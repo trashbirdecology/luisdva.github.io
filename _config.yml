@@ -27,6 +27,7 @@ kramdown:
 # Site owner
 owner:
   name: Luis Verde Arregoitia
+  description: ecology.evolution.conservation.biogeography
   avatar: https://pbs.twimg.com/profile_images/592507785922752513/Qh_GHEnO.jpg
   bio: "Describe your self."
   email: 
