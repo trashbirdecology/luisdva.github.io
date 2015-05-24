@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title:            Site Title
+title:            Luis D. Verde Arreogita
 locale:           en_US
 url:              
 
@@ -26,12 +26,12 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
-  avatar: bio-photo.jpg
+  name: Luis Verde Arregoitia
+  avatar: https://pbs.twimg.com/profile_images/592507785922752513/Qh_GHEnO.jpg
   bio: "Describe your self."
   email: 
   disqus-shortname: 
-  twitter: #username
+  twitter: LuisDVerde
   facebook: #username
   google:
     plus: #username
