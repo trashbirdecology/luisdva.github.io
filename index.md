@@ -8,7 +8,7 @@ tags:
   - blog
   - template
 image: 
-  feature: featureRat.jpg
+  feature: featurerat2.jpg
   credit: null
   creditlink: null
 published: true
