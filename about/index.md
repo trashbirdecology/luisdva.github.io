@@ -25,6 +25,7 @@ For my PhD (University of Queensland: 2010-2014), I investigated the relationshi
 
 
 
+
 Before that, I studied the ecology of bat migration for my BSc research thesis while studying biology at Universidad Nacional Autónoma de México (2004-2009) and worked at the Mammalogy Department at the Museum of Zoology, Facultad de Ciencias, UNAM.
 
 
