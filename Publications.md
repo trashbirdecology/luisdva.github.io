@@ -3,6 +3,8 @@ layout: page
 title: Publications
 permalink: /Publications/
 published: true
+image: 
+  feature: "featurePub.jpg"
 ---
 
 
