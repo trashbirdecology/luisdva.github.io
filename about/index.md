@@ -16,6 +16,12 @@ published: true
 ---
 
 
+image: 
+  feature: featurerat2.jpg
+  
+## This site
+Welcome to my personal research site. I'll be using this site for news, updates on research articles, and blog posts. The layout and design are work in progress, as I slowly learn more about Git, Markdown and Jekyll. 
+
 ## Research
 
 I'm interested in mammal diversity - past, and present. Through my research I aim to identify the mechanisms that generate spatial and taxonomic patterns of diversity, and the processes that threaten it. My broader interests include ecomorphology and phylogenetic comparative methods; one of my ongoing projects involves relating ecology to morphology to phylogeny in rodents using museum collections and phylogenies.  
