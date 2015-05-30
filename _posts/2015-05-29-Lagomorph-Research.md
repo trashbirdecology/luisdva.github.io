@@ -7,7 +7,7 @@ published: true
 
 ## Lagomorphs!
 
-![]({{site.baseurl}}//images/liebre.png)
+
 
 The spring of 2015 saw a flurry of publications relevant to lagomorph biology and conservation. To kick off my research blog, I've compiled some relevant links and summarized my own research on this unique group of mammals. 
 
