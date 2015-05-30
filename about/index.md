@@ -17,6 +17,7 @@ published: true
 
 
 
+
 ## This site
 Welcome to my personal research site. I'll be using this site for news, updates on research articles, and blog posts. The layout and design are work in progress, as I slowly learn more about Git, Markdown and Jekyll. 
 
@@ -26,9 +27,7 @@ I'm interested in mammal diversity - past, and present. Through my research I ai
 
 ## Background
 
-For my PhD (University of Queensland: 2010-2014), I investigated the relationship beween phylogeny and extinction risk in mammals. This research explored how the evolutionary age of a lineage relates to its current extinction risk (it doesn't) and the effects of extinctions on phylogenetic diversity and tree topologies.  
-
-Before that, I studied the ecology of bat migration for my BSc research thesis while studying biology at Universidad Nacional Autónoma de México (2004-2009) and worked at the Mammalogy Department at the Museum of Zoology, Facultad de Ciencias, UNAM.
+For my PhD (University of Queensland: 2010-2014), I investigated the relationship beween phylogeny and extinction risk in mammals. This research explored how the evolutionary age of a lineage relates to its current extinction risk (it doesn't) and the effects of extinctions on phylogenetic diversity and tree topologies. Before that, I studied the ecology of bat migration for my BSc research thesis while studying biology at Universidad Nacional Autónoma de México (2004-2009) and worked at the Mammalogy Department at the Museum of Zoology, Facultad de Ciencias, UNAM.
 
 
 ## Contact 
