@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About me
+title: About
 tags: 
   - about
   - Jekyll
@@ -9,11 +9,12 @@ tags:
 modified: {}
 comments: true
 image: 
-  feature: "featureAbout.jpg"
-  credit: 
-  creditlink: 
+  feature: featureAbout.jpg
+  credit: null
+  creditlink: null
 published: true
 ---
+
 
 
 ## This site
