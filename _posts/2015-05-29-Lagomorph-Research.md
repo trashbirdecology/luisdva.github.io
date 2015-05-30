@@ -14,8 +14,6 @@ published: true
         <figcaption>Tehuantepec hare.</figcaption>
 </figure>
 
-"https://github.com/luisDVA/luisdva.github.io/blob/master/images/liebre.png">
-
 The spring of 2015 saw a flurry of publications relevant to lagomorph biology and conservation. To kick off my research blog, I've compiled some relevant links and summarized my own research on this unique group of mammals. 
 
 My own interest towards this group came from a puzzling result in my first [thesis chapter](http://rspb.royalsocietypublishing.org/content/280/1765/20131092.short): that Lagomorph species belonging to species-poor genera (a category of biological classification above the species level, grouping similar and closely related species that share similar evolutionary histories) are at particularly high risk of extinction. This is an unusual pattern among mammalian orders and a worrying prospect because most Lagomorph genera are very small, containing only one or two species. If these species were to go extinct, there would be no similar species left anywhere else and a disproportionate amount of unique evolutionary history would be lost forever.
