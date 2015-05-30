@@ -16,9 +16,6 @@ published: true
 ---
 
 
-image: 
-  feature: featurerat2.jpg
-  
 ## This site
 Welcome to my personal research site. I'll be using this site for news, updates on research articles, and blog posts. The layout and design are work in progress, as I slowly learn more about Git, Markdown and Jekyll. 
 
