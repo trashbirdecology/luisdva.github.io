@@ -11,8 +11,7 @@ published: true
 
 
 <figure>
-	<a href="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"><img src="http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg"></a>
-	<figcaption><a href="http://www.flickr.com/photos/80901381@N04/7758832526/" title="Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr">Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr</a>.</figcaption>
+	<a href="https://github.com/luisDVA/luisdva.github.io/blob/master/images/liebre.png"><img 
 </figure>
 
 The spring of 2015 saw a flurry of publications relevant to lagomorph biology and conservation. To kick off my research blog, I've compiled some relevant links and summarized my own research on this unique group of mammals. 
