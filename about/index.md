@@ -13,6 +13,7 @@ image:
   credit: null
   creditlink: null
 published: true
+share: false
 ---
 
 
