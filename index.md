@@ -1,6 +1,6 @@
 ---
 layout: home
-excerpt: A minimal Jekyll theme for your blog by designer Michael Rose.
+excerpt: "Luis D. Verde Arregoitia Research Page"
 tags: 
   - Jekyll
   - theme
