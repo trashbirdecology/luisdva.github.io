@@ -9,10 +9,12 @@ published: true
 ---
 
 
-
 <figure>
-	<a href="https://github.com/luisDVA/luisdva.github.io/blob/master/images/liebre.png"><img 
+    <a href="/images/liebre.png"><img src="/images/liebre.png"></a>
+        <figcaption>Tehuantepec hare.</figcaption>
 </figure>
+
+"https://github.com/luisDVA/luisdva.github.io/blob/master/images/liebre.png">
 
 The spring of 2015 saw a flurry of publications relevant to lagomorph biology and conservation. To kick off my research blog, I've compiled some relevant links and summarized my own research on this unique group of mammals. 
 
