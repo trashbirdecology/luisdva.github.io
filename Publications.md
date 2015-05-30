@@ -3,6 +3,7 @@ layout: page
 title: Publications
 permalink: /Publications/
 published: true
+share: false
 image: 
   feature: featurePub.jpg
 ---
