@@ -1,8 +1,9 @@
 ---
+layout: post
+title: "Lagomorph research"
+tags: [hares, pikas, rabbits]
 published: true
 ---
-
-
 
 ## Lagomorphs!
 
