@@ -1,9 +1,12 @@
 ---
-published: false
+published: true
 ---
 
 
+
 ## Lagomorphs!
+
+![]({{site.baseurl}}//images/liebre.png)
 
 The spring of 2015 saw a flurry of publications relevant to lagomorph biology and conservation. To kick off my research blog, I've compiled some relevant links and summarized my own research on this unique group of mammals. 
 
@@ -26,6 +29,3 @@ In anticipation to the publication of this paper and her own awesome work on [cl
 [The Wonderful World of Lagomorphs](http://blogs.qub.ac.uk/qubio/2015/02/18/the-wonderful-world-of-lagomorphs/), and a piece on the importance of collaboration that describes how our paper came about: [Collaborative Research](https://blogs.qub.ac.uk/qubio/2015/03/20/collaborative-research/). I then summarized the results in [this](http://www.edgeofexistence.org/edgeblog/?p=8267) piece for the Zoological Society of London EDGE website.
 
 To wrap things up, a recent study by a team of Mexican researchers ([State of knowledge and conservation of endangered and critically endangered lagomorphs worldwide](http://www.revistas-conacyt.unam.mx/therya/index.php/THERYA/article/view/225/0)) highlights the state of knowledge and conservation of all globally endangered Lagomorphs. This synthesis found important gaps in knowledge, and provides important data on the conservation measures and research that are required to preserve these cute creatures.
-
-
-
