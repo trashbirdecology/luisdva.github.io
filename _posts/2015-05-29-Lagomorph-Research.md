@@ -1,13 +1,16 @@
 ---
 layout: post
-title: "Lagomorph research"
-tags: [hares, pikas, rabbits]
+title: Lagomorph research
+tags: 
+  - hares
+  - pikas
+  - rabbits
 published: true
 ---
 
-## Lagomorphs!
 
 
+![]({{site.baseurl}}/https://github.com/luisDVA/luisdva.github.io/blob/master/images/liebre.png)
 
 The spring of 2015 saw a flurry of publications relevant to lagomorph biology and conservation. To kick off my research blog, I've compiled some relevant links and summarized my own research on this unique group of mammals. 
 
