@@ -2,11 +2,11 @@
 layout: home
 excerpt: "Luis D. Verde Arregoitia Research Page"
 tags: 
-  - Jekyll
-  - theme
-  - responsive
+  - mammals
+  - conservation  
+  - updates
   - blog
-  - template
+  - LuisDVerde
 image: 
   feature: featurerat2.jpg
   credit: null
