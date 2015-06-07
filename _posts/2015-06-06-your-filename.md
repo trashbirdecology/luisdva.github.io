@@ -1,6 +1,7 @@
 ---
-published: false
+published: true
 ---
+
 
 ---
 layout: post
@@ -36,6 +37,20 @@ we tried to code this on JAGS but couldn't get mixing..
 
 since then I've seen ordinal extinction risk modeling used in 
 
-roughly what 
+roughly what
+
+{% highlight css %}
+#container {
+  float: left;
+  margin: 0 -240px 0 0;
+  width: 100%;
+# Load dplyr for data manipulation
+require(dplyr)
+
+# For reproducibility, read the table directly from the publication's URL 
+PantheriaWebAddress <- "http://esapubs.org/archive/ecol/e090/184/PanTHERIA_1-0_WR05_Aug2008.txt"
+pantheria <- read.table(file=PantheriaWebAddress,header=TRUE,sep="\t",na.strings=c("-999","-999.00"),stringsAsFactors = FALSE)
 
 
+}
+{% endhighlight %}
