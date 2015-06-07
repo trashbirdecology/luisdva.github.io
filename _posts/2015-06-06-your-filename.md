@@ -14,7 +14,7 @@ published: false
 ## Ordinal extinction risk models in R. 
 ### Modeling and plotting phylogenetic generalized linear mixed models
 
-This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed the alarming fact that almost 20% of the bird species found in Europe are facing extinction. This publication is the result of three years of hard work by consortium led by BirdLife International and financed by the European Commission. A publication like this is expected to guide and policy work over the coming years. 
+This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed that almost 20% of bird species in Europe are facing extinction. This publication is the result of three years of hard work by a consortium led by BirdLife International and financed by the European Commission. A publication like this is expected to guide and policy work over the coming years. 
 
 Red Lists of threatened species are widely recognised as the most authoritative and objective system for assessing the extinction risk of species. The Red List, which follows International Union for Conservation of Nature (IUCN) methodology, is widely recognised as the most authoritative and objective system for assessing the extinction risk of species
 
