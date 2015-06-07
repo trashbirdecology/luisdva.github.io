@@ -10,14 +10,15 @@ published: false
 ---
 
 
+
 ## Ordinal extinction risk models in R. 
 ### Modeling and plotting phylogenetic generalized linear mixed models
 
-The newly published European Red List of Birds reveals the shocking fact that habitat loss and climate change have caused the declines of 20 per cent of European bird species.  
+This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed the alarming fact that almost 20% of the bird species found in Europe are facing extinction. This publication is the result of three years of hard work by consortium led by BirdLife International and financed by the European Commission. A publication like this is expected to guide and policy work over the coming years. 
 
-After three years of work, a consortium led by BirdLife International and financed by the European Commission has published the new European Red List of Birds. This will set the base for European conservation and policy work over the coming years. The Red List is widely recognised as the most authoritative and objective system for assessing the extinction risk of species. The Red List, which follows International Union for Conservation of Nature (IUCN) methodology, is widely recognised as the most authoritative and objective system for assessing the extinction risk of species
+Red Lists of threatened species are widely recognised as the most authoritative and objective system for assessing the extinction risk of species. The Red List, which follows International Union for Conservation of Nature (IUCN) methodology, is widely recognised as the most authoritative and objective system for assessing the extinction risk of species
 
-This June, the newly published European Red Lists for both [birds](http://www.theguardian.com/environment/2015/may/14/a-third-of-europes-birds-under-threat-says-most-comprehensive-study-yet) and [marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction) revealed that almost 1/3 of Europe's birds and 40% of Europe's sharks, skates and rays face extinction. The species that are threatened are not a random 
+This June, the newly published European Red Lists for both  and [marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction) revealed that almost 1/3 of Europe's birds and 40% of Europe's sharks, skates and rays face extinction. The species that are threatened are not a random 
 
 As we learn more about the for most species in a group (the proporiton of species with ...varies) We are interested in identyfing the biological factors and/or human pressures that explain why some species are more threatened than others. multivariate linear models 
 
@@ -62,4 +63,3 @@ pantheria <- read.table (file=PantheriaWebAddress,header=TRUE,sep="\t",na.string
 De Lisle, S. P., & Rowe, L. (2015) Independent evolution of the sexes promotes amphibian diversification. 282. doi:10.1098/rspb.2014.2213.
 
 Seibold, S., Brandl, R., Buse, J., Hothorn, T., Schmidl, J., Thorn, S., et al. (2015) Association of extinction risk of saproxylic beetles with ecological degradation of forests in Europe. Conservation Biology.
-
