@@ -16,7 +16,7 @@ In the past few weeks, the European Red Lists for both [birds](http://www.thegua
 
 We are interested in identtyfing the biological factors and/or the human pressures that explain why some species are more threatened than others. multivariate linear models 
 
-```{r, 14-12-10-rworldmap, hide=TRUE, warning=FALSE, message=FALSE, echo=TRUE}
+```{r, hide=TRUE, warning=FALSE, message=FALSE, echo=TRUE}
 code <- "NTD_4"
 year <- 2013
 url <- paste0('http://apps.who.int/gho/athena/api/GHO/',code,'.csv?filter=COUNTRY:*;YEAR:',year)
@@ -47,11 +47,8 @@ since then I've seen ordinal extinction risk modeling used in
 
 roughly what
 
-{% highlight css %}
-#container {
-  float: left;
-  margin: 0 -240px 0 0;
-  width: 100%;
+{% highlight r %}
+
 # Load dplyr for data manipulation
 require(dplyr)
 
