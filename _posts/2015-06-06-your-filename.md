@@ -16,7 +16,7 @@ published: false
 
 This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed that almost 20% of bird species in Europe are facing extinction. This publication is the result of three years of hard work by a consortium led by BirdLife International and financed by the European Commission. A publication like this is expected to guide and policy work over the coming years. 
 
-Red Lists of threatened species are widely recognised as the most authoritative and objective system for assessing the extinction risk of species. The Red List, which follows International Union for Conservation of Nature (IUCN) methodology, is widely recognised as the most authoritative and objective system for assessing the extinction risk of species
+Red Lists of threatened species are widely recognised as authoritative and objective systems for assessing large-scale, species-level extinction risk. Red Lists can be compiled at various geographic levels, and they usually follow the rigurous quantitative methods set by the International Union for Conservation of Nature (IUCN). 
 
 This June, the newly published European Red Lists for both  and [marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction) revealed that almost 1/3 of Europe's birds and 40% of Europe's sharks, skates and rays face extinction. The species that are threatened are not a random 
 
