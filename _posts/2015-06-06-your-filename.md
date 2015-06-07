@@ -6,7 +6,7 @@ tags:
   - MCMCglmm
   - Probit model
   - extinction risk
-published: false
+published: true
 ---
 
 ## Ordinal extinction risk models in R. 
@@ -15,6 +15,18 @@ published: false
 In the past few weeks, the European Red Lists for both [birds](http://www.theguardian.com/environment/2015/may/14/a-third-of-europes-birds-under-threat-says-most-comprehensive-study-yet) and [marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction) 
 
 We are interested in identtyfing the biological factors and/or the human pressures that explain why some species are more threatened than others. multivariate linear models 
+
+```{r, 14-12-10-rworldmap, hide=TRUE, warning=FALSE, message=FALSE, echo=TRUE}
+code <- "NTD_4"
+year <- 2013
+url <- paste0('http://apps.who.int/gho/athena/api/GHO/',code,'.csv?filter=COUNTRY:*;YEAR:',year)
+#read query result into dataframe
+dF <- read.csv(url,as.is=TRUE)
+library(rworldmap)
+sPDF <- joinCountryData2Map(dF, nameJoinColumn="COUNTRY", joinCode="ISO3")
+mapCountryData(sPDF,nameColumnToPlot="Numeric",catMethod="fixedWidth",mapRegion="africa", mapTitle="Gambian sleeping sickness cases in 2013")
+
+```
 
 The IUCN extinction risk is an ordinal, categorical estimate of extinction threat that represents an underlying continuous latent variable (the unknown true extinction risk).
 Ordered threat categories can help to guide priorities for conservation
