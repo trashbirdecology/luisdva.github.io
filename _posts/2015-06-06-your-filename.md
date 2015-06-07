@@ -1,9 +1,4 @@
 ---
-published: true
----
-
-
----
 layout: post
 title: Ordinal extinction risk models 
 excerpt: "Modeling IUCN Red List data as ordered response variables "
@@ -13,6 +8,7 @@ tags:
   - extinction risk
 published: true
 ---
+
 ## Ordinal extinction risk models in R. 
 ### Modeling and plotting phylogenetic generalized linear mixed models
 
