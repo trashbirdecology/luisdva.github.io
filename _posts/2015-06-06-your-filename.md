@@ -12,8 +12,7 @@ published: false
 
 
 
-## Ordinal extinction risk models in R. 
-
+## Red List of Threatened Species
 
 This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed that almost 20% of bird species in Europe are facing extinction. This publication is the result of three years of hard work by a consortium led by BirdLife International and financed by the European Commission. This list, and similar recent publications (i.e the [European Red List of marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction)  are expected to guide conservation and policy work over the coming years. 
 Assigning species into different threat categories can help to guide priorities for conservation investment, and produce a series of recommendations for conservation action for each category. Red Lists of threatened species can be compiled at various geographic levels (state/country/global), and they usually follow the rigurous quantitative methods set by the International Union for Conservation of Nature [(IUCN)](http://www.iucnredlist.org/). Red Lists are authoritative and objective systems for assessing large-scale, species-level extinction risk. 
@@ -26,12 +25,18 @@ To date, most studies have treated Red List values of extinction risk as a conti
 
 In a nifty 2011 paper, Matthews et al. address this issue, and they suggest that the coarse continuous index approach can produce elevated type I error rates because such treatment applies arithmetic operations that lose the variance structure of the original ordinal ranks. Specifically, the problem occurs when the ordinal ranks are separated by unequal distances along the underlying continuous variable that they measure, and we can't know this beforehand.
 
-### phylogenetic generalized linear mixed models
+### Phylogenetic generalized linear mixed models
 
-For my PhD research I studied extinction risk in mammals, and I used the IUCN Red List data as the response variable. My cosupervisor Simon Blomberg convinced me to try and model the response as an ordinal index. At the time, few studies had done .. this.
+For my PhD research I studied extinction risk in mammals, and I used the IUCN Red List data as the response variable. My cosupervisor [Simon Blomberg](http://researchers.uq.edu.au/researcher/428) convinced me to try and model the response as an ordinal index. At the time, few studies had done .. this.
 Initially, we tried to code these models as ordinal logit models in JAGS - but as I struggled with the phylogenetic comparative aspect and the JAGS and Linux learning curves, a Reddit user pointed me to the MCMCglmm package by Jarrod Hadfield.  
 
 _MCMCglmm_ is an R package for fitting Generalised Linear Mixed Models using Markov chain Monte Carlo techniques. It draws on quantitative genetics methods, and I was interested in how the it could incorporate phylogenetic information (as a covariance matrix representing the amount of shared evolutionary history between species), and use a probit link function to model ordinal response variables. The package is widely-used and well-documented in mailing lists and discussion groups. 
+
+### 2013 paper
+
+My first thesis chapter, using Phylogenetic Generalised Linear Mixed Models (PGLMM; also known as Bayesian Phylogenetic Mixed Models, BPMM) 
+
+http://rspb.royalsocietypublishing.org/content/280/1765/20131092.short
 
 since then I've seen ordinal extinction risk modeling used in 
 
