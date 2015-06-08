@@ -33,7 +33,7 @@ _MCMCglmm_ is an R package for fitting Generalised Linear Mixed Models using Mar
 
 ### 2013 paper
 
-My first thesis chapter, using Phylogenetic Generalised Linear Mixed Models (PGLMM; also known as Bayesian Phylogenetic Mixed Models, BPMM) 
+For my first thesis chapter, I investigated the relationship between extinction risk and  using Phylogenetic Generalised Linear Mixed Models (PGLMM; also known as Bayesian Phylogenetic Mixed Models, BPMM) 
 
 http://rspb.royalsocietypublishing.org/content/280/1765/20131092.short
 
