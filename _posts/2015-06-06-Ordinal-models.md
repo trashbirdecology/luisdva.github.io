@@ -6,7 +6,7 @@ tags:
   - MCMCglmm
   - Probit model
   - extinction risk
-published: false
+published: true
 ---
 
 
