@@ -17,6 +17,7 @@ published: true
 
 
 
+
 ### Red Lists of Threatened Species
 
 This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed that almost 20% of bird species in Europe are facing extinction. This report is the result of three years of hard work by a consortium led by BirdLife International. This list, and similar recent publications (i.e the [European Red List of marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction))  are expected to guide conservation and policy work over the coming years. 
@@ -45,11 +46,8 @@ For my first thesis chapter, I investigated the relationship between extinction 
 I'm still proud of having published the "first" ordinal/phylogenetic mammal extinction risk  paper. I shared all my data and described the methods as thoroughly as I could, but I did not make my analysis and visualisation code available. On top of that I flaked when someone emailed me and requested the R code (sorry Jörg). I admit that at the time I was:
 
 * Very sloppy at R and keeping track of scripts and data.
-
 * Ashamed of my non-optimised code, annotated mostly in Spanish.
-
 * Scared of blatant errors that I might have somehow missed, which would make the paper wrong and useless (despite supervisor review).
-
 * Away on extended field work and conference travel.
 
 I ended up perpetuating the annoying trend of not supplying materials ["upon request"](http://www.tandfonline.com/doi/abs/10.1080/08989621.2012.678688?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed&) and I'd like to make it right. Below is a fully reproducible example for running and plotting a multivariate model of extinction risk in terrestrial carnivores (cliché/well-studied group) that takes into account phylogenetic relatedness between species, and the ordinal nature of Red List Data. It outlines what I did in the 2013 paper. 
@@ -57,6 +55,8 @@ I ended up perpetuating the annoying trend of not supplying materials ["upon req
 ## #rstats example code
 
 This code is not very elegant, but it should be fully reproducible as long as you have an internet connection. Make sure you install the latest version of all the required packages and please let me know of any serious mistakes or cool data wrangling tips that I could incorporate. 
+
+Please contact me if you are interested in this sort of thing, or if you have any feedback. 
 
 **Downloading and tidying trait data, phylogenetic tree and Red List status**
 
@@ -132,11 +132,9 @@ carnivoraData <- carnivoraFinal[!rownames(carnivoraFinal) %in% toDrop, ]
 
 For this example I'm ignoring known issues with missing data, taxonomy and synonyms, and phylogenetic uncertainty. All these issues can influence the model results and interpretation, and they should be addressed in a proper extinction risk study, especially one that aims to inform conservation. 
 
-* Missing data can be completed with throrough searches of recent or grey literature, or imputation techniques can fill in the gaps. 
-
-* Experience with the study group and taxonomic resources can clear up the identity of species before any analyisis. 
-
-* Phylogenetic uncertainty can be addressed by performing MCMCglmm across multiple trees using the [mulTree](https://github.com/TGuillerme/mulTree) functions by Thomas Guillerme & Kevin Healy at TCD. 
+* Missing data can be completed with thorough searches of recent or grey literature, or imputation techniques can fill in the gaps. 
+* Experience with the study group and open taxonomic resources can clear up the identity of species before running any analyses. 
+* Phylogenetic uncertainty can be addressed by performing MCMCglmm across multiple trees using the [mulTree](https://github.com/TGuillerme/mulTree) functions by Thomas Guillerme & Kevin Healy. 
 
 **Running the model**
 
@@ -174,13 +172,13 @@ summModel <- summary(ERiskModel)
 
 {% endhighlight %}
 
-The number of iterations can be changed depending on hardware/patience. A few things I left out include: running parallel chains, pooling chains with different starting values and their corresponding convergence diagnostics. This particular model converged, and the model summary shows that the probabalities in the 95% credible region for the body size parameter estimate do not include zero (i.e. a "significant" positive relationship between body size and extinction risk). 
+The number of iterations can be changed depending on hardware/patience. A few things I left out include: running parallel chains, and pooling chains with different starting values and then the corresponding convergence diagnostics. This particular model converged, and the model summary shows that the probabalities in the 95% credible region for the body size parameter estimate do not include zero (i.e. a "significant" positive relationship between body size and extinction risk). 
 
 |parameter|post.mean| l-95% CI| u-95% CI| 
 |:--------|:-------:|--------:|--------:|
 |(Intercept) | -3.19035| -4.95698| -1.67352|    
 |body size| 0.37848|  0.19934|  0.54769|   
-|LitterSize  | -0.20584| -0.40273|  0.01897|   
+|litter size  | -0.20584| -0.40273|  0.01897|   
 
 
 No we can plot the effect of body size on extinction risk while the effects of litter size are kept constant. This works by calculating the probabilities of falling into each ordered category for any number of values of a linear predictor. The process is explained very well in [this]( https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html) mailing list discussion and in the ordinal regression chapter of John Kruschke's puppy-themed Bayesian Analysis book (see its accompanying [blog entry](http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html)). Originally I calculated these probabilities manually. Fortunately, Josh Wiley wrote the [postMCMCglmm](https://github.com/JWiley/postMCMCglmm) R package which contains functions to estimate predicted probabilites from an MCMCglmm object. In the end we have a dataframe of predicted probabilites (and CISs) for a range of body size values for each Red List category. Finally, I stacked the probabilities in a ggplot call using a color scheme that I think is pretty and effective (and technically colourblind and printer friendly). 
@@ -283,3 +281,6 @@ require(ggplot2)
     <a href="/images/liebre.png"><img src="/images/ordinalplot.png"></a>
         <figcaption>sample extinction risk plot</figcaption>
 </figure>
+
+The probability of being at the Least Concern threat category is highest for smaller-bodied species, an it decreases with increasing body size. The interpretation for the other categories is done the same way. 
+
