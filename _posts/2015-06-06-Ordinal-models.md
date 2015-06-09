@@ -6,6 +6,10 @@ tags:
   - MCMCglmm
   - Probit model
   - extinction risk
+image: 
+  feature: featureCarn.jpg
+  credit: null
+  creditlink: null
 published: false
 ---
 
@@ -276,6 +280,6 @@ require(ggplot2)
 
 <figure>
     <a href="/images/liebre.png"><img src="/images/ordinalplot.png"></a>
-        <figcaption>Tehuantepec hare.</figcaption>
+        <figcaption>sample extinction risk plot</figcaption>
 </figure>
 
