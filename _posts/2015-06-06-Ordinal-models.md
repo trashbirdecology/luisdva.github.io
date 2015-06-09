@@ -13,6 +13,7 @@ published: true
 
 
 
+
 ### Red Lists of Threatened Species
 
 This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed that almost 20% of bird species in Europe are facing extinction. This report is the result of three years of hard work by a consortium led by BirdLife International. This list, and similar recent publications (i.e the [European Red List of marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction))  are expected to guide conservation and policy work over the coming years. 
@@ -76,7 +77,6 @@ carnivora <- select(carnivora,
                     BodySize = X5.1_AdultBodyMass_g,
                     LitterSize = X15.1_LitterSize)
 
-
 # keep only complete cases
 carnivora <- carnivora %>% filter(complete.cases(.)) 
 
@@ -121,8 +121,6 @@ carnPhylo <- treedata(mammalPhylo,carnivoraFinal)$phy
 toDrop <- setdiff(carnivoraFinal$Species,carnPhylo$tip.label)
 carnivoraData <- carnivoraFinal[!rownames(carnivoraFinal) %in% toDrop, ]
 
-
-}
 {% endhighlight %}
 
 For this example I'm ignoring known issues with missing data, taxonomy and synonyms, and phylogenetic uncertainty. All these issues can influence the model results and interpretation, and they should be addressed in a proper extinction risk study, especially one that aims to inform conservation. 
@@ -159,13 +157,11 @@ heidel.diag (ERiskModel$Sol) # Heidelberg and Welch (1983) diagnostic test
 autocorr (ERiskModel$Sol) # autocorrelation of succesive samples (should be near 0)
 plot (ERiskModel) # visual inspection of mixing properties of the MCMC chain
 
-
 # explore results
 summary (ERiskModel)
 # summarize model for plotting
 summModel <- summary(ERiskModel)
 
-}
 {% endhighlight %}
 
 The number of iterations can be changed depending on hardware/patience. A few things I left out include: running parallel chains, pooling chains with different starting values and their corresponding convergence diagnostics. This particular model converged, and the model summary shows that the probabalities in the 95% credible region for the body size parameter estimate do not include zero (i.e. a "significant" positive relationship between body size and extinction risk). 
@@ -189,15 +185,12 @@ No we can plot the effect of body size on extinction risk while the effects of l
 logBSize = seq(min(carnivoraData$lBodySize),max(carnivoraData$lBodySize), length.out=nrow(carnivoraData))
 LitterSize = seq(min(carnivoraData$LitterSize),max(carnivoraData$LitterSize), length.out=nrow(carnivoraData))
 
-
 # to plot the body size~threat relationship keeping the effect of litter size constant
 
 newdat2 <- as.matrix(data.frame("(Intercept)"=1,
                       bodySize = logBSize,
                       LitterSize = median(LitterSize))) 
             
-
-
 # probabilities of falling into categories
 
 require(devtools)
@@ -262,7 +255,6 @@ predProbPlot$outcome <- factor (rep(c("LC","NT","VU","EN","CR"), each = nrow(sum
 
 require(ggplot2)
 
-
  ggplot (predProbPlot, aes(x = bodySize, y = M, colour = outcome)) +
   geom_ribbon(aes(ymin = LL, ymax = UL, fill = outcome), alpha = .25) +
   geom_line(size=2)+
@@ -275,8 +267,4 @@ require(ggplot2)
   theme_classic()+theme(legend.position = "none",axis.ticks.y = element_blank())+
    geom_hline(yintercept=seq(0:4),by=1)
  
- 
-}
 {% endhighlight %}
-
-
