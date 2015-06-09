@@ -53,7 +53,7 @@ I ended up perpetuating the annoying trend of not supplying materials ["upon req
 
 ## #rstats example code
 
-This code is not very elegant, but it should be fully reproducible as long as you have an internet connection. Make sure you install the latest version of all the required packages and please let me know of any serious mistakes or cool data wrangling tips that I could incorporate. The full script is here. 
+This code is not very elegant, but it should be fully reproducible as long as you have an internet connection. Make sure you install the latest version of all the required packages and please let me know of any serious mistakes or cool data wrangling tips that I could incorporate. 
 
 **Downloading and tidying trait data, phylogenetic tree and Red List status**
 
@@ -180,7 +180,7 @@ The number of iterations can be changed depending on hardware/patience. A few th
 |LitterSize  | -0.20584| -0.40273|  0.01897|   
 
 
-No we can plot the effect of body size on extinction risk while the effects of litter size are kept constant. This works by calculating the probabilities of falling into each ordered category for any number of values of a linear predictor. The process is explained very well in [this]( https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html) mailing list discussion and in the ordinal regression chapter of John Kruschke's puppy-themed Bayesian Analysis book (see its accompanying [blog entry](http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html)). Originally I calculated these probabilities manually. Fortunately, Josh Wiley wrote the [postMCMCglmm](https://github.com/JWiley/postMCMCglmm) R package which contains functions to estimate predicted probabilites from an MCMCglmm object. 
+No we can plot the effect of body size on extinction risk while the effects of litter size are kept constant. This works by calculating the probabilities of falling into each ordered category for any number of values of a linear predictor. The process is explained very well in [this]( https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html) mailing list discussion and in the ordinal regression chapter of John Kruschke's puppy-themed Bayesian Analysis book (see its accompanying [blog entry](http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html)). Originally I calculated these probabilities manually. Fortunately, Josh Wiley wrote the [postMCMCglmm](https://github.com/JWiley/postMCMCglmm) R package which contains functions to estimate predicted probabilites from an MCMCglmm object. In the end we have a dataframe of predicted probabilites (and CISs) for a range of body size values for each Red List category. In the end I stack them in a ggplot call.
 
 **Plotting the model results**
 
