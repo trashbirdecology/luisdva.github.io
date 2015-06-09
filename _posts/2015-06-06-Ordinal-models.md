@@ -40,10 +40,14 @@ For my PhD research I studied extinction risk in mammals, and I used IUCN Red Li
 For my first thesis chapter, I investigated the relationship between extinction risk and  quantitative properties of the mammalian phylogeny. I used _MCMCglmm_ to fit Phylogenetic Generalised Linear Mixed Models (PGLMM; or the cooler-sounding Bayesian Phylogenetic Mixed Models, BPMM). This research was published in 2013 [[OA link]](http://rspb.royalsocietypublishing.org/content/280/1765/20131092.short) and since then I've seen ordinal extinction risk modeling used to address some interesting questions for amphibians [(De Lisle & Rowe 2015)](http://rspb.royalsocietypublishing.org/content/282/1803/20142213) and beetles [(Seibold et al., 2015)](http://onlinelibrary.wiley.com/doi/10.1111/cobi.12427/abstract), using SAS and Mesquite routines that I haven't looked into yet.
 
 I'm still proud of having published the "first" ordinal/phylogenetic mammal extinction risk  paper. I shared all my data and described the methods as thoroughly as I could, but I did not make my analysis and visualisation code available. On top of that I flaked when someone emailed me and requested the R code (sorry Jörg). I admit that at the time I was:
-* very sloppy at R and keeping track of scripts and data
-* ashamed of my non-optimised code, annotated mostly in Spanish
-* scared of blatant errors that I might have somehow missed, which would make the paper wrong and useless (despite having being checked by my supervisors)
-* away on extended field work and conference travel
+
+* Very sloppy at R and keeping track of scripts and data.
+
+* Ashamed of my non-optimised code, annotated mostly in Spanish.
+
+* Scared of blatant errors that I might have somehow missed, which would make the paper wrong and useless (despite supervisor review).
+
+* Away on extended field work and conference travel.
 
 I ended up perpetuating the annoying trend of not supplying materials ["upon request"](http://www.tandfonline.com/doi/abs/10.1080/08989621.2012.678688?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed&) and I'd like to make it right. Below is a fully reproducible example for running and plotting a multivariate model of extinction risk in terrestrial carnivores (cliché/well-studied group) that takes into account phylogenetic relatedness between species, and the ordinal nature of Red List Data. It outlines what I did in the 2013 paper. 
 
