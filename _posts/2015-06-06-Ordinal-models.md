@@ -10,8 +10,9 @@ image:
   feature: featureCarn.jpg
   credit: null
   creditlink: null
-published: false
+published: true
 ---
+
 
 
 
@@ -282,4 +283,3 @@ require(ggplot2)
     <a href="/images/liebre.png"><img src="/images/ordinalplot.png"></a>
         <figcaption>sample extinction risk plot</figcaption>
 </figure>
-
