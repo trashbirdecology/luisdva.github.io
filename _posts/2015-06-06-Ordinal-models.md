@@ -11,6 +11,7 @@ published: false
 
 
 
+
 ### Red Lists of Threatened Species
 
 This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed that almost 20% of bird species in Europe are facing extinction. This report is the result of three years of hard work by a consortium led by BirdLife International. This list, and similar recent publications (i.e the [European Red List of marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction))  are expected to guide conservation and policy work over the coming years. 
@@ -177,7 +178,7 @@ The number of iterations can be changed depending on hardware/patience. A few th
 |LitterSize  | -0.20584| -0.40273|  0.01897|   
 
 
-No we can plot the effect of body size on extinction risk while the effects of litter size are kept constant. This works by calculating the probabilities of falling into each ordered category for any number of values of a linear predictor. The process is explained very well in [this]( https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html) mailing list discussion and in the ordinal regression chapter of John Kruschke's puppy-themed Bayesian Analysis book (see its accompanying [blog entry](http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html)). Originally I calculated these probabilities manually. Fortunately, Josh Wiley wrote the [postMCMCglmm](https://github.com/JWiley/postMCMCglmm) R package which contains functions to estimate predicted probabilites from an MCMCglmm object. In the end we have a dataframe of predicted probabilites (and CISs) for a range of body size values for each Red List category. In the end I stack them in a ggplot call using a color scheme that I think is pretty and effective (and technically colourblind and printer friendly). 
+No we can plot the effect of body size on extinction risk while the effects of litter size are kept constant. This works by calculating the probabilities of falling into each ordered category for any number of values of a linear predictor. The process is explained very well in [this]( https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html) mailing list discussion and in the ordinal regression chapter of John Kruschke's puppy-themed Bayesian Analysis book (see its accompanying [blog entry](http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html)). Originally I calculated these probabilities manually. Fortunately, Josh Wiley wrote the [postMCMCglmm](https://github.com/JWiley/postMCMCglmm) R package which contains functions to estimate predicted probabilites from an MCMCglmm object. In the end we have a dataframe of predicted probabilites (and CISs) for a range of body size values for each Red List category. Finally, I stacked the probabilities in a ggplot call using a color scheme that I think is pretty and effective (and technically colourblind and printer friendly). 
 
 **Plotting the model results**
 
@@ -272,3 +273,9 @@ require(ggplot2)
    geom_hline(yintercept=seq(0:4),by=1)
  
 {% endhighlight %}
+
+<figure>
+    <a href="/images/liebre.png"><img src="/images/ordinalplot.png"></a>
+        <figcaption>Tehuantepec hare.</figcaption>
+</figure>
+
