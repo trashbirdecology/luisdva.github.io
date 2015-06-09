@@ -12,6 +12,7 @@ published: false
 
 
 
+
 ### Red Lists of Threatened Species
 
 This June, the [European Red List of Birds](http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0) revealed that almost 20% of bird species in Europe are facing extinction. This report is the result of three years of hard work by a consortium led by BirdLife International. This list, and similar recent publications (i.e the [European Red List of marine fishes](http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction))  are expected to guide conservation and policy work over the coming years. 
@@ -21,19 +22,21 @@ As we learn more about the threat status for more animal and plant groups throug
 
 ### Ordinal response
 
-To date, most studies have treated Red List values of extinction risk as a continuous variable (i.e there are five main threat categories for living species, going from _Least Concern -> Near Threatened -> Vulnerable -> Endangered -> Critically Endangered_ and they can be treated as a coarse continous index from 1 to 5). This approach assumes that the categories are continuously varying and evenly spaced. Instead, the Red List is an ordinal, categorical estimate of threat that represents an underlying continuous latent variable (the unknown true extinction risk). For example, the true difference in extinction risk may vary between categories of Least Concern and Near Threatened when compared with Critically Endangered and extinct. The coarse continuous index approach can produce elevated type I error rates because it loses the variance structure of the original ordinal ranks. Problems arise when the ordinal ranks are separated by unequal distances along the underlying continuous variable that they measure, and we can't know this beforehand. The coarse continous approach isn't necessarily wrong or misleading, but the sensitivity of models to different treatments of Red List response data is not always acknowledged. A growing number of papers have compared the results from ordinal vs continous models, and a simulation test by Matthews et al. (2011) have found that the results can be consistent, but not always... 
+To date, most studies have treated Red List values of extinction risk as a continuous variable (i.e there are five main threat categories for living species, going from _Least Concern -> Near Threatened -> Vulnerable -> Endangered -> Critically Endangered_ and they can be treated as a coarse continous index from 1 to 5). This approach assumes that the categories are continuously varying and evenly spaced. Instead, the Red List is an ordinal, categorical estimate of threat that represents an underlying continuous latent variable (the unknown true extinction risk). For example, the true difference in extinction risk may vary between categories of Least Concern and Near Threatened when compared with Critically Endangered and extinct. 
+
+The coarse continuous index approach can produce elevated type I error rates because it loses the variance structure of the original ordinal ranks. Problems arise when the ordinal ranks are separated by unequal distances along the underlying continuous variable that they measure, and we can't know this beforehand.  A growing number of papers have compared the results from ordinal vs continous models, and a simulation test by [Matthews et al. (2011)](http://rspb.royalsocietypublishing.org/content/early/2010/10/09/rspb.2010.1489.short) found that the results can be consistent in most situations. The coarse continous approach isn't necessarily wrong or misleading, but the sensitivity of models to different treatments of Red List response data is not always acknowledged.
 
 
 ### Phylogenetic generalized linear mixed models
 
 
-For my PhD research I studied extinction risk in mammals, and I used IUCN Red List data as the response variable. My co-supervisor and PCM guru [Simon Blomberg](http://researchers.uq.edu.au/researcher/428) convinced me to try and model the response as an ordinal index. At the time, only two studies had modeled Red List data as an ordered multinomial response, but both had potential non-indpendece issues. Liow et al. (2009) used nonphylogenetic proportional odds models; and González-Suárez & Revilla (2013) used taxonomically informed Generalised Linear Mixed Models. Initially, we tried to code ordinal logit models in JAGS - and while I struggled with the phylogenetic comparative aspect and the JAGS and Linux learning curves, a helpful Reddit user pointed me to the _MCMCglmm_ package by Jarrod Hadfield.  
+For my PhD research I studied extinction risk in mammals, and I used IUCN Red List data as the response variable. My co-supervisor and PCM guru [Simon Blomberg](http://researchers.uq.edu.au/researcher/428) convinced me to try and model the response as an ordinal index. At the time, only two studies had modeled Red List data as an ordered multinomial response, but both had potential non-indpendece issues. [Liow et al. (2009)](http://www.jstor.org/stable/10.1086/595756?seq=1#page_scan_tab_contents) used nonphylogenetic proportional odds models; and [González-Suárez & Revilla (2013)](http://onlinelibrary.wiley.com/doi/10.1111/ele.12035/full) used taxonomically informed Generalised Linear Mixed Models. Initially, we tried to code ordinal logit models in JAGS - and while I struggled with the phylogenetic comparative aspect and the JAGS and Linux learning curves, a helpful Reddit user pointed me to the _MCMCglmm_ package by Jarrod Hadfield.  
 
-_MCMCglmm_ is an R package for fitting Generalised Linear Mixed Models using Markov chain Monte Carlo techniques. It draws on quantitative genetics methods, and I was very interested in how the it could incorporate phylogenetic information (as a covariance matrix representing the amount of shared evolutionary history between species), and use a probit link function to model ordinal responses. The package is widely-used and well-documented in mailing lists and discussion groups (and Jarrod was always helpful and patient whenever I pestered him on mailing lists or at conferences).
+[_MCMCglmm_](http://cran.r-project.org/web/packages/MCMCglmm/index.html) is an R package for fitting Generalised Linear Mixed Models using Markov chain Monte Carlo techniques. It draws on quantitative genetics methods, and I was very interested in how the it could incorporate phylogenetic information (as a covariance matrix representing the amount of shared evolutionary history between species), and use a probit link function to model ordinal responses. The package is widely-used and well-documented in mailing lists and discussion groups (and Jarrod was always helpful and patient whenever I pestered him on mailing lists or at conferences).
 
 ### 2013 paper
 
-For my first thesis chapter, I investigated the relationship between extinction risk and  quantitative properties of the mammalian phylogeny. I used _MCMCglmm_ to fit Phylogenetic Generalised Linear Mixed Models (PGLMM; or the cooler-sounding Bayesian Phylogenetic Mixed Models, BPMM). This research was published in 2013 [[OA link]](http://rspb.royalsocietypublishing.org/content/280/1765/20131092.short) and since then I've seen ordinal extinction risk modeling used to address some interesting questions for amphibians and beetles, using SAS and Mesquite routines that I haven't looked into yet.
+For my first thesis chapter, I investigated the relationship between extinction risk and  quantitative properties of the mammalian phylogeny. I used _MCMCglmm_ to fit Phylogenetic Generalised Linear Mixed Models (PGLMM; or the cooler-sounding Bayesian Phylogenetic Mixed Models, BPMM). This research was published in 2013 [[OA link]](http://rspb.royalsocietypublishing.org/content/280/1765/20131092.short) and since then I've seen ordinal extinction risk modeling used to address some interesting questions for amphibians [(De Lisle & Rowe 2015)](http://rspb.royalsocietypublishing.org/content/282/1803/20142213) and beetles [(Seibold et al., 2015)](http://onlinelibrary.wiley.com/doi/10.1111/cobi.12427/abstract), using SAS and Mesquite routines that I haven't looked into yet.
 
 I'm still proud of having published the "first" ordinal/phylogenetic mammal extinction risk  paper. I shared all my data and described the methods as thoroughly as I could, but I did not make my analysis and visualisation code available. On top of that I flaked when someone emailed me and requested the R code (sorry Jörg). I admit that at the time I was:
 - very sloppy at R and keeping track of scripts and data
@@ -43,11 +46,11 @@ I'm still proud of having published the "first" ordinal/phylogenetic mammal exti
 
 I ended up perpetuating the annoying trend of not supplying materials ["upon request"](http://www.tandfonline.com/doi/abs/10.1080/08989621.2012.678688?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed&) and I'd like to make it right. Below is a fully reproducible example for running and plotting a multivariate model of extinction risk in terrestrial carnivores (cliché/well-studied group) that takes into account phylogenetic relatedness between species, and the ordinal nature of Red List Data. It outlines what I did in the 2013 paper. 
 
-## #Rstats example code
+## #rstats example code
 
 This code is not very elegant, but it should be fully reproducible as long as you have an internet connection. Make sure you install the latest version of all the required packages and please let me know of any serious mistakes or cool data wrangling tips that I could incorporate. The full script is here. 
 
-
+**Downloading and tidying trait data, phylogenetic tree and Red List status**
 
 {% highlight r %}
 
@@ -122,9 +125,12 @@ carnivoraData <- carnivoraFinal[!rownames(carnivoraFinal) %in% toDrop, ]
 }
 {% endhighlight %}
 
-For this example I ignore any issues with missing data, taxonomy and synonyms, and phylogenetic uncertainty. All these can and should be addressed in a proper extinction risk study, especially one that aims to inform conservation. 
-Missing data can be completed with throrough searches of recent or grey literature, or imputation techniques can fill in the gaps.  Phylogenetic uncertainty can be addressed by performing MCMCglmm across multiple trees using the mulTree functions by the TCD . 
+For this example I'm ignoring known issues with missing data, taxonomy and synonyms, and phylogenetic uncertainty. All these issues can influence the model results and interpretation, and they should be addressed in a proper extinction risk study, especially one that aims to inform conservation. 
+- Missing data can be completed with throrough searches of recent or grey literature, or imputation techniques can fill in the gaps. 
+- Experience with the study group and taxonomic resources can clear up the identity of species before any analyisis. 
+- Phylogenetic uncertainty can be addressed by performing MCMCglmm across multiple trees using the [mulTree](https://github.com/TGuillerme/mulTree) functions by Thomas Guillerme & Kevin Healy at TCD. 
 
+**Running the model**
 
 {% highlight r %}
 
@@ -162,10 +168,18 @@ summModel <- summary(ERiskModel)
 }
 {% endhighlight %}
 
-The number of iterations can be changed 
-parallel chains, pooling chains that have different starting values, just by looking at the summary and trace plots (fuzzy caterpillars) we see a positive relationship between body size and extinction risk. 
+The number of iterations can be changed depending on hardware/patience. A few things I left out include: running parallel chains, pooling chains with different starting values and their corresponding convergence diagnostics. This particular model converged, and the model summary shows that the probabalities in the 95% credible region for the body size parameter estimate do not include zero (i.e. a "significant" positive relationship between body size and extinction risk). 
 
-Next block of code is for plotting the effect of body size on extinction risk 
+|parameter|post.mean| l-95% CI| u-95% CI| 
+|:--------|:-------:|--------:|--------:|
+|(Intercept) | -3.19035| -4.95698| -1.67352|    
+|body size| 0.37848|  0.19934|  0.54769|   
+|LitterSize  | -0.20584| -0.40273|  0.01897|   
+
+
+No we can plot the effect of body size on extinction risk while the effects of litter size are kept constant. This works by calculating the probabilities of falling into each ordered category for any number of values of a linear predictor. The process is explained very well in [this]( https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html) mailing list discussion and in the ordinal regression chapter of John Kruschke's puppy-themed Bayesian Analysis book (see its accompanying [blog entry](http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html)). Originally I calculated these probabilities manually. Fortunately, Josh Wiley wrote the [postMCMCglmm](https://github.com/JWiley/postMCMCglmm) R package which contains functions to estimate predicted probabilites from an MCMCglmm object. 
+
+**Plotting the model results**
 
 {% highlight r %}
 
@@ -176,7 +190,7 @@ logBSize = seq(min(carnivoraData$lBodySize),max(carnivoraData$lBodySize), length
 LitterSize = seq(min(carnivoraData$LitterSize),max(carnivoraData$LitterSize), length.out=nrow(carnivoraData))
 
 
-# to plot the body size~threat relationship keeping the effect of gest. length constant
+# to plot the body size~threat relationship keeping the effect of litter size constant
 
 newdat2 <- as.matrix(data.frame("(Intercept)"=1,
                       bodySize = logBSize,
@@ -185,10 +199,6 @@ newdat2 <- as.matrix(data.frame("(Intercept)"=1,
 
 
 # probabilities of falling into categories
-# this follows ...http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html
-# https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html
-
-
 
 require(devtools)
 install_github ("postMCMCglmm", "JWiley")
@@ -206,7 +216,7 @@ predProbsCarn <- as.data.frame (cbind(do.call(rbind, rep(list(newdat2),5)), do.c
 predProbsCarn$outcome <- factor (rep(c("LC","NT","VU","EN","CR"), each = nrow(summPredCarn[[1]])), 
                                  levels=c("LC", "NT", "VU", "EN", "CR"))
 
-
+# stack probabilities for the ordered categories
 
 predProbsCarnLC <-  predProbsCarn %>%
   filter(outcome=="LC") %>%
@@ -248,7 +258,7 @@ predProbPlot <- rename(predProbPlot,bodySize=`newdat2[, 2]`)
 predProbPlot$outcome <- factor (rep(c("LC","NT","VU","EN","CR"), each = nrow(summPredCarn[[1]])), 
                                 levels=c("LC", "NT", "VU", "EN", "CR"))
 
-
+# plotting
 
 require(ggplot2)
 
@@ -269,6 +279,4 @@ require(ggplot2)
 }
 {% endhighlight %}
 
-De Lisle, S. P., & Rowe, L. (2015) Independent evolution of the sexes promotes amphibian diversification. 282. doi:10.1098/rspb.2014.2213.
 
-Seibold, S., Brandl, R., Buse, J., Hothorn, T., Schmidl, J., Thorn, S., et al. (2015) Association of extinction risk of saproxylic beetles with ecological degradation of forests in Europe. Conservation Biology.
