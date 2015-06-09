@@ -282,5 +282,5 @@ require(ggplot2)
         <figcaption>sample extinction risk plot</figcaption>
 </figure>
 
-The probability of being at the Least Concern threat category is highest for smaller-bodied species, an it decreases with increasing body size. The interpretation for the other categories is done the same way. 
+The probability of being at the Least Concern threat category is highest for smaller-bodied species, and it decreases with increasing body size. The interpretation for the other categories is done the same way. 
 
