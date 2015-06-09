@@ -124,8 +124,11 @@ carnivoraData <- carnivoraFinal[!rownames(carnivoraFinal) %in% toDrop, ]
 {% endhighlight %}
 
 For this example I'm ignoring known issues with missing data, taxonomy and synonyms, and phylogenetic uncertainty. All these issues can influence the model results and interpretation, and they should be addressed in a proper extinction risk study, especially one that aims to inform conservation. 
+
 * Missing data can be completed with throrough searches of recent or grey literature, or imputation techniques can fill in the gaps. 
+
 * Experience with the study group and taxonomic resources can clear up the identity of species before any analyisis. 
+
 * Phylogenetic uncertainty can be addressed by performing MCMCglmm across multiple trees using the [mulTree](https://github.com/TGuillerme/mulTree) functions by Thomas Guillerme & Kevin Healy at TCD. 
 
 **Running the model**
