@@ -1,5 +1,16 @@
 ---
-published: false
+layout: post
+title: Postdoc!
+excerpt: "Update on my upcoming position and thoughts on the job hunt"
+tags: 
+  - MCMCglmm
+  - Probit model
+  - extinction risk
+image: 
+  feature: featurePDRF.jpg
+  credit: null
+  creditlink: null
+published: true
 ---
 
 
