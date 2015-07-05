@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Postdoc!
-excerpt: "Update on my upcoming position and thoughts on the job hunt"
+excerpt: "Update on my upcoming position and thoughts on the job hunt."
 tags: 
   - postdoctoral
   - Museum
