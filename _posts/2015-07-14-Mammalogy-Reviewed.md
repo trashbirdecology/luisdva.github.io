@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Trends in mammal reseach in Mexico 1991-2012
+title: "Trends in mammal reseach in Mexico 1991-2012"
 excerpt: "Summary of research presented at scientific meetings of the Mexican Mammalogy Society (AMMAC) 1991-2012"
 tags: 
   - scientific conference
   - review
   - mammal research
-image:
+image: 
   feature: featureAMMAC.jpg
   credit: AMMAC 2014 meeting delegate photo. Labeled for reuse.
-published: false
-
+published: true
 ---
+
 
 Last year the Mexican Mammalogy Society (Asociación Mexicana de Mastozoología A.C.; AMMAC) celebrated its 30th anniversary. As part of the festivities, an analysis of the work presented at national AMMAC meetings from 1991 to 2012 was published in a special section of the society-run journal [Therya](http://www.mastozoologiamexicana.org/therya.php). These meetings are perhaps the most important academic forum for mammal research in the country. I’ve attended several of these meetings and always enjoy seeing so many researchers and students present their research on Neotropical mammals, so a quantitative summary of the research trends in Mexico for the last few decades definitely caught my attention. I had never considered the concept of analyzing conference data, and for months I’ve been meaning to write about this particular paper. 
 
@@ -69,8 +69,6 @@ The study found a promising pattern of increasing participation in the society�
 The taxonomic distribution of studies showed a nice mix of large-bodied, “charismatic” groups with other equally important orders of small mammals. Five orders received most of research interest. Carnivores were the most studied group (24.8%), followed very closely by rodents (24.3%), then bats (19.4%), even-toed ungulates (12%) and lagomorphs (6%). Primate studies seem particularly low in this regard (3%), and I suspect primatology research groups may be choosing to present their research at specialized primatology/anthropology meetings. 
 
 ## Conference vs. literature
-The authors mention another study (Guevara-Chumacero et al., 2001) that documented mammal research in Mexico from 1890 to 1995, using peer-reviewed articles and books as their data sources. This paper from 2001 found that roughly 80% of the literature on Mexican mammals was written by non-Mexicans authors, published in non-Mexican journals, and focused mostly on taxonomy and systematics.  Given the time period considered, I don’t find this statistic surprising and I suspect that research trends from 1995-present in the published literature are similar.  
+The authors mention another study (Guevara-Chumacero et al., 2001; OA link [[here, in Spanish]](http://www.redalyc.org/articulo.oa?id=57508303)) that documented mammal research in Mexico from 1890 to 1995, using peer-reviewed articles and books as their data sources. This paper from 2001 found that roughly 80% of the literature on Mexican mammals was written by non-Mexicans authors, published in non-Mexican journals, and focused mostly on taxonomy and systematics.  Given the time period considered, I don’t find this statistic surprising and I suspect that research trends from 1995-present in the published literature are similar. Now I'm curious to see what are the main topics and study groups presented at conferences organized by other mammalogy societies, for example: the [Australian Mammal Society](https://australianmammals.org.au/) or the [American Society of Mammalogists](http://www.mammalsociety.org/).
 
-Now I'm curious to see what are the main topics presented at other mammalogy conferences (for example the Australian 
-
-This bias made me wonder about the overlap between what is presented at conferences with what is published in peer-reviewed literature, and especially the publication status of conference communications. What are the publication rates of research presented in different countries, topics, or for different types of conferences (e.g. national specialist meetings vs. massive international conferences)? In my next post I’ll elaborate on this topic, and discuss the conference to publication pipeline within life sciences.
+The bias between conference communications and publications also made me wonder about the overlap between what is presented at conferences with what is published in peer-reviewed literature, and especially the publication status of conference communications. What are the publication rates of research presented in different countries, topics, or for different types of conferences (e.g. national specialist meetings vs. massive international conferences)? In my next post I’ll elaborate on this topic, and discuss the conference to publication pipeline for my particular field.
