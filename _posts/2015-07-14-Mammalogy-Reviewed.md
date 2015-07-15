@@ -1,5 +1,9 @@
 ---
-published: false
+image:
+  feature: featureAMMAC.jpg
+  credit: AMMAC 2014 meeting delegate photo. Labeled for reuse.
+  published: false
+
 ---
 
 
