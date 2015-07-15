@@ -3,8 +3,6 @@ published: false
 ---
 
 
-
-
 Last year the Mexican Mammalogy Society (Asociación Mexicana de Mastozoología; AMMAC) celebrated its 30th anniversary. As part of the festivities, an analysis of the work presented at national AMMAC meetings from 1991 to 2012 was published in a special section of the society-run journal [Therya](http://www.mastozoologiamexicana.org/therya.php). These meetings are perhaps the most important academic forum for mammal research in the country. I’ve attended several of these meetings and always enjoy seeing so many researchers and students present their research on Neotropical mammals, so a quantitative summary of the research trends in Mexico for the last few decades definitely caught my attention. I had never considered the concept of analyzing conference data, and for months I’ve been meaning to write about this particular paper. 
 
 Miguel Briones-Salas, Dagoberto Ramos and Yadira Santiago went through the abstract booklets for eleven national mammalogy meetings [Open Access paper [here](http://www.revistas-conacyt.unam.mx/therya/index.php/THERYA/article/viewFile/186/pdf_13) (in Spanish)]. Briones and his team examined 2527 summaries, representing 1596 oral and 931 poster presentations. From these abstracts they were able to determine the most popular research topics and study groups, which states received the most research interest, and the participation of Mexican and international institutions in the conferences.
@@ -18,10 +16,39 @@ The team classified the presentations into one of eleven main topics, with choic
         <figcaption>study topics through time (%) </figcaption>
 </figure>
 
-Here’s the reproducible code for this figure. I tried to include some nifty dplyr data manipulation and the direct.labels package that came in handy for ggplot2 objects. 
+Here’s the fully reproducible code for this figure. I tried to include some nifty _dplyr_ data manipulation and I stumbled accross the _direct.labels_ package that came in handy for ggplot2 objects. 
 
 {% highlight r %}
+# load packages
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(directlabels)
 
+# load data from github repo
+theryaData <- read.csv("http://raw.githubusercontent.com/luisDVA/codeluis/master/theryaData.csv")
+
+#transform the values to proprotions
+theryaData[,2:12] <- theryaData %>% select(-topic,-total) %>% 
+                      mutate_each(funs(prop = (. / sum(.)*100)))
+
+# this can also be done using the apply family of functions
+# data.frame(mapply(`/`, theryaData[,2:12], colSums(theryaData[,2:12]), SIMPLIFY = FALSE))
+
+# melt before plotting
+theryaProps <- theryaData %>% select(-total) %>% melt()
+
+# plot as points+lines *I used a default color palette 
+pointPlot <- ggplot(theryaProps,aes(x=variable,y=value, group=topic))+
+                geom_point(aes(color=topic)) + geom_line(aes(color=topic))+
+                theme(panel.background = element_blank(),legend.position="none")+
+                coord_cartesian(xlim=c(0,14)) +ylab("percentage of studies by topic")+xlab("year")+
+                scale_x_discrete(labels=gsub("X","",unique(theryaProps$variable)))
+
+# add labels at end of lines
+direct.label(pointPlot,list(dl.trans(x=x+0.2),"last.qp"))
+
+{% endhighlight %}
 
 For the entire dataset and within each conference: ecology was the most popular topic, followed by conservation and biogeographical studies – both of which follow similar trends. Taxonomy and phylogenetics studies represent a small percentage of presentations throughout the meetings analysed, and they show a very low increase in representation over the years. I wonder if this is restricted by the funds needed to pay for expensive lab materials, sequencing services or computing resources. To a certain extent, these trends probably reflect the personal interests of the PIs throughout the country along with the popular topics in mammalogy at the time of each meeting. I should also point out that classifying a study with nothing more than its title and abstract is not as straight-forward as it sounds. Ecology might actually be more studied, or more studies were classified as ecological in nature when they may have belonged in a different category. 
 
