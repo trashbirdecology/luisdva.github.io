@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Trends in mammal reseach in Mexico 1991-2012"
-excerpt: "Summary of research presented at scientific meetings of the Mexican Mammalogy Society (AMMAC) 1991-2012"
+excerpt: "Summary of research presented at scientific meetings of the Mexican Mammalogy Society (AMMAC) 1991-2012."
 tags: 
   - scientific conference
   - review
@@ -22,7 +22,7 @@ Miguel Briones-Salas, Dagoberto Ramos and Yadira Santiago went through the abstr
 The team classified the presentations into one of eleven main topics, with choices of: diet, anatomy & morphology, behavior, conservation, distribution, ecology, disease & parasites, physiology, reproduction, taxonomy & phylogeny, and miscellaneous. I was a little puzzled as to why diet wasn’t included in “ecology”, but in any case ecology was the predominant topic. I plotted the table of topics through time as proportions, to see which topics were most popular at each conference and through the years. 
 
 <figure>
-    <a href="/images/ammacPlt.jpg"><img src="/images/ammacPlt.jpg"></a>
+    <a href="/images/ammacPlt.jpeg"><img src="/images/ammacPlt.jpeg"></a>
         <figcaption>study topics through time (%) </figcaption>
 </figure>
 
