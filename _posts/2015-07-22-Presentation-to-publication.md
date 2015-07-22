@@ -4,12 +4,12 @@ published: false
 
 ## If you present will you publish? We need publication rate analyses for ecology, evolution, and conservation conferences
 
-** The title for this post borrows part the title from: Kanwalraj M. & S. Butterworth (2013) If You Present Will You Publish? An Analysis of Abstracts at the Craniofacial Society of Great Britain and Ireland Conferences 2000–2009. _The Cleft Palate-Craniofacial Journal_: November 2013, Vol. 50, No. 6, pp. 713-716.
+** The title for this post borrows part of the title from: Kanwalraj M. & S. Butterworth (2013) If You Present Will You Publish? An Analysis of Abstracts at the Craniofacial Society of Great Britain and Ireland Conferences 2000–2009. _The Cleft Palate-Craniofacial Journal_: Vol. 50, No. 6, pp. 713-716.
 doi: [http://dx.doi.org/10.1597/12-335](http://dx.doi.org/10.1597/12-335) **
 
 In a previous post I summarized an analysis of the content presented at Mexican mammalogy conferences over a number of years. The paper in question mentioned a gap between what was presented at conferences with what is published in the literature. This got me interested in previous efforts to track the fates of studies presented at scientific conferences and their paths to publication.
 
-While searching for these types of studies I stumbled upon Bibliometrics and Scientometrics, two closely related approaches to measuring scientific publications and science in general, respectively.  These fields focus on networks of scholars and scholarly communication, the development of areas of knowledge over time, and the measurement of productivity and impact for scholars or publications [(source)](http://microsites.oii.ox.ac.uk/tidsr/kb/48/what-bibliometrics-and-scientometrics).
+While searching for these types of studies I stumbled upon Bibliometrics and Scientometrics, two closely related approaches to measuring scientific publications and science in general, respectively.  These fields focus on networks of scholars and scholarly communication, the development of areas of knowledge over time, and the measurement of productivity and impact for scholars or publications [(read more)](http://microsites.oii.ox.ac.uk/tidsr/kb/48/what-bibliometrics-and-scientometrics).
 
 Analyses of publication rates are very common for medical and biomedical science conferences, but practically non-existent for important fields in life sciences such as ecology, evolution, or conservation. The conference to publication pathway (or bottleneck?) is an important issue to address, because we need to know:
 
@@ -24,7 +24,7 @@ Even when modern conferences put on great workshops, career development sessions
 
 ### Why present
 
-Scientific conferences are a great forum for discussion, networking, getting a sense of what the current state of research is, and ultimately becoming a part of the research community. In addition to gaining experience with public speaking, language skills, and presentation design; I was always told to present my work at conferences as a way to promote published or upcoming work, or to get feedback and new ideas from a wide pool of experts. *Notice how I leave out how presenting can help with “getting noticed” even if it’s “half the battle.”
+Scientific conferences are a great forum for discussion, networking, getting a sense of what the current state of research is, and ultimately becoming a part of the research community. In addition to gaining experience with public speaking, language skills, and presentation design; I was always told to present my work at conferences as a way to promote published or upcoming work, or to get feedback and new ideas from a wide pool of experts. *Note how I leave out how presenting can help with “getting noticed” even if it’s “half the battle.”
 
 ### Why publish
 
@@ -36,9 +36,9 @@ Personally, only half of the projects I’ve ever presented at conferences are n
 
 ### Publication rates
 
-In very comprehensive [review](http://onlinelibrary.wiley.com/doi/10.1002/14651858.MR000005.pub3/abstract) from 2008, Roberta Scherer, Patricia Langenberg, and Erik von Elm combined data from 79 reports of publication rates. These data represented 29,729 abstracts from at least 250 conferences in over 20 different disciplines (mostly biomedical). They found that 44.5% of conference communications were subsequently published in peer-reviewed journals, roughly 12 to 32 months after presentation.
+In very comprehensive [review](http://onlinelibrary.wiley.com/doi/10.1002/14651858.MR000005.pub3/abstract) from 2008, Roberta Scherer, Patricia Langenberg, and Erik von Elm combined data from 79 reports of publication rates. These data represented _29,729_ abstracts from at least 250 conferences in over 20 different disciplines (mostly biomedical). They found that **44.5%** of conference communications were subsequently published in peer-reviewed journals, roughly **12** to **32** months after presentation.
 
-The authors in this review identified some interesting factors associated with the publication of conference communications: oral presentations and those reporting ‘positive’ and ‘significant’ results had higher publication rates. Certain study designs (for clinical trials) were also associated with higher publication rates. An earlier [report](http://www.biomedcentral.com/1471-2288/3/12)by roughly the same team also found that abstracts were more likely to be published subsequently if presented either orally, at small meetings, or at meetings held in the USA. Research in publication rates for biomedical science meetings has advanced to a point where a 2015 [systematic review](http://dx.doi.org/10.1016/j.jclinepi.2015.01.027) quantified the reasons for nonpublication of presented material. The main reason given by authors was lack of time. Other common reasons were: lack of resources, publication not an aim, low priority, incomplete study, and trouble with co-authors.
+The authors in this review identified some interesting factors associated with the publication of conference communications: oral presentations and those reporting ‘positive’ and ‘significant’ results had higher publication rates. Certain study designs (for clinical trials) were also associated with higher publication rates. An earlier [report](http://www.biomedcentral.com/1471-2288/3/12) by roughly the same team also found that abstracts were more likely to be published subsequently if presented either orally, at small meetings, or at meetings held in the USA. Research in publication rates for biomedical science meetings has advanced to a point where a 2015 [systematic review](http://dx.doi.org/10.1016/j.jclinepi.2015.01.027) quantified the reasons for nonpublication of presented material. The main reason given by authors was lack of time. Other common reasons were: lack of resources, publication not an aim, low priority, incomplete study, and trouble with co-authors.
 
 Medical and biomedical research (pathology, dental research, neuroradiology, pharmacology, etc.) is very different from ecology, evolution, or conservation - this is likely to affect the type of content presented at meetings, the nature of these meetings, and the resulting publication rates. Factors like funding sources, professional affiliations with varying expectations to publish, and direct implications for human health make publication rate analyses for biomedical research practically incomparable with other fields. 
 
@@ -46,7 +46,7 @@ Medical and biomedical research (pathology, dental research, neuroradiology, pha
 
 I found more reports of publication rates published after 2008 to complement the Scherer et al. review, but only one focused on scientific meetings relevant to ecology, evolution, or conservation, bringing the grand total to ... **two**. 
 
-Bird and Bird (1999) analysed 425 abstracts randomly selected from 849 presented at the 1989 and 1991 meetings for the Society for Marine Mammals, reporting that peer-reviewed publications resulted from 55% of presentations. A less outdated and very nice paper from 2014 by Jon McRoberts and colleagues examined presentations at annual meetings organized by The Wildlife Society (TWS) between 1994 and 2006. Of the 6,279 presentations given at TWS annual conferences, 28.2% resulted in publications. The mean time between presentation and publication was 30 months, and the authors were able to determine that 87.9% of published communications came out after being presented at conferences and not before. This is a promising start, but we still need to know the publication rates for other relevant scientific conferences and to identify the factors associated with presented content that ultimately becomes part of the knowledge base. 
+Bird and Bird [(1999)](http://link.springer.com/article/10.1007/BF02464779) analysed 425 abstracts randomly selected from 849 presented at the 1989 and 1991 meetings for the Society for Marine Mammals, reporting that peer-reviewed publications resulted from 55% of presentations. A less outdated and very nice [paper](http://onlinelibrary.wiley.com/doi/10.1002/wsb.378/abstract) from 2014 by Jon McRoberts and colleagues examined presentations at annual meetings organized by The Wildlife Society (TWS) between 1994 and 2006. Of the _6,279_ presentations given at TWS annual conferences, **28.2%** resulted in publications. The mean time between presentation and publication was **30** months, and the authors were able to determine that **87.9%** of published communications came out after being presented at conferences and not before. This is a promising start, but we still need to know the publication rates for other relevant scientific conferences and to identify the factors associated with presented content that ultimately becomes part of the knowledge base. 
 
 ### Lots of questions 
 
@@ -67,11 +67,14 @@ Attendees that are not native speakers may be presenting in English at large int
 _Are certain topics within a conference more likely to be published?_
 
 For large and heterogeneous conferences, publication rates may vary between presentations on trendy topics with charismatic study groups in relation to basic research on non-charismatic groups or theoretical methods papers. 
+
+...
+
 This list could go on and on, but it’s evident that we need analyses of content and publication rates for scientific meetings about zoology, ecology, evolution, conservation, marine science, etc…
 
 ### What next? 
 
-Because there are essentially no publication rates analyses for any conference in my particular field, any large meeting represents a good start. Large international meetings (I’m thinking INTECOL or ICCB) may be interesting options, and we can use the 30 month period between presentation and publication (from the McRoberts report) as a time reference to start evaluating conference data as recent as 2012.  
+Because there are essentially no publication rates analyses for any conference in my particular field, any large meeting represents a good start. Large international meetings (I’m thinking INTECOL or ICCB) may be interesting options, and the 30 month period between presentation and publication (from the McRoberts report) provides a time reference to start evaluating conference data as recent as 2012.  
 
 The methods are already out there and the analyses are straight forward. New approaches such as text mining and web scraping can make things easier, along with the cooperation of the societies and committees in charge of organizing conferences. One could also poll attendees at future conferences on whether or not the work they are presenting is published, submitted, or intended for publication. Special interest groups, local chapters, or student sections of various organizations that put together periodic conferences should start looking into publication rates. 
 
