@@ -11,7 +11,7 @@ image:
 published: true
 ---
 
-## If you present will you publish? We need publication rate analyses for ecology, evolution, and conservation conferences
+## We need publication rate analyses for ecology, evolution, and conservation conferences
 
 ** The title for this post borrows part of the title from: Kanwalraj M. & S. Butterworth (2013) If You Present Will You Publish? An Analysis of Abstracts at the Craniofacial Society of Great Britain and Ireland Conferences 2000–2009. _The Cleft Palate-Craniofacial Journal_: Vol. 50, No. 6, pp. 713-716.
 doi: [http://dx.doi.org/10.1597/12-335](http://dx.doi.org/10.1597/12-335) **
