@@ -30,7 +30,7 @@ Many recent comparative studies of extinction risk (one of my main interests) us
 The papers in the table all use conditional inference trees to show the relative importance of different predictors and how they interact to put species at risk. My only issue with these papers are the figures for single-tree visualization. All the papers in the table above use the R package _party_ with default plot settings and then add some manual editing, either cosmetic or for journal requirements.  
 
 Binary tree objects are fairly simple, and the developers behind the _party_ R package did a good job of making panel-generating functions of class _grapcon___generator_ to plot the trees. That being said, I don’t particularly like the look of the default plots for _ctree_ objects. The ovals for the inner nodes look kind of lame, and the default plots are cluttered with details that aren’t always relevant to what needs to be discussed. 
-The following modifications to the default plotting functions make for better-looking figures, and they should save time plotting and editing binary trees for publication (there’s nothing wrong with editing the plots after creating them as long as the underlying tree is reproducible). 
+The following modifications to the default plotting functions make for better-looking figures, and they should save time plotting and editing binary trees for publication figures or presentation slides (there’s nothing wrong with editing the plots after creating them as long as the underlying tree is reproducible). 
 
 In this post I’m simply putting together some code that I found online in discussion threads and then modified following the documentation for the panel generating gunctions in _party_. 
 
