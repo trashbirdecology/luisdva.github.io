@@ -32,7 +32,7 @@ The papers in the table all use conditional inference trees to show the relative
 Binary tree objects are fairly simple, and the developers behind the _party_ R package did a good job of making panel-generating functions of class _grapcon___generator_ to plot the trees. That being said, I don’t particularly like the look of the default plots for _ctree_ objects. The ovals for the inner nodes look kind of lame, and the default plots are cluttered with details that aren’t always relevant to what needs to be discussed. 
 The following modifications to the default plotting functions make for better-looking figures, and they should save time plotting and editing binary trees for publication figures or presentation slides (there’s nothing wrong with editing the plots after creating them as long as the underlying tree is reproducible). 
 
-In this post I’m simply putting together some code that I found online in discussion threads and then modified following the documentation for the panel generating gunctions in _party_. 
+In this post I’m simply putting together some code that I found online in discussion threads and then modified following the documentation for the panel generating functions in _party_. 
 
 For a realistic example, I recreated the conditional inference tree in Lawes et al. (2015) using the dataset provided and some guesswork. I only focus on plotting, because the model parameters and accuracy diagnostics for tree-based methods are complicated and will get their own post at some point in the near future. 
 
