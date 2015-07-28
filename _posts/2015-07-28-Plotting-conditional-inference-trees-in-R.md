@@ -21,7 +21,7 @@ When using RF for comparative studies, it is difficult to trace an individual sp
 Many recent comparative studies of extinction risk (one of my main interests) use conditional inference trees. Even though RF methods can accommodate most types of response variables, most extinction risk studies transform their metrics of extinction risk into a dichotomous response to minimize the effect of the skewed distribution of categorical/ordinal threat values on model accuracy. 
 
 |paper | study group | response variable | 
-|------|-------------|-------------------|
+|------|-------------|-------------------:|
 |[Lawes et al. 2015](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130626) | Australian rodents | range declines (yes/no)|
 |[Di Marco et al. 2014](http://rstb.royalsocietypublishing.org/content/369/1643/20130198.long) | African land mammals |IUCN threat status (threatened/nonthreatened)| 
 |[Fisher et al. 2013](http://onlinelibrary.wiley.com/doi/10.1111/geb.12088/abstract) | Australian marsupials | range declines (yes/no)|
