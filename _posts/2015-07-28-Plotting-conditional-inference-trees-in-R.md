@@ -102,7 +102,7 @@ plot (rodCT,inner_panel=innerWeights,
       
 {% endhighlight %}
 
-This plot isn’t too far off from the popular default plot, but the minor differences should save time with editing and improve the data-ink ratio. 
+This plot isn’t too far off from the popular default plot, but the minor differences in the code should save time with editing and improve the data-ink ratio. 
 
 <figure>
     <a href="/images/newplot.png"><img src="/images/newplot.png"></a>
