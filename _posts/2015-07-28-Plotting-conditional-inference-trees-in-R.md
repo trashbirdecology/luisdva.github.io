@@ -10,12 +10,12 @@ When using RF for comparative studies, it is difficult to trace an individual sp
 
 Many recent comparative studies of extinction risk (one of my main interests) use conditional inference trees. Even though RF methods can accommodate most types of response variables, most extinction risk studies transform their metrics of extinction risk into a dichotomous response to minimize the effect of the skewed distribution of categorical/ordinal threat values on model accuracy. 
 
-Paper | study taxa | response variable | 
-|--------------------|------------------------|-----------------------------------|
-Lawes et al. 2015 | Australian rodents | declines in sp. range (yes/no) |
-Di Marco et al. 2014 | African land mammals |IUCN threat status (threatened/nonthreatened) | 
-Fisher et al. 2013 | Australian marsupials | declines in sp. range (yes/no) |
-Murray et al. 2011 | Australian amphibians | population trends (declining/stable) |
+|Paper | study taxa | response variable | 
+|------|-------------|-------------------|
+|Lawes et al. 2015 | Australian rodents | declines in sp. range (yes/no)|
+|Di Marco et al. 2014 | African land mammals |IUCN threat status (threatened/nonthreatened)| 
+|Fisher et al. 2013 | Australian marsupials | declines in sp. range (yes/no)|
+|Murray et al. 2011 | Australian amphibians | population trends (declining/stable)|
 
 The papers in the table all use conditional inference trees to show the relative importance of different predictors and how they interact to put species at risk. My only issue with these papers are the figures for single-tree visualization. All the papers in the table above use the R package party with default plot settings and then add some manual editing, either cosmetic or for journal requirements.  
 
@@ -42,7 +42,7 @@ plot(rodCT)
 {% endhighlight %}
 
 The ctree object is itself simple and printing it out, the tree notation is simple and it looks like this:
-> rodCT
+rodCT
 
 	 Conditional inference tree with 5 terminal nodes
 
