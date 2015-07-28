@@ -109,11 +109,12 @@ This plot isn’t too far off from the popular default plot, but the minor diffe
         <figcaption>plot with custom node functions</figcaption>
 </figure>
 
-Just as a demonstration, I exported the last plot as vector graphics and tinkered with it for five minutes in my 10 year old version of Illustrator CS2. The result looks pretty crisp. As usual, let me know if there are any mistakes in the code or if anything isn't well explained. 
-
+Just as a demonstration, I exported the last plot as vector graphics and tinkered with it for five minutes in my 10 year old version of Illustrator CS2. The result looks pretty crisp. 
 <figure>
     <a href="/images/lesslame32.jpg"><img src="/images/lesslame32.jpg "></a>
         <figcaption>edited figure</figcaption>
 </figure>
+
+As usual, let me know if there are any mistakes in the code or if anything isn't well explained. 
 
 
