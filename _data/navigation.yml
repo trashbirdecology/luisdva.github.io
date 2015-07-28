@@ -1,10 +1,14 @@
 # Site navigation links
 
-- title: Home
+- title: Recent posts
   url: /
 
 - title: About
   url: /about/
+  
+- title: All posts
+  url: /posts/
 
 - title: Publications
   url: /Publications/
+
