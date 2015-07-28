@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Plotting conditional inference trees"
-excerpt: "Example code for visualizing binary trees for dichotomous responses in R, focused on extinction risk modeling."
+excerpt: "Example code for visualizing binary trees with dichotomous responses in R, focused on extinction risk modeling."
 tags: 
   - party
   - random forests 
