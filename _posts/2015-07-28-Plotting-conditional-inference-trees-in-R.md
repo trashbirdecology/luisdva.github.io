@@ -2,6 +2,7 @@
 published: false
 ---
 
+
 Plotting conditional inference trees for dichotomous responses in R
 
 Machine learning approaches are becoming popular options for comparative analyses. Random forest (RF) techniques emerged as an extension of classification-tree analysis and are now widespread counterparts to multiple regression. Random forests provide accurate predictions and useful information about the underlying data, even when there are complex interactions between predictors. RF algorithms partition data into groups of increasingly similar observations based on the predictors, and average the results over a forest of many trees built from bootstrapping observations. 
@@ -10,19 +11,19 @@ When using RF for comparative studies, it is difficult to trace an individual sp
 
 Many recent comparative studies of extinction risk (one of my main interests) use conditional inference trees. Even though RF methods can accommodate most types of response variables, most extinction risk studies transform their metrics of extinction risk into a dichotomous response to minimize the effect of the skewed distribution of categorical/ordinal threat values on model accuracy. 
 
-|Paper | study taxa | response variable | 
+|Paper | study group | response variable | 
 |------|-------------|-------------------|
-|Lawes et al. 2015 | Australian rodents | declines in sp. range (yes/no)|
-|Di Marco et al. 2014 | African land mammals |IUCN threat status (threatened/nonthreatened)| 
-|Fisher et al. 2013 | Australian marsupials | declines in sp. range (yes/no)|
-|Murray et al. 2011 | Australian amphibians | population trends (declining/stable)|
+|[Lawes et al. 2015](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130626) | Australian rodents | declines in sp. range (yes/no)|
+|[Di Marco et al. 2014](http://rstb.royalsocietypublishing.org/content/369/1643/20130198.long) | African land mammals |IUCN threat status (threatened/nonthreatened)| 
+|[Fisher et al. 2013](http://onlinelibrary.wiley.com/doi/10.1111/geb.12088/abstract) | Australian marsupials | declines in sp. range (yes/no)|
+|[Murray et al. 2011](http://rspb.royalsocietypublishing.org/content/278/1711/1515.short)| Australian amphibians | population trends (declining/stable)|
 
 The papers in the table all use conditional inference trees to show the relative importance of different predictors and how they interact to put species at risk. My only issue with these papers are the figures for single-tree visualization. All the papers in the table above use the R package party with default plot settings and then add some manual editing, either cosmetic or for journal requirements.  
 
-Binary tree objects are fairly simple, and the developers behind the party R package did a good job of making panel-generating functions of class grapcon_generator to plot the trees. That being said, I don’t particularly like the look of the default plots for ctree objects. The ovals for the inner nodes look kind of lame, and the default plots are cluttered with details that aren’t always relevant to what needs to be discussed. 
+Binary tree objects are fairly simple, and the developers behind the _party_ R package did a good job of making panel-generating functions of class _grapcon___generator_ to plot the trees. That being said, I don’t particularly like the look of the default plots for _ctree_ objects. The ovals for the inner nodes look kind of lame, and the default plots are cluttered with details that aren’t always relevant to what needs to be discussed. 
 The following modifications to the default plotting functions make for better-looking figures, and they should save time plotting and editing binary trees for publication (there’s nothing wrong with editing the plots after creating them as long as the underlying tree is reproducible). 
 
-In this post I’m simply putting together some code that I found online in discussion threads and then modified following the documentation for the Panel Generating Functions in party. 
+In this post I’m simply putting together some code that I found online in discussion threads and then modified following the documentation for the panel generating gunctions in _party_. 
 
 For a realistic example, I recreated the conditional inference tree in Lawes et al. (2015) using the dataset provided and some guesswork. I only focus on plotting, because the model parameters and accuracy diagnostics for tree-based methods are complicated and will get their own post at some point in the near future. 
 
@@ -98,4 +99,3 @@ Just as a demonstration, I exported the last plot as vector graphics and tinkere
     <a href="/images/lesslame32.jpg"><img src="/images/lesslame32.jpg "></a>
         <figcaption>sample extinction risk plot</figcaption>
 </figure>
-
