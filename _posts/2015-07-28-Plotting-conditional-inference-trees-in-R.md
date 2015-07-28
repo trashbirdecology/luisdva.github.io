@@ -54,12 +54,11 @@ rodCT
 plot(rodCT)
 {% endhighlight %}
 
-The ctree object is itself simple and printing it out, the tree notation is simple and it looks like this:
+The ctree object is itself simple and the tree notation looks like this:
 
-{% raw %}
-rodCT
+{% highlight css %}
 
-	 Conditional inference tree with 5 terminal nodes
+Conditional inference tree with 5 terminal nodes
 
 Response:  declinecategory 
 Inputs:  North.South, Body.mass, Habitat 
@@ -79,7 +78,7 @@ Number of observations:  71
 1) North.South == {North}
   9)*  weights = 32 
  
- {% endraw %}
+{% endhighlight %}
 
 <figure>
     <a href="/images/plotRaw.png"><img src="/images/plotRaw.png"></a>
