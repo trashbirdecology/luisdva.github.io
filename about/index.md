@@ -9,7 +9,7 @@ tags:
 modified: {}
 comments: true
 image: 
-  feature: featureAbout.jpg
+  feature: featureAboutcopy.jpg
   credit: null
   creditlink: null
 published: true
@@ -24,6 +24,8 @@ Welcome to my personal research page. I'll be using this site for news, updates 
 ## Research
 
 I'm interested in mammal diversity - past, and present. Through my research I aim to identify the mechanisms that generate spatial and taxonomic patterns of diversity, and the processes that threaten it. My broader interests include ecomorphology, mammalian evolution, biogeography, and phylogenetic comparative methods. My ongoing project involves relating ecology to morphology to phylogeny in rodents using museum collections and phylogenies.  
+
+
 
 ## Background
 
