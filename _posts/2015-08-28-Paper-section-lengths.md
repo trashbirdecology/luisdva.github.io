@@ -24,6 +24,7 @@ Here’s the code to download the raw data and recreate a rough version of the f
     <a href="/images/epsfixedFinal.png"><img src="/images/epsfixedFinal.png"></a>
         <figcaption>mean section lengths in five journals</figcaption>
 </figure>
+
 I used the [palettetown](https://github.com/timcdlucas/palettetown) package by Tim Lucas to get a color palette and I highly recommend it.
 
 ## Discussion
