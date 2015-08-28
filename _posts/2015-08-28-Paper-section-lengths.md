@@ -11,6 +11,7 @@ image:
 published: true
 ---
 
+
 ## Introduction
 A few years ago, I was preparing a manuscript for submission to a journal and I received the following editing advice (from someone who had attended a writing workshop at some point):
 
@@ -29,7 +30,7 @@ Here’s the code to download the raw data and recreate a rough version of the f
 
 <figure>
     <a href="/images/epsfixedFinal.png"><img src="/images/epsfixedFinal.png"></a>
-        <figcaption>mean section lengths in five journals</figcaption>
+        <figcaption>Mean section lengths in five journals. Click to enlarge</figcaption>
 </figure>
 
 I used the [palettetown](https://github.com/timcdlucas/palettetown) package by Tim Lucas to get a color palette and I highly recommend it.
