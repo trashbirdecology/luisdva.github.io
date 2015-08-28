@@ -4,6 +4,7 @@ published: false
 
 
 
+
 ## Introduction
 A few years ago, I was preparing a manuscript for submission to a journal and I received the following editing advice (from someone who had attended a writing workshop at some point):
 
@@ -20,13 +21,19 @@ Here’s the code to download the raw data and recreate a rough version of the f
 
 ## Results
 
+<figure>
+    <a href="/images/epsfixedFinal.png"><img src="/images/epsfixedFinal.png"></a>
+        <figcaption>mean section lengths in five journals</figcaption>
+</figure>
+I used the [palettetown](https://github.com/timcdlucas/palettetown) package by Tim Lucas to get a color palette and I highly recommend it.
+
 ## Discussion
 
 Methods sections seem to be the lengthier parts of papers for most of the journals, although there is lots of variation and a fair amount of overlap with discussion sections. For some reason I always thought discussions were the longest parts of papers, but these data don’t agree. Introduction sections appear pretty consistent in length across journals.
 
 I snuck a couple of my papers in there, and as much as I thought that I write concise and crisp papers, mine fell towards the lengthy end of the spectrum. In my defence, a lot of the bloat came during peer review - the early versions of the manuscripts did match the mean section lengths that I had calculated for initial submission.
 
-I used a Chrome extension to count the words directly from each paper’s HTML view, the same format that could potentially be web-scraped, with the word counts automated by using the appropriate selectors. I tried to do this with rvest but failed; I’m still very new to scraping so if you think this is feasible let me know.  
+I used a Chrome extension to count the words directly from each paper’s HTML view, the same format that could potentially be web-scraped, with the word counts automated by using the appropriate selectors. I tried to do this with [rvest](https://cran.r-project.org/web/packages/rvest/index.html) but failed; I’m still very new to scraping so if you think this is feasible let me know.  
 
 ## Concluding remarks
 
