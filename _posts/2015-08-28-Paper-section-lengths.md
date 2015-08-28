@@ -4,7 +4,6 @@ published: false
 
 
 
-
 ## Introduction
 A few years ago, I was preparing a manuscript for submission to a journal and I received the following editing advice (from someone who had attended a writing workshop at some point):
 
@@ -17,7 +16,7 @@ I picked ten recent papers from five journals that I’m personally interested i
 
 Here’s the code to download the raw data and recreate a rough version of the figure below.  
 
-{% gist  %}
+{% gist luisDVA/ff21825cfd05003c3a60 %}
 
 ## Results
 
