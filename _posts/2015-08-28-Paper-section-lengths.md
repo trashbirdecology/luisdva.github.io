@@ -1,8 +1,15 @@
 ---
-published: false
+layout: post
+title: Section lengths in scientific papers
+excerpt: "How long is the average section in a research article? Includes code for downloading and plotting data for five journals."
+tags: 
+  - editing
+  - manuscript formatting
+  - dotwhisker
+image: 
+  feature: featurePaperSt.jpg
+published: true
 ---
-
-
 
 ## Introduction
 A few years ago, I was preparing a manuscript for submission to a journal and I received the following editing advice (from someone who had attended a writing workshop at some point):
