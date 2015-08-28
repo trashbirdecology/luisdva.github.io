@@ -12,10 +12,11 @@ published: true
 ---
 
 
+
 ## Introduction
 A few years ago, I was preparing a manuscript for submission to a journal and I received the following editing advice (from someone who had attended a writing workshop at some point):
 
->Edit your manuscript to match the section length of recent papers in your target journal. This will standardize the overall format and subconsciously appease the reviewers and editors, potentially improving the chances of a favourable decision. 
+>Edit your manuscript to match the section length of recent papers in your target journal. This will standardize the overall format and subconsciously appease the reviewers and editors, potentially improving the chances of a favorable decision. 
 
 I found myself repeating this advice to other first-time manuscript submitters recently, and instead of letting them figure it out I went ahead and gathered some data to make this blog entry. This type of data should be of interest to authors, reviewers, and editors, all of whom deal with paper length and structure in one way or another.
 
