@@ -3,6 +3,7 @@ published: false
 ---
 
 
+
 ## Introduction
 A few years ago, I was preparing a manuscript for submission to a journal and I received the following editing advice (from someone who had attended a writing workshop at some point):
 
@@ -14,6 +15,8 @@ I found myself repeating this advice to other first-time manuscript submitters r
 I picked ten recent papers from five journals that I’m personally interested in, and counted the number of words in each of the sections (except for the references). These word counts don’t include table content or figure captions. I chose the 50 papers mostly at random (trying to include open access issues) and focused only on ‘standard’ articles that follow the traditional format for original research articles (unlike reviews or opinion pieces). 
 
 Here’s the code to download the raw data and recreate a rough version of the figure below.  
+
+{% gist  %}
 
 ## Results
 
