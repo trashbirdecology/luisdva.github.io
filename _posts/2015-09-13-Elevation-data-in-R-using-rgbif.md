@@ -2,6 +2,7 @@
 published: false
 ---
 
+
 ## Getting elevation data for point occurrences in R using rgbif
 
 As part of an ongoing project on Phyllostomid bat macroecology, I was given a spreadsheet of point occurrences for Stenodermatines. All the records had georeferenced location data in Degrees/Minutes/Seconds, but some did not include original elevation data.  Thus, I wanted to fetch the elevation for the points with missing data – a simple enough task.  At first, I considered doing it the way I remembered from my undergraduate projects, by plugging the coordinates for individual localities into third-party websites that locate them in an embedded Google Map and show the elevation (eg mygeoposition.com).
@@ -13,6 +14,11 @@ In this post, I go through some reproducible example code for getting elevation 
 Example code and data
 
 When I received the point data, I was warned that records with no altitude data used “9999” as the NA value. This was pretty obvious to spot and easy to put into the na.strings argument when importing the data.
+
+{% highlight r %}
+
+{% endhighlight %}
+
 After loading the data, I used dplyr to rename some columns, convert the coordinates into decimal degrees, and discard records with original elevation data. 
 Then I tried out the elevation function. Because I already had columns named decimalLatitude and decimalLongitude, the only arguments needed were the name of the data frame and my Google Elevation API key (which is easy to obtain).
 I kept getting the following error message 
