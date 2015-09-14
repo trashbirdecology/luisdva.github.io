@@ -22,7 +22,7 @@ library(rgbif)
 library(dplyr)
 
 # read coordinate data
-Localities <- read.csv("rawCoords.csv",na.strings = 9999,stringsAsFactors = FALSE)
+Localities <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/rawCoords.csv",na.strings = 9999,stringsAsFactors = FALSE)
 
 {% endhighlight %}
 
