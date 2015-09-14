@@ -1,7 +1,15 @@
 ---
-published: false
+layout: post
+title: Getting elevation data for point occurrences in R using rgbif
+excerpt: "Using R to fetch elevation for lat/long data through an API."
+tags: 
+  - error 400
+  - rgbif
+  - google elevation API
+image: 
+  feature: featureRGBIF.jpg
+published: true
 ---
-
 
 
 ## Getting elevation data for point occurrences in R using rgbif
