@@ -2,6 +2,7 @@
 published: false
 ---
 
+## Getting elevation data for point occurrences in R using rgbif
 
 As part of an ongoing project on Phyllostomid bat macroecology, I was given a spreadsheet of point occurrences for Stenodermatines. All the records had georeferenced location data in Degrees/Minutes/Seconds, but some did not include original elevation data.  Thus, I wanted to fetch the elevation for the points with missing data – a simple enough task.  At first, I considered doing it the way I remembered from my undergraduate projects, by plugging the coordinates for individual localities into third-party websites that locate them in an embedded Google Map and show the elevation (eg mygeoposition.com).
 
@@ -27,6 +28,4 @@ There is no warning message written into the function for point occurrences with
 
 In this case, the problems came from an inconsistent treatment of NA values in the original data. I used very hacky way to filter these records and then the elevation function worked fine.
 
-There must be nifty tools out there for checking inconsistent NA values in raw data, and in this case the coordinates can be checked spatially before fetching elevations.  For now, I hope this post helps others when they get stuck while working with lat/long data and APIs. 
-
-
+There must be nifty tools out there for checking inconsistent NA values in raw data, and in this case the coordinates can be checked spatially before fetching elevations.  For now, I hope this post helps others when they get stuck while working with lat/long data and APIs.
