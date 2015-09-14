@@ -20,7 +20,7 @@ In this post, I go through some reproducible example code for getting elevation 
 
 ### Example code and data
 
-When I received the point data, I was warned that records with no altitude used “9999” as the NA value. This was pretty obvious to spot and easy to put into the na.strings argument when importing the data.
+When I received the point data, I was warned that records with no altitude used “9999” as the NA value. This was pretty obvious to spot and easy to put into the _na.strings_ argument when importing the data.
 
 {% highlight r %}
 # load packages
@@ -32,7 +32,7 @@ Localities <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/maste
 
 {% endhighlight %}
 
-After loading the data, I used _dplyr_ to rename some columns, convert the coordinates into decimal degrees, and discard records with original elevation data. Then I tried out the _elevation_ function. Because I already had columns named decimalLatitude and decimalLongitude, the only arguments needed were the name of the data frame and my Google Elevation API key (which is easy to obtain).
+After loading the data, I used _dplyr_ to rename some columns, convert the coordinates into decimal degrees, and discard records with original elevation data. Then I tried out the _elevation_ function. Because I already had columns named 'decimalLatitude' and 'decimalLongitude', the only arguments needed were the name of the data frame and my Google Elevation API key (which is easy to obtain).
 
 
 {% highlight r %}
