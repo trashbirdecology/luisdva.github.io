@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting elevation data for point occurrences in R using rgbif
-excerpt: "Using R to fetch elevation for lat/long data through an API."
+excerpt: Using R to fetch elevation for lat/long data through an API.
 tags: 
   - error 400
   - rgbif
@@ -11,6 +11,8 @@ image:
 published: true
 ---
 
+
+> Update 14/9/2015: Scott Chamberlain of rOpenSci has added checks to the elevation function to warn when the input coordinates have impossible values, incomplete cases, and values at 0,0. 
 
 As part of an ongoing project on Phyllostomid bat macroecology, I was given a spreadsheet of point occurrences for Stenodermatines. All the records had georeferenced location data in Degrees/Minutes/Seconds, but some did not include original elevation data.  Thus, I wanted to fetch the elevation for the points with missing data – a simple enough task.  At first, I considered doing it the way I remembered from my undergraduate projects, by plugging the coordinates for individual localities into third-party websites that locate them in an embedded Google Map and show the elevation (for example: [mygeoposition.com](http://mygeoposition.com/)).
 
