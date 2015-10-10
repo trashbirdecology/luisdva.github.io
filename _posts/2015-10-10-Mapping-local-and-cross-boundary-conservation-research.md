@@ -7,7 +7,7 @@ tags:
   - geosphere
   - GIS
 image: 
-  feature: featureMapping.jpg
+  feature: featureMapping2.jpg
 published: true
 ---
 
@@ -51,7 +51,7 @@ I plotted the points for author and study countries in different colours to show
 Final map
 <figure>
     <a href="/images/cresch.png"><img src="/images/cresch.png"></a>
-        <figcaption>unedited figure output</figcaption>
+        <figcaption>unedited figure output. click to enlarge.</figcaption>
 </figure>
 
 
