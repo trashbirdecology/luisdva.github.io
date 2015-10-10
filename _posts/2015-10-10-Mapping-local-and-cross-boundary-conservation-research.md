@@ -38,10 +38,13 @@ An easy task thanks to _dplyr_.
 ### Geocoding the points to connect
 
 Rather than drawing lines between the centroids of the connected countries, I opted to use the location of each countries’ capital city. To do this: I scraped a simple table of world capitals from the web, joined it to my data and then used the _mutate_geocode_ function in _ggmap_ to get the coordinates for each point. I also used _jitterDupCoords_ from the _geoR_ package to jitter any duplicated coordinates and bring out the connections that were hidden beneath overlapping lines. 
+
 ### Visualising in-country research
 The _rworldmap_ package comes with functions to join user data with an internal world map using country names, which can then be plotted with flexible graphical options. 
+
 ### Get lines to connect points
 The best way to visualise geographic connections is using shortest-path lines (great circles). The _gcIntermediate_ function in _geosphere_ is well documented, and I took ideas from [these](http://flowingdata.com/2011/05/11/how-to-map-connections-with-great-circles/) [blog](http://robinlovelace.net/2014/06/22/great-circles-in-rworldmap-ggplot2.html) [posts](http://toreopsahl.com/2011/08/12/why-anchorage-is-not-that-important-binary-ties-and-sample-selection/) to work out intermediate points along the great circle, which can then be drawn as lines. 
+
 ### Plot lines and points
 I plotted the points for author and study countries in different colours to show that connections are often not reciprocal. 
 
