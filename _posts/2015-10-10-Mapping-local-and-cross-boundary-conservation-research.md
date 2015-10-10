@@ -34,7 +34,9 @@ The annotated code to reproduce the map is in the Gist embedded at the end of th
 
 ### Counting the in-country research
 An easy task thanks to _dplyr_.
+
 ### Geocoding the points to connect
+
 Rather than drawing lines between the centroids of the connected countries, I opted to use the location of each countries’ capital city. To do this: I scraped a simple table of world capitals from the web, joined it to my data and then used the _mutate_geocode_ function in _ggmap_ to get the coordinates for each point. I also used _jitterDupCoords_ from the _geoR_ package to jitter any duplicated coordinates and bring out the connections that were hidden beneath overlapping lines. 
 ### Visualising in-country research
 The _rworldmap_ package comes with functions to join user data with an internal world map using country names, which can then be plotted with flexible graphical options. 
@@ -45,7 +47,7 @@ I plotted the points for author and study countries in different colours to show
 
 Final map
 <figure>
-    <a href="/images/cresh.png"><img src="/images/cresh.png"></a>
+    <a href="/images/cresch.png"><img src="/images/cresch.png"></a>
         <figcaption>unedited figure output</figcaption>
 </figure>
 
@@ -64,7 +66,7 @@ Countries with more in-house research tend to have more connections.
 
 - Many African and Western Asian countries not represented, neither by local nor overseas researchers. 
 
-I’ll keep analysing and expanding this dataset, so expect more updates in the future. For any questions, comments, or if anyone is interested in these data, contact me.
+I’ll keep analysing and expanding this dataset, so expect more updates in the future. For any questions, mistakes in the code, comments, or if anyone is interested in these data, contact me.
 
 Code and data
 {% gist luisDVA/c36109edfd37ba3049d2 %}
