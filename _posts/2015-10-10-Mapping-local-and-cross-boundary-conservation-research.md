@@ -38,6 +38,10 @@ The best way to visualise geographic connections is using shortest-path lines (g
 I plotted the points for author and study countries in different colours to show that connections are often not reciprocal. 
 
 Final map
+<figure>
+    <a href="/images/cresh.png"><img src="/images/cresh.png"></a>
+        <figcaption>unedited figure output</figcaption>
+</figure>
 
 
 ## Spatial patterns
@@ -55,4 +59,8 @@ Countries with more in-house research tend to have more connections.
 - Many African and Western Asian countries not represented, neither by local nor overseas researchers. 
 
 I’ll keep analysing and expanding this dataset, so expect more updates in the future. For any questions, comments, or if anyone is interested in these data, contact me.
+
+Code and data
+{% gist luisDVA/c36109edfd37ba3049d2 %}
+
 
