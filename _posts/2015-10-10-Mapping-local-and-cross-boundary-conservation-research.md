@@ -1,5 +1,14 @@
 ---
-published: false
+layout: post
+title: Mapping local and cross-boundary conservation research
+excerpt: "Mapping spatial patterns in conservation research in R using ICCB 2011 presentation data."
+tags: 
+  - SCB
+  - geosphere
+  - GIS
+image: 
+  feature: featureMapping.jpg
+published: true
 ---
 
 
