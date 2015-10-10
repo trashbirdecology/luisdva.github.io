@@ -11,9 +11,6 @@ image:
 published: true
 ---
 
-
-## Mapping local and cross-boundary conservation research
-
 In the past few months I wrote a couple of blog posts ([here](http://luisdva.github.io/Mammalogy-Reviewed/) and [here](http://luisdva.github.io/Presentation-to-publication/)) about the need to collect and analyse data that describes the content presented at biology conferences, as well as data on the demographics of the presenters. In my spare time, I’ve been putting together a dataset of conference content. I analyse part of these data for this post as a way to share some curious spatial patterns in conservation research, and to document my first steps towards using R for GIS analyses. 
 
 Part of my data looks like this:
