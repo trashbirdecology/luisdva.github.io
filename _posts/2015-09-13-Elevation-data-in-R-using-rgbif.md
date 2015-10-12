@@ -12,6 +12,8 @@ published: true
 ---
 
 
+> Update 12/10/2015: I found and fixed an error in the formula for converting latlong coordinates to decimal degrees. My bad.
+
 > Update 14/9/2015: Scott Chamberlain of rOpenSci has added checks to the elevation function to warn when the input coordinates have impossible values, incomplete cases, and values at 0,0. 
 
 As part of an ongoing project on Phyllostomid bat macroecology, I was given a spreadsheet of point occurrences for Stenodermatines. All the records had georeferenced location data in Degrees/Minutes/Seconds, but some did not include original elevation data.  Thus, I wanted to fetch the elevation for the points with missing data – a simple enough task.  At first, I considered doing it the way I remembered from my undergraduate projects, by plugging the coordinates for individual localities into third-party websites that locate them in an embedded Google Map and show the elevation (for example: [mygeoposition.com](http://mygeoposition.com/)).
@@ -41,7 +43,7 @@ After loading the data, I used _dplyr_ to rename some columns, convert the coord
 # keep points with no elevation data and convert to decimal degrees
 LocalitiesNoElevation <-   Localities %>%  filter(is.na(Elevation)) %>% 
   mutate(decimalLatitude= LatitudeDegrees + LatitudeMinutes/60 + LatitudeSeconds/3600,
-         decimalLongitude= -(abs(LongitudeDegrees)) + LongitudeMinutes/60 + LongitudeSeconds/3600)
+         decimalLongitude= (abs(LongitudeDegrees) + LongitudeMinutes/60 + LongitudeSeconds/3600)*-1))
 
 
 # fetch elevations, use your personal API key
