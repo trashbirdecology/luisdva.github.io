@@ -12,6 +12,8 @@ image:
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
++ **Verde Arregoitia, L. D.** (2015), Biases, gaps, and opportunities in mammalian extinction risk research. _Mammal Review_. doi: 10.1111/mam.12049
+
 
 + **Verde Arregoitia, L. D.**, Leach, K., Reid, N. and Fisher, D. O. (2015), Diversity, extinction, and threat status in Lagomorphs. _Ecography_. doi: 10.1111/ecog.01063
 
