@@ -14,6 +14,7 @@ published: true
 
 
 
+
 My latest paper was recently published online, and I hadn’t been able to post about it until now.  The link is [here](http://onlinelibrary.wiley.com/doi/10.1111/mam.12049/full), and here’s a [copy](https://github.com/luisDVA/codeluis/raw/master/luisV2015.pdf) of the Early View version.
 
 Applications of the comparative method to conservation science really took off in the past 20 years. Research on extinction risk has benefited from several elements coming together, such as phylogenies with good taxonomic coverage, comprehensive datasets of species biology, and the IUCN Red List conservation assessments. Most extinction risk research has focused on animals, and especially the well-known vertebrate classes: mammals and birds. This paper looked at what we have been researching compared to what we should be researching, focusing only on multispecies extinction risk studies. I reviewed 68 studies and quantified their scope, sample sizes, variables, and various details describing the methods used in each one. 
@@ -34,7 +35,7 @@ The paper also comes with a comprehensive database of all the variables that hav
         <figcaption> Variable use in 68 comparative extinction risk studies for mammals: a) all 187 unique variables grouped into 11 classes; b) variables that appear in at least five studies. click to enlarge.</figcaption>
 </figure>
 
-With my results, I suggested Southeast Asia and the Caribbean as urgent and interesting areas for future study. They both have very unique mammal faunas, lots of endemics, high threat, and many recent extinctions. I also give some methods suggestions based on the patterns I saw across all the studies. These suggestions boil down to one message: avoid unnecessarily degraded datasets. Authors often drop species with incomplete data, or make little effort to ensure overlap between the species in comparative datasets and those that appear in published phylogenies (a key component in most approaches).
+With my results, I suggested Southeast Asia and the Caribbean as urgent and interesting areas for future study. They both have unique mammal faunas, lots of endemics, high threat, and many recent extinctions. I also give some methods suggestions based on the patterns I saw across all the studies. These suggestions boil down to one message: avoid unnecessarily degraded datasets. Authors often drop species with incomplete data, or make little effort to ensure overlap between the species in comparative datasets and those that appear in published phylogenies (a key component in most approaches).
 
 ## Writing a single-author paper
 
