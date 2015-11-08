@@ -14,11 +14,16 @@ The taxonomic and geographic biases of mammal research in general apply to extin
 Spatially, most countries and bioregions rich in endemic and threatened mammals are understudied. For example, I put country-level threat, diversity, and endemism into the figure below. This is nothing revolutionary, but out of these 20 relevant countries: only India and Australia have dedicated studies. Christophe Ladroue is the real MVP for his Polar Histogram function, check it out here (http://chrisladroue.com/2012/02/polar-histogram-pretty-and-useful/)
 
 <figure>
-    <a href="/images/cresch.png"><img src="/images/fig2blog.png"></a>
+    <a href="/images/fig2blog.png"><img src="/images/fig2blog.png"></a>
         <figcaption>Species richness, threat, and endemism for the top 20 countries with > 200 species of which more than 10% are threatened. Total species richness under each country name. Sources: IUCN Global Mammal Assessment and Visconti et al. (2011). click to enlarge.</figcaption>
 </figure>
 
 The paper also comes with a comprehensive database of all the variables that have been used to try and predict extinction risk in mammals. Overall, body size was the most popular variable, used in virtually all studies, followed by geographic range – used in half of the studies. These two popular variables are decent predictors of threat status, but this might just be because they are used so often. The exciting results came when I looked at how often different variables had significant associations with extinction risk in proportion to how often they were used (Figure below). Proportionally: weaning age, geographic range, and precipitation were the most consistent predictors, they showed significant associations with extinction risk in almost half of the studies that included them. In this proportional approach, body size had significant effects on extinction risk in only a third of the studies that included it. We should start focusing on weaning age and what it means in relation to the pressures that put species at risk in the first place.
+
+<figure>
+    <a href="/images/fig3blog.png"><img src="/images/fig3blog.png"></a>
+        <figcaption> Variable use in 68 comparative extinction risk studies for mammals: a) all 187 unique variables grouped into 11 classes; b) variables that appear in at least five studies. click to enlarge.</figcaption>
+</figure>
 
 With my results, I suggested Southeast Asia and the Caribbean as urgent and interesting areas for future study. They both have very unique mammal faunas, lots of endemics, high threat, and many recent extinctions. I also give some methods suggestions based on the patterns I saw across all the studies. These suggestions boil down to one message: avoid unnecessarily degraded datasets. Authors often drop species with incomplete data, or make little effort to ensure overlap between the species in comparative datasets and those that appear in published phylogenies (a key component in most approaches).
 
