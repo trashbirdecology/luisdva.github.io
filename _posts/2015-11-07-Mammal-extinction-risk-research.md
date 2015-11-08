@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Extinction risk research in mammals
-excerpt: "Trends and patterns in mammal extinction risk research, and thoughts on writing a sole-author paper ."
+excerpt: "Trends and patterns in mammal extinction risk research, and thoughts on writing a sole-author paper."
 tags: 
   - Mammal review
   - authorship
