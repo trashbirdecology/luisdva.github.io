@@ -1,9 +1,15 @@
 ---
-published: false
+layout: post
+title: Extinction risk research in mammals
+excerpt: "Trends and patterns in mammal extinction risk research, and thoughts on writing a sole-author paper ."
+tags: 
+  - Mammal review
+  - authorship
+  - comparative method
+image: 
+  feature: featureMR.jpg
+published: true
 ---
-
-
-
 
 My latest paper was recently published online, and I hadn’t been able to post about it until now.  The link is here, and here’s a copy (wink wink).
 
