@@ -12,11 +12,12 @@ published: true
 ---
 
 
+
 My latest paper was recently published online, and I hadn’t been able to post about it until now.  The link is [here](http://onlinelibrary.wiley.com/doi/10.1111/mam.12049/full), and here’s a [copy](https://github.com/luisDVA/codeluis/raw/master/10.1111-mam.12049.pdf) of the Early View version.
 
 Applications of the comparative method to conservation science really took off in the past 20 years. Research on extinction risk has benefited from several elements coming together, such as phylogenies with good taxonomic coverage, comprehensive datasets of species biology, and the IUCN Red List conservation assessments. Most extinction risk research has focused on animals, and especially the well-known vertebrate classes: mammals and birds. This paper looked at what we have been researching compared to what we should be researching, focusing only on multispecies extinction risk studies. I reviewed 68 studies and quantified their scope, sample sizes, variables, and various details describing the methods used in each one. 
 
-The taxonomic and geographic biases of mammal research in general apply to extinction risk research. Everyone prefers primates and carnivores, but some orders of small mammals (rodents and Eulipotyphla) urgently need more research specifically aimed at identifying what puts some species at risk while others are doing OK.  Fortunately, the IUCN Small Mammal Specialist Group is already on it.
+The taxonomic and geographic biases of mammal research in general apply to extinction risk research. Everyone prefers primates and carnivores, but some orders of small mammals (rodents and Eulipotyphla) urgently need more research specifically aimed at identifying what puts some species at risk while others are doing OK.  Fortunately, the IUCN [Small Mammal Specialist Group](http://http://www.small-mammals.org/) is already on it.
 
 Spatially, most countries and bioregions rich in endemic and threatened mammals are understudied. For example, I put country-level threat, diversity, and endemism into the figure below. This is nothing revolutionary, but out of these 20 relevant countries: only India and Australia have dedicated studies. Christophe Ladroue is the real MVP for his Polar Histogram function, check it out [here](http://chrisladroue.com/2012/02/polar-histogram-pretty-and-useful/).
 
