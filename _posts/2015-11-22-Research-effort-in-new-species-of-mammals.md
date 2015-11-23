@@ -77,7 +77,9 @@ This exercise also shows the importance of what criteria are used for considerin
 
 As always, contact me with any questions or comments.
 
-* I know Soricomorpha is paraphyletic but I automated the assignment of species into their corresponding orders and only just realized that the database uses this classification. 
+* I know Soricomorpha is paraphyletic but I automated the assignment of species into their corresponding orders and the database I chose uses this classification. 
 
+#Code and data
 
+{% gist luisDVA/6905e4a811a958223314%}
 
