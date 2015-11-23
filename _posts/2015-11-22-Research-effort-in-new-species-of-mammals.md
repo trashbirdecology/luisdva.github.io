@@ -8,7 +8,7 @@ tags:
   - Peromyscus schmidly
   - ggplot
 image: 
-  feature: featureNM.png
+  feature: featureNM.jpg
   credit: null
   creditlink: null
 published: true
