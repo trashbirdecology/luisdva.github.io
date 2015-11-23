@@ -54,7 +54,7 @@ To get a better look at some of the orders that have yielded more new species, h
 This last plot focuses on the two most diverse orders, which also happen to have the most new species. Go ahead and call me a chartjunking tourist for this one, but I wanted to try out _rphylopic_ at some point.  I replaced the points in this dotplot for description dates, and used the _gridExtra_ package to arrange the plots side by side. 
 
 <figure>
-    <a href="/images/ammacPlt.jpeg"><img src="/images/ammacPlt.jpeg"></a>
+    <a href="/images/fig4nmBig.png"><img src="/images/fig4nmBig.png"></a>
         <figcaption> new species of rodents and bats, with search hits and description years </figcaption>
 </figure>
 
