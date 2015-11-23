@@ -1,6 +1,19 @@
 ---
-published: false
+layout: post
+title: Research patterns in new species of mammals
+excerpt: "summary and visualization of research effort towards recently described species of terrestrial mammals. Inlcudes R code and data."
+tags: 
+  - discovery
+  - olinguito
+  - Peromyscus schmidly
+  - ggplot
+image: 
+  feature: featureNM.png
+  credit: null
+  creditlink: null
+published: true
 ---
+
 
 
 Most people assume that most, if not all, mammals are known to science. Although mammals are a charismatic and well-studied group, this assumption is mistaken. In [this](http://www.pnas.org/content/106/10/3841.full) paper from 2009, Ceballos and Ehrlich found that 408 new species of terrestrial mammals have been described since 1993 - when the first comprehensive database of mammalian taxonomy (Mammal Species of the World; [MSW](http://www.departments.bucknell.edu/biology/resources/msw3/browse.asp)) was published. Over half of these new mammals are cryptic species (not easily recognized by morphological features), but many others are large and distinctive. We are nowhere near a complete inventory of mammalian diversity. New species are formally described after painstaking efforts by taxonomy-oriented scientists at a surprisingly consistent pace. 
