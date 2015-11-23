@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Research patterns in new species of mammals
-excerpt: "summary and visualization of research effort towards recently described species of terrestrial mammals. Inlcudes R code and data."
+excerpt: "Summary and visualization of research effort towards recently described species of terrestrial mammals. Inlcudes R code and data."
 tags: 
   - discovery
   - olinguito
@@ -31,7 +31,7 @@ I work with mammals, and try to keep up with new species and with changes in tax
 
 First, I used [Tabula](http://tabula.technology/) to get the data out of the clunky pdf supplement and into a useful format. I was interested in the list of species, the year they were described, and in the number of hits on an academic search engine for each one. From previous experience, Google Scholar tends to index more material and provide more relevant results.  Unfortunately, there is no API for Google Scholar, and automated searches and scraping are not allowing in their Terms of Service. While it is technically possible to run automated searches and scrape the results, the search engine will detect and block anything that looks like automatic queries. This means any scraping function will end up having to wait between searches ([see here](https://gist.github.com/timcdlucas/78478755b49e5c6342c4)), so I went with the manual approach.
 
-For 361 species picked at random in the dataset, I did manual searches on Google Scholar in a web browser (using quotations to search for exact matches) and gathered the number of search results in a simple table (download link is with the code). I graphed the number of results for each species (grouped by order) below.  The data and code for all these figures is at the end of this post. I’m pretty proud of how I integrated _dplyr_ and _ggplot2_ to wrangle the data and make the figures.
+For 361 species picked at random in the dataset, I did manual searches on Google Scholar in a web browser (using quotations to search for exact matches) and gathered the number of search results in a simple table (download link is with the code). I graphed the number of results for each species (grouped by order) below.  The data and code for all these figures is at the end of this post. I’m pretty proud of how I integrated _dplyr_ and _ggplot2_ to wrangle the data and make the figures. Click on any picture to enlarge it.
 
 <figure>
     <a href="/images/fig1newM.png"><img src="/images/fig1newM.png"></a>
