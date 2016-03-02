@@ -28,6 +28,18 @@
   </div><!-- /.image-wrap -->
 {% endif %}
 
+ {% if page.carousel %}
+  <div class="flexslider">
+    <ul class="slides">
+      {% for slides in page.carousel %}
+      <li>
+        <img src="{{ slides.image }}">
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
 <div id="main" role="main"> 
   <div class="article-author-side">
     {% include _author-bio.html %}
