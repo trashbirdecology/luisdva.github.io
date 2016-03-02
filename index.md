@@ -9,11 +9,11 @@ tags:
   - blog
   - LuisDVerde
 carousel:
-  - image: /images/slider1.jpg
-  - image: /images/slider2.jpg
-  - image: /images/slider3.jpg
-  - image: /images/slider4.jpg
-  - image: /images/slider5.jpg
+  - image: slider1.jpg
+  - image: slider2.jpg
+  - image: slider3.jpg
+  - image: slider4.jpg
+  - image: slider5.jpg
 published: true
 ---
 
