@@ -43,6 +43,18 @@ $(function() {
   });
 });
 
+// Initialise FlexSlider for Carousels
+$(window).load(function() {
+    $('.flexslider').flexslider({
+    animation: "fade",
+    controlNav: false,
+    directionNav: true,
+    slideshowSpeed: 5000,
+    animationSpeed: 600,
+    touch: true
+    });
+});
+
 // Add lightbox class to all image links
 $("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']").addClass("image-popup");
 
