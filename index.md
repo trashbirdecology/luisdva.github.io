@@ -8,10 +8,12 @@ tags:
   - updates
   - blog
   - LuisDVerde
-image: 
-  feature: featurerat2.jpg
-  credit: null
-  creditlink: null
+carousel:
+  - image: /images/slider1.jpg
+  - image: /images/slider2.jpg
+  - image: /images/slider3.jpg
+  - image: /images/slider4.jpg
+  - image: /images/slider5.jpg
 published: true
 ---
 
