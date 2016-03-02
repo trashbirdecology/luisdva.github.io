@@ -1,5 +1,15 @@
 ---
-published: false
+layout: post
+title: Presentations section and Biotweeps
+excerpt: "Brief updates, March 2016"
+tags: 
+  -Presentation titles
+  -Twitter SciComm
+image: 
+  feature: slider3.jpg
+  credit: null
+  creditlink: null
+published: true
 ---
 
 New presentations section and Biotweeps
