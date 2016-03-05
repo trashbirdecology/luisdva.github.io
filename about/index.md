@@ -27,7 +27,7 @@ Welcome to my personal research page. I'll be using this site for news, updates 
 
 I'm interested in mammal diversity - past, and present. Through my research I aim to identify the mechanisms that generate spatial and taxonomic patterns of diversity, and the processes that threaten it. My broader interests include ecomorphology, mammalian evolution, biogeography, and phylogenetic comparative methods. 
 
-Currently, I'm a postdoctoral research fellow at the [Natural History Musem Bern](http://www.nmbe.ch/en). My ongoing project involves relating ecology to morphology to phylogeny in rodents using museum collections and phylogenies.  
+Currently, I'm a postdoctoral research fellow in the Vertebrates Department at the [Natural History Musem Bern](http://www.nmbe.ch/en). My ongoing project involves relating ecology to morphology to phylogeny in rodents using museum collections and phylogenies.  
 
 <figure>
     <a href="/images/darcyPyg.jpg"><img src="/images/darcyPyg.jpg"></a>
