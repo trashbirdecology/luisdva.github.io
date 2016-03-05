@@ -18,8 +18,6 @@ share: false
 
 
 
-
-
 ## This site
 Welcome to my personal research page. I'll be using this site for news, updates on research articles, R code, and blog posts. The layout and design are work in progress, as I slowly learn more about Git, Markdown and Jekyll. 
 
