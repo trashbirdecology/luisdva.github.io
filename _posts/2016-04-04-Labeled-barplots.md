@@ -29,6 +29,11 @@ newDataFr <- data.frame(critter=c(rep("mouse",3),rep("opossum",3)),
 
 The data structure is ready for plotting, and this can all be done with ggplot to initialize a ggplot object and geom_bar to draw the bars.
 {% highlight r %}
+#if you don't have the packages you can install them all from CRAN using install.packages()
+library(ggplot) 
+library(ggthemes)
+library(palettetown)
+# plot the data
 ggplot(newDataFr)+
   geom_bar(aes(y=individuals,x=critter,fill=trapped),position="dodge",stat="identity")
 {% endhighlight %}
@@ -48,8 +53,40 @@ ggplot(newDataFr)+
   theme_pander()+guides(fill=guide_legend(title="Forest strata"))+ylab("number of captures")+
   scale_fill_poke(pokemon = 9,spread=3)
  {% endhighlight %}
+ 
+ <figure>
+    <a href="/images/bars2.png"><img src="/images/bars2.png"></a>
+        <figcaption>looks better</figcaption>
+</figure>
 
 I think this plot looks nicer and less cluttered, but without grid lines, it can be hard to know exactly how many little mammals were caught at each of the forest strata. Luckily, it’s easy to add text labels above each bar (or so I thought). Just a matter of using geom_text, giving it the labels that will go over each bar and the positions for each one using x and y OR SO I THOUGHT
 
-I fiddled with the aesthetics for geom_text for a while and after many searches and tutorials I was getting nowhere. At some point I closed everything, started again from scratch and in the process I unknowingly put the general aesthetics in the call to ggplot and not in the call to geom_bar. This made the plot I wanted, including a 0 where it needs to be. I’m still looking into why this happens, it must be the way in which the aesthetic parameters are inherited. Once I have an explanation I’ll update this post, but if anyone knows PLEASE let me know. 
+{% highlight r %}
+ggplot(newDataFr)+
+  geom_bar(aes(y=individuals,x=critter,fill=trapped),position="dodge",stat="identity")+
+  theme_pander()+guides(fill=guide_legend(title="Forest strata"))+ylab("number of captures")+
+  scale_fill_poke(pokemon = 9,spread=3)+
+  geom_text(aes(label =individuals,y=individuals, x=critter),vjust=-.5,position=position_dodge(width =1))
+ {% endhighlight %}
+ 
+ <figure>
+    <a href="/images/bars3.png"><img src="/images/bars3.png"></a>
+        <figcaption>the bar labels aren't dodging</figcaption>
+</figure>
+
+The labels in the plot above are not side by side above their corresponding bar. I fiddled with the aesthetics for geom_text for a while and after many searches and tutorials I was getting nowhere. At some point I closed everything, started again from scratch and in the process I unknowingly put the general aesthetics in the call to ggplot and not in the call to geom_bar. This made the plot I wanted, including a 0 where it needs to be. I’m still looking into why this happens, it must be the way in which the aesthetic parameters are inherited. Once I have an explanation I’ll update this post, but if anyone knows PLEASE let me know. 
+
+{% highlight r %}
+
+ggplot(newDataFr,aes(y=individuals,x=critter,fill=trapped))+
+  geom_bar(position="dodge",stat="identity")+
+  theme_pander()+guides(fill=guide_legend(title="Forest strata"))+ylab("number of captures")+
+  scale_fill_poke(pokemon = 9,spread=3)+
+  geom_text(aes(label =individuals,y=individuals, x=critter),vjust=-.5,position=position_dodge(width =1))
+{% endhighlight %}
+
+<figure>
+    <a href="/images/bars4.png"><img src="/images/bars4.png"></a>
+        <figcaption>finally</figcaption>
+</figure>
 
