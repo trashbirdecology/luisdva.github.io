@@ -41,7 +41,7 @@ newDataFr <- data.frame(critter=c(rep("mouse",3),rep("opossum",3)),
 
 {% endhighlight %}
 
-The data structure is ready for plotting, and this can all be done with ggplot to initialize a ggplot object and geom_bar to draw the bars.
+The data structure is ready for plotting, and this can all be done with _ggplot()_ to initialize a ggplot object and _geom\_bar()_ to draw the bars.
 {% highlight r %}
 #if you don't have the packages you can install them all from CRAN using install.packages()
 library(ggplot) 
@@ -59,7 +59,7 @@ ggplot(newDataFr)+
 
 We want the heights of the bars to represent values in the data, so we use _stat="identity"_ and map a variable to the y aesthetic. We use _position=”dodge”_ to literally dodge any overlaps and adjust the position of the bars to be side by side. 
 
-For the next plot, I got fancy and used two additional packages to change the overall look of the plot and add some nice colors to the bars. I also used _guide_ and _ylab_ to make changes to the legend title and the label for the y axis. The _pander_ theme from the _ggthemes_ package will change the general aspect of the plot such as the colour of the background, gridlines, the size and colour of fonts. It actually comes from an effort to unify the plot outpot from the different graph engines (graphics, lattice, ggplot). The _scale\_fill\_poke()_ function comes from the _palettetown_ package by [Tim D. Lucas](http://timcdlucas.github.io/), it contains several pokemon-inspired color palettes, and I personally like the color schemes in most of the little characters (also, I helped Tim with selecting some palettes that are colorblind friendly).  
+For the next plot, I got fancy and used two additional packages to change the overall look of the plot and add some nice colors to the bars. I also used _guide_ and _ylab_ to make changes to the legend title and the label for the y axis. The _pander_ theme from the _ggthemes_ package will change the general aspect of the plot such as the colour of the background, gridlines, and the size and colour of fonts. It actually comes from an effort to unify the plot outpot from the different graph engines (graphics, lattice, ggplot). The _scale\_fill\_poke()_ function comes from the _palettetown_ package by [Tim D. Lucas](http://timcdlucas.github.io/), it contains several pokemon-inspired color palettes, and I personally like the color schemes in most of the little characters (also, I helped Tim with selecting some palettes that are colorblind friendly).  
 
 {% highlight r %}
 ggplot(newDataFr)+
@@ -73,7 +73,7 @@ ggplot(newDataFr)+
         <figcaption>looks better</figcaption>
 </figure>
 
-I think this plot looks nicer and less cluttered, but without grid lines, it can be hard to know exactly how many little mammals were caught at each of the forest strata. Luckily, it’s easy to add text labels above each bar. Just a matter of using geom_text, giving it the labels that will go over each bar and the positions for each one using _x_ and _y_ OR SO I THOUGHT.
+I think this plot looks nicer and less cluttered, but without grid lines, it can be hard to know exactly how many little mammals were caught at each of the forest layers. Luckily, it’s easy to add text labels above each bar. Just a matter of using _geom\_text()_, giving it the labels that will go over each bar and the positions for each one using _x_ and _y_ **OR SO I THOUGHT**.
 
 {% highlight r %}
 ggplot(newDataFr)+
@@ -97,6 +97,7 @@ ggplot(newDataFr,aes(y=individuals,x=critter,fill=trapped))+
   theme_pander()+guides(fill=guide_legend(title="Forest strata"))+ylab("number of captures")+
   scale_fill_poke(pokemon = 9,spread=3)+
   geom_text(aes(label =individuals,y=individuals, x=critter),vjust=-.5,position=position_dodge(width =1))
+  #vjust can move the labels up and down
 {% endhighlight %}
 
 <figure>
