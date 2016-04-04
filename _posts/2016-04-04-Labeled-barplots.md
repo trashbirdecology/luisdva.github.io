@@ -17,7 +17,7 @@ This dataset is inspired by the actual data I was trying to plot. It has groups 
 
 For anyone not on board with ggplot, [here’s](http://thecoatlessprofessor.com/programming/creating-stacked-barplot-and-grouped-barplot-in-r-using-base-graphics-no-ggplot2/) a well-written post by The Coatless Professor on making grouped barplots using base grpahics. 
 
-First, let’s replicate the table above. Notice that the data has a consistent order such that the critter entries are grouped together and the  trapped variable has a cyclic ordering. In this example, opossums were not caught in the upper canopy but there is still a row for this, because 0 is data. 
+First, let’s replicate the table above. Notice that the data has a consistent order such that the **critter** entries are grouped together and the **trapped** variable has a cyclic ordering. In this example, opossums were not caught in the upper canopy but there is still a row for this, because 0 is data. 
 
 {% highlight r %}
 # making the data frame
@@ -43,15 +43,15 @@ ggplot(newDataFr)+
         <figcaption>starting out</figcaption>
 </figure>
 
-We want the heights of the bars to represent values in the data, so we use stat="identity" and map a variable to the y aesthetic. We use position=”dodge” to literally dodge any overlaps and adjust the position of the bars to be side by side. 
+We want the heights of the bars to represent values in the data, so we use _stat="identity"_ and map a variable to the y aesthetic. We use _position=”dodge”_ to literally dodge any overlaps and adjust the position of the bars to be side by side. 
 
-For the next plot, I got fancy and used two additional packages to change the overall look of the plot and add some nice colors to the bars. I also used guide and ylab to make changes to the legend title and the label for the y axis. The pander theme from the ggthemes package will change the general aspect of the plot such as the colour of the background, gridlines, the size and colour of fonts. It actually comes from an effort to unify the plot outpot from the different graph engines (graphics, lattice, ggplot). The scale_fill_poke function come from the palettetown package by Tim D. Lucas, it contains several pokemon-inspired color palettes, I personally like the color schemes in most of the little characters (also, I helped Tim with selecting some palettes that are colorblind friendly).  
+For the next plot, I got fancy and used two additional packages to change the overall look of the plot and add some nice colors to the bars. I also used _guide_ and _ylab_ to make changes to the legend title and the label for the y axis. The _pander_ theme from the _ggthemes_ package will change the general aspect of the plot such as the colour of the background, gridlines, the size and colour of fonts. It actually comes from an effort to unify the plot outpot from the different graph engines (graphics, lattice, ggplot). The "scale_fill_poke" function comes from the _palettetown_ package by Tim D. Lucas, it contains several pokemon-inspired color palettes, and I personally like the color schemes in most of the little characters (also, I helped Tim with selecting some palettes that are colorblind friendly).  
 
 {% highlight r %}
 ggplot(newDataFr)+
   geom_bar(aes(y=individuals,x=critter,fill=trapped),position="dodge",stat="identity")+
   theme_pander()+guides(fill=guide_legend(title="Forest strata"))+ylab("number of captures")+
-  scale_fill_poke(pokemon = 9,spread=3)
+  scale_fill_poke(pokemon = 9,spread=3) #see the documentation for palettetown
  {% endhighlight %}
  
  <figure>
@@ -74,7 +74,7 @@ ggplot(newDataFr)+
         <figcaption>the bar labels aren't dodging</figcaption>
 </figure>
 
-The labels in the plot above are not side by side above their corresponding bar. I fiddled with the aesthetics for geom_text for a while and after many searches and tutorials I was getting nowhere. At some point I closed everything, started again from scratch and in the process I unknowingly put the general aesthetics in the call to ggplot and not in the call to geom_bar. This made the plot I wanted, including a 0 where it needs to be. I’m still looking into why this happens, it must be the way in which the aesthetic parameters are inherited. Once I have an explanation I’ll update this post, but if anyone knows PLEASE let me know. 
+The labels in the plot above are not side by side above their corresponding bar. I fiddled with the aesthetics for geom_text for a while and after many searches and tutorials I was getting nowhere. At some point I closed everything, started again from scratch and in the process I unknowingly **put the general aesthetics in the call to ggplot and not in the call to geom_bar**. This made the plot I wanted, including a 0 where it needs to be. I’m still looking into why this happens, it must be the way in which the aesthetic parameters are inherited. Once I have an explanation I’ll update this post, but if anyone knows PLEASE let me know. 
 
 {% highlight r %}
 
