@@ -1,7 +1,7 @@
 ---
 layout: post
 title: pls don't do this :(
-excerpt: "Easy changes to make before sharing tablular data with others. "
+excerpt: "Easy changes to make before sharing tabular data with others. "
 tags: 
   - Excel
   - reshape2
