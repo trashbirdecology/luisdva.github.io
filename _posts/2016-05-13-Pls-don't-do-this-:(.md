@@ -43,11 +43,17 @@ Suggestion: add additional columns with the information that was being conferred
 Merged cells will look good in the final version of a table, but they can lead to strange behaviours when trying to read and manipulate the data with other programs. 
 
 <figure>
+    <a href="/images/xlsEx2.png"><img src="/images/xlsEx2.png"></a>
+        <figcaption>merged and centered</figcaption>
+</figure>
+
+Suggestion: suck it up and repeat the content that was merged in the first place. R, Python and Julia can deal just fine with this kind of melted presentation of the data.
+
+<figure>
     <a href="/images/xlsEx2.1.png"><img src="/images/xlsEx2.1.png"></a>
         <figcaption>everything is better melted</figcaption>
 </figure>
 
-Suggestion: suck it up and repeat the content that was merged in the first place. R, Python and Julia can deal just fine with this kind of melted presentation of the data.
 
 # 3. Weird header rows
 
