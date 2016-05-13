@@ -1,7 +1,4 @@
 ---
-published: false
----
----
 layout: post
 title: pls don't do this :(
 excerpt: "Easy changes to make before sharing tablular data with others. "
@@ -15,7 +12,6 @@ image:
   creditlink: null
 published: true
 ---
-
 
 _Three common bad practices in sharing tables and spreadsheets and how to avoid them._
 
