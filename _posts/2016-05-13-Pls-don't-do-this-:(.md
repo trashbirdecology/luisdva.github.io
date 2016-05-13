@@ -14,7 +14,7 @@ published: true
 ---
 
 
-Three common bad practices in sharing tables and spreadsheets and how to avoid them.
+_Three common bad practices in sharing tables and spreadsheets and how to avoid them._
 
 In the past month I’ve been busy with collaborations, and by coincidence all the projects that I’m involved with reached the stage of actually having completed datasets at the same time. This has involved me receiving data via email or shared web folders. So far all these data has come in Excel spreadsheets. Personally, I don’t have anything against xls files and I won’t start judging others. However, with this post I want to share three common spreadsheet practices that we should all avoid when preparing and sharing data in a tabular format. These are all things I’ve done in the past, but they add complication and slow things down at the time of analysis and data manipulation.
 
