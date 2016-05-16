@@ -15,7 +15,7 @@ published: true
 
 _Three common bad practices in sharing tables and spreadsheets and how to avoid them._
 
-> Update. 16/5/2016: After writing this post I, came across [this](http://cottagelabs.com/weave/csvconf) presentation by Richard Jones, which includes a slide on "The weird things humans do with spreadsheets". Check it out.
+> Update. 16/5/2016: After writing this post I, came across [this](http://cottagelabs.com/weave/csvconf) presentation by Richard Jones at the recent CSV2016 conference, which includes a slide on "The weird things humans do with spreadsheets". Check it out.
 
 In the past month I’ve been busy with collaborations, and by coincidence all the projects that I’m involved with reached the stage of actually having completed datasets at the same time. This has involved me receiving data via email or shared web folders. So far all these data has come in Excel spreadsheets. Personally, I don’t have anything against xls files and I won’t start judging others. However, with this post I want to share three common spreadsheet practices that we should all avoid when preparing and sharing data in a tabular format. These are all things I’ve done in the past, but they add complication and slow things down at the time of analysis and data manipulation.
 
