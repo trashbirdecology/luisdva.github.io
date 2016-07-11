@@ -13,6 +13,18 @@ Hopefully people can find this post with web searches, but this also a reference
 
 Sometimes the different parts of a scientific name are separated by non-whitespace characters (probably because many phylogenetic programs don’t like spaces). We can replace them all using pattern matching + replacement with _base::gsub_. 
 
+Lets make an example table of Mesoamerican rodents
+
+{% highlight r %}
+
+mice <- data.frame(spNames=c("Peromyscus_melanophrys","Peromyscus_nasutus",
+                      "Peromyscus_schmidlyi","Peromyscus_melanotis",
+                      "Liomys_pictus","Baiomys_musculus"),
+           Genus=c(rep("Peromyscus",4),"Liomys","Baiomys"),
+           spEpithet=c("melanophrys","nasutus","schmidlyi","melanotis",
+                       "pictus","musculus"))
+                       
+{% endhighlight %}
 
 
 | spNames                | Genus      | spEpithet   |
@@ -24,21 +36,25 @@ Sometimes the different parts of a scientific name are separated by non-whitespa
 | Liomys_pictus          | Liomys     | pictus      |
 | Baiomys_musculus       | Baiomys    | musculus    |
 
+Let's rewrite the spNames column, with spaces instead of underscores
 
 {% highlight r %}
 
+mice$spNames <- gsub(pattern = "_",replacement = " ",deerMice$spNames)
 
 {% endhighlight %}
 
-# combining columns
+We can also replace spaces with underscores, or with any other characters.
+
+# Combining columns
 
 Sometimes, we find that a scientific name has been split into separate columns when we open a table. This is particularly prevalent in IUCN Red List tables. In excel, I used to do this by concatenating cells with the "&" operator, then I would copy and paste the values into a new column before removing the one with the formula.
 
 Using the same example table from above, we can use 
 
 {% highlight r %}
-
-
+# adding a new column with the binomial name, the default separator is a space
+mice$binomial <- paste(mice$Genus,mice$spEpithet)
 {% endhighlight %}
 
 
@@ -51,10 +67,33 @@ Using the same example table from above, we can use
 "5","Liomys_pictus","Liomys","pictus","Liomys pictus"
 "6","Baiomys_musculus","Baiomys","musculus","Baiomys musculus"
 
-# change var order
+# Change the order of variables variable 
 
-For 
-just to be more confortable in general
+With comparative data I'm always more comfortable having the column with taxon names at the very beginning. dplyr comes in handy here 
+
+Let's make a table in which the column with binomial ends is at the end and not nice for when we scroll through. 
+
+{% highlight r %}
+mice <- data.frame(spNames=c("Peromyscus_melanophrys","Peromyscus_nasutus",
+                             "Peromyscus_schmidlyi","Peromyscus_melanotis",
+                             "Liomys_pictus","Baiomys_musculus"),
+                   Genus=c(rep("Peromyscus",4),"Liomys","Baiomys"),
+                   spEpithet=c("melanophrys","nasutus","schmidlyi","melanotis",
+                               "pictus","musculus"))
+# bind the first table with a matrix of random values (five columns, six rows)
+mice <- bind_cols(mice,as.data.frame(replicate(5,rnorm(6))))
+# use paste, and the new column gets added at the "end" of the table
+mice$binomial <- paste(mice$Genus,mice$spEpithet)
+{% endhighlight %}
+
+| spNames                | Genus      | spEpithet   | V1                 | V2                  | V3                 | V4                | V5                 | binomial               |
+|------------------------|------------|-------------|--------------------|---------------------|--------------------|-------------------|--------------------|------------------------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys | -0.265632782924824 | 0.327897273820304   | 0.219972954482649  | -0.64632767838069 | -1.89915607125176  | Peromyscus melanophrys |
+| Peromyscus_nasutus     | Peromyscus | nasutus     | -0.973022546256686 | 0.333634724290662   | -0.395166433835357 | 1.91347143971885  | 0.957920666155521  | Peromyscus nasutus     |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | 0.799411588833332  | 0.275100569368765   | -0.366978824994484 | 0.824579802851748 | 1.47553578545787   | Peromyscus schmidlyi   |
+| Peromyscus_melanotis   | Peromyscus | melanotis   | -1.71310752865598  | 0.4877680373641     | -1.30147483454924  | -1.65639349280446 | 0.562997113124786  | Peromyscus melanotis   |
+| Liomys_pictus          | Liomys     | pictus      | -1.14047435456842  | 0.656050064169863   | 0.481688180071972  | 0.652645856842719 | 1.20831417376165   | Liomys pictus          |
+| Baiomys_musculus       | Baiomys    | musculus    | 0.550892132837616  | -0.0246539689028568 | -0.260391572360798 | 0.803264181793322 | -0.583093143639412 | Baiomys musculus       |
 
 
 # fill w existing colum
