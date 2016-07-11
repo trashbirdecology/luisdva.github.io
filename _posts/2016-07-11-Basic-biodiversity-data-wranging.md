@@ -27,7 +27,7 @@ These little operations are all reproducible on their own, I put everything in c
 
 Sometimes the different parts of a scientific name are separated by non-whitespace characters (probably because many phylogenetic programs don’t like spaces). We can replace them all using pattern matching + replacement with _base::gsub_. 
 
-Lets make an example table of Mesoamerican rodents
+Set up an example table of Mesoamerican rodents
 
 {% highlight r %}
 
@@ -74,9 +74,9 @@ We can also replace spaces with underscores, or with any other characters.
 
 # Combining columns
 
-Sometimes, we find that a scientific name has been split into separate columns when we open a table. This is particularly prevalent in IUCN Red List tables. In excel, I used to do this by concatenating cells with the "&" operator, then I would copy and paste the values into a new column before removing the one with the formula.
+Sometimes, we find that a scientific name has been split into separate columns when we open a table. This is particularly prevalent in IUCN Red List tables. In Excel, I used to do this by concatenating cells with the "&" operator, then I would copy and paste the values into a new column before removing the one with the formula.
 
-Using the same example table from above, we can use 
+Using the same example table from above, we can use: 
 
 {% highlight r %}
 # adding a new column with the binomial name, the default separator is a space
@@ -84,19 +84,20 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 {% endhighlight %}
 
 
-"","spNames","Genus","spEpithet","binomial"
-"1","Peromyscus_melanophrys","Peromyscus","melanophrys","Peromyscus melanophrys"
-"2","Peromyscus_nasutus","Peromyscus","nasutus","Peromyscus nasutus"
-"3","Peromyscus_schmidlyi","Peromyscus","schmidlyi","Peromyscus schmidlyi"
-"4","Peromyscus_melanotis","Peromyscus","melanotis","Peromyscus melanotis"
-"5","Liomys_pictus","Liomys","pictus","Liomys pictus"
-"6","Baiomys_musculus","Baiomys","musculus","Baiomys musculus"
+| spNames                | Genus      | spEpithet   | binomial               |
+|------------------------|------------|-------------|------------------------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys | Peromyscus melanophrys |
+| Peromyscus_nasutus     | Peromyscus | nasutus     | Peromyscus nasutus     |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | Peromyscus schmidlyi   |
+| Peromyscus_melanotis   | Peromyscus | melanotis   | Peromyscus melanotis   |
+| Liomys_pictus          | Liomys     | pictus      | Liomys pictus          |
+| Baiomys_musculus       | Baiomys    | musculus    | Baiomys musculus       |
 
 # Change the order of variables variable 
 
-With comparative data I'm always more comfortable having the column with taxon names at the very beginning. dplyr comes in handy here.
+With comparative data I'm always more comfortable having the column with taxon names at the very beginning. _dplyr_ comes in handy here.
 
-Let's make a table in which the column with binomial ends is at the end and not nice for when we scroll through. 
+Let's make a table in which the column with binomial names is at the end and not nice for when we scroll through. 
 
 {% highlight r %}
 mice <- data.frame(spNames=c("Peromyscus_melanophrys","Peromyscus_nasutus",
@@ -121,7 +122,7 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 | Baiomys_musculus       | Baiomys    | musculus    | 0.550892132837616  | -0.0246539689028568 | -0.260391572360798 | 0.803264181793322 | -0.583093143639412 | Baiomys musculus       |
 
 
-We can use the everything argument in dplyr::select to put the species names first and then everything, no need to type all the column names.
+We can use the _everything()_ argument in _dplyr::select_ to put the species names first and then everything, no need to type all the column names.
 
 {% highlight r %}
 mice %>% select(binomial,everything())
@@ -140,7 +141,7 @@ mice %>% select(binomial,spNames:V5)
 | Liomys pictus          | Liomys_pictus          | Liomys     | pictus      | -0.575792000674879 | -1.22862981043979 | 0.400478776675252  | -2.41569084734938  | 0.184892341645976  |
 | Baiomys musculus       | Baiomys_musculus       | Baiomys    | musculus    | 0.876058186669997  | 0.411338959287477 | -1.71683685761396  | -0.333207472623785 | 0.23739134255065   |
 
-# Complete NA values in one column with data from another colum
+# Complete NA values in one column with data from another column
 
 If we have a column with gaps, and we want to replace these missing values with values from another columnn in the same table, we can use an ifelse statement to find NA values and replace them with the value on the same row but for a different column. 
 
@@ -212,14 +213,14 @@ Output from the _count_ function
 | Liomys     | 1 |
 | Peromyscus | 4 |
 
-Using mutate and the _n()_alternative to _count()_
+Using mutate and the _n()_ alternative to _count()_
 
 
-| spNames                | Genus      | spEpithet   | tailLength | tailLengthNew | tailLengthBoth | howMany |
-|------------------------|------------|-------------|------------|---------------|----------------|---------|
-| Peromyscus_melanophrys | Peromyscus | melanophrys | 90         | 92            | 90             | 4       |
-| Peromyscus_nasutus     | Peromyscus | nasutus     | NA         | 100           | 100            | 4       |
-| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | NA         | 119           | 119            | 4       |
-| Peromyscus_melanotis   | Peromyscus | melanotis   | 123        | 144           | 123            | 4       |
-| Liomys_pictus          | Liomys     | pictus      | NA         | 89            | 89             | 1       |
-| Baiomys_musculus       | Baiomys    | musculus    | 60         | 68            | 60             | 1       |
+| spNames                | Genus      | spEpithet   |  howMany |
+|------------------------|------------|-------------|----------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys |  4       |
+| Peromyscus_nasutus     | Peromyscus | nasutus     |  4       |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | 4        |
+| Peromyscus_melanotis   | Peromyscus | melanotis   |  4       |
+| Liomys_pictus          | Liomys     | pictus      |  1       |
+| Baiomys_musculus       | Baiomys    | musculus    |  1       |
