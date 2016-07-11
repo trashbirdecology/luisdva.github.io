@@ -2,18 +2,27 @@
 published: false
 ---
 
-At some point we all end up working with large(ish) sets of for example, morphological measurements for museum specimens, occurrence records from bird surveys, average values for many species.  
-Here are some 
+At some point we all end up working with datasets that describe biodiversity in some form or another. For example: morphological measurements for museum specimens, occurrence records from bird surveys, ecological traits for many different species, etc. Becuse these datasets share some common features, there are certain tools and operations that we can use to get the rows, columns, and content into something we can use in our analyses. 
 
-Admit that probably a year into my PhD, and with an R expert like Simon Blomberg as a supervisor I still wasted a lot of time getting my data ready manually. I took a long time transitioning from xls spreadsheets, doing and a lot of copying and pasting, writing things down on paper, and retyping data.
+I'll admit here that as recently as 2012 - years into my PhD and with a statistics and programming expert as a supervisor, I still wasted a lot of time getting my data ready manually. I took a long time transitioning from xls spreadsheets, doing and a lot of copying and pasting, writing things down on paper, and retyping data. These examples deal with very basic operations, but I wish I knew all this when I first got into comparative analyses.
 
-Hopefully people can find this post with web searches, but this also a reference for myself. I often have to  go through my old scripts to remember how to do these basic operations.
+Hopefully people can find this post with web searches, but this also a reference for myself. I often have to  go through my old scripts to remember how to do these basic operations. This post walks through five data-wrangling tips, and I'll follow it up in the near future. 
 
 
 # Separators
 
-Many 
-Sometimes the different parts of a scientific name are separated by non-whitespace characters. (many phylogenetic programs don’t like spaces) We can replace them all using pattern matching + replacement with gsub 
+Sometimes the different parts of a scientific name are separated by non-whitespace characters (probably because many phylogenetic programs don’t like spaces). We can replace them all using pattern matching + replacement with _base::gsub_. 
+
+
+
+| spNames                | Genus      | spEpithet   |
+|------------------------|------------|-------------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys |
+| Peromyscus_nasutus     | Peromyscus | nasutus     |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   |
+| Peromyscus_melanotis   | Peromyscus | melanotis   |
+| Liomys_pictus          | Liomys     | pictus      |
+| Baiomys_musculus       | Baiomys    | musculus    |
 
 
 {% highlight r %}
@@ -23,10 +32,30 @@ Sometimes the different parts of a scientific name are separated by non-whitespa
 
 # combining columns
 
-Sometimes, we find that a scientific name has been split into columns when we open a table
-In excel, I used to do this with the & operator, then copy and paste the values into a new column before removing the one with the formula and saving as a csv for R
+Sometimes, we find that a scientific name has been split into separate columns when we open a table. This is particularly prevalent in IUCN Red List tables. In excel, I used to do this by concatenating cells with the "&" operator, then I would copy and paste the values into a new column before removing the one with the formula.
+
+Using the same example table from above, we can use 
+
+{% highlight r %}
+
+
+{% endhighlight %}
+
+
+
+"","spNames","Genus","spEpithet","binomial"
+"1","Peromyscus_melanophrys","Peromyscus","melanophrys","Peromyscus melanophrys"
+"2","Peromyscus_nasutus","Peromyscus","nasutus","Peromyscus nasutus"
+"3","Peromyscus_schmidlyi","Peromyscus","schmidlyi","Peromyscus schmidlyi"
+"4","Peromyscus_melanotis","Peromyscus","melanotis","Peromyscus melanotis"
+"5","Liomys_pictus","Liomys","pictus","Liomys pictus"
+"6","Baiomys_musculus","Baiomys","musculus","Baiomys musculus"
 
 # change var order
+
+For 
+just to be more confortable in general
+
 
 # fill w existing colum
 
