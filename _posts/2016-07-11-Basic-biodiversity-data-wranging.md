@@ -16,7 +16,7 @@ published: true
 
 At some point we all end up working with datasets that describe biodiversity in some form or another. For example: morphological measurements for museum specimens, occurrence records from bird surveys, ecological traits for many different species, etc. Becuse these datasets share some common features, there are certain tools and operations that we can use to get the rows, columns, and content into something we can use in our analyses. 
 
-I'll admit here that as recently as 2012 - already years into my PhD program and with a statistics and programming expert as a supervisor, I still wasted a lot of time getting my data ready manually. I took a long time transitioning from xls spreadsheets, doing and a lot of copying and pasting, writing things down on paper, and retyping data. These examples deal with very basic operations, but I wish I knew all this when I first got into comparative analyses. The first time I tackled some of these operations with a terrestrial mammal dataset of 3300 species I wasted months organizing a single table, with the risk of introducing errors and no way of keeping track of what I did.  
+I'll admit here that as recently as 2012 - already years into my PhD program and with a statistics and programming expert as a supervisor, I still wasted a lot of time getting my data ready manually. I took a long time transitioning from xls spreadsheets, doing a lot of copying and pasting, writing things down on paper, and retyping data. These examples deal with very basic operations, but I wish I knew all this when I first got into comparative analyses. The first time I tackled some of these operations for a terrestrial mammal dataset of 3300 species, I wasted months organizing a single table, with the risk of introducing errors and no way of keeping track of what I did.  
 
 Hopefully people can find this post with web searches, but this also a reference for myself. I often have to  go through my old scripts to remember how to do these basic operations. This post walks through five data-wrangling tips, and I'll follow it up in the near future.  
 
@@ -143,7 +143,7 @@ mice %>% select(binomial,spNames:V5)
 
 # Complete NA values in one column with data from another column
 
-If we have a column with gaps, and we want to replace these missing values with values from another columnn in the same table, we can use an ifelse statement to find NA values and replace them with the value on the same row but for a different column. 
+If we have a column with gaps, and we want to replace these missing values with values from another columnn in the same table, we can use an _ifelse_ statement to find NA values and replace them with the value on the same row but for a different column. 
 
 I often use this when working with body mass data from various sources.
 
@@ -207,10 +207,10 @@ mice %>% group_by(Genus) %>% mutate(howMany=n())
 
 Output from the _count_ function
 
-| Genus      | n |
-|------------|---|
-| Baiomys    | 1 |
-| Liomys     | 1 |
+|    Genus   | n |
+|:----------:|:-:|
+|   Baiomys  | 1 |
+|   Liomys   | 1 |
 | Peromyscus | 4 |
 
 Using mutate and the _n()_ alternative to _count()_
@@ -224,3 +224,5 @@ Using mutate and the _n()_ alternative to _count()_
 | Peromyscus_melanotis   | Peromyscus | melanotis   |  4       |
 | Liomys_pictus          | Liomys     | pictus      |  1       |
 | Baiomys_musculus       | Baiomys    | musculus    |  1       |
+
+That's it for now, I'll post five more next month. If there is any mistake in the code please let me know. I hope this helps.
