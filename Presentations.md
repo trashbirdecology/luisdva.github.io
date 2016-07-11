@@ -4,13 +4,19 @@ title: Presentations
 permalink: /Presentations/
 published: true
 share: false
-image: 
+image:
   feature: slider5.jpg
 ---
 
 
 
 Here are some full titles for work I’ve presented at international scientific meetings.
+
++ Verde Arregoitia, L.D. 2016. Comparing rodent species of different sizes for ecomorphological analyses. _International Congress of Vertebrate Morphology_. Washington DC, USA
+
++ Verde Arregoitia, L.D. 2016. Testing for body size divergence in Neotropical bats. _American Society of Mammalogists 96th Annual Meeting_. Minneapolis, USA
+
++ Verde Arregoitia, L.D. 2016. Rodent Morphology in a Phylogenetic Context. _Evolution_. Austin, Texas
 
 + Verde Arregoitia, L.D. 2016. Testing for body size divergence in Neotropical bats. _Macroecology meets Biogeography_. Trier, Germany
 
