@@ -44,7 +44,19 @@ mice$spNames <- gsub(pattern = "_",replacement = " ",deerMice$spNames)
 
 {% endhighlight %}
 
+| spNames                | Genus      | spEpithet   | binomial               |
+|------------------------|------------|-------------|------------------------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys | Peromyscus melanophrys |
+| Peromyscus_nasutus     | Peromyscus | nasutus     | Peromyscus nasutus     |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | Peromyscus schmidlyi   |
+| Peromyscus_melanotis   | Peromyscus | melanotis   | Peromyscus melanotis   |
+| Liomys_pictus          | Liomys     | pictus      | Liomys pictus          |
+| Baiomys_musculus       | Baiomys    | musculus    | Baiomys musculus       |
+
+
+
 We can also replace spaces with underscores, or with any other characters.
+
 
 # Combining columns
 
@@ -58,7 +70,6 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 {% endhighlight %}
 
 
-
 "","spNames","Genus","spEpithet","binomial"
 "1","Peromyscus_melanophrys","Peromyscus","melanophrys","Peromyscus melanophrys"
 "2","Peromyscus_nasutus","Peromyscus","nasutus","Peromyscus nasutus"
@@ -69,7 +80,7 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 
 # Change the order of variables variable 
 
-With comparative data I'm always more comfortable having the column with taxon names at the very beginning. dplyr comes in handy here 
+With comparative data I'm always more comfortable having the column with taxon names at the very beginning. dplyr comes in handy here.
 
 Let's make a table in which the column with binomial ends is at the end and not nice for when we scroll through. 
 
@@ -96,27 +107,101 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 | Baiomys_musculus       | Baiomys    | musculus    | 0.550892132837616  | -0.0246539689028568 | -0.260391572360798 | 0.803264181793322 | -0.583093143639412 | Baiomys musculus       |
 
 
-# fill w existing colum
+We can use the everything argument in dplyr::select to put the species names first and then everything, no need to type all the column names.
 
-# how many of each
-
-
-
-
-
-
-The data structure is ready for plotting, and this can all be done with _ggplot()_ to initialize a ggplot object and _geom\_bar()_ to draw the bars.
 {% highlight r %}
-#if you don't have the packages you can install them all from CRAN using install.packages()
-library(ggplot) 
-library(ggthemes)
-library(palettetown)
-# plot the data
-ggplot(newDataFr)+
-  geom_bar(aes(y=individuals,x=critter,fill=trapped),position="dodge",stat="identity")
+mice %>% select(binomial,everything())
+#note that this is equivalent to 
+mice %>% select(binomial,spNames,Genus, spEpithet, V1,V2,V3,V4,V5)
+# or using : to refer to contiguous columns
+mice %>% select(binomial,spNames:V5)
 {% endhighlight %}
 
-<figure>
-    <a href="/images/bars1.png"><img src="/images/bars1.png"></a>
-        <figcaption>starting out</figcaption>
-</figure>
+| binomial               | spNames                | Genus      | spEpithet   | V1                 | V2                | V3                 | V4                 | V5                 |
+|------------------------|------------------------|------------|-------------|--------------------|-------------------|--------------------|--------------------|--------------------|
+| Peromyscus melanophrys | Peromyscus_melanophrys | Peromyscus | melanophrys | -0.490526050918862 | -2.29797595130779 | 2.11160930871023   | -0.430962443007775 | 0.50344941399482   |
+| Peromyscus nasutus     | Peromyscus_nasutus     | Peromyscus | nasutus     | -0.781036682214806 | 1.40044764539878  | -0.209455037987789 | -0.935971109894094 | -0.366825311604144 |
+| Peromyscus schmidlyi   | Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | -2.51591860901864  | -0.23778409071267 | -1.1462302628069   | 0.0739518575091712 | 0.107382290698513  |
+| Peromyscus melanotis   | Peromyscus_melanotis   | Peromyscus | melanotis   | 1.37170335168867   | 1.44752591932182  | -0.12263680063621  | -0.552935232650411 | 1.27964207296267   |
+| Liomys pictus          | Liomys_pictus          | Liomys     | pictus      | -0.575792000674879 | -1.22862981043979 | 0.400478776675252  | -2.41569084734938  | 0.184892341645976  |
+| Baiomys musculus       | Baiomys_musculus       | Baiomys    | musculus    | 0.876058186669997  | 0.411338959287477 | -1.71683685761396  | -0.333207472623785 | 0.23739134255065   |
+
+# Complete NA values in one column with data from another colum
+
+If we have a column with gaps, and we want to replace these missing values with values from another columnn in the same table, we can use an ifelse statement to find NA values and replace them with the value on the same row but for a different column. 
+
+I often use this when working with body mass data from various sources.
+
+
+{% highlight r %}
+mice <- data.frame(spNames=c("Peromyscus_melanophrys","Peromyscus_nasutus",
+                             "Peromyscus_schmidlyi","Peromyscus_melanotis",
+                             "Liomys_pictus","Baiomys_musculus"),
+                   Genus=c(rep("Peromyscus",4),"Liomys","Baiomys"),
+                   spEpithet=c("melanophrys","nasutus","schmidlyi","melanotis",
+                               "pictus","musculus"),
+                   tailLength= c(90,NA,NA,123,NA,60),
+                   tailLengthNew = c(92,100,119,144,89,68))
+{% endhighlight %}
+
+| spNames                | Genus      | spEpithet   | tailLength | tailLengthNew |
+|------------------------|------------|-------------|------------|---------------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys | 90         | 92            |
+| Peromyscus_nasutus     | Peromyscus | nasutus     | NA         | 100           |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | NA         | 119           |
+| Peromyscus_melanotis   | Peromyscus | melanotis   | 123        | 144           |
+| Liomys_pictus          | Liomys     | pictus      | NA         | 89            |
+| Baiomys_musculus       | Baiomys    | musculus    | 60         | 68            |
+
+
+{% highlight r %}
+
+# a new variable with the gaps filled in
+mice$tailLengthBoth <- ifelse (test=is.na(mice$tailLength),
+                               yes = mice$tailLengthNew, no= mice$tailLength )
+{% endhighlight %}
+
+| spNames                | Genus      | spEpithet   | tailLength | tailLengthNew | tailLengthBoth |
+|------------------------|------------|-------------|------------|---------------|----------------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys | 90         | 92            | 90             |
+| Peromyscus_nasutus     | Peromyscus | nasutus     | NA         | 100           | 100            |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | NA         | 119           | 119            |
+| Peromyscus_melanotis   | Peromyscus | melanotis   | 123        | 144           | 123            |
+| Liomys_pictus          | Liomys     | pictus      | NA         | 89            | 89             |
+| Baiomys_musculus       | Baiomys    | musculus    | 60         | 68            | 60             |
+
+
+# Count how many of each
+
+We often need to group our data and count how many instances we have of each group.
+
+{% highlight r %}
+mice <- data.frame(spNames=c("Peromyscus_melanophrys","Peromyscus_nasutus",
+                             "Peromyscus_schmidlyi","Peromyscus_melanotis",
+                             "Liomys_pictus","Baiomys_musculus"),
+                   Genus=c(rep("Peromyscus",4),"Liomys","Baiomys"),
+                   spEpithet=c("melanophrys","nasutus","schmidlyi","melanotis",
+                               "pictus","musculus"))
+                               
+# this gives us a nice table of how many in each group
+mice %>% count(Genus)
+# this adds a new variable with the count data
+mice %>% group_by(Genus) %>% mutate(howMany=n())
+        
+{% endhighlight %}
+
+| Genus      | n |
+|------------|---|
+| Baiomys    | 1 |
+| Liomys     | 1 |
+| Peromyscus | 4 |
+
+
+| spNames                | Genus      | spEpithet   | tailLength | tailLengthNew | tailLengthBoth | howMany |
+|------------------------|------------|-------------|------------|---------------|----------------|---------|
+| Peromyscus_melanophrys | Peromyscus | melanophrys | 90         | 92            | 90             | 4       |
+| Peromyscus_nasutus     | Peromyscus | nasutus     | NA         | 100           | 100            | 4       |
+| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | NA         | 119           | 119            | 4       |
+| Peromyscus_melanotis   | Peromyscus | melanotis   | 123        | 144           | 123            | 4       |
+| Liomys_pictus          | Liomys     | pictus      | NA         | 89            | 89             | 1       |
+| Baiomys_musculus       | Baiomys    | musculus    | 60         | 68            | 60             | 1       |
