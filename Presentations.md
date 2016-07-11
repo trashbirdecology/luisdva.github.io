@@ -16,7 +16,7 @@ Here are some full titles for work I’ve presented at international scientific 
 
 + Verde Arregoitia, L.D. 2016. Testing for body size divergence in Neotropical bats. _American Society of Mammalogists 96th Annual Meeting_. Minneapolis, USA
 
-+ Verde Arregoitia, L.D. & Manuel Schweizer. 2016. Rodent Morphology in a Phylogenetic Context. _Evolution_. Austin, Texas
++ Verde Arregoitia, L.D. & Manuel Schweizer. 2016. Rodent ecoorphology in a phylogenetic context. _Evolution_. Austin, Texas
 
 + Verde Arregoitia, L.D. 2016. Testing for body size divergence in Neotropical bats. _Macroecology meets Biogeography_. Trier, Germany
 
