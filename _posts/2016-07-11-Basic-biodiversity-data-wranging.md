@@ -93,7 +93,7 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 | Liomys_pictus          | Liomys     | pictus      | Liomys pictus          |
 | Baiomys_musculus       | Baiomys    | musculus    | Baiomys musculus       |
 
-# Change the order of variables variable 
+# Change the order of variables
 
 With comparative data I'm always more comfortable having the column with taxon names at the very beginning. _dplyr_ comes in handy here.
 
