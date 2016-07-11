@@ -58,15 +58,15 @@ mice$spNames <- gsub(pattern = "_",replacement = " ",deerMice$spNames)
 
 {% endhighlight %}
 
-| spNames                | Genus      | spEpithet   | binomial               |
-|------------------------|------------|-------------|------------------------|
-| Peromyscus_melanophrys | Peromyscus | melanophrys | Peromyscus melanophrys |
-| Peromyscus_nasutus     | Peromyscus | nasutus     | Peromyscus nasutus     |
-| Peromyscus_schmidlyi   | Peromyscus | schmidlyi   | Peromyscus schmidlyi   |
-| Peromyscus_melanotis   | Peromyscus | melanotis   | Peromyscus melanotis   |
-| Liomys_pictus          | Liomys     | pictus      | Liomys pictus          |
-| Baiomys_musculus       | Baiomys    | musculus    | Baiomys musculus       |
 
+| spNames                | Genus      | spEpithet   |
+|------------------------|------------|-------------|
+| Peromyscus melanophrys | Peromyscus | melanophrys |
+| Peromyscus nasutus     | Peromyscus | nasutus     |
+| Peromyscus schmidlyi   | Peromyscus | schmidlyi   |
+| Peromyscus melanotis   | Peromyscus | melanotis   |
+| Liomys pictus          | Liomys     | pictus      |
+| Baiomys musculus       | Baiomys    | musculus    |
 
 
 We can also replace spaces with underscores, or with any other characters.
