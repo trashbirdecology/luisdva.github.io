@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "Basic biodiversity data-wrangling operations"
-excerpt: "Manipulating variables and content in biodiversity datasets using base R and dplyr. "
-tags: 
+title: Basic biodiversity data-wrangling operations
+excerpt: >-
+  Manipulating variables and content in biodiversity datasets using base R and
+  dplyr. 
+tags:
   - count how many
   - everything()
   - species names
   - separators
-image: 
+image:
   feature: featureWrangling1.png
   credit: null
   creditlink: null
@@ -16,7 +18,7 @@ published: true
 
 At some point we all end up working with datasets that describe biodiversity in some form or another. For example: morphological measurements for museum specimens, occurrence records from bird surveys, ecological traits for many different species, etc. Becuse these datasets share some common features, there are certain tools and operations that we can use to get the rows, columns, and content into something we can use in our analyses. 
 
-I'll admit here that as recently as 2013 - already several years into my PhD program and with a statistics and programming expert as a supervisor, I still wasted a lot of time getting my data ready manually. I took a long time transitioning from xls spreadsheets, doing a lot of copying and pasting, writing things down on paper, and retyping data. These examples deal with very basic operations, but I wish I knew all this when I first got into comparative analyses. The first time I tackled some of these operations for a terrestrial mammal dataset of 3300 species, I wasted months organizing a single table, with the risk of introducing errors and no way of keeping track of what I did.  
+I'll admit here that as recently as 2013 - already several years into my PhD program and with a statistics and programming expert as a supervisor, I still wasted a lot of time getting my data ready manually. I took a long time transitioning from xls spreadsheets, doing a lot of copying and pasting, writing things down on paper, and retyping data. These examples deal with very basic operations, but I wish I knew all this when I first got into comparative analyses. The first time I tackled some of these operations for a terrestrial mammal dataset of 3300 species, I wasted months organizing a single flat table, running the risk of introducing errors and with no way of keeping track of what I did.  
 
 Hopefully people can find this post with web searches, but this also a reference for myself. I often have to  go through my old scripts to remember how to do these basic operations. This post walks through five data-wrangling tips, and I'll follow it up in the near future.  
 
@@ -25,7 +27,7 @@ These little operations are all reproducible on their own, I put everything in c
 
 # Separators
 
-Sometimes the different parts of a scientific name are separated by non-whitespace characters (probably because many phylogenetic programs don’t like spaces). We can replace them all using pattern matching + replacement with _base::gsub_. 
+Sometimes the different parts of a scientific name are separated by non-whitespace characters (probably because many phylogenetics programs don’t like spaces). We can replace them all using pattern matching + replacement with _base::gsub_. 
 
 Set up an example table of Mesoamerican rodents
 
@@ -55,7 +57,7 @@ Let's rewrite the spNames column, with spaces instead of underscores
 {% highlight r %}
 
 mice$spNames <- gsub(pattern = "_",replacement = " ",deerMice$spNames)
-
+# note that this assignment 'overwrites' the spNames column 
 {% endhighlight %}
 
 
@@ -81,6 +83,7 @@ Using the same example table from above, we can use:
 {% highlight r %}
 # adding a new column with the binomial name, the default separator is a space
 mice$binomial <- paste(mice$Genus,mice$spEpithet)
+# note that the new column gets bound at the end of the table
 {% endhighlight %}
 
 
@@ -97,7 +100,9 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 
 With comparative data I'm always more comfortable having the column with taxon names at the very beginning. _dplyr_ comes in handy here.
 
-Let's make a table in which the column with binomial names is at the end and not nice for when we scroll through. 
+Let's make a table in which the column with binomial names we want is at the end and not nice for when we scroll through. 
+
+Note how this code includes a line for creating a matrix with random values, this becomes useful when making  example datasets or simulations. 
 
 {% highlight r %}
 mice <- data.frame(spNames=c("Peromyscus_melanophrys","Peromyscus_nasutus",
@@ -122,11 +127,11 @@ mice$binomial <- paste(mice$Genus,mice$spEpithet)
 | Baiomys_musculus       | Baiomys    | musculus    | 0.550892132837616  | -0.0246539689028568 | -0.260391572360798 | 0.803264181793322 | -0.583093143639412 | Baiomys musculus       |
 
 
-We can use the _everything()_ argument in _dplyr::select_ to put the species names first and then everything, no need to type all the column names.
+We can use the _everything()_ argument in _dplyr::select_ to put the species names first and then everything else, no need to type all the column names.
 
 {% highlight r %}
 mice %>% select(binomial,everything())
-#note that this is equivalent to 
+# note that this is equivalent to 
 mice %>% select(binomial,spNames,Genus, spEpithet, V1,V2,V3,V4,V5)
 # or using : to refer to contiguous columns
 mice %>% select(binomial,spNames:V5)
@@ -145,7 +150,7 @@ mice %>% select(binomial,spNames:V5)
 
 If we have a column with gaps, and we want to replace these missing values with values from another columnn in the same table, we can use an _ifelse_ statement to find NA values and replace them with the value on the same row but for a different column. 
 
-I often use this when working with body mass data from various sources.
+I often use this when working with mammalian body mass data from various source.
 
 
 {% highlight r %}
@@ -213,7 +218,7 @@ Output from the _count_ function
 |   Liomys   | 1 |
 | Peromyscus | 4 |
 
-Using mutate and the _n()_ alternative to _count()_
+Using _mutate_ and the _n()_ alternative to _count()_
 
 
 | spNames                | Genus      | spEpithet   |  howMany |
@@ -225,4 +230,4 @@ Using mutate and the _n()_ alternative to _count()_
 | Liomys_pictus          | Liomys     | pictus      |  1       |
 | Baiomys_musculus       | Baiomys    | musculus    |  1       |
 
-That's it for now, I'll post five more next month. If there is any mistake in the code please let me know. I hope this helps.
+That's it for now, I'll post five more tips and tricks next month. If there is any mistake in the code please let me know. I hope this helps. 
