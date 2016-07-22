@@ -37,6 +37,11 @@ plot(climStack$CHELSA_temp_1_1979.2013,ext=boxextent)
 points(localidades)
 {% endhighlight %}
 
+<figure>
+    <a href="/images/figurita.png"><img src="/images/figurita.png"></a>
+        <figcaption>utilizando puros valores gráficos predeterminados</figcaption>
+</figure>
+
 Nota: los conjuntos de capas se pueden recortar con rasterVis::crop por cuestiones de memoria.
  La extracción es fácil, y se hace para todos los elementos de la pila.
 {% highlight r %}
@@ -49,11 +54,20 @@ bioclimat<-cbind(localidades,extractedClim)
 write.csv(bioclimat,"biolcimatic.csv")
 {% endhighlight %}
 
-
+Como tenemos dos variables climáticas, las podemos graficar en 2d como un perfil bioclimático. Este ejemplo es con ggplot pero hay otras opciones para generar gráficas. 
 
 {% highlight r %}
+library(ggplot2)
+
+
+ggplot(bioclimat,aes(x=CHELSA_temp_1_1979.2013,y=CHELSA_prec_7_1979.2013))+
+  geom_point()+geom_density2d()+
+  xlab("temperatura")+ylab("precipitación")+
+  theme_minimal()
 {% endhighlight %}
 
 
-
-
+<figure>
+    <a href="/images/sobres.png"><img src="/images/sobres.png"></a>
+        <figcaption> envoltura bioclimática </figcaption>
+</figure>
