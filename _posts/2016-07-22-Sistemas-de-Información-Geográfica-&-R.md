@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt:  Extraer valores de uno o más raster a partir de coordenadas xy usando R. 
+excerpt: Extraer valores de uno o más raster a partir de coordenadas xy usando R.
 tags:
   - rstats
   - sig
@@ -18,8 +18,9 @@ En temas de biodiversidad, es común trabajar con registros puntuales de la dist
 
 Extraer el valor de las celdas en donde ocurren nuestros registros puntuales es fácil usando sistemas de información geográfica (SIG), que casi siempre tienen alguna herramienta dedicada a esta tarea. Para uno de mis proyectos, tuve que extraer los valores de varios raster para los registros puntuales de algunas especies de murciélagos en México. En algún momento decidí que mi regreso a los SIG iba a ser exclusivamente en R, y por eso investigué cómo logar esta extracción de datos sin programas adicionales.   
 
-En este caso usé los raster de temperatura y precipitación del proyecto CHELSA Climate. Estos datos se encuentran disponibles desde hace un par de semanas, y parece que tienen mejor exactitud en zonas montañosas que otras opciones existentes como WorldClim. Aquí se pueden descargar los datos de clima en formato geotiff. Son archivos grandes, pero yo no tuve problema para manipularlos en una laptop que ya tiene 5 años. 
-En este ejemplo, obtuve simultáneamente los valores de dos raster para 150 localidades: la temperatura promedio en enero y la precipitacion promedio en julio. Para reproducirlo, hay que tener los archivos de clima que son “Mean january temperature y  Mean july precipitation en esta página de descargas, y las coordenadas están en este archivo csv. 
+En este caso usé los raster de temperatura y precipitación del proyecto [CHELSA Climate](http://chelsa-climate.org/). Estos datos se encuentran disponibles desde hace un par de semanas, y parece que tienen mejor exactitud en zonas montañosas que otras opciones existentes como WorldClim. Aquí se pueden descargar los datos de clima en formato geotiff. Son archivos grandes, pero yo no tuve problema para manipularlos en una laptop que ya tiene 5 años. 
+
+En este ejemplo, obtuve simultáneamente los valores de dos raster para 150 localidades: la temperatura promedio en enero y la precipitacion promedio en julio. Para reproducirlo, hay que tener los archivos de clima que son _Mean january temperature_ y  _Mean july precipitation_ en esta [página de descargas](http://chelsa-climate.org/downloads/), y las coordenadas se pueden leer directamente de [este](https://raw.githubusercontent.com/luisDVA/codeluis/master/localidades.csv) archivo csv. 
 
 {% highlight r %}
 # cargar paquetes, instalarlos si hace falta usando install.packages()
@@ -35,7 +36,7 @@ julPrec <- raster("CHELSA_prec_7_1979-2013.tif") # precipitaciones julio
 # apilarlos como ingredientes en una hamburguesa
 climStack <- stack(janTemp,julPrec)
 # leer el archivo con las localidades 
-localidades <- read.csv("localidades.csv")%>% select(long=2,lat=3)
+localidades <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/localidades.csv")%>% select(long=2,lat=3)
 
 {% endhighlight %}
 Podemos visualizar las diferentes capas (llamándolas con índices), en este caso usando una extensión geográfica definida con _extent_ y encima de esto se pueden graficar los puntos.
