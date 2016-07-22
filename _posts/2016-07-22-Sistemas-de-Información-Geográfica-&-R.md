@@ -14,11 +14,11 @@ published: true
 ---
 # Extraer valores de uno o más raster a partir de coordenadas xy usando R. 
 
-En temas de biodiversidad, es común trabajar con registros puntuales de la distribución de una o más especies, generalmente representadas en coordenadas geográficas (longitud/latitud). Para ciertos análisis en macroecología, conservación, y biogeografía, necesitamos datos sobre las condiciones ambientales en cada registro. Estos datos de clima, vegetación, uso de suelo, etc. generalmente existen como capas raster (una representación del área de estudio en formato de matriz dividida en celdas con valores únicos).
+En temas de biodiversidad, es común trabajar con registros puntuales de la distribución de una o más especies, generalmente representadas en coordenadas geográficas xy (longitud/latitud). Para ciertos análisis en macroecología, conservación, y biogeografía, necesitamos datos sobre las condiciones ambientales en cada registro. Estos datos de clima, vegetación, uso de suelo, etc. generalmente existen como capas raster (una representación del área de estudio en formato de matriz dividida en celdas con valores únicos).
 
-Extraer el valor de las celdas en donde ocurren nuestros registros puntuales es fácil usando sistemas de información geográfica (SIG), que casi siempre tienen alguna herramienta dedicada a esta tarea. Para uno de mis proyectos, tuve que extraer los valores de varios raster para los registros puntuales de algunas especies de murciélagos en México. En algún momento decidí que mi regreso a los SIG iba a ser exclusivamente en R, y por eso investigué cómo logar esta extracción de datos sin programas adicionales.   
+Extraer el valor de las celdas en donde ocurren nuestros registros puntuales es fácil usando sistemas de información geográfica (SIG) con interfaces gráficas, que casi siempre tienen algun botón o herramienta dedicada a esta tarea. Para uno de mis proyectos, tuve que extraer los valores de varios raster para los registros puntuales de algunas especies de murciélagos en México. En algún momento decidí que mi regreso a los SIG iba a ser exclusivamente en R, y por eso investigué cómo logar esta extracción de datos sin programas adicionales.   
 
-En este caso usé los raster de temperatura y precipitación del proyecto [CHELSA Climate](http://chelsa-climate.org/). Estos datos se encuentran disponibles desde hace un par de semanas, y parece que tienen mejor exactitud en zonas montañosas que otras opciones existentes como WorldClim. Aquí se pueden descargar los datos de clima en formato geotiff. Son archivos grandes, pero yo no tuve problema para manipularlos en una laptop que ya tiene 5 años. 
+En este caso usé los raster de temperatura y precipitación del proyecto [CHELSA Climate](http://chelsa-climate.org/). Estos datos se encuentran disponibles desde hace un par de semanas, y parece que tienen mejor exactitud en zonas montañosas que otras opciones existentes como WorldClim. Aquí se pueden descargar los datos de clima en formato _geotiff_. Son archivos grandes, pero yo no tuve problema para manipularlos en una laptop que ya tiene 5 años. 
 
 En este ejemplo, obtuve simultáneamente los valores de dos raster para 150 localidades: la temperatura promedio en enero y la precipitacion promedio en julio. Para reproducirlo, hay que tener los archivos de clima que son _Mean january temperature_ y  _Mean july precipitation_ en esta [página de descargas](http://chelsa-climate.org/downloads/), y las coordenadas se pueden leer directamente de [este](https://raw.githubusercontent.com/luisDVA/codeluis/master/localidades.csv) archivo csv. 
 
@@ -96,3 +96,7 @@ ggplot(bioclimat,aes(x=CHELSA_temp_1_1979.2013,y=CHELSA_prec_7_1979.2013))+
     <a href="/images/sobres.png"><img src="/images/sobres.png"></a>
         <figcaption> envoltura bioclimática </figcaption>
 </figure>
+
+!Listo! Sabiendo extraer datos, los más tardado será la descarga de los raster.
+
+No duden en contactarme si tienen cualquier duda o sugerencia.
