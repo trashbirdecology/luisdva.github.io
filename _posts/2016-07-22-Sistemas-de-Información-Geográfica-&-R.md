@@ -42,11 +42,12 @@ localidades <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/mast
 Podemos visualizar las diferentes capas (llamándolas con índices), en este caso usando una extensión geográfica definida con _extent_ y encima de esto se pueden graficar los puntos.
 {% highlight r %}
 # extension geografica para graficar
+	# definida por límites máximos y mínimos de long y lat 
 boxextent <- extent(-115,-90,10,25)
 
 # dibujar el raster y los puntos (en este caso el primer elemento de la pila)
 plot(climStack$CHELSA_temp_1_1979.2013,ext=boxextent)
-points(localidades)
+points(localidades) #añade los puntos sobre la gráfica existente
 {% endhighlight %}
 
 <figure>
@@ -54,8 +55,10 @@ points(localidades)
         <figcaption>utilizando puros valores gráficos predeterminados</figcaption>
 </figure>
 
-Nota: los conjuntos de capas se pueden recortar con rasterVis::crop por cuestiones de memoria.
- La extracción es fácil, y se hace para todos los elementos de la pila.
+_Nota: los conjuntos de capas se pueden recortar con rasterVis::crop por cuestiones de memoria._
+
+La extracción es fácil, y se hace para todos los elementos de la pila al mismo tiempo.
+
 {% highlight r %}
 # extrer valores de todas las capas en la pila
 extractedClim <- extract(climStack,localidades)
