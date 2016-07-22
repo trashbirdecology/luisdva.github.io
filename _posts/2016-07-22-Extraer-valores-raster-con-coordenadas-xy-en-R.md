@@ -54,6 +54,16 @@ bioclimat<-cbind(localidades,extractedClim)
 write.csv(bioclimat,"biolcimatic.csv")
 {% endhighlight %}
 
+Al final nos queda algo que se ve más o menos así:
+
+| longitude | lat         | CHELSA_temp_1_1979-2013 | CHELSA_prec_7_1979-2013 |
+|-----------|-------------|-------------------------|-------------------------|
+| -96.385   | 19.60055556 | -99.7333                | 17.33361                |
+| -96.385   | 19.60055556 | 25.20189667             | 1548.687744             |
+| -99.5689  | 21.19917    | 19.83035                | 940.9037                |
+| -96.385   | 19.60055556 | 25.20189667             | 1548.687744             |
+| -98.7333  | 21.1        | 17.33361                | 545.4098                |
+
 Como tenemos dos variables climáticas, las podemos graficar en 2d como un perfil bioclimático. Este ejemplo es con ggplot pero hay otras opciones para generar gráficas. 
 
 {% highlight r %}
