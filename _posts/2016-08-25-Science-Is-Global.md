@@ -65,7 +65,7 @@ norts %>%  count(posted  = date(mdy_hms(norts[,1]))) %>%
 
 <figure>
     <a href="/images/twtdates.png"><img src="/images/twtdates.png"></a>
-        <figcaption>starting out</figcaption>
+        <figcaption>tweets/day</figcaption>
 </figure>
 
 Now for the interesting part, I had to translate the flag emojis into something sensible. I don’t know if this applies to everyone, but on my Windows PC I always struggle with special characters in R. I was interested in the flag emojis people were using, and in my case I was unsure of how to deal with file encoding and fonts so all the emojis and special characters were getting “garbaged” into things like this  ðŸ‡¬ðŸ‡§
