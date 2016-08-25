@@ -1,5 +1,16 @@
 ---
-published: false
+layout: post
+excerpt: 'Emoji flags, international research, and tweet analyses in R.'
+tags:
+  - rstats
+  - Twitter
+  - stringi
+  - encoding
+image:
+  feature: featureflags.png
+  credit: null
+  creditlink: null
+published: true
 ---
 ## Tweet data and emoji flags in R
 
