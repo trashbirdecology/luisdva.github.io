@@ -7,10 +7,10 @@ tags:
   - stringi
   - encoding
 image:
-  feature: featureSig.png
+  feature: featureflags.png
   credit: null
   creditlink: null
-published: false
+published: true
 ---
 ## Tweet data and emoji flags in R
 
