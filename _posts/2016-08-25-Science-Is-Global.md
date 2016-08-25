@@ -32,7 +32,7 @@ This is my first attempt at working with Twitter data and strings, and I want to
 library(stringi)
 library(dplyr)
 
-# read file for Archiver from your own working directory
+# read file for Archiver from URL
 alltweets <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/scienceisglobal.csv",stringsAsFactors = F,header = T)
 
 # strip retweets
@@ -80,10 +80,44 @@ sciFlags <- filter(norts, grepl("ð",Tweet.Text))
 
 Emoji flags are combinations of two regional indicator letters, based on ISO 3166-1: a list of internationally recognized two-letter country codes. There are now hundreds of working flag emojis, and their indicator letters have unique encodings. Fortunately, [this page](http://emojipedia.org/flags/)  has the full list, and after scraping it and doing some minor edits, I had a csv file that was getting garbaged the same way when I read it into R, making it a good translation table. 
 
+{% highlight r %}
+#read conversion table
+emoTable2 <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/countryFlags.txt",stringsAsFactors = F) %>% select("encoding"=1,"region"=2)
+#add some whitespace for legibility
+emoTable2$region <- paste(" ",emoTable2$region," ")
+{% end highlight %}
+
 If we know what the gibberish stands for, we can use the powerful stringi package to do vectorized pattern replacements. It also helps that a similar translation table for emojis has already been put together by another team doing Twitter analytics. 
 
 I used a hacky, multi-stage process to replace flags and other emojis until all the weird characters were accounted for. The biggest issue was that there can be overlap in the character strings representing combinations of regional indicators, and because the replacements are vectorized without lookahead overlap detection, it becomes messy because countries can be both incorrectly replaced or excluded.
 For example, if someone mentioned Ascencion Island and Canada together (ACCA) and the vector of two-letter combinations is not ordered just right, the CC for Cocos Islands can get ‘incorrectly’ replaced instead of the two countries that were actually mentioned. 
+
+{% highlight r %}
+# multiple patterns and replacements
+sciFlags$tweetTRANS <-  stri_replace_all_fixed(sciFlags$Tweet.Text,emoTable2$encoding,emoTable2$region,vectorize_all = F)
+# filter rows that are (probably) all set
+set1 <- filter(sciFlags, !grepl("ð",tweetTRANS))
+# new column with tweet text that is ready to go *i.e. the column used for filtering
+set1$textDone <- set1$tweetTRANS 
+
+# pending replacement
+chec <- filter(sciFlags, grepl("ð",tweetTRANS))
+#sad and smiley faces
+emojis <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/emojis.csv",stringsAsFactors = F)
+emojisFilt <- filter(emojis,!grepl("flag",emojis$meaning))
+# replace misc emojis
+chec$transF <- stri_replace_all_fixed(chec$tweetTRANS,emojisFilt$emoji,emojisFilt$meaning,vectorize_all = F)
+# extract rows that are ready to go
+set2 <- filter(chec, !grepl("ð",transF))
+set2$textDone <- set2$transF
+# pendind more replacement
+chec <- filter(chec, grepl("ð",transF))
+# angry emoji replaced separately (too much overlap)
+angem <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/angryemoji.csv",stringsAsFactors = F)
+chec$transF <-  stri_replace_all_fixed(chec$transF,angem$emoji,angem$meaning,vectorize_all = F)
+
+
+{% end highlight %}
 
 My solution for the overlapping patterns was to strip away all alphanumeric characters and punctuation, and to then split the remaining strings into 8-character chunks (because I realized that each regional indicator gets garbaged into four character sequences) and then translate again. 
 
