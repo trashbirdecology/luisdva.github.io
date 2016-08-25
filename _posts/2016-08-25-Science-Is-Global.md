@@ -33,7 +33,7 @@ library(stringi)
 library(dplyr)
 
 # read file for Archiver from your own working directory
-alltweets <- read.csv("scienceisglobal - #scienceisglobal.csv",stringsAsFactors = F,header = T)
+alltweets <- read.csv("tweetArchiverData.csv",stringsAsFactors = F,header = T)
 
 # strip retweets
 norts <- filter(alltweets, !grepl("RT @",Tweet.Text))
