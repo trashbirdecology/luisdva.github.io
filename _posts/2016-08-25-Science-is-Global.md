@@ -52,7 +52,6 @@ norts <- filter(norts,!grepl("VOTE for me in",Tweet.Text))
 
 I started by cleaning up the data. To avoid duplication, I removed all the retweets, the twitteR package has a function for this, but with the flat data frame we can use dplyr::filter and some basic pattern matching to remove retweets, which made up a good portion of the dataset (about 75%). Looking at the original entries, I realized that it would be a good idea to strip all URLS, then remove other duplicates and spam (e.g. dozens of tweets with spam links or requesting votes in spammy websites).
 
-
 Now we can plot how many tweets were posted each day, and we see that #scienceisglobal peaked the day after the joint statement was published and then tapered off. 
 
 {% highlight r %}
@@ -116,11 +115,9 @@ chec <- filter(chec, grepl("ð",transF))
 angem <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/angryemoji.csv",stringsAsFactors = F)
 chec$transF <-  stri_replace_all_fixed(chec$transF,angem$emoji,angem$meaning,vectorize_all = F)
 
-
 {% end highlight %}
 
 My solution for the overlapping patterns was to strip away all alphanumeric characters and punctuation, and to then split the remaining strings into 8-character chunks (because I realized that each regional indicator gets garbaged into four character sequences) and then translate again. 
-
 
 After that, I used stringi to extract the occurrences of different country names in each tweet and some more list manipulation to end up with a matrix of the presence of each country in each tweet.
 
