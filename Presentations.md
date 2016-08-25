@@ -12,11 +12,13 @@ image:
 
 Here are some full titles for work I’ve presented at international scientific meetings.
 
++ Verde Arregoitia, L.D. 2016. Rethinking omnivory in rodents. _Rodens et Spatium: the 15th International Conference on Rodent Biology_. Olomouc, Czech Republic
+
 + Verde Arregoitia, L.D. 2016. Comparing rodent species of different sizes for ecomorphological analyses. _International Congress of Vertebrate Morphology_. Washington DC, USA
 
 + Verde Arregoitia, L.D. 2016. Testing for body size divergence in Neotropical bats. _American Society of Mammalogists 96th Annual Meeting_. Minneapolis, USA
 
-+ Verde Arregoitia, L.D. & Manuel Schweizer. 2016. Rodent ecoorphology in a phylogenetic context. _Evolution_. Austin, Texas
++ Verde Arregoitia, L.D. & Manuel Schweizer. 2016. Rodent ecomorphology in a phylogenetic context. _Evolution_. Austin, Texas
 
 + Verde Arregoitia, L.D. 2016. Testing for body size divergence in Neotropical bats. _Macroecology meets Biogeography_. Trier, Germany
 
