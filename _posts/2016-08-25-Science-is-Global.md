@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt: 'Emoji flags, international research, and tweet analyses in R.'
+excerpt: Emoji flags, international research, and tweet analyses in R.
 tags:
   - rstats
   - Twitter
@@ -140,10 +140,12 @@ Finally, using code from a previous post I joined the country list to a worldmap
 
 
 {% highlight r %}
-
+ok ok
 {% end highlight %}
 
 <figure>
     <a href="/images/mapW.png"><img src="/images/mapW.png"></a>
         <figcaption>starting out</figcaption>
 </figure>
+
+no
