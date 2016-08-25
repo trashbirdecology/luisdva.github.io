@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt: 'Emoji flags, international research, and tweet analyses in R'
+excerpt: 'Emoji flags, international research, and tweet analyses in R.'
 tags:
   - rstats
   - Twitter
