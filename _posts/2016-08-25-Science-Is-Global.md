@@ -33,7 +33,7 @@ library(stringi)
 library(dplyr)
 
 # read file for Archiver from your own working directory
-alltweets <- read.csv("tweetArchiverData.csv",stringsAsFactors = F,header = T)
+alltweets <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/scienceisglobal.csv",stringsAsFactors = F,header = T)
 
 # strip retweets
 norts <- filter(alltweets, !grepl("RT @",Tweet.Text))
@@ -54,6 +54,7 @@ I started by cleaning up the data. To avoid duplication, I removed all the retwe
 
 
 Now we can plot how many tweets were posted each day, and we see that #scienceisglobal peaked the day after the joint statement was published and then tapered off. 
+
 {% highlight r %}
 norts %>%  count(posted  = date(mdy_hms(norts[,1]))) %>% 
   ggplot(aes(posted,n)) +
@@ -112,4 +113,3 @@ Finally, using code from a previous post I joined the country list to a worldmap
     <a href="/images/mapW.png"><img src="/images/mapW.png"></a>
         <figcaption>starting out</figcaption>
 </figure>
-
