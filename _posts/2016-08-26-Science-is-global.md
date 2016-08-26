@@ -26,3 +26,44 @@ A few days later, Bastian Greshake published [this](http://ruleofthirds.de/scien
 I’ve always wanted to play with Twitter data and do something similar, but in my case I wanted to do everything in R. Using the [Twitter Archiver spreadsheet](https://docs.google.com/spreadsheets/d/1NRxvV0JP_eF98WUfbkpj1iMBlFEe25JGKGhblM6U3KQ/) he organized, I downloaded a copy of the Google sheet on 8/8/2016, which included 11655 tweets that included the hashtag (I’ve been very slow with writing this post).
 
 This is my first attempt at working with Twitter data and strings, and I want to share the process and some of the things I learned about working with strings, dates, encodings, and emojis. To replicate my version of the analysis, I suggest downloading the Google sheet and filtering everything up to “8/8/2016 9:01:04” using _lubridate_.
+
+{% highlight r %}
+#load libraries (install if needed)
+library(stringi)
+library(dplyr)
+
+# read file for Archiver from URL
+alltweets <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/scienceisglobal.csv",stringsAsFactors = F,header = T)
+
+# strip retweets
+norts <- filter(alltweets, !grepl("RT @",Tweet.Text))
+norts <- filter(norts, !grepl("Retweeted",Tweet.Text))
+
+# percentage of RTs in dataset
+1-nrow(norts)/nrow(alltweets)
+
+# strip urls
+norts$Tweet.Text <- stri_replace_all_regex(norts$Tweet.Text," ?(f|ht)(tp)(s?)(://)(.*)[.|/](.*)","")
+# remove duplicates
+norts <- norts%>%  filter(!stri_duplicated(norts$Tweet.Text))
+# remove spambot tweets
+norts <- filter(norts,!grepl("VOTE for me in",Tweet.Text))
+{% end highlight %}
+
+I started by cleaning up the data. To avoid duplication, I removed all the retweets, the twitteR package has a function for this, but with the flat data frame we can use dplyr::filter and some basic pattern matching to remove retweets, which made up a good portion of the dataset (about 75%). Looking at the original entries, I realized that it would be a good idea to strip all URLS, then remove other duplicates and spam (e.g. dozens of tweets with spam links or requesting votes in spammy websites).
+
+Now we can plot how many tweets were posted each day, and we see that #scienceisglobal peaked the day after the joint statement was published and then tapered off. 
+
+{% highlight r %}
+norts %>%  count(posted  = date(mdy_hms(norts[,1]))) %>% 
+  ggplot(aes(posted,n)) +
+  geom_line() + 
+  scale_x_date(labels = date_format("%m/%d"),breaks = date_breaks("days"))+
+    labs(x = "date posted",
+       y = "no. of tweets")
+{% end highlight %}
+
+<figure>
+    <a href="/images/twtdates.png"><img src="/images/twtdates.png"></a>
+        <figcaption>tweets/day</figcaption>
+</figure>
