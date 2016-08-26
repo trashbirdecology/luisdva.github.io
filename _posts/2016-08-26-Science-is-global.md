@@ -48,7 +48,7 @@ norts$Tweet.Text <- stri_replace_all_regex(norts$Tweet.Text," ?(f|ht)(tp)(s?)(:/
 norts <- norts%>%  filter(!stri_duplicated(norts$Tweet.Text))
 # remove spambot tweets
 norts <- filter(norts,!grepl("VOTE for me in",Tweet.Text))
-{% end highlight %}
+{% endhighlight %}
 
 I started by cleaning up the data. To avoid duplication, I removed all the retweets, the twitteR package has a function for this, but with the flat data frame we can use dplyr::filter and some basic pattern matching to remove retweets, which made up a good portion of the dataset (about 75%). Looking at the original entries, I realized that it would be a good idea to strip all URLS, then remove other duplicates and spam (e.g. dozens of tweets with spam links or requesting votes in spammy websites).
 
@@ -61,7 +61,7 @@ norts %>%  count(posted  = date(mdy_hms(norts[,1]))) %>%
   scale_x_date(labels = date_format("%m/%d"),breaks = date_breaks("days"))+
     labs(x = "date posted",
        y = "no. of tweets")
-{% end highlight %}
+{% endhighlight %}
 
 <figure>
     <a href="/images/twtdates.png"><img src="/images/twtdates.png"></a>
