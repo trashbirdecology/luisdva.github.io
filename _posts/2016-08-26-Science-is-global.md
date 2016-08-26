@@ -86,7 +86,7 @@ emoTable2 <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master
 emoTable2$region <- paste(" ",emoTable2$region," ")
 {% endhighlight %}
 
-If we know what the gibberish stands for, we can use the powerful _stringi_ package to do vectorized pattern replacements. It also helps that a similar translation table for emojis has already been put together by another team doing Twitter analytics. 
+If we know what the gibberish stands for, we can use the powerful _stringi_ package to do vectorized pattern replacements. It also helps that a similar translation table for emojis has already been put together by [another team](https://github.com/iorch/jakaton_feminicidios) doing Twitter analytics. 
 
 I used a hacky, multi-stage process to replace flags and other emojis until all the weird characters were accounted for. The biggest issue was that there can be overlap in the character strings representing combinations of regional indicators, and because the replacements are vectorized without lookahead overlap detection, it becomes messy because countries can be both incorrectly replaced or excluded.
 For example, if someone mentioned Ascencion Island and Canada together (ACCA) and the vector of two-letter combinations is not ordered just right, the CC for Cocos Islands can get ‘incorrectly’ replaced instead of the two countries that were actually mentioned. 
