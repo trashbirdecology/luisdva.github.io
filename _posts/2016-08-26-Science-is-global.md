@@ -67,3 +67,79 @@ norts %>%  count(posted  = date(mdy_hms(norts[,1]))) %>%
     <a href="/images/twtdates.png"><img src="/images/twtdates.png"></a>
         <figcaption>tweets/day</figcaption>
 </figure>
+
+Now for the interesting part, I had to translate the flag emojis into something sensible. I don’t know if this applies to everyone, but on my Windows PC I always struggle with special characters in R. I was interested in the flag emojis people were using, and in my case I was unsure of how to deal with file encoding and fonts so all the emojis and special characters were getting “garbaged” into things like this  ðŸ‡¬ðŸ‡§
+
+I realized that there is no loss of information with this character garbling, and that other people also work with it (see here), so they were something I could work with.  Now I could use these characters and filter our rows that won’t contain emojis.
+
+{% highlight r %}
+# keep tweets with probably flags 
+sciFlags <- filter(norts, grepl("ð",Tweet.Text))
+{% endhighlight %}
+
+Emoji flags are combinations of two regional indicator letters, based on ISO 3166-1: a list of internationally recognized two-letter country codes. There are now hundreds of working flag emojis, and their indicator letters have unique encodings. Fortunately, [this page](http://emojipedia.org/flags/)  has the full list, and after scraping it and doing some minor edits, I had a csv file that was getting garbaged the same way when I read it into R, making it a good translation table. 
+
+{% highlight r %}
+#read conversion table
+emoTable2 <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/countryFlags.txt",stringsAsFactors = F) %>% select("encoding"=1,"region"=2)
+#add some whitespace for legibility
+emoTable2$region <- paste(" ",emoTable2$region," ")
+{% endhighlight %}
+
+If we know what the gibberish stands for, we can use the powerful stringi package to do vectorized pattern replacements. It also helps that a similar translation table for emojis has already been put together by another team doing Twitter analytics. 
+
+I used a hacky, multi-stage process to replace flags and other emojis until all the weird characters were accounted for. The biggest issue was that there can be overlap in the character strings representing combinations of regional indicators, and because the replacements are vectorized without lookahead overlap detection, it becomes messy because countries can be both incorrectly replaced or excluded.
+For example, if someone mentioned Ascencion Island and Canada together (ACCA) and the vector of two-letter combinations is not ordered just right, the CC for Cocos Islands can get ‘incorrectly’ replaced instead of the two countries that were actually mentioned. 
+
+{% highlight r %}
+# multiple patterns and replacements
+sciFlags$tweetTRANS <-  stri_replace_all_fixed(sciFlags$Tweet.Text,emoTable2$encoding,emoTable2$region,vectorize_all = F)
+# filter rows that are (probably) all set
+set1 <- filter(sciFlags, !grepl("ð",tweetTRANS))
+# new column with tweet text that is ready to go *i.e. the column used for filtering
+set1$textDone <- set1$tweetTRANS 
+
+# pending replacement
+chec <- filter(sciFlags, grepl("ð",tweetTRANS))
+#sad and smiley faces
+emojis <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/emojis.csv",stringsAsFactors = F)
+emojisFilt <- filter(emojis,!grepl("flag",emojis$meaning))
+# replace misc emojis
+chec$transF <- stri_replace_all_fixed(chec$tweetTRANS,emojisFilt$emoji,emojisFilt$meaning,vectorize_all = F)
+# extract rows that are ready to go
+set2 <- filter(chec, !grepl("ð",transF))
+set2$textDone <- set2$transF
+# pendind more replacement
+chec <- filter(chec, grepl("ð",transF))
+# angry emoji replaced separately (too much overlap)
+angem <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/angryemoji.csv",stringsAsFactors = F)
+chec$transF <-  stri_replace_all_fixed(chec$transF,angem$emoji,angem$meaning,vectorize_all = F)
+
+{% endhighlight %}
+
+My solution for the overlapping patterns was to strip away all alphanumeric characters and punctuation, and to then split the remaining strings into 8-character chunks (because I realized that each regional indicator gets garbaged into four character sequences) and then translate again. 
+
+After that, I used stringi to extract the occurrences of different country names in each tweet and some more list manipulation to end up with a matrix of the presence of each country in each tweet.
+
+Quick summary statistics: On average, about nine different countries were mentioned per tweet, with the minimum of 1 and a maximum of 50 for some people having way too much fun with emoji flags.
+
+Bastian G. noted that the usual Western, rich industrialized countries are the most frequently mentioned. We can make a lollipop plot of the top n countries with the highest number of mentions. In this case it’s 30.
+
+
+<figure>
+    <a href="/images/lolipop.png"><img src="/images/lolipop.png"></a>
+        <figcaption>useful ggalt geometry</figcaption>
+</figure>
+
+Finally, using code from a previous post I joined the country list to a worldmap to visualize the countries being mentioned.
+
+
+{% highlight r %}
+ok ok
+{% endhighlight %}
+
+<figure>
+    <a href="/images/mapW.png"><img src="/images/mapW.png"></a>
+        <figcaption>starting out</figcaption>
+</figure>
+
