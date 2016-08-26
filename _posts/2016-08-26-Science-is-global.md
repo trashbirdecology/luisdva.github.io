@@ -202,9 +202,10 @@ countryFreqsDF <- data.frame(country=names(countryFreqs),n=countryFreqs)
 
 {% endhighlight %}
 
-Quick summary statistics: On average, about nine different countries were mentioned per tweet, with a minimum of 1 and a maximum of 50 for some people having way too much fun with emoji flags.
+**Quick summary statistics:**
+On average, about **nine** different countries were mentioned per tweet, with a minimum of **1** and a maximum of **50** for some people having way too much fun with emoji flags.
 
-Bastian G. noted that the usual Western, rich industrialized countries are the most frequently mentioned. We can make a lollipop plot of the top n countries with the highest number of mentions. In this case it’s 30.
+Bastian G. noted that the usual Western, rich industrialized countries are the most frequently mentioned. We can make a lollipop plot of the top _n_ countries with the highest number of mentions. In this case it’s 30.
 {% highlight r %}
 # make sure to use the latest version from github
 library(ggalt)
@@ -244,7 +245,7 @@ do.call(addMapLegend,c(mapParameters,legendWidth = 0.5))
 
 <figure>
     <a href="/images/mapW.png"><img src="/images/mapW.png"></a>
-        <figcaption>yellow fill is for countrries with no matches in the tweet data</figcaption>
+        <figcaption>yellow fill is for countries with no matches in the tweet data</figcaption>
 </figure>
 
 I put the countries with no matches in yellow to see the gaps, which in this case may not be true gaps because I made no steps to match the country names from my emoji flag table with the built in country names from the world map. 
