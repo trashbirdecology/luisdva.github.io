@@ -25,7 +25,7 @@ A few days later, Bastian Greshake published [this](http://ruleofthirds.de/scien
 
 I’ve always wanted to play with Twitter data and do something similar, but in my case I wanted to do everything in R. Using the [Twitter Archiver spreadsheet](https://docs.google.com/spreadsheets/d/1NRxvV0JP_eF98WUfbkpj1iMBlFEe25JGKGhblM6U3KQ/) he organized, I downloaded a copy of the Google sheet on 8/8/2016, which included 11655 tweets that included the hashtag (I’ve been very slow with writing this post).
 
-This is my first attempt at working with Twitter data and strings, and I want to share the process and some of the things I learned about working with strings, dates, encodings, and emojis. To replicate my version of the analysis, I suggest downloading the Google sheet and filtering everything up to “8/8/2016 9:01:04” using _lubridate_.
+This is my first attempt at working with Twitter data and strings, and I want to share the process and some of the things I learned about working with strings, dates, encodings, and emojis. To replicate my version of the analysis, I suggest downloading the Google sheet and filtering everything up to “8/8/2016 9:01:04” using _lubridate_. The rest of the data is already on a repo and you should be able to replicate everything by copying and pasting the code.
 
 {% highlight r %}
 #load libraries (install if needed)
@@ -86,7 +86,7 @@ emoTable2 <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master
 emoTable2$region <- paste(" ",emoTable2$region," ")
 {% endhighlight %}
 
-If we know what the gibberish stands for, we can use the powerful stringi package to do vectorized pattern replacements. It also helps that a similar translation table for emojis has already been put together by another team doing Twitter analytics. 
+If we know what the gibberish stands for, we can use the powerful _stringi_ package to do vectorized pattern replacements. It also helps that a similar translation table for emojis has already been put together by another team doing Twitter analytics. 
 
 I used a hacky, multi-stage process to replace flags and other emojis until all the weird characters were accounted for. The biggest issue was that there can be overlap in the character strings representing combinations of regional indicators, and because the replacements are vectorized without lookahead overlap detection, it becomes messy because countries can be both incorrectly replaced or excluded.
 For example, if someone mentioned Ascencion Island and Canada together (ACCA) and the vector of two-letter combinations is not ordered just right, the CC for Cocos Islands can get ‘incorrectly’ replaced instead of the two countries that were actually mentioned. 
@@ -161,7 +161,7 @@ Flagstranslated <- bind_rows(set1,set2,set3,set4,set5)
 {% endhighlight %}
 
 
-After that, I used stringi to extract the occurrences of different country names in each tweet and some more list manipulation to end up with a matrix of the presence of each country in each tweet.
+After that, I used _stringi_ to extract the occurrences of different country names in each tweet and some more list manipulation to end up with a matrix of the presence of each country in each tweet.
 
 {% highlight r %}
 
@@ -244,7 +244,12 @@ do.call(addMapLegend,c(mapParameters,legendWidth = 0.5))
 
 <figure>
     <a href="/images/mapW.png"><img src="/images/mapW.png"></a>
-        <figcaption>starting out</figcaption>
+        <figcaption>yellow fill is for countrries with no matches in the tweet data</figcaption>
 </figure>
 
 I put the countries with no matches in yellow to see the gaps, which in this case may not be true gaps because I made no steps to match the country names from my emoji flag table with the built in country names from the world map. 
+
+This is not a comprehensive analysis of the countries mentioned by people using the #ScienceisGlobal, since there are other ways to trigger emoji flags such as three-character "hashflags" (read about them [here](https://medium.com/dmrc-at-large/waiving-hash-flags-some-thoughts-on-twitter-hashtag-emoji-bfdcdc4ab9ad#.twxhdft6t)). I did not collect or count these, but the regex for catching these flags is not a problem: /\B#\w*[a-zA-Z]+\w*/ . Still, this code shoud work for anyone trying to parse emojis and especially national flags from Twitter data.
+
+Contact me if the code isn't working or if you have better alternatives for my hacky approach.
+
