@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt: Emoji flags, international research, and tweet analysis in R.
+excerpt: 'Emoji flags, international research, and tweet analysis in R.'
 tags:
   - rstats
   - Twitter
@@ -70,7 +70,7 @@ norts %>%  count(posted  = date(mdy_hms(norts[,1]))) %>%
 
 Now for the interesting part, I had to translate the flag emojis into something sensible. I don’t know if this applies to everyone, but on my Windows PC I always struggle with special characters in R. I was interested in the flag emojis people were using, and in my case I was unsure of how to deal with file encoding and fonts so all the emojis and special characters were getting “garbaged” into things like this  ðŸ‡¬ðŸ‡§
 
-I realized that there is no loss of information with this character garbling, and that other people also work with it (see here), so they were something I could work with.  Now I could use these characters and filter our rows that won’t contain emojis.
+I realized that there is no loss of information with this character garbling, and that other people also work with it ([see here](https://github.com/iorch/jakaton_feminicidios)), so they were something I could work with.  Now I could use these characters and filter our rows that won’t contain emojis.
 
 {% highlight r %}
 # keep tweets with probably flags 
@@ -115,16 +115,105 @@ chec <- filter(chec, grepl("ð",transF))
 angem <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/angryemoji.csv",stringsAsFactors = F)
 chec$transF <-  stri_replace_all_fixed(chec$transF,angem$emoji,angem$meaning,vectorize_all = F)
 
+# extract rows that are ready to go
+set3 <- filter(chec, !grepl("ð",transF))
+set3$textDone <- set3$transF
+# still pending
+chec <- filter(chec, grepl("ð",transF))
 {% endhighlight %}
 
 My solution for the overlapping patterns was to strip away all alphanumeric characters and punctuation, and to then split the remaining strings into 8-character chunks (because I realized that each regional indicator gets garbaged into four character sequences) and then translate again. 
 
+{% highlight r %}
+# for stubborn ones with overlaps
+#strip alhpanumeric chars
+chec$transStripped <- stri_replace_all_regex(chec$Tweet.Text,"[A-Za-z0-9\\s]","")
+# strip left over not-so-special characters
+chec$transStripped <- stri_replace_all_fixed(chec$transStripped,c("@","!","#","_",".","&","-","?",";",
+                                                                  "'","/",":",",","(",")"),"",vectorize_all = F)
+# split into 8 char blocks
+chec$transStripped <- gsub("(.{8})", "\\1 ", chec$transStripped)
+# translate with flag table
+chec$countries <-  stri_replace_all_fixed(chec$transStripped,emoTable2$encoding,emoTable2$region,vectorize_all = F)
+
+# extract rows that are ready to go
+set4 <- filter(chec, !grepl("ð",countries))
+set4$textDone <- set4$countries 
+
+#filter again
+chec <- filter(chec, grepl("ð",countries))
+
+#loose ends (random regional symbol emojis tweeted by people for some reason)
+regsimbols <- read.csv("looseEnds.csv",stringsAsFactors = F)
+# on the first translation column to avoid overlaps or unnecessary countries
+chec$transF <- stri_replace_all_fixed(chec$transF,regsimbols$ï..emoji,regsimbols$meaning,vectorize_all = F)
+
+# extract rows that are ready to go
+set5 <- filter(chec, !grepl("ð",transF))
+set5$textDone <- set5$transF
+# filter once more
+chec <- filter(chec, grepl("ð",transF))
+
+# have them all?
+nrow(set1)+nrow(set2)+nrow(set3)+nrow(set4)+nrow(set5) == nrow(sciFlags)
+# bind them
+Flagstranslated <- bind_rows(set1,set2,set3,set4,set5)
+{% endhighlight %}
+
+
 After that, I used stringi to extract the occurrences of different country names in each tweet and some more list manipulation to end up with a matrix of the presence of each country in each tweet.
 
-Quick summary statistics: On average, about nine different countries were mentioned per tweet, with the minimum of 1 and a maximum of 50 for some people having way too much fun with emoji flags.
+{% highlight r %}
+
+# get the country names from the tweets
+countryExtract <- list()
+for (i in 1:nrow(emoTable2)) {
+  countryExtract[[i]] <- stri_extract_all_fixed(Flagstranslated$textDone,emoTable2$region[i],
+                                                case_insensitive=TRUE,overlap=TRUE)
+}
+
+# put into DF
+countryMatches <- simplify2array(countryExtract) %>% as.data.frame()
+
+# cant remember how to apply properly
+countryNs <- countryMatches
+for (i in 1:ncol(countryMatches)) {
+  countryNs[,i] <- sapply(countryMatches[,i],function(x)length(x[!is.na(x)]))
+}
+
+# country names without the whitespace
+emoTable2$regionTrimmed <- stri_trim(emoTable2$region)
+names(countryNs) <- emoTable2$regionTrimmed
+
+# change all non cero values to 1
+countryNstandard <- countryNs
+countryNstandard[countryNstandard>0] <- 1
+
+# some tweets did not have countries but had other emojis, remove them
+countryNstandard <- countryNstandard[rowSums(countryNstandard)!=0,]
+
+# summary statistics
+colSums(countryNstandard)
+summary(rowSums(countryNstandard))
+
+# make a DF of colsums
+countryFreqs <- colSums(countryNstandard)
+countryFreqsDF <- data.frame(country=names(countryFreqs),n=countryFreqs)
+
+{% endhighlight %}
+
+Quick summary statistics: On average, about nine different countries were mentioned per tweet, with a minimum of 1 and a maximum of 50 for some people having way too much fun with emoji flags.
 
 Bastian G. noted that the usual Western, rich industrialized countries are the most frequently mentioned. We can make a lollipop plot of the top n countries with the highest number of mentions. In this case it’s 30.
+{% highlight r %}
+# make sure to use the latest version from github
+library(ggalt)
 
+countryFreqsDF %>% top_n(30) %>% 
+  ggplot(aes(x=reorder(country,n),y=n)) + geom_lollipop(point.colour = "blue")+
+  coord_flip()+theme_minimal()+xlab("Country")+ylab("Mentions")
+
+{% endhighlight %}
 
 <figure>
     <a href="/images/lolipop.png"><img src="/images/lolipop.png"></a>
@@ -135,7 +224,22 @@ Finally, using code from a previous post I joined the country list to a worldmap
 
 
 {% highlight r %}
-ok ok
+#join mentions data with a world map
+library(rworldmap)
+tweetsGeo <- joinCountryData2Map(countryFreqsDF, joinCode="NAME", nameJoinColumn="country")
+
+#create a map-shaped window
+mapDevice('x11')
+
+#plot
+par(bg="grey15")
+mapParameters <- mapCountryData(tweetsGeo, nameColumnToPlot="n", catMethod="fixedWidth",
+                                borderCol="grey11", oceanCol="grey15",missingCountryCol = "yellow",addLegend = F,
+                                mapTitle = "Science is Global",
+                                colourPalette = c("#3182BD", "#00004d"))
+do.call(addMapLegend,c(mapParameters,legendWidth = 0.5))
+
+
 {% endhighlight %}
 
 <figure>
@@ -143,3 +247,4 @@ ok ok
         <figcaption>starting out</figcaption>
 </figure>
 
+I put the countries with no matches in yellow to see the gaps, which in this case may not be true gaps because I made no steps to match the country names from my emoji flag table with the built in country names from the world map. 
