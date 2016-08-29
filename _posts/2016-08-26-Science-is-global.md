@@ -161,7 +161,7 @@ Flagstranslated <- bind_rows(set1,set2,set3,set4,set5)
 {% endhighlight %}
 
 
-After that, I used _stringi_ to extract the occurrences of different country names in each tweet and some more list manipulation to end up with a matrix of the presence of each country in each tweet.
+After that, I used _stringi_ to extract the occurrences of different country names in each tweet and some more list manipulation to end up with a matrix of the presence of each country in each tweet. Don't mind the for loop.
 
 {% highlight r %}
 
@@ -207,7 +207,7 @@ On average, about **nine** different countries were mentioned per tweet, with a 
 
 Bastian G. noted that the usual Western, rich industrialized countries are the most frequently mentioned. We can make a lollipop plot of the top _n_ countries with the highest number of mentions. In this case it’s 30.
 {% highlight r %}
-# make sure to use the latest version from github
+# make sure to use the latest version from github, install using devtools
 library(ggalt)
 
 countryFreqsDF %>% top_n(30) %>% 
@@ -253,4 +253,3 @@ I put the countries with no matches in yellow to see the gaps, which in this cas
 This is not a comprehensive analysis of the countries mentioned by people using the #ScienceisGlobal, since there are other ways to trigger emoji flags such as three-character "hashflags" (read about them [here](https://medium.com/dmrc-at-large/waiving-hash-flags-some-thoughts-on-twitter-hashtag-emoji-bfdcdc4ab9ad#.twxhdft6t)). I did not collect or count these, but the regex for catching these flags is not a problem: /\B#\w*[a-zA-Z]+\w*/ . Still, this code shoud work for anyone trying to parse emojis and especially national flags from Twitter data.
 
 Contact me if the code isn't working or if you have better alternatives for my hacky approach.
-
