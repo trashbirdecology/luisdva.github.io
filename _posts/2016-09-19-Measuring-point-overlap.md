@@ -35,5 +35,6 @@ Another relevant method for examining the co-distribution of point occurrences i
 
 All the code is below, contact me with any questions, comments, or if the code isn’t working.
 
-gist
- 
+#Code and data
+
+{% gist luisDVA/6f60c241f1f647933c492d6d3d1399b6 %}
