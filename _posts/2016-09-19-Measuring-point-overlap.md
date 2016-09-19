@@ -1,6 +1,18 @@
 ---
-published: false
+layout: post
+excerpt: 'Measuring spatial overlap with point data'
+tags:
+  - rstats
+  - O metric
+  - ggmap
+  - co-occurrence
+image:
+  feature: featureOstatistic.png
+  credit: null
+  creditlink: null
+published: true
 ---
+## Patterns of overlap among occurrence points
 
 For different lines of research that I’ve been involved with lately (morphological differences between co-occurring species of yellow-shouldered bat and the spatial patterning between virus records in wild mammals and human viral cases), I’ve been thinking about spatial overlap between point occurrence data and how to quantify it. 
 
