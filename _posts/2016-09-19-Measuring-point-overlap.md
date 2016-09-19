@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt: 'Measuring spatial overlap with point data'
+excerpt: 'Measuring spatial overlap with point data.'
 tags:
   - rstats
   - O metric
