@@ -24,7 +24,7 @@ Another very nice feature of the _O_ metric is that it works on 2d space in gene
 
 In the appendix of the Cardillo and Warren paper, they break down the behaviour of the _O_ statistic and its sensitivity to different levels of clumping and to the asymmetry in the distribution of points among the two species. I wanted to use the _O_ statistic with my data, but despite the clear explanation in the text and the simulations in the appendix, I was still slow to grasp how the range of values corresponds with different levels of overlap. As stated in the paper: 
 
-“The value of _O_ is bounded between zero and one, with values close to zero indicating little spatial overlap while a value of ~0.5 is expected if the occurrence points of the two species are randomly and independently distributed across the same area.”
+> “The value of _O_ is bounded between zero and one, with values close to zero indicating little spatial overlap while a value of ~0.5 is expected if the occurrence points of the two species are randomly and independently distributed across the same area.”
 
 I believe that _O_ will get a lot of use in the future and I hope this post helps others looking to use it (I also hope I didn’t mess anything up). All the code needed to recreate the two figures in this post is in the embedded gist at the end, as long as you have the required packages it should be fully reproducible.
 
