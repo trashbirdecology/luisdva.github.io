@@ -18,7 +18,7 @@ For different lines of research that I’ve been involved with lately (morpholog
 
 Fortunately, in [this](http://onlinelibrary.wiley.com/doi/10.1111/geb.12455/abstract "Cardillo and Warren 2016 GEB") recent and very cool paper Marcel Cardillo and Dan Warren introduced a nifty method to quantify overlap among species using the proximity of occurrence points using patterns of co-aggregation for multiple species: The point-proximity metric _O_.
 
-In my opinion, using point occurrences to represent species’ distributions is usually the way to go because: (1) sometimes point occurrences is all we have, and (2) polygon range maps might overestimate distributions and lead to various errors in downstream analyses. If anyone is interested, I summarized the pros and cons of point data in [this](http://onlinelibrary.wiley.com/doi/10.1111/ecog.01063/abstract) 2015 paper on lagomorphs. 
+In my opinion, using point occurrences to represent species’ distributions is usually the way to go because: (1) sometimes point occurrences is all we have, and (2) polygon range maps might overestimate distributions and lead to various errors in downstream analyses. If anyone is interested, I summarized the pros and cons of point data in [this](http://onlinelibrary.wiley.com/doi/10.1111/ecog.01063/abstract "Verde Arregoitia et al 2015 Ecography") 2015 paper on lagomorphs. 
 
 Another very nice feature of the _O_ metric is that it works on 2d space in general, so we can use it to measure overlap in environmental or even morphological space (usually defined by principal components i.e. points on two axes).
 
@@ -51,9 +51,9 @@ I was unfamiliar with the _inset_ function for plotting custom objects inside a 
 
 Another relevant method for examining the co-distribution of point occurrences involves Ripley's K and L functions, descriptive statistics for detecting deviations from spatial homogeneity. These are also based on Euclidean distances, and they can be used in cases in which sampling is biased. I’ll write a post about these methods in the future, but anyone interested should check out these two links.
 
-[Wheeler](https://andrewpwheeler.wordpress.com/2015/10/27/the-spatial-clustering-of-hits-vs-misses-in-shootings-using-ripleys-k/ "Spatial clustering tests")
+[Andrew Wheeler blog post](https://andrewpwheeler.wordpress.com/2015/10/27/the-spatial-clustering-of-hits-vs-misses-in-shootings-using-ripleys-k/ "Spatial clustering tests")
 
-[Retail Stores](http://www.planetizen.com/node/65765 "Clustering of Retail Stores")
+[Retail Store distributions](http://www.planetizen.com/node/65765 "Clustering of Retail Stores")
 
 All the code is below, contact me with any questions, comments, or if the code isn’t working.
 
