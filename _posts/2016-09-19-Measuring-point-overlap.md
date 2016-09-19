@@ -20,12 +20,20 @@ To visualize and test _O_ for different degrees of polygon overlap and a varying
 
 With this hastily-put together function and plotting code, I was able to visualize the occurrence points alongside a plot of how _O_ behaves with different numbers of points. In this case there is no asymmetry in the sample sizes for each ‘species’. 
 
-Img
+<figure>
+    <a href="/images/Ovalues.png"><img src="/images/Ovalues.png"></a>
+        <figcaption>click to enlarge</figcaption>
+</figure>
 
 The resulting plot is pretty much what I expected to see, but I still found it helpful to see how _O_ increases with increasing spatial overlap and how we get similar values even for small(ish) sample sizes. 
 Now for a somewhat silly example with real distributions, I used _rgbif_ to download point occurrence data for a few species with varying degrees of overlap. I chose two species of bird and three species of mammal that would show the range of values of _O_ with real data. 
 
 The two bird species have a narrow contact zone, and each of these has a slight amount of point overlap with the mouse opossum. These three in turn have no overlap at all with the remaining two arid zone rodents, which show a fair amount of overlap.
+
+<figure>
+    <a href="/images/pointmap.png"><img src="/images/pointmap.png"></a>
+        <figcaption>click to enlarge</figcaption>
+</figure>
 
 I was unfamiliar with the _inset_ function for plotting custom objects inside a _ggmap_, but it turned out to be pretty useful and I’ll be using it in the future. 
 
