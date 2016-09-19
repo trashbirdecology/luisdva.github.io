@@ -50,7 +50,9 @@ The two bird species have a narrow contact zone, and each of these has a slight 
 I was unfamiliar with the _inset_ function for plotting custom objects inside a _ggmap_, but it turned out to be pretty useful and I’ll be using it in the future. 
 
 Another relevant method for examining the co-distribution of point occurrences involves Ripley's K and L functions, descriptive statistics for detecting deviations from spatial homogeneity. These are also based on Euclidean distances, and they can be used in cases in which sampling is biased. I’ll write a post about these methods in the future, but anyone interested should check out these two links.
+
 [Wheeler](https://andrewpwheeler.wordpress.com/2015/10/27/the-spatial-clustering-of-hits-vs-misses-in-shootings-using-ripleys-k/ "Spatial clustering tests")
+
 [Retail Stores](http://www.planetizen.com/node/65765 "Clustering of Retail Stores")
 
 All the code is below, contact me with any questions, comments, or if the code isn’t working.
