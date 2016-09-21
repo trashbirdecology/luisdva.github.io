@@ -1,5 +1,16 @@
 ---
-published: false
+layout: post
+excerpt: 'Tres maneras de agrupar puntos en dos dimensiones con ggplot.'
+tags:
+  - rstats
+  - ggplot
+  - en tu idioma
+  - graficas
+image:
+  feature: featureGroups.png
+  credit: null
+  creditlink: null
+published: true
 ---
 ## Agrupando puntos en dos dimensiones con ggplot
 
