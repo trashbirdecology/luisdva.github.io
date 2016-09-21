@@ -45,7 +45,7 @@ birdsAll <- bind_rows(birds30,birds40) %>% na.omit()
         <figcaption>puntos en 2d</figcaption>
 </figure>
 
-Uno de los métodos más comunes para agrupar puntos es la **envoltura convexa** (_convex hull_), que tiene una definición geométrica formal pero que prácticamente es como si rodeáramos al grupo de puntos con una liga elástica.  Podemos calcular las envolturas para varios grupos usando grDevices::chull y una función de la familia apply (este método lo aprendí en esta discusión).
+Uno de los métodos más comunes para agrupar puntos es la **envoltura convexa** (_convex hull_), que tiene una definición geométrica formal pero que prácticamente es como si rodeáramos al grupo de puntos con una liga elástica.  Podemos calcular las envolturas para varios grupos usando grDevices::chull y una función de la familia apply (este método lo aprendí en [esta](http://stats.stackexchange.com/questions/22805/how-to-draw-neat-polygons-around-scatterplot-regions-in-ggplot2 "foro") discusión).
 
 {% highlight r %}
 
