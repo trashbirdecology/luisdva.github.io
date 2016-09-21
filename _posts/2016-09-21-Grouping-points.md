@@ -1,5 +1,16 @@
 ---
-published: false
+layout: post
+excerpt: 'Three ways to draw polygons around groups of points using ggplot.'
+tags:
+  - rstats
+  - ggplot
+  - ggalt
+  - dataviz
+image:
+  feature: featureGroups.png
+  credit: null
+  creditlink: null
+published: true
 ---
 ##Drawing polygons around groups of points in ggplot
 
