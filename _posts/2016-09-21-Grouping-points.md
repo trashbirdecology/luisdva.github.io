@@ -12,7 +12,7 @@ image:
   creditlink: null
 published: true
 ---
-##Drawing polygons around groups of points in ggplot
+## Drawing polygons around groups of points in ggplot
 
 > Esta publicación está disponible en español [aqui](http://luisdva.github.io/Agrupando-puntos/ "rock en tu idioma")
 
