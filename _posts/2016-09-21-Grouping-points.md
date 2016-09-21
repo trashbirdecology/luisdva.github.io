@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt: 'Three ways to draw polygons around groups of points using ggplot.'
+excerpt: Three ways to draw polygons around groups of points using ggplot.
 tags:
   - rstats
   - ggplot
@@ -14,7 +14,7 @@ published: true
 ---
 ##Drawing polygons around groups of points in ggplot
 
-> Esta publicación está disponible en español aqui
+> Esta publicación está disponible en español [aqui](http://luisdva.github.io/Agrupando-puntos/ "rock en tu idioma")
 
 For various kinds of analyses, we often end up plotting point data in two dimensions for two or groups. This includes Principal Component Analyses, bioclimatic profiles, or any other combination of values on two axes. In some of my recent projects I’ve encountered three alternatives for drawing polygons around groups of points and I want to share code and examples for all three in this post.  
 
