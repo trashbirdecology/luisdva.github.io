@@ -5,7 +5,7 @@ tags:
   - rstats
   - ggplot
   - ggalt
-  - dataviz
+  - datavis
 image:
   feature: featureGroups.png
   credit: null
