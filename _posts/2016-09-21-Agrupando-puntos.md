@@ -75,7 +75,7 @@ Otra opción muy común es la de agrupar puntos usando **elipses**. _ggplot_ cue
 
 <figure>
     <a href="/images/elips.png"><img src="/images/elips.png"></a>
-        <figcaption>ellipse with default settings</figcaption>
+        <figcaption>elipse sin cambios a los argumentos de color or relleno</figcaption>
 </figure>
 
 
