@@ -46,7 +46,7 @@ ggplot(birdsAll,aes(x=mass,y=length,color=age))+geom_point()+theme_bw()
 
 # Convex hulls
 
-Convex hulls are one of the most common methods for grouping points. Convex hulls have a formal geometric definition, but basically they are like stretching a rubber band around the outermost points in the group. We can calculate the convex hulls for many groups using _grDevices::chull_ and an apply function (see this exchange for a worked example). 
+Convex hulls are one of the most common methods for grouping points. Convex hulls have a formal geometric definition, but basically they are like stretching a rubber band around the outermost points in the group. We can calculate the convex hulls for many groups using _grDevices::chull_ and an apply function (see this [exchange](http://stats.stackexchange.com/questions/22805/how-to-draw-neat-polygons-around-scatterplot-regions-in-ggplot2 "stackexchange topic") for a worked example). 
 
 {% highlight r %}
 
