@@ -94,7 +94,7 @@ This third option is what I ended up using for my own figures. It uses _geomenci
 
 <figure>
     <a href="/images/encircle.png"><img src="/images/encircle.png"></a>
-        <figcaption>ellipse with default settings</figcaption>
+        <figcaption>with smoothing spline</figcaption>
 </figure>
 
 Although I left them hollow, we can change the transparency and fill values of the different polygons for all three methods. This can be useful to highlight overlap between groups.
