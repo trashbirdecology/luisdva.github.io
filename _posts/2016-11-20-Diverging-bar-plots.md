@@ -42,14 +42,48 @@ The following block of code goes through five major steps to produce the followi
 {% highlight r %}
 # long-form vegetation survey data
 # these data should more or less reflect the vegetation patterns at "Quebrada de Cordoba", Chile
-library(dplyr)
 
 vegSurvey <- 
 data.frame(sampling_point=rep(c(1:5),4),
            slope=c(rep("North",10),rep("South",10)),
            veg_Type=rep(c(rep("native",5),rep("introduced",5)),2),
            spp=as.integer(abs(rnorm(20,5,2))))
-
 vegSurvey$spp <-   ifelse(vegSurvey$veg_Type =="introduced",vegSurvey$spp+1,vegSurvey$spp)
+
+library(dplyr)
+library(ggplot2)
+library(extrafont)
+devtools::install_github('bart6114/artyfarty')
+library(artyfarty)
+
+vegSurvey <- vegSurvey %>%  mutate(sppInv= ifelse(veg_Type =="native",spp,spp*-1))
+
+# plot for only the North slope
+
+vegSurvey %>% filter(slope=="North") %>% 
+ggplot(aes(x=sampling_point, y=sppInv, fill=veg_Type))+
+  geom_bar(stat="identity",position="identity")+
+  xlab("sampling point")+ylab("number of species")+
+  scale_fill_manual(name="Plant type",values = c("#FFA373","#50486D"))+
+  coord_flip()+ggtitle("North slope")+
+  geom_hline(yintercept=0)+
+  xlab("Sampling Points")+
+  ylab("Species number")+
+  scale_y_continuous(breaks = pretty(vegSurvey$sppInv),labels = abs(pretty(vegSurvey$sppInv)))+
+  theme_scientific()
+
+# plot for both slopes using facetting
+
+ggplot(vegSurvey, aes(x=sampling_point, y=sppInv, fill=veg_Type))+
+  geom_bar(stat="identity",position="identity")+
+  facet_wrap(~slope)+xlab("sampling point")+ylab("number of species")+
+  scale_fill_manual(name="Plant type",values = c("#FFA373","#50486D"))+
+  coord_flip()+
+  geom_hline(yintercept=0)+
+  xlab("Sampling Points")+
+  ylab("Species number")+
+  scale_y_continuous(breaks = pretty(vegSurvey$sppInv),labels = abs(pretty(vegSurvey$sppInv)))+
+  theme_scientific()+
+  theme(strip.text.x = element_text(face = "bold"))
 
 {% endhighlight %}
