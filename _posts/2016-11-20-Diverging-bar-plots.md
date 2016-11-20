@@ -7,7 +7,7 @@ tags:
   - artyfarty
   - LINCglobal
 image:
-  feature: featureDiverg.png
+  feature: featureDiverg.jpg
   credit: null
   creditlink: null
 published: true
@@ -24,7 +24,7 @@ Here is an example for some vegetation data in which the richness of native vs. 
 
 If we have only two categories and we want to show the contrast in values between the two, then diverging ‘stacked’ bar plots (thanks to data scientist Matt Sandy [@appupio](https://twitter.com/appupio) for the terminology) look to be a pretty effective visualization strategy.  
 
-Last month, as part of a group exercise at a workshop, we were plotting some vegetation data with only two categories. My suggestion was to plot dodged bars, but marine biologist [Antonio Canepa Oneto](https://www.researchgate.net/profile/Antonio_Canepa) sketched a diverging bar plot on paper and suggested we give that a try. I had never tried to make a plot like this and I couldn’t find any documentation for making such plots in R, but after a few minutes of fiddling with the stat argument in ggplot2 we were able to make a nice figure that really highlighted the differences in values between two groups.
+Last month, as part of a group exercise at a workshop, we were plotting some vegetation data with only two categories. My suggestion was to plot dodged bars, but marine biologist [Antonio Canepa Oneto](https://www.researchgate.net/profile/Antonio_Canepa) sketched a diverging bar plot on paper and suggested we give that a try. I had never tried to make a plot like this and I couldn’t find any documentation for making such plots in R, but after a few minutes of fiddling with the _stat_ argument in ggplot2 we were able to make a nice figure that really highlighted the differences in values between two groups.
 
 Since then I’ve noticed these types of plots online, mainly in some journalistic figures for topics that involved very dichotomous variables (pro and versus GMO, US elections, etc.).
 
