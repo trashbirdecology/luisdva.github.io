@@ -37,7 +37,7 @@ The block of code below goes through five major steps to produce the following f
         <figcaption>diverging bar plot with a custom theme for one of the two slopes</figcaption>
 </figure>
 
-Both of these figures use custom themes. 
+Both of these figures use custom themes from Bart Smeets' [artyfarty](https://github.com/Bart6114/artyfarty) package.
 
 <figure>
     <a href="/images/bothslopes.png"><img src="/images/bothslopes.png"></a>
