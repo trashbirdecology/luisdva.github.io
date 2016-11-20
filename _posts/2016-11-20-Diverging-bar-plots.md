@@ -3,9 +3,11 @@ published: false
 ---
 Bar plots are a good way to show continuous (or count) data that is grouped into categories. When we have few categories (~4 or fewer), plotting bars side by side is probably the most straightforward and common solution. 
 
+Here is an example for some vegetation data in which the richness of native vs. introduced plant species was measured at five sampling points along the two slopes of a ravine.
+
 <figure>
-    <a href="/images/pointsonly.png"><img src="/images/pointsonly.png"></a>
-        <figcaption>just the points in 2d</figcaption>
+    <a href="/images/dodged.png"><img src="/images/dodged.png"></a>
+        <figcaption>dodged bar plot with default ggplot settings</figcaption>
 </figure>
 
 
@@ -17,13 +19,26 @@ Since then I’ve noticed these types of plots online, mainly in some journalist
 
 Here’s some R code to create stacked bar charts using ggplot2. The figure below should be fully reproducible, and it more or less follows the type of plot of plant diversity that inspired this post. 
 
-The following block of code goes through X major steps.
+The following block of code goes through five major steps to produce the following figures:
+
+<figure>
+    <a href="/images/northslope.png"><img src="/images/northslope.png"></a>
+        <figcaption>diverging bar plot with a custom theme for one of the two slopes</figcaption>
+</figure>
+
+<figure>
+    <a href="/images/bothslopes.png"><img src="/images/bothslopes.png"></a>
+        <figcaption>diverging bar plot with a custom theme and facet wrapping</figcaption>
+</figure>
+
 1. Set up some sample data, representing two parallel vegetation transects on different slopes of a ravine in which native vs introduced plants were recorded at five sampling points. This is already in ‘long’ form.
 2. Conditionally invert the signs for the values of one of the two categories (in this case multiplying all the introduced species richness values by -1.
 3. Plot the bars using stat=”identity” and position=”identity”
 4. Re-specify the y axis breaks and labels using the pretty function and the abs function because the values weren’t really negative.
 5. Make the figures pretty using the artyfarty package, and use facet wrapping to summarize even more data.
-  
+
+
+
 {% highlight r %}
 # long-form vegetation survey data
 # these data should more or less reflect the vegetation patterns at "Quebrada de Cordoba", Chile
