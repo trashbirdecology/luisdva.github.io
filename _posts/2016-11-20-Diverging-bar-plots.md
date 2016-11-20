@@ -1,5 +1,16 @@
 ---
-published: false
+layout: post
+excerpt: Making diverging stacked bar plots in R using ggplot.
+tags:
+  - rstats
+  - ggplot
+  - artyfarty
+  - LINCglobal
+image:
+  feature: featureDiverg.png
+  credit: null
+  creditlink: null
+published: true
 ---
 Bar plots are a good way to show continuous (or count) data that is grouped into categories. When we have few categories (~4 or fewer), plotting bars side by side is probably the most straightforward and common solution. 
 
