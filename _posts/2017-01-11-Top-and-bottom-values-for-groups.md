@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt: Using R and dplyr to extract the minimum of maximum values within groups.
+excerpt: Using R and dplyr to extract minimum or maximum variable values within groups.
 tags:
   - rstats
   - dplyr
@@ -12,10 +12,10 @@ image:
   creditlink: null
 published: true
 ---
-In tables that contain data for many different groups, getting the maximum and minimum values (or the top n or bottom n values) of a continuous variable within each group is (I think) a common enough task. These are some simple examples:
+In tables that contain data for many different groups, getting the maximum and minimum values (or the top _n_ or bottom _n_ values) of a continuous variable within each group is (I think) a common enough task. These are some simple examples:
 
 - largest and smallest species in an order or family
--  best represented taxonomic groups specimens in a collection, grouped by geographic unit
+-  best represented taxonomic groups in a collection, grouped by geographic unit
 
 Despite the prevalence of this task in data wrangling for biodiversity research, I couldn’t find any documentation online so I thought I should contribute. 
 The following is an approach that I saw someone else do using a spreadsheet program, and it inspired this post. There’s nothing particularly wrong with doing it this way, it just takes more time, is harder to document, and has to be repeated manually in case the original table is modified.
@@ -49,7 +49,7 @@ brains %>% count(Taxonomic_order)
 brains2 <- brains %>% group_by(Taxonomic_order) %>% filter(n()>1)
 {% endhighlight %}
 
-Now we can use pipes, the _group\_by_ function and _top\_n_ to get the top and bottom values within each group. In this case, I get the top and bottom values separately and then bind the rows using bind_rows.
+Now we can use pipes, the _group\_by_ function and _top\_n_ to get the top and bottom values within each group. In this case, I get the top and bottom values separately and then bind the rows using _bind\_rows_.
 
 {% highlight r %}
 # create data frame with top values of each group
@@ -61,8 +61,8 @@ minmaxBr <- bind_rows(brtop,brbottom)
 minmaxBr <- arrange(minmaxBr,Taxonomic_Order)
 {% endhighlight %}
 
-In this new data frame we see that the bat with the highest brain mass is _Pteropus giganteus_ and the bat with the lowest brain mass is the tiny _Pipistrellus subflavus_. 
-We can even plot the resulting maximum and minimum brain mass values for a few orders (on a log scale, using a hacky approach to _geom|_path_) to see some of the variation.
+In this new data frame we see that for example: the bat (Order Chiroptera) with the highest brain mass is _Pteropus giganteus_ and the bat with the lowest brain mass is the tiny _Pipistrellus subflavus_. 
+We can even plot the resulting maximum and minimum brain mass values for a few orders (on a log scale, using a hacky approach to _geom\_path_) to see some of the variation.
 
 {% highlight r %}
 # plot the min and max values for a few random orders
