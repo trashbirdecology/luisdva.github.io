@@ -60,9 +60,16 @@ brbottom <-   brains2 %>% group_by(Taxonomic_order) %>% top_n(-1,Brain_mass_g)
 # bind and arrange
 minmaxBr <- bind_rows(brtop,brbottom) 
 minmaxBr <- arrange(minmaxBr,Taxonomic_Order)
+# look at the result for bats
+minmaxBr %>% filter(Taxonomic_order=="Chiroptera")
 {% endhighlight %}
 
-In this new data frame we see that for example: the bat (Order Chiroptera) with the highest brain mass is _Pteropus giganteus_ and the bat with the lowest brain mass is the tiny _Pipistrellus subflavus_. 
+| Taxonomic_order | Species_name           | Brain_mass_g |
+|-----------------|------------------------|--------------|
+| Chiroptera      | Pteropus_giganteus     | 7.605096     |
+| Chiroptera      | Pipistrellus_subflavus | 0.125000     |
+
+In this new data frame we see that the bat (Order Chiroptera) with the highest brain mass is _Pteropus giganteus_ and the bat with the lowest brain mass is the tiny _Pipistrellus subflavus_. 
 We can even plot the resulting maximum and minimum brain mass values for a few orders (on a log scale, using a hacky approach to _geom\_path_) to see some of the variation.
 
 {% highlight r %}
