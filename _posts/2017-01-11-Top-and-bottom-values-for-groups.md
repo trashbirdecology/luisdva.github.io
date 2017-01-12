@@ -1,5 +1,16 @@
 ---
-published: false
+layout: post
+excerpt: Using R and dplyr to extract the minimum of maximum values within groups.
+tags:
+  - rstats
+  - dplyr
+  - minmax
+  - mammals
+image:
+  feature: featureMinMax.jpg
+  credit: null
+  creditlink: null
+published: true
 ---
 In tables that contain data for many different groups, getting the maximum and minimum values (or the top n or bottom n values) of a continuous variable within each group is (I think) a common enough task. These are some simple examples:
 
@@ -60,11 +71,11 @@ ggplot(aes(x=Taxonomic_order,y=log(Brain_mass_g)))+geom_path()+theme_minimal()
 {% endhighlight %}
 
 <figure>
-    <a href="/images/bothslopes.png"><img src="/images/bothslopes.png"></a>
-        <figcaption>diverging bar plot with a custom theme and facet wrapping</figcaption>
+    <a href="/images/bothslopes.png"><img src="/images/brainMasses.png"></a>
+        <figcaption>click to enlarge</figcaption>
 </figure>
 
 
-Note: In case of ties, the documentation states that top_n() either takes all rows with a value, or none.
+Note: In case of ties, the documentation states that _top\_n()_ either takes all rows with a value, or none.
 
 
