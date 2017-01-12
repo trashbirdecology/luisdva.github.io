@@ -76,6 +76,4 @@ ggplot(aes(x=Taxonomic_order,y=log(Brain_mass_g)))+geom_path()+theme_minimal()
 </figure>
 
 
-Note: In case of ties, the documentation states that _top\_n()_ either takes all rows with a value, or none.
-
-
+Note that in case of ties, the documentation states that _top\_n()_ either takes all rows with a value, or none.
