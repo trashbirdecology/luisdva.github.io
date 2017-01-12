@@ -55,6 +55,7 @@ Now we can use pipes, the _group\_by_ function and _top\_n_ to get the top and b
 # create data frame with top values of each group
 brtop <-   brains2 %>% group_by(Taxonomic_order) %>% top_n(1,Brain_mass_g)
 # create data frame with bottom values of each group
+## note that we use a minus sign rather than a different function
 brbottom <-   brains2 %>% group_by(Taxonomic_order) %>% top_n(-1,Brain_mass_g)
 # bind and arrange
 minmaxBr <- bind_rows(brtop,brbottom) 
