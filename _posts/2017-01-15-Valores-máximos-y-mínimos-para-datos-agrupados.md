@@ -13,6 +13,8 @@ image:
 published: true
 ---
 
+> This post is available in English [here](http://luisdva.github.io/Top-and-bottom-values-for-groups/)
+
 Muchas veces tenemos tablas o bases de datos con valores que corresponden a diferentes grupos, sobre todo cuando estamos trabajando con datos de biodiversidad que se encuentran agrupados geográficamente o de acuerdo a alguna taxonomía. 
 
 En estos casos es común que necesitemos obtener el valor máximo o mínimo dentro de cada grupo. Por ejemplo: 
