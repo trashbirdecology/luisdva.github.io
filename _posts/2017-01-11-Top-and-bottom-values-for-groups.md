@@ -12,6 +12,8 @@ image:
   creditlink: null
 published: true
 ---
+> Esta publicación está disponible en español [aqui](http://luisdva.github.io/Valores-m%C3%A1ximos-y-m%C3%ADnimos-para-datos-agrupados/)
+
 In tables that contain data for many different groups, getting the maximum and minimum values (or the top _n_ or bottom _n_ values) of a continuous variable within each group is (I think) a common enough task. These are some simple examples:
 
 - largest and smallest species in an order or family
