@@ -10,9 +10,9 @@ image:
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
-+ **Verde Arregoitia L.D.**, Fisher, D.O, and Schweizer, M. (2017), Morphology captures diet and locomotor types in rodents. _Royal Society Open Science_. 4 160957; DOI: 10.1098/rsos.160957. * Full text (Open Access) [here] (http://rsos.royalsocietypublishing.org/content/4/1/160957)
++ **Verde Arregoitia L.D.**, Fisher, D.O, and Schweizer, M. (2017), Morphology captures diet and locomotor types in rodents. _Royal Society Open Science_. 4 160957; DOI: 10.1098/rsos.160957. * Full text (Open Access) [here](http://rsos.royalsocietypublishing.org/content/4/1/160957)
 
-+ Estrada, A., Garber, P.A., Rylands, A.B., Roos, C., Fernandez-Duque, E., Di Fiore, A., K. Anne-Isola Nekaris, Nijman, V., Heymann, E.W., Lambert, J.E., Rovero, F., Barelli, C., Setchell, J.M, Gillespie, T.A., Mittermeier, R.A., **Verde Arregoitia, L.D.,** de Guinea, M.,  Gouveia, S., Dobrovolski, R., Shanee, S., Shanee, N., Boyle, S.A., Fuentes, A., MacKinnon, K.C., Amato, K.L, Meyer, A.L.S, Wich, S., Sussman, R.W., Pan, R., Kone, I., Li, B. (2017), Impending extinction crisis of the world’s primates: Why primates matter. _Science Advances_ e1600946, 3:1, DOI: 10.1126/sciadv.1600946. * Full text (Open Access) [here] (http://advances.sciencemag.org/content/3/1/e1600946)
++ Estrada, A., Garber, P.A., Rylands, A.B., Roos, C., Fernandez-Duque, E., Di Fiore, A., K. Anne-Isola Nekaris, Nijman, V., Heymann, E.W., Lambert, J.E., Rovero, F., Barelli, C., Setchell, J.M, Gillespie, T.A., Mittermeier, R.A., **Verde Arregoitia, L.D.,** de Guinea, M.,  Gouveia, S., Dobrovolski, R., Shanee, S., Shanee, N., Boyle, S.A., Fuentes, A., MacKinnon, K.C., Amato, K.L, Meyer, A.L.S, Wich, S., Sussman, R.W., Pan, R., Kone, I., Li, B. (2017), Impending extinction crisis of the world’s primates: Why primates matter. _Science Advances_ e1600946, 3:1, DOI: 10.1126/sciadv.1600946. * Full text (Open Access) [here](http://advances.sciencemag.org/content/3/1/e1600946)
 
 + **Verde Arregoitia, L. D.** (2015), Biases, gaps, and opportunities in mammalian extinction risk research. _Mammal Review_. DOI: 10.1111/mam.12049
 
