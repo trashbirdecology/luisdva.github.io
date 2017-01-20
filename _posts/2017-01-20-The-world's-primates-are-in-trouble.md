@@ -28,7 +28,7 @@ My involvement in the paper was mainly in the sections that relate phylogeny and
 
 It is probably worth noting that the Supplementary Materials file contains what is probably the most up-to-date primate taxonomy, complete with common names, threat status, population trends, body mass, and the number of Web of Science results for each species (up to March 2016). **This is a huge deal**, and although the data is trapped in an awkward PDF format for now, I’ll see to it that a csv or spreadsheet version starts circulating.
 
-This paper was a massive effort by so many dedicated primate and conservation scientists, and I’m happy it’s getting so much attention. I even feel like a tourist among all these international experts. In fact, I still remember reading Russell Mittermeier’s 1997 book ‘Megadiversity’ as a student learning about my own country’s mammals, and now I can barely believe that my name appears next to his on the author list.   
+This paper was a massive effort by so many dedicated primate researchers and conservation scientists, and I’m happy it’s getting so much attention. I even feel like a tourist among all these international experts. In fact, I still remember reading Russell Mittermeier’s 1997 book ‘Megadiversity’ as a student learning about my own country’s mammals, and now I can barely believe that my name appears next to his on the author list.   
 
 Feel free to contact me with any questions or comments. 
 
