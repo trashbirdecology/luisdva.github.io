@@ -1,5 +1,15 @@
 ---
-published: false
+layout: post
+excerpt: Brief updates on our new publication on the primate extinction crisis.
+tags:
+  - Estrada
+  - Science Advances
+  - conservation
+  image:
+  feature: featurePrimates.jpg
+  credit: CC0 image
+  creditlink: Pixabay
+published: true
 ---
 
 ## Gorillas, monkeys and other primates must be saved from 'impending extinction', urge 31 scientists
