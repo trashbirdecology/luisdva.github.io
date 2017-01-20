@@ -1,6 +1,6 @@
 ---
 layout: post
-excerpt: Brief updates on our new publication on the primate extinction crisis.
+excerpt: Brief updates on our new publication reviewing the primate extinction crisis.
 tags:
   - Estrada
   - Science Advances
