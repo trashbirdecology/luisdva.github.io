@@ -5,7 +5,7 @@ tags:
   - Estrada
   - Science Advances
   - conservation
-  image:
+image:
   feature: featurePrimates.jpg
   credit: CC0 image
   creditlink: Pixabay
