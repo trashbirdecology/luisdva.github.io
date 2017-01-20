@@ -7,8 +7,8 @@ tags:
   - conservation
 image:
   feature: featurePrimates.jpg
-  credit: CC0 image
-  creditlink: Pixabay
+  credit: CC0 image, Pixabay
+  creditlink:
 published: true
 ---
 
