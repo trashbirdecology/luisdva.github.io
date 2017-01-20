@@ -12,7 +12,7 @@ image:
 published: true
 ---
 
-> Gorillas, monkeys and other primates must be saved from 'impending extinction', urge 31 scientists
+## Gorillas, monkeys and other primates must be saved from 'impending extinction', urge 31 scientists
 
 The headline above comes from [this article](http://www.independent.co.uk/environment/gorilla-monkeys-primates-save-from-impending-extinction-31-scientists-urge-a7533631.html) published in The Independent yesterday. The article summarizes the findings of [this recent review paper](http://advances.sciencemag.org/content/3/1/e1600946), and I’m honored to be one of the 31 scientists behind the report that’s getting more media attention than we’ve been able to keep up with. 
 
@@ -30,5 +30,5 @@ It is probably worth noting that the Supplementary Materials file contains what 
 
 This paper was a massive effort by so many dedicated primate and conservation scientists, and I’m happy it’s getting so much attention. I even feel like a tourist among all these international experts. In fact, I still remember reading Russell Mittermeier’s 1997 book ‘Megadiversity’ as a student learning about my own country’s mammals, and now I can barely believe that my name appears next to his on the author list.   
 
-Feel free to contact with any questions or comments. 
+Feel free to contact me with any questions or comments. 
 
