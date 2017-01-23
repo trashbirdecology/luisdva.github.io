@@ -13,8 +13,7 @@ published: true
 ---
 Last week my paper on rodent ecomorphology was finally published (citation details are at the end of this post).
 
-[Morphology captures diet and locomotor types in rodents](http://rsos.royalsocietypublishing.org/content/4/1/160957 "open access link")[newtab]
-
+[Morphology captures diet and locomotor types in rodents](http://rsos.royalsocietypublishing.org/content/4/1/160957 "open access link"){:target="_blank"}
 
 This recent publication is the primary result of my postdoctoral research (2015-2016) at the Natural History Museum Bern (NMBE). I worked on this project with the curator of birds [Manuel Schweizer](http://www.nmbe.ch/en/information/team/dr-manuel-schweizer) at NMBE and with [Diana Fisher](https://twitter.com/DianaF1080), my PhD supervisor from The University of Queensland. Below is a brief summary of the article.
 
