@@ -15,7 +15,18 @@ Last week my paper on rodent ecomorphology was finally published.
 
 [Morphology captures diet and locomotor types in rodents](http://rsos.royalsocietypublishing.org/content/4/1/160957 "open access link")
 
+To open in a new tab:
+ <a href="(http://rsos.royalsocietypublishing.org/content/4/1/160957" target="_blank">Test</a>
+
+
 This recent publication is the primary result of my postdoctoral research (2015-2016) at the Natural History Museum Bern (NMBE). I worked on this project with the curator of birds [Manuel Schweizer](http://www.nmbe.ch/en/information/team/dr-manuel-schweizer) at NMBE and with [Diana Fisher](https://twitter.com/DianaF1080), my PhD supervisor from The University of Queensland. Below is a brief summary of the article.
+
+### Citation details
+
+Verde Arregoitia LD, Fisher
+DO, Schweizer M. 2017 Morphology captures
+diet and locomotor types in rodents.R. Soc.
+open sci. 4: 160957. http://dx.doi.org/10.1098/rsos.160957
 
 ### Rodents
 
