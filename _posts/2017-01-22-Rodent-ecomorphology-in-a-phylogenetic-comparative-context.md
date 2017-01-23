@@ -47,3 +47,22 @@ Many recent studies aim to figure out the diversity of the traits of the species
 
 This is by far my most Open Science paper to date. It was published open access (CC BY 4.0) in the journal Royal Society Open Science (which I highly recommend), and I provided the supporting data and R code as a GitHub repository archived on Zenodo. Check out the paper and the repo for the morphological dataset, and contact me if there are any questions. 
 
+### Media
+
+We wanted to get some local coverage on research involving the collections at the museum for the general public in the German-speaking part of Switzerland, and below are links to some of the coverage (all in German).
+
+[BZ](http://www.basellandschaftlichezeitung.ch/schweiz/forscher-erstellen-biometrische-datenbank-der-nagetiere-130865570)
+ 
+[Blick](http://www.blick.ch/life/wissen/biologie-forscher-erstellen-biometrische-datenbank-der-nagetiere-id6084214.html)
+ 
+[LZ](http://www.limmattalerzeitung.ch/schweiz/forscher-erstellen-biometrische-datenbank-der-nagetiere-130865570)
+ 
+[FM1 Today](http://www.fm1today.ch/forscher-erstellen-biometrische-datenbank-der-nagetiere/402524)
+ 
+[GT](http://www.grenchnertagblatt.ch/schweiz/forscher-erstellen-biometrische-datenbank-der-nagetiere-130865570)
+ 
+[SwissInfo](http://www.swissinfo.ch/ger/alle-news-in-kuerze/forscher-erstellen-biometrische-datenbank-der-nagetiere/42877476)
+ 
+[March Anzeiger](http://www.marchanzeiger.ch/index.cfm?ressort=home&source=sda&id=242282)
+ 
+
