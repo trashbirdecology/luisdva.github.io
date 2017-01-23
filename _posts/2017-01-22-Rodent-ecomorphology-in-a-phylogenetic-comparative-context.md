@@ -1,5 +1,15 @@
 ---
-published: false
+layout: post
+excerpt: Summary of our new publication 'Morphology captures diet and locomotor types in rodents'.
+tags:
+  - Fisher
+  - Schweizer
+  - collections
+image:
+  feature: featureRods.jpg
+  credit:
+  creditlink:
+published: true
 ---
 Last week my paper on rodent ecomorphology was finally published. 
 
