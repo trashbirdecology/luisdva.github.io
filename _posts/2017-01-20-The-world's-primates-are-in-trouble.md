@@ -11,10 +11,9 @@ image:
   creditlink:
 published: true
 ---
-> Update, 26/01/2017. As promised, here is the data from the supplement as a csv file. The data is exactly the same that appears in Tables S1 to S4. I simply put it into a useable table that includes all regions and family as separate columns for easier data wrangling.
+> Update, 26/01/2017. As promised, here is the data from the supplement as a csv file. The data is exactly the same that appears in Tables S1 to S4. I simply put it into a useable table that includes all regions and family as separate columns for easier data wrangling. In the regions column, mlAfrica means mainland Africa. 
 
-
-
+[Estrada et al 2017 dataset](https://raw.githubusercontent.com/luisDVA/codeluis/master/1600946_tables.csv)
 
 
 ## Gorillas, monkeys and other primates must be saved from 'impending extinction', urge 31 scientists
