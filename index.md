@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Homepage
-excerpt: "mamals, ecology, evolution, conservation - Luis D. Verde Arregoitia Research Page"
+excerpt: "mammals, ecology, evolution, conservation - Luis D. Verde Arregoitia Research Page"
 tags: 
   - mammals
   - conservation  
