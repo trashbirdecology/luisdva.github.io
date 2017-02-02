@@ -13,7 +13,7 @@ image:
 published: true
 ---
 
-> _Cette recherche a été publié  dans la revue _Royal Society Open Science_. Le Dr Manuel Schweizer du NMBE et la Dr Diana Fisher de l'Université de Queensland, en Australie, ont également collaboré dans cette recherche. 
+> Cette recherche a été publié  dans la revue "Royal Society Open Science". Le Dr Manuel Schweizer du NMBE et la Dr Diana Fisher de l'Université de Queensland, en Australie, ont également collaboré dans cette recherche. 
 
 [Morphology captures diet and locomotor types in rodents](http://rsos.royalsocietypublishing.org/content/4/1/160957 "open access link"){:target="_blank"}
 
