@@ -8,7 +8,7 @@ tags:
   - trop mimi
 image:
   feature: featureRongeurs.jpg
-  credit:CC0 public domain
+  credit: CC0 public domain
   creditlink:
 published: true
 ---
