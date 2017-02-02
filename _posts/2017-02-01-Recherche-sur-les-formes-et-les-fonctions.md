@@ -1,7 +1,17 @@
 ---
-published: false
+layout: post
+excerpt: La morphologie permet de prédire le régime alimentaire et mode de locomotion des rongeurs.
+tags:
+  - Fisher
+  - Schweizer
+  - francais
+  - trop mimi
+image:
+  feature: featureRongeurs.jpg
+  credit:CC0 public domain
+  creditlink:
+published: true
 ---
-La morphologie permet de prédire le régime alimentaire et mode de locomotion des rongeurs
 
 > _Cette recherche a été publié  dans la revue _Royal Society Open Science_. Le Dr Manuel Schweizer du NMBE et la Dr Diana Fisher de l'Université de Queensland, en Australie, ont également collaboré dans cette recherche. 
 
@@ -37,6 +47,6 @@ De nombreuses études récentes cherchent à savoir comment l’extinction de di
 
 Les collections d'histoire naturelle fournissent des informations essentielles pour la recherche sur la conservation, l'écologie et l'évolution. Le matériel des collections (peaux, squelettes et échantillons de tissus) est une source importante de données morphologiques, génétiques et écologiques. De nombreuses questions biologiques ne peuvent être résolues qu'en étudiant des spécimens, mais beaucoup de collections à travers le monde sont sous-utilisées et risquent d'être perdues en raison d'un manque d'attention, de financement et d'entretien.
 
-Citation
+# Citation
 
 Verde Arregoitia LD, Fisher DO, Schweizer M. 2017 Morphology captures diet and locomotor types in rodents. _R. Soc.open sci_. 4: 160957. http://dx.doi.org/10.1098/rsos.160957
