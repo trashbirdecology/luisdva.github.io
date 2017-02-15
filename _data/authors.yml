@@ -1,20 +1,21 @@
 # Authors
 
+LDVA:
+  name: Luis D. Verde Arregoitia
+  email:
+  bio: "site owner"
+  avatar: bio-photo.jpg
+  twitter: LuisDVerde
+  google:
+    plus:
+
 MGS:
   name: Manuela González-Suárez 
   web:
   email: 
-  bio: 
+  bio: "guest/contributor"
   avatar: 
   twitter: MGS_tweets
   google:
     plus: 
 
-cornelius_fiddlebone:
-  name: Cornelius Fiddlebone
-  email: cornelius@thewhip.com
-  bio: "I ordered what?"
-  avatar: bio-photo.jpg
-  twitter: rhymeswithsackit
-  google:
-    plus: CorneliusFiddlebone
