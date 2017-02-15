@@ -8,7 +8,9 @@ The script shows how to match the IUCN Red List status data with a species-level
 ## FIRST: 
 We start by loading and retrieving the necessary R packages and datasets. Using the R package taxize you can actually retrieve the IUCN Red List data directly but you need a personal API so I am not showing that here. You can also download the latest version from IUCN Red List. For this example I just uploaded a list obtained on the 5th January 2017 which is available on GitHub.
 
-codebloq
+{% highlight r %}
+
+{% endhighlight %}
 
 ## SECOND: 
 
@@ -16,13 +18,17 @@ Although each species is meant to have only one name under our system of nomencl
 
 The IUCN database contains a list of synomys but even using that list some species may not be matched. The R package taxize allows to search some online sources to define synonyms but still some names may be unmatched. Luis Verde Arregoitia used web scraping to download and wrangle a massive list of synonyms for species and subspecies of mammals, compiled by Christian Boudet for his website Planet Mammifères (Mammals’ Planet). This is not necessarily a formal, peer-reviewed taxonomic database but it is quite up-to-date and the synonyms listed reflect taxonomic changes and the current status of homotypic synonyms. The list of synonyms on the site appears as text with a new line for each species and its synonyms. Because there is consistency in the formatting (species in boldface, synonyms separated by equal signs), the text can be wrangled into a tidy data frame relatively easily.
 
-cbloq
+{% highlight r %}
+
+{% endhighlight %}
 
 ## THIRD: 
 
 This is the loop to search and match species names from EltonTrait to IUCN. It is a presented as a single loop with several steps that could be done separately (that could help for checking mistakes).
 
-cbloq
+{% highlight r %}
+
+{% endhighlight %}
 
 ## FOURTH: 
 
