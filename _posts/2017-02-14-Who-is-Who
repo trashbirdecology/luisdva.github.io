@@ -1,0 +1,29 @@
+---
+published: false
+---
+If you have ever used more than one database describing information for a list of species, you probably have struggled with the “joys” of finding the right name matches. I work mostly with mammalian databases (I have compiled a list of many of these useful resources here) and despite being generally well-know species I always run into problems when matching names. There are reputable taxonomic lists like Wilson and Reeder’s but this was published in 2005 and new species have been discovered and some names revised, so not all sources use the same names. Particularly, I often want to match names to IUCN Red List data and their taxonomic list changes regularly. I think their goal is to be up-to-date rather than being taxonomically precise… So after many wasted hours matching databases, often with manual searches, I decided to make a R script with the help of Luis Verde Arregoitia to make the process as automated as possible. We are both sharing the code in our blogs in case it is useful for others too.
+
+The script shows how to match the IUCN Red List status data with a species-level database. Here as an example we use the diet database EltonTraits as an example, but the script could be modified relatively easy to match other databases. You can download a R Markdown file here.
+
+## FIRST: 
+We start by loading and retrieving the necessary R packages and datasets. Using the R package taxize you can actually retrieve the IUCN Red List data directly but you need a personal API so I am not showing that here. You can also download the latest version from IUCN Red List. For this example I just uploaded a list obtained on the 5th January 2017 which is available on GitHub.
+
+codebloq
+
+## SECOND: 
+
+Although each species is meant to have only one name under our system of nomenclatural rules, there are often several names that are applied under different circumstances. Generally, only one taxa (the oldest) is designated as a priority by the International Commission on Zoological Nomenclature, other names are considered “synonymous” (junior synonym). To add to the confusion, the status of subspecies can be very dynamic. 
+
+The IUCN database contains a list of synomys but even using that list some species may not be matched. The R package taxize allows to search some online sources to define synonyms but still some names may be unmatched. Luis Verde Arregoitia used web scraping to download and wrangle a massive list of synonyms for species and subspecies of mammals, compiled by Christian Boudet for his website Planet Mammifères (Mammals’ Planet). This is not necessarily a formal, peer-reviewed taxonomic database but it is quite up-to-date and the synonyms listed reflect taxonomic changes and the current status of homotypic synonyms. The list of synonyms on the site appears as text with a new line for each species and its synonyms. Because there is consistency in the formatting (species in boldface, synonyms separated by equal signs), the text can be wrangled into a tidy data frame relatively easily.
+
+cbloq
+
+## THIRD: 
+
+This is the loop to search and match species names from EltonTrait to IUCN. It is a presented as a single loop with several steps that could be done separately (that could help for checking mistakes).
+
+cbloq
+
+## FOURTH: 
+
+Quick summary of issues. Some species may be only partially matched or matched to more than one name. In those cases we see no solution by human intervention. That means, you need to check those taxa and make a decision (to assign one name, to ignore these potential confusion species, to write a paper to clarify taxonomy…)
