@@ -1,4 +1,5 @@
 ---
+title: "Visualizando pares de variables independientes"
 layout: post
 excerpt: Graficando dos variables independientes sin usar ejes duales.
 tags:
