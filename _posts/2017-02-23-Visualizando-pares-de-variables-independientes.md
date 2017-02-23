@@ -9,7 +9,7 @@ image:
   feature: featureDual.jpg
   credit:
   creditlink:
-published: false
+published: true
 ---
 
 Supongamos que el personal administrativo de un negocio quiere visualizar las cifras anuales sobre el número de transacciones registradas y el total de ventas para cada uno de sus 15 empleados.  
