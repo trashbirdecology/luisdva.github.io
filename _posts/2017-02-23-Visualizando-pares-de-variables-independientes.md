@@ -1,4 +1,14 @@
 ---
+layout: post
+excerpt: Graficando dos variables independientes sin usar ejes duales.
+tags:
+  - el gerente
+  - ggplot2
+  - elerre
+image:
+  feature: featureDual.jpg
+  credit:
+  creditlink:
 published: false
 ---
 
