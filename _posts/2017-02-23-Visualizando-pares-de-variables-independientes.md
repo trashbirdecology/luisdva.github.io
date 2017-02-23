@@ -21,7 +21,7 @@ En este caso no hay razón para esperar que el total de ventas ($MXN) se relacio
 | B        | 21            | 200          |
 | C        | 6             | 10954        |
 
-Una de las opciones más simples es mostrar las gráficas para cada variable independiente lado a lado, y para ayudarnos visualmente podemos acomodar la variable dependiente (en este caso un factor) según sus valores en el eje Y para alguna de las dos variables independientes. No sé cómo usar dos ejes y simultáneamente y hay [varias](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [razones](http://www.storytellingwithdata.com/blog/2011/05/secondary-y-axis) para no hacerlo.
+Una de las opciones más simples es mostrar las gráficas para cada variable independiente lado a lado, y para ayudarnos visualmente podemos acomodar la variable dependiente (en este caso un factor) según sus valores en el eje Y para alguna de las dos variables independientes. Ni sé cómo usar dos ejes y simultáneamente y hay [varias](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [razones](http://www.storytellingwithdata.com/blog/2011/05/secondary-y-axis) para no hacerlo.
 
 <figure>
     <a href="/images/lollp1.png"><img src="/images/lollp1.png"></a>
@@ -52,6 +52,6 @@ En este último caso, usé (de manera bastante redundante) colores, tamaños, y 
         <figcaption></figcaption>
 </figure>
 
-El script de R para reproducir este tipo de gráficas está disponible en el siguiente Gist. La apariencia nítida y minimalista es gracias a los paquetes _ggalt_ y _hrbrthemes_ desarrollados por Bob Rudis. En el script primero generamos datos aleatorios para 15 vendedores (rotulados “A”,”B”,”C”,etc.) y luego generamos las figuras con ggplot2. Personalmente prefiero usar ‘paletas’ en lugar de barras y girar los ejes 90 grados (coord_flip) para que sean más fáciles de interpretar. Por lo general yo uso el paquete _gridExtra_ para acomodar dos o más objetos gráficos lado a lado.
+El script de R para reproducir este tipo de gráficas está disponible en el siguiente Gist. La apariencia nítida y minimalista es gracias a los paquetes _ggalt_ y _hrbrthemes_ desarrollados por [Bob Rudis](https://github.com/hrbrmstr). En el script primero generamos datos aleatorios para 15 vendedores (rotulados “A”,”B”,”C”,etc.) y luego generamos las figuras con ggplot2. Personalmente prefiero usar ‘paletas’ en lugar de barras y girar los ejes 90 grados (coord_flip) para que sean más fáciles de interpretar. Por lo general yo uso el paquete _gridExtra_ para acomodar dos o más objetos gráficos lado a lado.
 
 {% gist luisDVA/3e45462f654e9717e37dffbc86ded4aa %}
