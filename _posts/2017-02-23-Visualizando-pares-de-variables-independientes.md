@@ -52,4 +52,6 @@ En este último caso, usé (de manera bastante redundante) colores, tamaños, y 
         <figcaption></figcaption>
 </figure>
 
-El script de R para reproducir este tipo de gráficas está disponible en el siguiente Gist. La apariencia nítida y minimalista es gracias a los paquetes ggalt y hrbrthemes desarrollados por Bob Rudis. En el script primero generamos datos aleatorios para 15 vendedores (rotulados “A”,”B”,”C”,etc.) y luego generamos las figuras con ggplot2. Personalmente prefiero usar ‘paletas’ en lugar de barras y girar los ejes 90 grados (coord_flip) para que sean más fáciles de interpretar. Por lo general yo uso el paquete gridExtra para acomodar dos o más objetos gráficos lado a lado.
+El script de R para reproducir este tipo de gráficas está disponible en el siguiente Gist. La apariencia nítida y minimalista es gracias a los paquetes _ggalt_ y _hrbrthemes_ desarrollados por Bob Rudis. En el script primero generamos datos aleatorios para 15 vendedores (rotulados “A”,”B”,”C”,etc.) y luego generamos las figuras con ggplot2. Personalmente prefiero usar ‘paletas’ en lugar de barras y girar los ejes 90 grados (coord_flip) para que sean más fáciles de interpretar. Por lo general yo uso el paquete _gridExtra_ para acomodar dos o más objetos gráficos lado a lado.
+
+{% gist luisDVA/3e45462f654e9717e37dffbc86ded4aa %}
