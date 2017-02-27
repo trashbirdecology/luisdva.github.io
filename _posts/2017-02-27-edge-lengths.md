@@ -14,7 +14,7 @@ published: true
 ---
 In the words of [Nick Matzke]( https://twitter.com/NickJMatzke):
 
-> R's tree structure is pretty non-intuitive, compared to the "a tree is a collection of node objects" structure that is taught in most phylogenetics courses and used in e.g. C++ software. It's done this way because R likes lists, and doesn't like objects (source).
+> R's tree structure is pretty non-intuitive, compared to the "a tree is a collection of node objects" structure that is taught in most phylogenetics courses and used in e.g. C++ software. It's done this way because R likes lists, and doesn't like objects.
 
 The structure of phylogenetic trees in R (namely [APE’s](https://academic.oup.com/bioinformatics/article/20/2/289/204981/APE-Analyses-of-Phylogenetics-and-Evolution-in-R) phylo objects) can be confusing because much of the information needed to describe how different nodes and branches make up a tree is implicit. 
 
