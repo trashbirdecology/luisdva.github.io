@@ -1,4 +1,15 @@
 ---
+title: "Making sense of trees"
+layout: post
+excerpt: Extracting edge lengths from R phylo objects.
+tags:
+  - Jeff Hanson
+  - ape
+  - Paradis
+image:
+  feature: featureDual.jpg
+  credit: CC0 image
+  creditlink: https://pixabay.com/
 published: false
 ---
 Making sense of trees
