@@ -12,8 +12,6 @@ image:
   creditlink: https://pixabay.com/
 published: true
 ---
-Making sense of trees
-
 In the words of [Nick Matzke]( https://twitter.com/NickJMatzke):
 
 > R's tree structure is pretty non-intuitive, compared to the "a tree is a collection of node objects" structure that is taught in most phylogenetics courses and used in e.g. C++ software. It's done this way because R likes lists, and doesn't like objects (source).
