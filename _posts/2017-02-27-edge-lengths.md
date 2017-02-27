@@ -88,7 +88,7 @@ Lets have a look. Both functions keep the tip order so comparing the results is 
 
 
 <figure>
-    <a href="/images/birdFams.png"><img src="/images/birdFams.jpg"></a>
+    <a href="/images/birdFams.png"><img src="/images/birdFams.png"></a>
         <figcaption>plotted with ggtree</figcaption>
 </figure>
 
