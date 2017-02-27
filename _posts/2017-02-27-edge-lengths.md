@@ -24,7 +24,7 @@ Phylo objects have a vector of edge lengths for every node, but I was unable to 
 
 I’m writing this brief post because I found an R script from early 2012 in a random USB stick, in which coding superstar [Jeff Hanson]( https://twitter.com/jeff_o_hanson) walked me through indexing, building loops, and functions in order to extract the species lineage ages for any phylogeny object. 
 
-The function below has a couple of loops that iterate through the mrca matrix and the branching times vector to produce a data frame of edge lengths for all the tree tips. The for loops make for slow processing if we have large trees but I was patient and that exact function created the main dataset that I analysed for a large part of my thesis. If you’re into that kind of thing have a look at Jeff’s crisp programming to see how clever he was when coming up with the loops.
+The function below has a couple of loops that iterate through the mrca matrix and the branching times vector to produce a data frame of edge lengths for all the tree tips. The for loops make for slow processing if we have large trees but I was patient and that exact function created the main dataset that I analysed for a large part of my thesis. If you’re interested have a look at Jeff’s crisp programming to see how clever he was when coming up with the loops.
 
 {% highlight r %}
 # extracting edge lengths from a phylo object
@@ -82,7 +82,7 @@ for (i in colnames(mrca.matrix)) {
 
 A few years later I learned that the [BioGeoBEARS](http://phylo.wikidot.com/biogeobears) R package includes the _prt()_ function, which Nick Matzke wrote specifically to print the content of a tree into a tabular format, making all the implicit information explicit. This function is faster and provides much more information, and I was very relieved to see that the edge lengths it provides are the same Jeff and I obtained with the custom function. 
 
-Lets have a look. Both functions keep the tip order so comparing the results is easy. This examples uses the built in tree of bird families (Sibley and Ahlquist (1990) from the _ape_ package. 
+Lets have a look. Both functions keep the tip order so comparing the results is easy. This examples uses the built in tree of bird families (Sibley and Ahlquist 1990) from the _ape_ package. 
 
 
 <figure>
