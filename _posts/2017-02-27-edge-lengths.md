@@ -7,7 +7,7 @@ tags:
   - ape
   - Paradis
 image:
-  feature: featureDual.jpg
+  feature: featureTrees.jpg
   credit: CC0 image
   creditlink: https://pixabay.com/
 published: false
