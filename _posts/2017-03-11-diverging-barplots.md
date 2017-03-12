@@ -1,7 +1,7 @@
 ---
 title: "More on diverging stacked bar plots"
 layout: post
-excerpt: My take on the SkepticalScience global warming barplot using ggplot, includes code and data.
+excerpt: My take on the SkepticalScience global warming figure using ggplot, includes R code and data.
 tags:
   - datavis
   - Roboto
@@ -39,11 +39,11 @@ The code to reproduce the figure is below, and here are the steps I used to prod
 
 1. Digitize the original figure using [PlotDigitizer](http://plotdigitizer.sourceforge.net/) and set up columns with the studies and the grouping variable. 
 2. Round the values. 
-3. Plot the data, keeping the title and axis labels consistent with the original figure. The plot was made using ggplot2 and several of my favorite packages to improve its overall appearance. I used one of Google's Roboto fonts but if you don't have it on your system you may use any other font family.
+3. Plot the data, keeping the title and axis labels consistent with the original figure. The plot was made using _ggplot2_ and several of my favorite packages to improve its overall appearance. I used one of Google's Roboto fonts but if you don't have it on your system you may use any other font family.
 4. Rotate the axes and reorder the x axis.
 5. Highlight the y axis in a lighter color for extra coolness.
 
-Note how I used functions from the forcats package within the ggplot arguments to wrangle the factor levels.
+Note how I used functions from the _forcats_ package within the _ggplot_ arguments to wrangle the factor levels.
 
 {% highlight r %}
 
