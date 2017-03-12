@@ -35,5 +35,26 @@ The code to reproduce the figure is below, and here are the steps I used to prod
 
 {% highlight r %}
 
-{% endhighlight %}
+library(dplyr)
+library(ggplot2)
+library(forcats)
+library(artyfarty)
+library(extrafont)
 
+dat <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/contributions.csv",stringsAsFactors = F) %>% 
+          mutate(contribution=round(contribution,0))
+
+loadfonts(device="win")
+
+ggplot(dat,aes(x=fct_rev((fct_inorder(study))), y=contribution,fill=contributor))+
+  geom_bar(stat="identity",position="identity",color="dark grey")+
+  coord_flip()+ylim(-50,200)+
+  geom_hline(yintercept=0,color =c("white"))+
+  theme_flat()+
+  xlab("study")+ylab("% contribution")+
+  ggtitle("Contributors to Global Warming over the past 50-65 years")+
+  scale_fill_manual(name="",values = c("#FFA373","#50486D"))+
+  labs(caption="reproduced from skepticalscience.com")+
+  theme(text=element_text(family="Roboto Medium"))
+    
+{% endhighlight %}
