@@ -35,17 +35,18 @@ The code to reproduce the figure is below, and here are the steps I used to prod
 
 {% highlight r %}
 
+# load packages
 library(dplyr)
 library(ggplot2)
 library(forcats)
 library(artyfarty)
 library(extrafont)
-
+# read data
 dat <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/contributions.csv",stringsAsFactors = F) %>% 
           mutate(contribution=round(contribution,0))
-
+# register fonts (onto windows device in my case)
 loadfonts(device="win")
-
+# plot
 ggplot(dat,aes(x=fct_rev((fct_inorder(study))), y=contribution,fill=contributor))+
   geom_bar(stat="identity",position="identity",color="dark grey")+
   coord_flip()+ylim(-50,200)+
