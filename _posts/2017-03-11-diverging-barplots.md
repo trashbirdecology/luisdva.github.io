@@ -1,5 +1,16 @@
 ---
-published: false
+title: "More on diverging stacked bar plots"
+layout: post
+excerpt: My take on the SkepticalScience global warming barplot using ggplot, includes code and data.
+tags:
+  - datavis
+  - Roboto
+  - forcats
+image:
+  feature: featureGW.jpg
+  credit: CC0 image
+  creditlink: https://pixabay.com/
+published: true
 ---
 > Note: I was not involved in creating the original figure or in how the data behind it was collected and processed, but I wanted to share my own take on showing the values for the different studies in a way that was easier to read given the importance of the issue.
 
