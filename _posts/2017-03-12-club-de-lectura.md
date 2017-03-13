@@ -64,7 +64,7 @@ Resumen geográfico y taxonómico sobre los ejemplares de la colección de mamí
 
 ### Revista Mexicana de Biodiversidad (Josué)
 Martínez-Salazar et al. 2016  
-[Helminth parasites of some rodents (Cricetidae, Heteromyidae, and Sciuridae) from Zacatecas, Mexico](http://revista.ib.unam.mx/index.php/bio/article/view/1360)
+[Helminth parasites of some rodents (Cricetidae, Heteromyidae, and Sciuridae) from Zacatecas, Mexico](http://revista.ib.unam.mx/index.php/bio/article/view/1360)  
 Registros de endoparásitos de roedores en el estado de Zacatecas.
 
 ### Proceedings of the Royal Society B - Biological Sciences (Juan)
