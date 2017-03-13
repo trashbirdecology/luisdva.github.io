@@ -28,8 +28,7 @@ Evolución convergente de colas relativamente más largas en _Peromyscus_ de amb
 _____
 ### Zootaxa (Alfredo)
 Matson & Ordóñez Garza 2017  
-[The taxonomic status of Long-tailed shrews (Mammalia: genus Sorex) from Nuclear Central America](
-https://doi.org/10.11646/zootaxa.4236.3.3)  
+[The taxonomic status of Long-tailed shrews (Mammalia: genus Sorex) from Nuclear Central America](https://doi.org/10.11646/zootaxa.4236.3.3)  
 Revisión taxonómica de musarañas de tierras altas del género _Sorex_ en Centroamérica. Se propone una nueva especie para Guatemala. 
 _____
 ### Systematic Biology (Brenda)
@@ -64,12 +63,12 @@ Orígenes ontogenéticos de los huesos del oido medio en mamíferos, comparando 
 _____
 ### Mammalian Biology (Lázaro)
 Cuadrado-Ríos & Mantilla-Meluk 2016  
-[Timing the evolutionary history of tent-making bats, genus _Uroderma_ (Phyllostomidae): A biogeographic context](http://dx.doi.org/10.1016/j.mambio.2016.07.045)
+[Timing the evolutionary history of tent-making bats, genus _Uroderma_ (Phyllostomidae): A biogeographic context](http://dx.doi.org/10.1016/j.mambio.2016.07.045)  
 Filogeografía y biogeografía del género _Uroderma_ usando DNA mitocondrial, los resultados muestran la influencia de los Andes y las islas caribeñas en los patrones de diversificación. 
 _____
 ### Journal of Biogeography (Lucy)
 Villalobos et al. 2017  
-[Global patterns of mammalian co-occurrence: phylogenetic and body size structure within species ranges](http://onlinelibrary.wiley.com/doi/10.1111/jbi.12826/abstract)
+[Global patterns of mammalian co-occurrence: phylogenetic and body size structure within species ranges](http://onlinelibrary.wiley.com/doi/10.1111/jbi.12826/abstract)  
 Procesos ecológicos y evolutivos para explicar la codistribución de especies de mamíferos terrestres a nivel mundial. El tamaño corporal y la filogenia ayudan a explicar patrones espaciales de diversidad. 
 _____
 ### Mammalia (Marco)
