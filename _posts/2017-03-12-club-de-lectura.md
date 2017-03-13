@@ -1,5 +1,16 @@
 ---
-published: false
+title: "Novedades en la literatura mastozoológica, marzo 2017"
+layout: post
+excerpt: Resumen del seminario mensual de actualización en literatura científica del grupo de Mastozoología, MZFC-UNAM. 
+tags:
+  - mastos
+  - marti
+  - club de galanes
+image:
+  feature: featureNerd.jpg
+  credit: CC0 image
+  creditlink: https://pixabay.com/
+published: true
 ---
 ## Seminario mensual de actualización en literatura científica del grupo de Mastozoología, MZFC-UNAM (club de lectura)
 
