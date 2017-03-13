@@ -1,7 +1,7 @@
 ---
 published: false
 ---
-Seminario mensual de actualización en literatura científica del grupo de Mastozoología, MZFC-UNAM (club de lectura). 
+## Seminario mensual de actualización en literatura científica del grupo de Mastozoología, MZFC-UNAM (club de lectura)
 
 El objetivo de esta actividad es estar al día con la literatura sobre el área de interés de nuestro grupo de trabajo. Trabajar en equipo nos ayuda a estar al día sin tener que revisar constantemente todas las revistas.  
 
@@ -13,7 +13,7 @@ Se le asignó una revista a cada participante, quien deberá revisar la página 
 4. Conservación
 5. Patrones generales de alto impacto a nivel mundial
 
-Este es el resumen de la sesión de marzo 2017. Lo comparto para el grupo y para cualquier persona interesada en mamíferos. Las contribuciones tiene el siguiente formato:
+A continuación, los artículos que compartimos en la sesión de marzo de 2017. Lo comparto para el grupo y para cualquier persona interesada en mamíferos. Las contribuciones tienen el siguiente formato:
 
 ### Revista (ponente)
 Autores  
