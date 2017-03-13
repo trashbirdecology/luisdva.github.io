@@ -38,7 +38,7 @@ Punto de vista sobre el uso de métodos que contemplan el sorteo incompleto de l
 _____
 ### Molecular Phylogenetics & Evolution (Luis)
 Pavan & Marroig 2017  
-[Timing and patterns of diversification in the Neotropical bat genus Pteronotus (Mormoopidae)](http://www.sciencedirect.com/science/article/pii/S1055790317300908)
+[Timing and patterns of diversification in the Neotropical bat genus _Pteronotus_ (Mormoopidae)](http://www.sciencedirect.com/science/article/pii/S1055790317300908)
 Reconstrucción de los patrones biogeográficos del género _Pteronotus_ usando una filogenia molecular y modelos de biogeografía paramétrica. 
 _____
 ### Molecular Ecology (Giovani)
@@ -57,7 +57,7 @@ Martínez-Salazar et al. 2016
 Registros de endoparásitos de roedores en el estado de Zacatecas.
 _____
 ### Proceedings of the Royal Society B - Biological Sciences (Juan)
-Urban et al 2017  
+Urban et al. 2017  
 [A new developmental mechanism for the separation of the mammalian middle ear ossicles from the jaw](http://dx.doi.org/10.1098/rspb.2016.2416)  
 Orígenes ontogenéticos de los huesos del oido medio en mamíferos, comparando patrones en marsupiales y placentados. 
 _____
