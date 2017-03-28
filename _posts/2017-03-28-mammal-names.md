@@ -1,4 +1,16 @@
 ---
+title: "What's in a name"
+layout: post
+excerpt: Text analysis applied to mammalian common names. 
+tags:
+  - stringi
+  - tidytext
+  - regex
+  - hrbr
+image:
+  feature: featureMNames.png
+  credit: contains CC0 public domain elements from pixabay
+  creditlink: 
 published: false
 ---
 With [Mammal March Madness]( http://mammalssuck.blogspot.com/2017/02/dont-call-it-is-comeback-weve-been-here.html) happening this month, I’ve been seeing a lot of common names for mammalian species in my Twitter feed and this year in particular two of the divisions are based directly on common names: Adjective mammals (e.g. Spectacled bear, pouched rat, clouded leopard, etc. ) and Two Animals One Mammal (e.g. bearcat, tiger quoll, hog badger, etc.). I recently had to figure out how to do text analysis for another project (in which I counted the most frequently-used words in the titles of hundreds of papers), so I wondered if I could apply the same analysis code to the common names for mammals (turns out I could). 
