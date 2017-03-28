@@ -13,14 +13,14 @@ image:
   creditlink: 
 published: true
 ---
-With [Mammal March Madness]( http://mammalssuck.blogspot.com/2017/02/dont-call-it-is-comeback-weve-been-here.html) happening this month, I’ve been seeing a lot of common names for mammalian species in my Twitter feed and this year in particular two of the divisions are based directly on common names: Adjective mammals (e.g. Spectacled bear, pouched rat, clouded leopard, etc. ) and Two Animals One Mammal (e.g. bearcat, tiger quoll, hog badger, etc.). I recently had to figure out how to do text analysis for another project (in which I counted the most frequently-used words in the titles of hundreds of papers), so I wondered if I could apply the same analysis code to the common names for mammals (turns out I could). 
+With [Mammal March Madness]( http://mammalssuck.blogspot.com/2017/02/dont-call-it-is-comeback-weve-been-here.html) happening this month, I’ve been seeing a lot of common names for mammalian species in my Twitter feed and this year in particular two of the divisions are based directly on common names: **Adjective mammals** (e.g. Spectacled bear, pouched rat, clouded leopard, etc. ) and **Two Animals One Mammal** (e.g. bearcat, tiger quoll, hog badger, etc.). I recently had to figure out how to do text analysis for another project (in which I counted the most frequently-used words in the titles of hundreds of papers), so I wondered if I could apply the same analysis code to the common names for mammals (turns out I could). 
 This post has two parts: Part One is a straightforward text analysis of word frequency, and Part Two is a nifty approach to quantifying name lengths.  
 
 # Part 1: What are the most frequent words in the common names of thousands of mammalian species?
 
-I’m doing this post for common names in English because these made for the largest dataset. Personally, I rarely use common names and we don’t really have nearly as many in Spanish (although some of the ones we have are pretty cool (e.g. tlacuachín, chungungo, and viejo de monte).  
+I’m doing this post for common names in English because these made for the largest dataset. Personally, I rarely use common names and we don’t really have nearly as many in Spanish - although some of the ones we have are pretty cool (e.g. tlacuachín, chungungo, and viejo de monte).  
 
-For this post I we’ll use the [tidytext]( http://tidytextmining.com/) R package and a massive list of common names for mammals that’s available thanks to the [IUCN Red List]( http://www.iucnredlist.org/) assessments. All the code here should be fully reproducible, although you will probably need to install various packages first.
+For this post we’ll use the [tidytext]( http://tidytextmining.com/) R package and a massive list of common names for mammals that’s available thanks to the [IUCN Red List]( http://www.iucnredlist.org/) assessments. All the code here should be fully reproducible, although you will probably need to install various packages first.
 
 {% highlight r %}
 # load libraries
@@ -37,7 +37,7 @@ IUCN <- read.csv("https://raw.githubusercontent.com/ManuelaGonzalez/Who-is-Who/m
 commNamesTax <- IUCN %>% select(Order,common_name=Common.names..Eng.,Genus,Species) %>% mutate(scName=paste(Genus,Species,sep=" "))
 {% endhighlight %}
 
-Once we download the IUCN data that we had from another post we use _unnest_tokens()_ to split up the common names and end up with a row for every token (in this case words). With the words in this long format, we can easily quantify them using _count()_. Pretty cool and pretty simple. 
+Once we download the IUCN data that we had from another [post](http://luisdva.github.io/Who-is-Who/) we use _unnest_tokens()_ to split up the common names and end up with a row for every token (in this case words). With the words in this long format, we can easily quantify them using _count()_. Pretty cool and pretty simple. 
 
 {% highlight r %}
 ## for all species
@@ -51,7 +51,9 @@ namesAll <- commNamesTax %>% mutate(names_all = common_name) %>% unnest_tokens(w
 # quantify
 by_wordAll <- namesAll %>% count(word, sort = TRUE)
 {% endhighlight %}
-I chose an arbitrary number of 20 top words to plot, using ggalt and hrbrthemes to make crisp and minimalist lollipop charts.
+
+I chose an arbitrary number of 20 top words to plot, using _ggalt_ and _hrbrthemes_ to make crisp and minimalist lollipop charts.
+
 {% highlight r %}
 # prepare for plotting
 loadfonts(device="win")
@@ -72,10 +74,10 @@ Unsurprisingly, the top words for all orders reflect the names of the most diver
 
 <figure>
     <a href="/images/allOrders.png"><img src="/images/allOrders.png"></a>
-        <figcaption></figcaption>
+        <figcaption>click to enlarge</figcaption>
 </figure>
 
-To gain more insight, we can join the list of top words with the Parts of speech data frame that comes with _tidytext_. This dataset contains hundreds of thousands of English words from the [Moby Project](http://icon.shef.ac.uk/Moby/mpos.html) by Grady Ward, with each one tagged as "Noun", "Adverb", "Adjective", or  “Verb”, among other options.  For some of the top terms there were multiple matches (for example: “flying” as an adjective, a noun, and a verb) but we can keep the first match using _slice()_. I also fixed up missing or mismatched terms manually using _case/_when()_.
+To gain more insight, we can join the list of top words with the **Parts of speech** data frame that comes with _tidytext_. This dataset contains hundreds of thousands of English words from the [Moby Project](http://icon.shef.ac.uk/Moby/mpos.html) by Grady Ward, with each one tagged as "Noun", "Adverb", "Adjective", or  “Verb”, among other options.  For some of the top terms there were multiple matches (for example: “flying” as an adjective, a noun, and a verb) but we can keep the first match using _slice()_. I also fixed up missing or mismatched terms manually using _case\_when()_.
 
 I wrote a function to get the top n words, mainly as a way to document how non-standard evaluation works for _unnest/_tokens_/_ because I couldn’t find anything in the help files. Hint: it takes the arguments as character vectors. 
 
