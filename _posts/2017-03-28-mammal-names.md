@@ -79,7 +79,7 @@ Unsurprisingly, the top words for all orders reflect the names of the most diver
 
 To gain more insight, we can join the list of top words with the **Parts of speech** data frame that comes with _tidytext_. This dataset contains hundreds of thousands of English words from the [Moby Project](http://icon.shef.ac.uk/Moby/mpos.html) by Grady Ward, with each one tagged as "Noun", "Adverb", "Adjective", or  “Verb”, among other options.  For some of the top terms there were multiple matches (for example: “flying” as an adjective, a noun, and a verb) but we can keep the first match using _slice()_. I also fixed up missing or mismatched terms manually using _case\_when()_.
 
-I wrote a function to get the top n words, mainly as a way to document how non-standard evaluation works for _unnest/_tokens_/_ because I couldn’t find anything in the help files. Hint: it takes the arguments as character vectors. 
+I wrote a function to get the top n words, mainly as a way to document how non-standard evaluation works for _unnest\_tokens\__ because I couldn’t find anything in the help files. Hint: it takes the arguments as character vectors. 
 
 {% highlight r %}
 # function to get top n
@@ -134,7 +134,7 @@ ggplot(topWbyOrder,aes(x = fct_reorder(word, n), y = n)) +
 
 <figure>
     <a href="/images/specOrders.png"><img src="/images/specOrders.png"></a>
-        <figcaption></figcaption>
+        <figcaption>click to enlarge</figcaption>
 </figure>
 
 We see that there is essentially no overlap in the most frequent words, but this is probably not the best way to visualize the high amount of mismatch. Instead, we can condense way more information using a heatmap, in this case created using Rebecca Barter’s [_superheat_](https://rlbarter.github.io/superheat/index.html) package. 
@@ -167,7 +167,7 @@ The heatmap shows how there are no shared top words between the six most diverse
 
 <figure>
     <a href="/images/mheatmap.png"><img src="/images/mheatmap.png"></a>
-        <figcaption></figcaption>
+        <figcaption>click image to enlarge</figcaption>
 </figure>
 
 Finally, I wrote a very crude function to generate new common names by just mashing up some of the popular words following three few simple formulas (adjective adjective noun, noun noun, adjective nounnoun). 
@@ -205,9 +205,11 @@ newMammal <- function(dat,howmany){
 newMammal(by_wordAll,10)
 {% endhighlight %}
 
-Most of the output makes no sense, but there were some funny ones, and I decided to draw a few with my MS Paint skills. Here is a sample of 100. 
+Most of the output makes no sense, but there were some funny ones, and I decided to draw a few with my epic MS Paint skills. Below is a sample of 100. 
 
 > This function could be vastly improved by using more tags other than noun and adjective. For example, it’s possible to follow this [post](https://www.r-bloggers.com/the-animals-of-actuallivingscientists/) by [Maëlle Salmon]( http://www.masalmon.eu/) to separate animal names from other nouns. 
+
+**100 random mashed up names**
 
 {% highlight text %}
 1 soricine dayakmar
@@ -320,7 +322,7 @@ Most of the output makes no sense, but there were some funny ones, and I decided
 # Part 2: Name lengths
 
 Now we will quantify the length of different common names, in terms of both words and characters.
-Before doing that, it’s worth noting that of 5567 species in the dataset, 5350 have at least one common name listed. Also, 2407 species have >1 common names. The trick there was to use stringi’s _stri_detect()_ to only keep rows that contain commas and then count the number of rows. 
+Before doing that, it’s worth noting that of **5567** species in the dataset, **5350** have at least one common name listed. Also, **2407** species have >1 common names. The trick there was to use stringi’s _stri_detect()_ to only keep rows that contain commas and then count the number of rows. 
 
 {% highlight r %}
 # part two: name lengths
@@ -336,7 +338,7 @@ multNames <- commNamesTax %>% mutate(N_commonNames=(stri_count_fixed(common_name
 commNamesTax %>% filter(stri_detect_fixed(common_name,",")) %>% nrow()
 {% endhighlight %}
 
-Two species are tied with the highest number of common names (9): the grey wolf (aka. Timber Wolf, Arctic Wolf, Gray Wolf, Mexican Wolf, Plains Wolf, Common Wolf, Tundra Wolf, Wolf) and the wapiti (aka. Siberian Wapiti, McNeill's Deer, Merriam's Wapiti, Shou, Izubra/Manchurian Wapiti, Tien Shan Wapiti, Tule Elk, Alashan Wapiti).
+Two species are tied with the highest number of common names (9): the **grey wolf** (aka. Timber Wolf, Arctic Wolf, Gray Wolf, Mexican Wolf, Plains Wolf, Common Wolf, Tundra Wolf, Wolf) and the **wapiti** (aka. Siberian Wapiti, McNeill's Deer, Merriam's Wapiti, Shou, Izubra/Manchurian Wapiti, Tien Shan Wapiti, Tule Elk, Alashan Wapiti).
 
 Once we’ve counted the number of names, let’s check it out in histogram format.
 
@@ -354,7 +356,7 @@ ggplot(multNames,aes(N_commonNames))+geom_histogram(binwidth = 1,fill="red",alph
         <figcaption>pretty skewed</figcaption>
 </figure>
 
-To count the length of the common names in terms of characters, I had to make a choice about which name to keep for those species that had many. The simplest option was to keep the first one provided, using the _separate()_ function in tidyr. 
+To count the length of the common names in terms of characters, I had to make a choice about which name to keep for those species that had many. The simplest option was to keep the first one provided, using the _separate()_ function in _tidyr_. 
 
 {% highlight r %}
 # separate using the commas
@@ -363,7 +365,7 @@ firstNames <- commNamesTax %>%  separate(common_name,",",into="FirstCname")
 firstNames$charlengths <- stri_length(firstNames$FirstCname)
 {% endhighlight %}
 
-The mammal with the shortest common name is the Kob (_Kobus kob_), an antelope found across sub-Saharan Africa. The species with the longest common name is the Black-crowned Central American Squirrel Monkey (_Saimiri oerstedii_), with a self-explanatory common name.
+The mammal with the shortest common name is the **Kob** (_Kobus kob_), an antelope found across sub-Saharan Africa. The species with the longest common name is the **Black-crowned Central American Squirrel Monkey** (_Saimiri oerstedii_), with a self-explanatory common name.
 
 Now let’s look at the distribution of the number of characters, but using a density plot instead of a histogram.
 
@@ -383,4 +385,5 @@ ggplot(firstNames,aes(charlengths))+geom_density(col="red")+
 </figure>
 
 That’s all, if you found this helpful please let me know, and also contact me if you find any mistakes in the code.
+
 Go mammals!
