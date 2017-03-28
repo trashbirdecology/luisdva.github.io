@@ -67,7 +67,9 @@ by_wordAll %>%
        caption="source: IUCN Red List assessments", x="word",y="count") +
   theme_ipsum_rc(grid="X")
 {% endhighlight %}
+
 Unsurprisingly, the top words for all orders reflect the names of the most diverse groups (rodents, bats, shrews and primates)
+
 <figure>
     <a href="/images/allOrders.png"><img src="/images/allOrders.png"></a>
         <figcaption></figcaption>
