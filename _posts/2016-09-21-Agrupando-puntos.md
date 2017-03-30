@@ -14,7 +14,7 @@ published: true
 ---
 ## Agrupando puntos en dos dimensiones con ggplot
 
-> This post is available in English [here](http://luisdva.github.io/Grouping-points/ "Anglais")
+> This post is available in English [here](http://luisdva.github.io/rstats/Grouping-points/ "Anglais")
 
 Para varios tipos de análisis, es común terminar con gráficas que muestran puntos de dos o más grupos en dos dimensiones. Por ejemplo: análisis de componentes principales, perfiles bioclimáticos, o cualquier combinación de valores en dos ejes. Colaborando en diferentes proyectos, me he encontrado con tres alternativas para agrupar puntos y las quiero compartir en una misma publicación.
 
