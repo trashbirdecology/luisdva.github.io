@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: catindex
 permalink: /categories/
 title: "Posts by Category"
 author_profile: true
