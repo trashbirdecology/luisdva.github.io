@@ -4,6 +4,7 @@ title: Basic biodiversity data-wrangling operations
 excerpt: >-
   Manipulating variables and content in biodiversity datasets using base R and
   dplyr. 
+category: rstats
 tags:
   - count how many
   - everything()
