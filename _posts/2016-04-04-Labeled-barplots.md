@@ -2,6 +2,7 @@
 layout: post
 title: Labeled barplots in ggplot2
 excerpt: "Visualizing grouped values using labeled side-by-side bars in ggplot2."
+category: rstats
 tags: 
   - ggplot2
   - dodged barplot
