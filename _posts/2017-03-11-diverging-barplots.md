@@ -2,6 +2,7 @@
 title: "More on diverging stacked bar plots"
 layout: post
 excerpt: My take on the SkepticalScience global warming figure using ggplot, includes R code and data.
+category: rstats
 tags:
   - datavis
   - Roboto
