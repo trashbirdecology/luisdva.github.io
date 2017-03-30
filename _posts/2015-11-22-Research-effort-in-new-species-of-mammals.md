@@ -2,6 +2,7 @@
 layout: post
 title: Research patterns in new species of mammals
 excerpt: "Summary and visualization of research effort for recently described species of terrestrial mammals. Includes R code and data."
+category: rstats
 tags: 
   - discovery
   - olinguito
