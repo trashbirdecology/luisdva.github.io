@@ -71,4 +71,4 @@ jekyll-archives:
   layout: 
     tag:tag-archive-layout
   permalinks:
-    tag: '/archives/tag/:name/`
+    tag: '/tag/:name/`
