@@ -1,5 +1,5 @@
 ---
-layout: catindex
+layout: post-index
 title: R Posts
 excerpt: "Rstats Posts"
 image: 
