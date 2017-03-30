@@ -1,5 +1,7 @@
 ---
 layout: catindex
-title: "Posts by Category"
-author_profile: true
+title: R Posts
+excerpt: "Rstats Posts"
+image: 
+  feature: featurePosts.jpg
 ---
