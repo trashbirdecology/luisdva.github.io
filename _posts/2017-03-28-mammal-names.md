@@ -38,7 +38,7 @@ IUCN <- read.csv("https://raw.githubusercontent.com/ManuelaGonzalez/Who-is-Who/m
 commNamesTax <- IUCN %>% select(Order,common_name=Common.names..Eng.,Genus,Species) %>% mutate(scName=paste(Genus,Species,sep=" "))
 {% endhighlight %}
 
-Once we download the IUCN data that we had from another [post](http://luisdva.github.io/Who-is-Who/) we use _unnest_tokens()_ to split up the common names and end up with a row for every token (in this case words). With the words in this long format, we can easily quantify them using _count()_. Pretty cool and pretty simple. 
+Once we download the IUCN data that we had from another [post](http://luisdva.github.io/rstats/Who-is-Who/) we use _unnest_tokens()_ to split up the common names and end up with a row for every token (in this case words). With the words in this long format, we can easily quantify them using _count()_. Pretty cool and pretty simple. 
 
 {% highlight r %}
 ## for all species
