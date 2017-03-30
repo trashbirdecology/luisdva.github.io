@@ -2,6 +2,7 @@
 title: "What's in a name?"
 layout: post
 excerpt: Text analysis applied to mammalian common names. 
+category: rstats
 tags:
   - stringi
   - tidytext
