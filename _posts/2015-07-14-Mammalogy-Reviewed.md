@@ -2,6 +2,7 @@
 layout: post
 title: "Trends in mammal research in Mexico 1991-2012"
 excerpt: "Summary of research presented at scientific meetings of the Mexican Mammalogy Society (AMMAC) 1991-2012."
+category: rstats
 tags: 
   - scientific conference
   - review
