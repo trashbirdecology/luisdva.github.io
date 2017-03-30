@@ -1,6 +1,7 @@
 ---
 layout: post
 excerpt: Making diverging stacked bar plots in R using ggplot.
+category: rstats
 tags:
   - rstats
   - ggplot
