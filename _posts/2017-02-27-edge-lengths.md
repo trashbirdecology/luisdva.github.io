@@ -2,6 +2,7 @@
 title: "Making sense of trees"
 layout: post
 excerpt: Extracting edge lengths from R phylo objects.
+category: rstats
 tags:
   - Jeff Hanson
   - ape
