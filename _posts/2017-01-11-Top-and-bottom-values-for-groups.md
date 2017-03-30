@@ -1,6 +1,7 @@
 ---
 layout: post
 excerpt: Using R and dplyr to extract minimum or maximum (or both) variable values within groups.
+category: rstats
 tags:
   - rstats
   - dplyr
