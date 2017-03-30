@@ -17,7 +17,7 @@ The title for this post borrows part of the title from: Kanwalraj M. & S. Butter
 doi: [http://dx.doi.org/10.1597/12-335](http://dx.doi.org/10.1597/12-335)
 {: .notice}
 
-In a previous post I summarized an analysis of the content presented at Mexican mammalogy conferences over a number of years. The paper in question mentioned a gap between what was presented at conferences with what is published in the literature. This got me interested in previous efforts to track the fates of studies presented at scientific conferences and their paths to publication.
+In a previous [post](http://luisdva.github.io/rstats/Mammalogy-Reviewed/) I summarized an analysis of the content presented at Mexican mammalogy conferences over a number of years. The paper in question mentioned a gap between what was presented at conferences with what is published in the literature. This got me interested in previous efforts to track the fates of studies presented at scientific conferences and their paths to publication.
 
 While searching for these types of studies I stumbled upon Bibliometrics and Scientometrics, two closely related approaches to measuring scientific publications and science in general, respectively.  These fields focus on networks of scholars and scholarly communication, the development of areas of knowledge over time, and the measurement of productivity and impact for scholars or publications [(read more)](http://microsites.oii.ox.ac.uk/tidsr/kb/48/what-bibliometrics-and-scientometrics).
 
