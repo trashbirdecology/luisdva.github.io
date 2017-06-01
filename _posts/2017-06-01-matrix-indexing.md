@@ -2,6 +2,7 @@
 published: false
 ---
 Matrix indexing
+
 I recently received a file from a collaborator in which some categorical variables describing various primate species had been recoded into binary columns. I later learned that this is known as a design or model matix, in which categories (factors) are expanded into a set of dummy variables.
 
 For example, I was looking at something like this:
@@ -30,18 +31,87 @@ Almost immediately the Twitter #rstats community came through and both [Naupaka 
 
 Essentialy:
 
-{% highlighttext %}
+{% highlight text %}
 gather() %>% filter() %>% select()
 {% endhighlight %}
 
-My mistake was not leaving a species/ID column in the rough screenshot that I posted and in the toy dataset that I was using, without which I couldn’t get the above approach to work. Once I realized that I needed row IDs I replied in the Twitter thread and [T.J. Mahr]( https://twitter.com/tjmahr) pointed out that the tibble package has a new function to add row IDs to columns (rowid_to_column). 
+My mistake was not leaving a species/ID column in the rough screenshot that I posted and in the toy dataset that I was using, without which I couldn’t get the above approach to work straight away. Once I realized that I needed row IDs I replied in the Twitter thread and [T.J. Mahr]( https://twitter.com/tjmahr) pointed out that the _tibble_ package has a new function to add row IDs to columns (**rowid_to_column()**). 
+
+> If you have a table that already has row ids, then there's no need to create them.
+
 That was the last piece missing and I got everything working. Let’s have a look at how to recode dummy binary columns into a single variable (also known as matrix indexing).
-First, the dplyr approach:
-With row ids
 
-With a loop (thanks to [Daijiang Li]( https://twitter.com/_djli) for this suggestion)
+First, the _tidyverse_ approach:
 
-baseR approach using the apply family of functions (thanks to [Damien R. Farine]( https://twitter.com/DamienFarine) for this one)
+{% highlight r%}
+# load packages
+library(dplyr)
+library(tibble)
+library(tidyr)
 
-When this indexing has to be done many times for different variables, I came across a nifty way of putting the new tbls together using Reduce() to perform multiple left joins.
+# create the example dataframe
+## Biogeographic regions
+regs <- matrix(c(0,0,0,0,0,0,0,
+                 0,1,0,0,0,0,0,
+                 1,0,1,1,1,0,0,
+                 0,0,0,0,0,1,1),ncol = 4, nrow = 7)
+colnames(regs) <- c("Asia","Madagascar","Mainland","Neotropics")
+regsdf <- data.frame(regs) #coerce to dataframe
+
+# tidyverse approach
+regions <- regsdf %>% rowid_to_column() %>% gather(region,present,Asia:Neotropics) %>% 
+              filter(present==1) %>% select(-present) %>% arrange(rowid)
+{% endhighlight %}
+
+With a loop (thanks to [Daijiang Li](https://twitter.com/_djli) for this suggestion)
+
+{% highlight r%}
+# create an empty vector and populate it with the variable name that isn't cero within each row
+regsvec <- c()
+for(i in 1:nrow(regsdf)) {
+    regsvec[i] <- names(regsdf)[which(regsdf[i,]!=0)]
+}
+
+{% endhighlight %}
+
+
+baseR approach using the apply family of functions (thanks to [Damien R. Farine](https://twitter.com/DamienFarine) for this one)
+
+{% highlight r%}
+# similar but using the apply family of functions
+regionvec <- names(regsdf)[apply(regsdf,1,function(x) {which(x==1)})]
+{% endhighlight %}
+
+When this indexing has to be done many times for different variables, I came across a nifty way of putting the new tbls together using _Reduce()_ to perform multiple left joins.
+
+{% highlight r %}
+# another variable to recode
+## locomotion mode
+locomotionType <- matrix(c(0,0,1,0,1,0,0,
+                           1,1,0,1,0,1,1),ncol=2, nrow = 7,)
+colnames(locomotionType) <- c("loc_arboreal","loc_terrestrial")
+locomotionTypedf <- data.frame(locomotionType)
+
+# indexing
+locType <- locomotionTypedf %>% rowid_to_column() %>% gather(loctype,present,loc_arboreal:loc_terrestrial) %>% 
+  filter(present==1) %>% select(-present) %>% arrange(rowid)
+
+# one more variable
+## habitat type
+habt <- matrix(c(1,0,1,0,0,0,0,
+                 0,0,0,0,0,1,1,
+                 0,0,0,1,1,0,0,
+                 0,1,0,0,0,0,0),ncol = 4, nrow = 7)
+colnames(habt) <- c("urban","forest","dry","crops")
+habtdf <- data.frame(habt)
+
+# indexing
+habType <- habtdf %>% rowid_to_column() %>% gather(habitatType,present,urban:crops) %>% 
+  filter(present==1) %>% select(-present) %>% arrange(rowid)
+
+# join the three
+sptraits <- Reduce(left_join,list(regions,locType,habType)) 
+
+{% endhighlight %}
+
 
