@@ -15,7 +15,6 @@ image:
   creditlink: 
 published: true
 ---
-Matrix indexing
 
 I recently received a file from a collaborator in which some categorical variables describing various primate species had been recoded into binary columns. I later learned that this is known as a design or model matix, in which categories (factors) are expanded into a set of dummy variables.
 
@@ -40,7 +39,7 @@ About ten of the variables that I needed were coded as binary columns and I foun
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> people: <br>what&#39;s the dplyr or <a href="https://twitter.com/hashtag/tidyr?src=hash">#tidyr</a> way to do this? <br>help pls I&#39;m stuck :( <a href="https://t.co/OAt5jGed8L">pic.twitter.com/OAt5jGed8L</a></p>&mdash; Luis D. Verde (@LuisDVerde) <a href="https://twitter.com/LuisDVerde/status/867869003246706690">May 25, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I’m a tidyverse type of person so I specifically asked for a dplyr or tidyr approach. By then I had already written a loop that more or less worked, but I knew I was missing something.
+I’m a tidyverse type of person so I specifically asked for a _dplyr_ or _tidyr_ approach. By then I had already written a loop that more or less worked, but I knew I was missing something.
 Almost immediately the Twitter #rstats community came through and both [Naupaka Zimmerman](https://twitter.com/naupakaz) and [Giulio Valentino Dalla Riva](https://twitter.com/ipnosimmia) suggested that I ‘melt’ the data into long format; filter only the rows with value 1, and then select out the column with the values.
 
 Essentialy:
@@ -49,9 +48,9 @@ Essentialy:
 gather() %>% filter() %>% select()
 {% endhighlight %}
 
-My mistake was not leaving a species/ID column in the rough screenshot that I posted and in the toy dataset that I was using, without which I couldn’t get the above approach to work straight away. Once I realized that I needed row IDs I replied in the Twitter thread and [T.J. Mahr]( https://twitter.com/tjmahr) pointed out that the _tibble_ package has a new function to add row IDs to columns (**rowid_to_column()**). 
+My mistake was not leaving a species/ID column in the rough screenshot that I posted and in the toy dataset that I was using, without which I couldn’t get the above approach to work straight away. After realizing that I needed row IDs I replied in the Twitter thread and [T.J. Mahr]( https://twitter.com/tjmahr) pointed out that the _tibble_ package has a new function to add row IDs to columns (**rowid_to_column()**). 
 
-> If you have a table that already has row ids, then there's no need to create them.
+> If you have a table that already has row IDs, then there's no need to create them.
 
 That was the last piece missing and I got everything working. Let’s have a look at how to recode dummy binary columns into a single variable (also known as matrix indexing).
 
