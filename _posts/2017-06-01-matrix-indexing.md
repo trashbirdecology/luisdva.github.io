@@ -1,5 +1,19 @@
 ---
-published: false
+title: "Matrix Indexing"
+layout: post
+excerpt: Recoding binary dummy variables into factors. Includes tidyverse and base R approaches. 
+category: rstats
+tags:
+  - matrix
+  - reduce
+  - dplyr
+  - tidyr
+  - model matrix
+image:
+  feature: featureMatrixInd.jpg
+  credit: contains CC0 public domain elements from Pixabay
+  creditlink: 
+published: true
 ---
 Matrix indexing
 
@@ -114,4 +128,4 @@ sptraits <- Reduce(left_join,list(regions,locType,habType))
 
 {% endhighlight %}
 
-
+Feel free to contact me with any questions or simply to let me know if you found this useful. 
