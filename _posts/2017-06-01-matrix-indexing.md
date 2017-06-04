@@ -16,7 +16,7 @@ image:
 published: true
 ---
 
-I recently received a file from a collaborator in which some categorical variables describing various primate species had been recoded into binary columns. I later learned that this is known as a design or model matix, in which categories (factors) are expanded into a set of dummy variables.
+I recently received a file from a collaborator in which some categorical variables describing various primate species had been recoded into binary columns. I later learned that this is known as a design or model matrix, in which categories (factors) are expanded into a set of dummy variables.
 
 For example, I was looking at something like this:
 
