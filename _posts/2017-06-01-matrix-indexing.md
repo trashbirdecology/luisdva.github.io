@@ -34,7 +34,7 @@ Instead of something like this:
 | sp b    | arboreal    |
 | sp c    | arboreal    |
 
-About ten of the variables that I needed were coded as binary columns and I found myself unsure of how I could change them back without too much work. I didn’t know what to call this or what terms to search for, so I took to Twitter and asked.
+About ten of the variables that I needed were coded as binary columns and I found myself unsure of how I could change them back without too much work. I didn’t know what to call this or what terms to search for, so I took to Twitter and asked:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> people: <br>what&#39;s the dplyr or <a href="https://twitter.com/hashtag/tidyr?src=hash">#tidyr</a> way to do this? <br>help pls I&#39;m stuck :( <a href="https://t.co/OAt5jGed8L">pic.twitter.com/OAt5jGed8L</a></p>&mdash; Luis D. Verde (@LuisDVerde) <a href="https://twitter.com/LuisDVerde/status/867869003246706690">May 25, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
