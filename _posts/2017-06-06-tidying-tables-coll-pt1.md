@@ -1,13 +1,28 @@
 ---
-published: false
+title: "Tidy tables for collections-based research (Part 1)"
+layout: post
+excerpt: Wrangling commonly-used data formats for collections-based research. Part 1: GenBank accession tables. 
+category: rstats
+tags:
+  - separate
+  - gather
+  - dplyr
+  - tidyr
+  - melt
+image:
+  feature: featureCollsRes.jpg
+  credit: Oxford Museum of Natural History; CC0 public domain image from Pixabay
+  creditlink: 
+published: true
 ---
-Tidy tables for collections-based research (Part 1)
 
-This series of posts will go through some simple steps to wrangle the data that often accompanies collections-based studies. This post is on handling multispecies tables of GenBank accession numbers, a common component of systematics papers.
+This series of posts will go through some simple steps to wrangle the data that often accompanies collections-based studies. This post is on handling multispecies tables of GenBank accession numbers, a common component of systematics and phylogeography papers.
 
 As I work my way through the tables and appendices of various rodent phylogeny/morphology papers, I’ll continue to post more of the R code that has saved me lots of time by not having to edit large datasets by hand. 
 
 In this case, I wanted to tidy up a pretty basic table from this 2013 [paper](http://onlinelibrary.wiley.com/doi/10.1111/jzo.12017/abstract) by Morgan and Alvarez. This supplementary table had species with their corresponding GenBank accession numbers for four different gene sequences. 
+
+A subset of the data:
 
 |       species       	|          X12S          	|          cytb          	|    GHR   	|           TTH          	|
 |:-------------------:	|:----------------------:	|:----------------------:	|:--------:	|:----------------------:	|
@@ -15,11 +30,12 @@ In this case, I wanted to tidy up a pretty basic table from this 2013 [paper](ht
 |    Cuniculus paca   	| AF433906 (Agouti paca) 	| AY206573 (Agouti paca) 	| AF433928 	| AF433881 (Agouti paca) 	|
 | Dasyprocta punctata 	|        AF433921        	|                        	| AF433943 	|        AF433897        	|
 
-The table for this paper in particular had an interesting twist: some of the accession numbers also included a species name for some special cases in which there have been taxonomic changes. This is useful information, and the original way of presenting it as merged cells in a table in a Word document was visually helpful. However, this format is not ideal for further analyses. We often need to download the sequences programmatically, or compute summary statistics about the taxa being studied, and this is all easier with tidy data. 
+This table in particular had an interesting twist: some of the accession numbers also included a species name for some special cases in which there have been taxonomic changes. This is useful information, and the original way of presenting it as merged cells in a table in a Word document was visually helpful. However, this format is not ideal for further analyses. We often need to download the sequences programmatically, or compute summary statistics about the taxa being studied, and this is all easier with tidier data. 
 
 Let’s use some helpful **tidyverse** functions to change the overall structure of the data and separate the accession numbers from the species synonyms for those species that have any.
 
-Setting up an example data frame from a subset of the actual table
+Setting up an example data frame from a subset of the actual table:
+
 {% highlight r %}
 appendixS1 <- 
 data.frame(species = c("Aconaemys sagei", "Cuniculus paca", "Phyllomys pattoni", "Proechimys longicaudatus"), 
