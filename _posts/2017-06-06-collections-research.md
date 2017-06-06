@@ -1,3 +1,7 @@
+---
+published: false
+---
+
 This series of posts will go through some simple steps to wrangle the data that often accompanies collections-based studies. This post is on handling multispecies tables of GenBank accession numbers, a common component of systematics and phylogeography papers.
 
 As I work my way through the tables and appendices of various rodent phylogeny/morphology papers, I’ll continue to post more of the R code that has saved me lots of time by not having to edit large datasets by hand. 
@@ -88,4 +92,3 @@ Final structure
 {% endhighlight %}
 
 Pretty simple, but it beats having to manually cut out the synonyms. The original dataset had more genes and many more species but the principle is still the same.
-
