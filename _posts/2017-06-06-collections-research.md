@@ -1,6 +1,20 @@
 ---
 title: "Tidy tables for collections-based research (Part 1)"
 layout: post
+excerpt: Wrangling commonly-used data formats for collections-based research. Part 1: GenBank accession tables.
+category: rstats
+tags:
+  - tidyverse
+  - sequences
+image:
+  feature: featureCollsRes.jpg
+  credit: contains CC0 public domain elements from Pixabay
+  creditlink: 
+published: true
+---
+
+title: "Tidy tables for collections-based research (Part 1)"
+layout: post
 excerpt: Wrangling commonly-used data formats for collections-based research. Part 1: GenBank accession tables. 
 category: rstats
 tags:
