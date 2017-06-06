@@ -1,21 +1,3 @@
----
-title: "Tidy tables for collections-based research (Part 1)"
-layout: post
-excerpt: Wrangling commonly-used data formats for collections-based research - Part 1: GenBank accession tables. 
-category: rstats
-tags:
-  - separate
-  - gather
-  - dplyr
-  - tidyr
-  - melt
-image:
-  feature: featureCollsRes.jpg
-  credit: Oxford Museum of Natural History; CC0 public domain image from Pixabay
-  creditlink: 
-published: true
----
-
 This series of posts will go through some simple steps to wrangle the data that often accompanies collections-based studies. This post is on handling multispecies tables of GenBank accession numbers, a common component of systematics and phylogeography papers.
 
 As I work my way through the tables and appendices of various rodent phylogeny/morphology papers, I’ll continue to post more of the R code that has saved me lots of time by not having to edit large datasets by hand. 
