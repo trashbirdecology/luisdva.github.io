@@ -1,14 +1,14 @@
 ---
 title: "Tidy tables for collections-based research (Part 1)"
 layout: post
-excerpt: approaches 
+excerpt: Wrangling commonly-used data formats for collections-based research. Part 1: GenBank accession tables. 
 category: rstats
 tags:
-  - matrix
-  - reduce
+  - genbank
+  - gather
   - dplyr
   - tidyr
-  - model matrix
+  - melt
 image:
   feature: featureMatrixInd.jpg
   credit: contains CC0 public domain elements from Pixabay
