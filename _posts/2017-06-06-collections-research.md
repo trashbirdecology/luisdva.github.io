@@ -8,7 +8,6 @@ tags:
   - gather
   - dplyr
   - tidyr
-  - melt
 image:
   feature: featureMatrixInd.jpg
   credit: contains CC0 public domain elements from Pixabay
