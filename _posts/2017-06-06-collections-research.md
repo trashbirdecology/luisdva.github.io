@@ -92,6 +92,7 @@ appendixS1$synonym %<>% gsub("[[:punct:]]", "", .) %>% trimws()
 
 Final structure
 {% highlight text %}
+
                    species gene accNumber            synonym
 1          Aconaemys sagei X12S  AF520673               <NA>
 2          Aconaemys sagei cytb      <NA>               <NA>
@@ -101,11 +102,8 @@ Final structure
 6        Phyllomys pattoni cytb  EF608187               <NA>
 7 Proechimys longicaudatus X12S    U12447               <NA>
 8 Proechimys longicaudatus cytb    U35414 Proechimys simonsi
+
 {% endhighlight %}
 
 Pretty simple, but it beats having to manually cut out the synonyms. The original dataset had more genes and many more species but the principle is still the same.
-
-
-
-
 
