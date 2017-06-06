@@ -4,7 +4,6 @@ layout: post
 excerpt: Wrangling commonly-used data formats for collections-based research. Part 1: GenBank accession tables. 
 category: rstats
 tags:
-  - genbank
   - gather
   - dplyr
   - tidyr
