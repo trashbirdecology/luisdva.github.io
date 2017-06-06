@@ -1,5 +1,5 @@
 ---
-title: "filth"
+title: "Tidy tables for collections-based research (Part 1)"
 layout: post
 excerpt: approaches 
 category: rstats
