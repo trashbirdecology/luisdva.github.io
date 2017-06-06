@@ -1,7 +1,7 @@
 ---
 title: "Tidy tables for collections-based research (Part 1)"
 layout: post
-excerpt: Wrangling commonly-used data formats for collections-based research - Part 1: GenBank accession tables. 
+excerpt: Wrangling commonly-used data formats for collections-based research. Part 1: GenBank accession tables. 
 category: rstats
 tags:
   - separate
@@ -11,7 +11,7 @@ tags:
   - melt
 image:
   feature: featureCollsRes.jpg
-  credit: Oxford Museum of Natural History; CC0 public domain image from Pixabay
+  credit: Oxford Museum of Natural History CC0 public domain image from Pixabay
   creditlink: 
 published: true
 ---
