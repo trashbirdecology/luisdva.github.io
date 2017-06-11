@@ -164,6 +164,7 @@ lessa08og <- lessa08 %>% select(-discrete) %>%
 names(lessa08og)[-1] %<>% paste0("_og")
 # join original and discrete and arrange the columns
 lessa08 <- left_join(lessa08disc,lessa08og) %>% select(taxa,order(colnames(.)))
+# coerce remaining vars to numeric
 ## hacky approach using the underscore 
 lessa08 %<>% mutate_at(vars(contains("_")),funs(as.numeric))
 
@@ -201,4 +202,7 @@ $ deltoid_process_disc   <dbl> 2, 1, 1, 2, 1, NA
 $ epicondylar_width_disc <dbl> 1, 1, 1, 1, 1, NA
 {% endhighlight %}
 
-Simple enough, but I have the feeling that I’ll be using this code to clean up the tables of several papers in the near future. 
+Simple enough, but I have the feeling that I’ll be using this code to clean up the tables of several papers in the near future. I think this code should be robust to the new release of _dplyr_, if it's not I'll update the post.
+
+Happy wrangling.
+
