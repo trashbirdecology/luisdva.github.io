@@ -164,6 +164,9 @@ lessa08og <- lessa08 %>% select(-discrete) %>%
 names(lessa08og)[-1] %<>% paste0("_og")
 # join original and discrete and arrange the columns
 lessa08 <- left_join(lessa08disc,lessa08og) %>% select(taxa,order(colnames(.)))
+## hacky approach using the underscore 
+lessa08 %<>% mutate_at(vars(contains("_")),funs(as.numeric))
+
 {% endhighlight %}
 
 Here’s another way of looking at the new data frames. This is for the discrete values.
@@ -189,16 +192,13 @@ lessa08 %>% select(taxa,contains('disc'))
 The subset:
 
 {% highlight text %}
-> glimpse(lessa08)
+> lessa08 %>% select(taxa,contains('disc')) %>% glimpse(lessa08)
 Observations: 6
-Variables: 7
-$ taxa                   <chr> "Eucelophorus zaratei", "Octodontomys gliroides", "Octomys mimax", "Praectenomys r...
-$ burrow_structure_disc  <chr> NA, "2", "2", NA, "1", NA
-$ burrow_structure_og    <dbl> NA, NA, NA, NA, NA, NA
-$ deltoid_process_disc   <chr> "2", "1", "1", "2", "1", NA
-$ deltoid_process_og     <dbl> NA, 0.33, NA, NA, NA, NA
-$ epicondylar_width_disc <chr> "1", "1", "1", "1", "1", NA
-$ epicondylar_width_og   <dbl> NA, 0.24, 0.22, NA, NA, NA
+Variables: 4
+$ taxa                   <chr> "Eucelophorus zaratei", "Octodontomys gli...
+$ burrow_structure_disc  <dbl> NA, 2, 2, NA, 1, NA
+$ deltoid_process_disc   <dbl> 2, 1, 1, 2, 1, NA
+$ epicondylar_width_disc <dbl> 1, 1, 1, 1, 1, NA
 {% endhighlight %}
 
 Simple enough, but I have the feeling that I’ll be using this code to clean up the tables of several papers in the near future. 
