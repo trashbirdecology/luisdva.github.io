@@ -1,9 +1,24 @@
 ---
-published: false
+title: "Tidy tables for collections-based research (Part 2)"
+layout: post
+excerpt: Wrangling commonly-used data formats. Part 2 - Compound values.
+category: rstats
+tags:
+  - separate
+  - gather
+  - dplyr
+  - tidyr
+  - melt
+image:
+  feature: featureCollsRes.jpg
+  credit: Oxford Museum of Natural History CC0 public domain image from Pixabay
+  creditlink:
+published: true
 ---
-Tidy tables for collections-based research (Part 2)
 
 This is Part Two (of many) in series of posts will go through some simple steps to wrangle the data that is often provided as part of collections-based studies. Data wrangling involves importing, cleaning, and transforming raw data into useful information that is ready for analysis. It is a time-consuming process, so having a reusable and flexible suite of scripts and code can really save us time in the long run. 
+
+> for Part 1 click [here](http://luisdva.github.io/rstats/collections-based1/).
 
 This post is on handling multispecies tables of species trait values in which two related values appear together in the same observation or ‘cell’. For example: showing original and transformed values together using some form of punctuation or special character to separate the different values. This saves space when presenting tables in publications and is relatively common in comparative datasets, but if we only want to work with one of the two values that appear together we need to separate them first.
 
