@@ -16,7 +16,7 @@ image:
 published: true
 ---
 
-This is Part Two (of many) in series of posts will go through some simple steps to wrangle the data that is often provided as part of collections-based studies. Data wrangling involves importing, cleaning, and transforming raw data into useful information that is ready for analysis. It is a time-consuming process, so having a reusable and flexible suite of scripts and code can really save us time in the long run. 
+This is Part Two (of many) in series of posts that will go through some simple steps to wrangle the data that is often provided as part of collections-based studies. Data wrangling involves importing, cleaning, and transforming raw data into useful information that is ready for analysis. It is a time-consuming process, so having a reusable and flexible suite of scripts and code can really save us time in the long run. 
 
 > for Part 1 click [here](http://luisdva.github.io/rstats/collections-based1/).
 
