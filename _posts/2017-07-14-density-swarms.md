@@ -33,7 +33,7 @@ To plot the distribution of variable values for different groups, I used the max
         <figcaption>photo by Flickr user marabuchi; (CC BY-SA 2.0)</figcaption>
 </figure>
 
-This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/) that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way, and I’m probably missing some. All the code here is fully reroducible, although you may need to install some packages first. 
+This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/) that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way at the end of this post. All the code here is fully reroducible, although you may need to install some packages first. 
 
 ## Web scraping
 
@@ -265,4 +265,17 @@ ggplot(dogbeesRev)+
 {% endhighlight%}
 
 Finally, the visual appeal of joyplots can make us get carried away, but as TJ Mahr and [Matti Vuore](https://vuorre.netlify.com/post/2017/visualizing-varying-effects-posteriors-with-joyplots/) pointed out, they can be used to [show posterior distributions of parameter estimates](http://rpubs.com/tjmahr/joyplot).  
+## hrbrverse resources 
 
+Packages:
+[ggalt](https://github.com/hrbrmstr/ggalt) package (for a nice kerned density geom)
+[hrbrthemes](https://github.com/hrbrmstr/hrbrthemes) (crisp ggplot themes)
+
+scraping blog posts:
+[Real Estate](https://rud.is/b/2017/05/05/scrapeover-friday-a-k-a-another-r-scraping-makeover/)
+[Music Composers](https://rud.is/b/2017/04/23/decomposing-composers-with-r/)
+
+Stack Overflow help:
+[Using geom_text with facet_grid](https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid)
+
+[Advice on POST requests](https://stackoverflow.com/questions/39516673/rvest-could-not-find-possible-submission-target-when-submitting-form)
