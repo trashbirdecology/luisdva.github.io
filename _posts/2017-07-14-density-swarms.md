@@ -132,14 +132,14 @@ This code is clunky and it needs different data frames with pre-summarized infor
 
 Here's the result with scaled densities and point swarms.
 <figure>
-    <a href="/images/unscaledDens.png"><img src="/images/unscaledDens.png"></a>
+    <a href="/images/scaledDens.png"><img src="/images/scaledDens.png"></a>
         <figcaption>Everything rescaled (0-1)</figcaption>
 </figure>
 
 Here's a version with unscaled densities and point swarms.
 
 <figure>
-    <a href="/images/scaledDens.png"><img src="/images/scaledDens.png"></a>
+    <a href="/images/unscaledDens.png"><img src="/images/unscaledDens.png"></a>
         <figcaption>Unscaled</figcaption>
 </figure>
 
