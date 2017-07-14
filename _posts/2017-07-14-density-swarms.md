@@ -1,5 +1,19 @@
 ---
-published: false
+title: "Jumping dogs and density plots"
+layout: post
+excerpt: Plotting densities, showing the underlying data as a point swarm. 
+category: rstats
+tags:
+  - joy division
+  - joyplots
+  - beeswarm
+  - violin
+  - golden retriever
+image:
+  feature: featureSplash.jpg
+  credit: photo by Adam Baker
+  creditlink: https://commons.wikimedia.org/wiki/File:Dock_jumping_splash.jpg
+published: true
 ---
 
 In recent weeks there has been much interest in making cool-looking plots of overlapping density distributions. Basically: stacking many overlapping polygons/ribbons to resemble the Joy Division Unknown Pleasures cover art that we all like. 
