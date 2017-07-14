@@ -30,18 +30,38 @@ This post has three main steps: scraping the jump distance data, wrangling it, a
 
 I did not find and Terms of Service prohibiting automated data grabbing anywhere on the SplashDogs website or in the site’s robots.txt file. Remember to always check if scraping is allowed and adhere to all Terms and Conditions. Here’s a [brief guide](https://blog.scrapinghub.com/2016/08/25/how-to-crawl-the-web-politely-with-scrapy/) on how to crawl the web politely. Take breaks between sequential requests, be kind to web servers when scraping, and just be nice in general. What would the dogs think if you crashed a site! 
 
-
 To scrape the data, I used _rvest_ to interact with the web form on the site, making queries for event results by breed and year. I was only after data for a few breeds, and I managed to abstract the scraping into a function and use _purrr_ (a first for me!) to iterate through a small vector of breeds that I chose following two main criteria: (personal bias, and representation in the competitions). I wanted to compare groups with several hundred entries (Labradors) vs groups with just a few (American Pit Bull Terriers). 
+
+{% highlight r%}
+{% endhighlight %}
 
 ## Data wrangling
 
 After putting the html tables into data frames, it was a straightforward process to summarize the data. I cleaned up some unnecessary spaces in the handler names, and kept only the maximum jump distance for each dog.  
+
+{% highlight r%}
+{% endhighlight %}
 
 ## Plotting
 
 My approach was to create a one-sided beeswarm plot object for different groups and plot it over the respective density. For comparison, I made two versions. One in which the densities and the point swarm are scaled, and one without scaling. I’m using faceting here, and I didn’t try to make the densities overlap. 
 This code is clunky and it needs different data frames with pre-summarized information, but I’m happy with the results. The forcats package was very useful for reordering the factor levels whenever I had to arrange the groups for plotting.
 
+Here's the result with scaled densities and point swarms.
+<figure>
+    <a href="/images/unscaledDens.png"><img src="/images/unscaledDens.png"></a>
+        <figcaption>Everything rescaled (0-1)</figcaption>
+</figure>
+
+Here's a version with unscaled densities and point swarms.
+
+<figure>
+    <a href="/images/scaledDens.png"><img src="/images/scaledDens.png"></a>
+        <figcaption>Unscaled</figcaption>
+</figure>
+
+{% highlight r%}
+{% endhighlight %}
 
 For comparison here’s a plot of the same data using geom_joy and some theming to make the plot extra cool. It looks really crisp, and the default geom_joy can be built with a single line of code. 
 I suspect that what I’ve done with the beeswarm points can be made into a geom to accompany geom_joy. If you’re good at ggproto let me know and we can try it out. 
