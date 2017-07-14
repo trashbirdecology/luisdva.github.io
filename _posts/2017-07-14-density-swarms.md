@@ -18,7 +18,7 @@ published: true
 
 In recent weeks there has been much interest in making cool-looking plots of overlapping density distributions. Basically: stacking many overlapping polygons/ribbons to resemble the Joy Division Unknown Pleasures cover art that we all like. 
 
-I saw this kind of plot a few weeks back in a New York Times [infographic](https://www.nytimes.com/interactive/2017/06/12/upshot/the-politics-of-americas-religious-leaders.html?mcubz=2" target="_blank), with several more examples appearing in my Twitter feed this month. Most notably, the Free Time survey plot.
+I saw this kind of plot a few weeks back in a New York Times [infographic](https://www.nytimes.com/interactive/2017/06/12/upshot/the-politics-of-americas-religious-leaders.html){:target="_blank"}, with several more examples appearing in my Twitter feed this month. Most notably, the Free Time survey plot.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Peak time for sports and leisure <a href="https://twitter.com/hashtag/dataviz?src=hash">#dataviz</a>. About time for a joyplot; might do a write-up on them. <a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> code at <a href="https://t.co/Q2AgW068Wa">https://t.co/Q2AgW068Wa</a> <a href="https://t.co/SVT6pkB2hB">pic.twitter.com/SVT6pkB2hB</a></p>&mdash; Henrik Lindberg (@hnrklndbrg) <a href="https://twitter.com/hnrklndbrg/status/883675698300420098">July 8, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
