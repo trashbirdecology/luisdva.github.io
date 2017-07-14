@@ -51,7 +51,7 @@ This post has three main steps: scraping the jump distance data, wrangling it, a
 
 ## Web scraping
 
-I did not find and Terms of Service prohibiting automated data grabbing anywhere on the SplashDogs website or in the site’s robots.txt file. Remember to always check if scraping is allowed and adhere to all Terms and Conditions. Here’s a [brief guide](https://blog.scrapinghub.com/2016/08/25/how-to-crawl-the-web-politely-with-scrapy/) on how to crawl the web politely. Take breaks between sequential requests, be kind to web servers when scraping, and just be nice in general. What would the dogs think if you crashed a site! 
+I did not find and Terms of Service prohibiting automated data grabbing or visualization by third parties anywhere on the SplashDogs website or in the site’s robots.txt file. Remember to always check if scraping is allowed and adhere to all Terms and Conditions. Here’s a [brief guide](https://blog.scrapinghub.com/2016/08/25/how-to-crawl-the-web-politely-with-scrapy/) on how to crawl the web politely. Take breaks between sequential requests, be kind to web servers when scraping, and just be nice in general. What would the dogs think if you crashed a site! 
 
 To scrape the data, I used _rvest_ to interact with the web form on the site, making queries for event results by breed and year. I was only after data for a few breeds, and I managed to abstract the scraping into a function and use _purrr_ (a first for me!) to iterate through a small vector of breeds that I chose following two main criteria: (personal bias, and representation in the competitions). I wanted to compare groups with several hundred entries (Labradors) vs groups with just a few (American Pit Bull Terriers). 
 
