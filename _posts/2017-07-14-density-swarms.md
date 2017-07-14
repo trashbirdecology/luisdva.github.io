@@ -1,7 +1,7 @@
 ---
 title: "Jumping dogs and density plots"
 layout: post
-excerpt: Plotting densities, showing the underlying data as a point swarm. 
+excerpt: Plotting density distributions with the underlying data as a point swarm. 
 category: rstats
 tags:
   - joy division
