@@ -285,7 +285,7 @@ Packages:
 [ggalt](https://github.com/hrbrmstr/ggalt){:target="_blank"} package (for a nice kerned density geom)  
 [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes){:target="_blank"} (crisp ggplot themes)
 
-scraping blog posts:
+scraping blog posts:  
 [Real Estate](https://rud.is/b/2017/05/05/scrapeover-friday-a-k-a-another-r-scraping-makeover/){:target="_blank"}  
 [Music Composers](https://rud.is/b/2017/04/23/decomposing-composers-with-r/){:target="_blank"}
 
