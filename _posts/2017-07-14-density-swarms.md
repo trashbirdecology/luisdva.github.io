@@ -4,27 +4,36 @@ published: false
 
 In recent weeks there has been much interest in making cool-looking plots of overlapping density distributions. Basically: stacking many overlapping polygons/ribbons to resemble the Joy Division Unknown Pleasures cover art that we all like. 
 
-I saw this kind of plot a few weeks back in a New York Times [infographic](https://www.nytimes.com/interactive/2017/06/12/upshot/the-politics-of-americas-religious-leaders.html?mcubz=2" target="_blank), with several more examples appearing in my Twitter feed this month.   
+I saw this kind of plot a few weeks back in a New York Times [infographic](https://www.nytimes.com/interactive/2017/06/12/upshot/the-politics-of-americas-religious-leaders.html?mcubz=2" target="_blank), with several more examples appearing in my Twitter feed this month. Most notably, the Free Time survey plot.
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Peak time for sports and leisure <a href="https://twitter.com/hashtag/dataviz?src=hash">#dataviz</a>. About time for a joyplot; might do a write-up on them. <a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> code at <a href="https://t.co/Q2AgW068Wa">https://t.co/Q2AgW068Wa</a> <a href="https://t.co/SVT6pkB2hB">pic.twitter.com/SVT6pkB2hB</a></p>&mdash; Henrik Lindberg (@hnrklndbrg) <a href="https://twitter.com/hnrklndbrg/status/883675698300420098">July 8, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 The overlapping density plots are very appealing visually, and definitely very challenging to make. [Claus Wilke](https://twitter.com/ClausWilke) recently stepped up to the challenge and created [ggjoy](https://github.com/clauswilke/ggjoy/), an R package for creating the appropriately named JoyPlots. The name was coined in April and the ggjoy package is just a few days old, and both are already getting lots and lots of attention. 
 
  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I guess joyplots are a thing now!<br>Congrats <a href="https://twitter.com/JennyBryan">@JennyBryan</a><a href="https://twitter.com/hashtag/joyplot?src=hash">#joyplot</a> <a href="https://twitter.com/hashtag/joyplots?src=hash">#joyplots</a> <a href="https://t.co/dYdugsbhcu">pic.twitter.com/dYdugsbhcu</a></p>&mdash; Diogo Aguiam (@diogoaguiam) <a href="https://twitter.com/diogoaguiam/status/885801611448201217">July 14, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I feel that Kernel densities look good and that they work well for big datasets with clear unimodal or bimodal distributions. However, with smaller datasets I feel that density functions reflect the choice of smoothing parameters more than they reflect the actual distribution of the underlying data. The optimally-smoothed kernels may not be the prettiest, and so it is probably worth trying to show densities as well as the underlying data.   
+Kernel densities look good and that they work well for big datasets with clear unimodal or bimodal distributions. However, with smaller datasets I feel that density functions reflect the choice of smoothing parameters more than they reflect the actual distribution of the underlying data. The optimally-smoothed kernels may not be the prettiest, and so it is probably worth trying to show densities as well as the underlying data.   
 
 With density plots, it’s difficult to see where the data actually are, and as Andrew Gelman [commented](http://andrewgelman.com/2009/11/25/whats_wrong_wit/):
 > '_I’d rather just see what’s happening … rather than trying to guess by taking the density estimate and mentally un-convolving the kernel._'
 
 For this post, I go through some code for making density plots that also show the underlying data. As usual, I show this using the best type of data: dog data. 
 
-jangolino
+<figure>
+    <a href="/images/jangolino.jpg"><img src="/images/jangolino.jpg"></a>
+        <figcaption>CC0 image</figcaption>
+</figure>
 
 To plot the distribution of variable values for different groups, I used the maximum jump distance for several hundred dogs that participated in the SplashDogs ([http://www.splashdogs.com/](http://www.splashdogs.com/)) ‘Super Air’ dock jumping competition during 2016. Dock jumping is essentially a long jump sport for dogs. Dogs run along a ~12 meter dock and jump into the water, usually chasing a toy. Jumps are measured from the edge of the dock to the point where the base of the dog's tail first enters the water.
 
-labradoooor
+<figure>
+    <a href="/images/labrador.jpg"><img src="/images/labrador.jpg"></a>
+        <figcaption>photo by Flickr user marabuchi; (CC BY-SA 2.0)</figcaption>
+</figure>
 
-This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/) that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way, and I’m probably missing some.
+This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/) that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way, and I’m probably missing some. All the code here is fully reroducible, although you may need to install some packages first. 
 
 ## Web scraping
 
@@ -33,6 +42,49 @@ I did not find and Terms of Service prohibiting automated data grabbing anywhere
 To scrape the data, I used _rvest_ to interact with the web form on the site, making queries for event results by breed and year. I was only after data for a few breeds, and I managed to abstract the scraping into a function and use _purrr_ (a first for me!) to iterate through a small vector of breeds that I chose following two main criteria: (personal bias, and representation in the competitions). I wanted to compare groups with several hundred entries (Labradors) vs groups with just a few (American Pit Bull Terriers). 
 
 {% highlight r%}
+# SCRAPING
+# load libraries
+library(rvest)
+library(dplyr)
+
+# set up parameters
+# vector with the breeds we want data for
+brVec <- c("Golden Retriever", "Labrador Retriever", "Belgian Malinois", "German Shorthaired Pointer", "Border Collie", "American Pit Bull Terrier")
+
+# website to interact with
+splurl <- "http://splashdogs.com/events/results/breedTool.php"
+# session info
+pgsession <- html_session(splurl)
+# get the webform
+pgform <-html_form(pgsession)[[2]]
+
+# function to get a breed and wrangle the resulting DF
+getbreed <- function(breed){
+# fill the form, submit it, and get the table
+# setting the values with the breed we want
+filled_form <-set_values(pgform,
+                         "year" = "2016",
+                         "filter" = "0",
+                         "air"  = "0",
+                         "breed" = breed)
+# submitting the updated form
+resp <- submit_form(session=pgsession, form=filled_form)
+
+# extract the table and add a variable with the breed
+respDF <- resp %>%
+  html_nodes("table") %>%
+  .[[2]] %>%
+  html_table(header=TRUE) %>% 
+  mutate(dog_breed=breed)
+# pause between requests
+Sys.sleep(sample(seq(6,10,0.5), 1))
+
+return(respDF)
+}
+
+library(purrr)
+# iterate using purrr
+breedDFs <- map(brVec, getbreed)
 {% endhighlight %}
 
 ## Data wrangling
@@ -40,11 +92,28 @@ To scrape the data, I used _rvest_ to interact with the web form on the site, ma
 After putting the html tables into data frames, it was a straightforward process to summarize the data. I cleaned up some unnecessary spaces in the handler names, and kept only the maximum jump distance for each dog.  
 
 {% highlight r%}
+###################
+# wrangling
+library(magrittr)
+# bind into a single df
+allbreeds <- bind_rows(breedDFs)
+# convert feet to meters
+allbreeds <- allbreeds %>% mutate(jumpDist=round((Score*0.3048),2))  
+# remove 0-length jumps
+allbreeds %<>% filter(jumpDist>0)
+
+# see how many records per breed 
+allbreeds %>% count(dog_breed)
+
+# merge multiple spaces in handler names
+allbreeds$`Handler Name` <- gsub("\\s+", " ",allbreeds$`Handler Name`)
+# summarize
+allbreedsMax <- allbreeds %>% group_by(`Dog Name`,`Handler Name`,dog_breed) %>% summarize(jumpDist=round(max(jumpDist),2))
 {% endhighlight %}
 
 ## Plotting
 
-My approach was to create a one-sided beeswarm plot object for different groups and plot it over the respective density. For comparison, I made two versions. One in which the densities and the point swarm are scaled, and one without scaling. I’m using faceting here, and I didn’t try to make the densities overlap. 
+My approach was to create a one-sided beeswarm plot object for different groups and plot it over the respective density. I made two versions. One in which the densities and the point swarm are scaled, and one without scaling. I’m using faceting here, and I didn’t try to make the densities overlap. 
 This code is clunky and it needs different data frames with pre-summarized information, but I’m happy with the results. The forcats package was very useful for reordering the factor levels whenever I had to arrange the groups for plotting.
 
 Here's the result with scaled densities and point swarms.
@@ -61,13 +130,139 @@ Here's a version with unscaled densities and point swarms.
 </figure>
 
 {% highlight r%}
+### PLOTTING
+# packages
+library(ggplot2)
+library(beeswarm)
+library(ggalt)
+library(forcats)
+library(magrittr)
+library(hrbrthemes)
+library(extrafont)
+
+# beeswarm object
+dogbees <- beeswarm(jumpDist~dog_breed,method="swarm",data=allbreedsMax,vertical=FALSE,
+                    side=1, corral="none",priority="density")
+# rename vars
+dogbees %<>% rename(jumpDist=y, dens=x, breed=x.orig)
+# scale beeswarm density
+dogbees %<>% group_by(breed) %>% mutate(scDens=(dens-min(dens)) / (max(dens)-min(dens))) %>% ungroup()
+
+# reorder so breeds are arranged by median jump distance
+# as a new variable
+dogbees$breedR <- fct_reorder(dogbees$breed,dogbees$jumpDist,fun=median,.desc=TRUE)
+
+# presummarize median jump distances
+medJumps <- dogbees %>% group_by(breedR) %>% summarise(med=median(jumpDist))
+
+# data frame for the geom_text labels
+bdata = data.frame(x=0.1, y=0.9, 
+                   lab=levels(fct_reorder(dogbees$breed,dogbees$jumpDist,fun=median,.desc=TRUE)),
+                   breedR=levels(fct_reorder(dogbees$breed,dogbees$jumpDist,fun=median,.desc=TRUE)))
+# labels with sample sizes
+bdata <- left_join(bdata,count(dogbees,breedR)) %>% mutate(breedsamp=paste(breedR," ","\n","(",n,")",sep=""))
+bdata <- left_join(bdata,medJumps) # for reordering
+# reorder after the join
+bdata$breedR <- fct_reorder(bdata$breedR,bdata$med,.desc=TRUE)
+
+# plot
+ggplot(dogbees)+
+  facet_grid(breedR~.,scales = "free")+
+  geom_bkde(aes(x=jumpDist,y=..scaled..), color="#0684D0",
+            truncate=FALSE, fill="#D1D5DB",alpha=0.7,
+            range.x = c(0,max(dogbees$jumpDist+0.5)))+
+  geom_point(aes(x=jumpDist,y=scDens),
+             shape=21, color="white",fill="#231F20",size=2)+
+  geom_vline(data=medJumps,aes(xintercept=med),color="light grey")+
+  geom_text(aes(x, y, label=breedsamp),data=bdata, hjust=0)+
+  labs(x="Super Air jump distance (meters)", y="density (scaled)",
+       caption="source: splashdogs.com SplashStats \n *retrieved* 13/07/2017")+
+  scale_y_continuous(breaks = c(0,1),expand = c(0,0.2))+
+  scale_x_continuous(expand=c(0,0))+
+  theme_minimal(base_family = "Roboto Condensed")+
+  theme(strip.text.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.title = element_text(size=rel(1.4)),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(size=rel(1.3), color = "#020816"))
+  
+
+############## unscaled densities
+# beeswarm object
+dogbeesU <- beeswarm(jumpDist~dog_breed,method="swarm",data=allbreedsMax,vertical=FALSE,
+                    side=1, corral="wrap",priority="density")
+
+# rename vars
+dogbeesU %<>% rename(jumpDist=y, dens=x, breed=x.orig)
+# shift beeswarm density
+dogbeesU %<>% group_by(breed) %>% mutate(densShifted= (dens-min(dens))) %>% ungroup()
+
+# reorder so breeds are arranged by median jump distance
+# as a new variable
+dogbeesU$breedR <- fct_reorder(dogbeesU$breed,dogbeesU$jumpDist,fun=median,.desc=TRUE)
+
+# presummarize median jump distances
+medJumpsU <- dogbeesU %>% group_by(breedR) %>% summarise(med=median(jumpDist))
+
+# data frame for the geom_text labels
+bdataU = data.frame(x=0.17, y=max(dogbeesU$densShifted)-0.1, 
+                   lab=levels(fct_reorder(dogbeesU$breed,dogbeesU$jumpDist,fun=median,.desc=TRUE)),
+                   breedR=levels(fct_reorder(dogbeesU$breed,dogbeesU$jumpDist,fun=median,.desc=TRUE)))
+# labels with sample sizes
+bdataU <- left_join(bdataU,count(dogbeesU,breedR)) %>% mutate(breedsamp=paste(breedR," ","(",n,")",sep=""))
+bdataU <- left_join(bdataU,medJumpsU) # for reordering
+# reorder after the join
+bdataU$breedR <- fct_reorder(bdataU$breedR,bdataU$med,.desc=TRUE)
+
+
+# plot
+ggplot(dogbeesU)+
+  geom_bkde(aes(x=jumpDist,y=..density..), color="#0684D0",
+            truncate=FALSE, fill="#D1D5DB",alpha=0.7,
+            range.x = c(0,max(dogbees$jumpDist+0.5)))+
+  geom_point(aes(x=jumpDist,y=densShifted),
+             shape=21, color="white",fill="#231F20",size=2)+
+  geom_vline(data=medJumpsU,aes(xintercept=med),color="light grey")+
+  labs(x="Super Air jump distance (meters)", y="density",
+       caption="source: splashdogs.com SplashStats \n *retrieved* 13/07/2017")+
+  scale_y_continuous(expand = c(0,.03))+
+  scale_x_continuous(expand=c(0,0))+
+  facet_grid(breedR~.)+
+  theme_minimal(base_family = "Roboto")+
+  theme(strip.text.y = element_blank(),
+        panel.grid = element_blank(),
+        axis.title = element_text(size=rel(1.4)),
+        axis.text.x = element_text(size=rel(1.3), color = "#020816"))+
+  geom_text(aes(x, y, label=breedsamp),data=bdataU, hjust=0)
+
 {% endhighlight %}
 
-For comparison here’s a plot of the same data using geom_joy and some theming to make the plot extra cool. It looks really crisp, and the default geom_joy can be built with a single line of code. 
+For comparison, here’s a plot of the same data using geom_joy and some theming to make the plot look extra cool. It looks really crisp, and the default geom_joy can be built with a single line of code. 
 I suspect that what I’ve done with the beeswarm points can be made into a geom to accompany geom_joy. If you’re good at ggproto let me know and we can try it out. 
 
-Finally, 
-The visual appeal and coolness of joyplots can make us get carried away, but as tjmahr hsve pointed out, , they can be used to show the posterior distribution and 
-https://vuorre.netlify.com/post/2017/visualizing-varying-effects-posteriors-with-joyplots/
-https://twitter.com/tjmahr/status/884577726308507649
-https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid
+<figure>
+    <a href="/images/geomhipster.png"><img src="/images/geomhipster.png"></a>
+        <figcaption>would wear this on a t-shirt</figcaption>
+</figure>
+
+{% highlight r%}
+## joyplot
+library(ggjoy)
+dogbeesRev <- dogbees
+
+ggplot(dogbeesRev)+
+  geom_joy(aes(x=jumpDist,y=fct_rev(breedR), height=..density..),scale=1.9,
+           col="#0094D3",fill="black")+
+  theme_minimal(base_family = "Roboto Thin") +
+  labs(x="\njump",y="density")+
+  theme(axis.title = element_text(size=rel(1.3),color="#5DFF4F"),
+        axis.text = element_text(size=rel(1.1),color="#5DFF4F"),
+        panel.grid = element_blank(), 
+        panel.background = element_rect(fill = "black"),
+        plot.background = element_rect(fill = "black"),
+        plot.margin = unit(c(2,3,2,2), "cm"))
+
+{% endhighlight%}
+
+Finally, the visual appeal of joyplots can make us get carried away, but as TJ Mahr and [Matti Vuore](https://vuorre.netlify.com/post/2017/visualizing-varying-effects-posteriors-with-joyplots/) pointed out, they can be used to [show posterior distributions of parameter estimates](http://rpubs.com/tjmahr/joyplot).  
+
