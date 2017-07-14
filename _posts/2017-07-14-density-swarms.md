@@ -23,14 +23,14 @@ I saw this kind of plot a few weeks back in a New York Times [infographic](https
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Peak time for sports and leisure <a href="https://twitter.com/hashtag/dataviz?src=hash">#dataviz</a>. About time for a joyplot; might do a write-up on them. <a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> code at <a href="https://t.co/Q2AgW068Wa">https://t.co/Q2AgW068Wa</a> <a href="https://t.co/SVT6pkB2hB">pic.twitter.com/SVT6pkB2hB</a></p>&mdash; Henrik Lindberg (@hnrklndbrg) <a href="https://twitter.com/hnrklndbrg/status/883675698300420098">July 8, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-The overlapping density plots are very appealing visually, and definitely very challenging to make. [Claus Wilke](https://twitter.com/ClausWilke) recently stepped up to the challenge and created [ggjoy](https://github.com/clauswilke/ggjoy/), an R package for creating the appropriately named JoyPlots. The name was coined in April and the ggjoy package is just a few days old, and both are already getting lots and lots of attention. 
+The overlapping density plots are very appealing visually, and definitely very challenging to make. [Claus Wilke](https://twitter.com/ClausWilke){:target="_blank"} recently stepped up to the challenge and created [ggjoy](https://github.com/clauswilke/ggjoy/){:target="_blank"}, an R package for creating the appropriately named JoyPlots. The name was coined in April and the ggjoy package is just a few days old, and both are already getting lots and lots of attention. 
 
  <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I guess joyplots are a thing now!<br>Congrats <a href="https://twitter.com/JennyBryan">@JennyBryan</a><a href="https://twitter.com/hashtag/joyplot?src=hash">#joyplot</a> <a href="https://twitter.com/hashtag/joyplots?src=hash">#joyplots</a> <a href="https://t.co/dYdugsbhcu">pic.twitter.com/dYdugsbhcu</a></p>&mdash; Diogo Aguiam (@diogoaguiam) <a href="https://twitter.com/diogoaguiam/status/885801611448201217">July 14, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Kernel densities look good and that they work well for big datasets with clear unimodal or bimodal distributions. However, with smaller datasets I feel that density functions reflect the choice of smoothing parameters more than they reflect the actual distribution of the underlying data. The optimally-smoothed kernels may not be the prettiest, and so it is probably worth trying to show densities as well as the underlying data.   
 
-With density plots, it’s difficult to see where the data actually are, and as Andrew Gelman [commented](http://andrewgelman.com/2009/11/25/whats_wrong_wit/):
+With density plots, it’s difficult to see where the data actually are, and as Andrew Gelman [commented](http://andrewgelman.com/2009/11/25/whats_wrong_wit/){:target="_blank"}:
 > '_I’d rather just see what’s happening … rather than trying to guess by taking the density estimate and mentally un-convolving the kernel._'
 
 For this post, I go through some code for making density plots that also show the underlying data. As usual, I show this using the best type of data: dog data. 
@@ -40,18 +40,18 @@ For this post, I go through some code for making density plots that also show th
         <figcaption>CC0 image</figcaption>
 </figure>
 
-To plot the distribution of variable values for different groups, I used the maximum jump distance for several hundred dogs that participated in the SplashDogs ([http://www.splashdogs.com/](http://www.splashdogs.com/)) ‘Super Air’ dock jumping competition during 2016. Dock jumping is essentially a long jump sport for dogs. Dogs run along a ~12 meter dock and jump into the water, usually chasing a toy. Jumps are measured from the edge of the dock to the point where the base of the dog's tail first enters the water.
+To plot the distribution of variable values for different groups, I used the maximum jump distance for several hundred dogs that participated in the SplashDogs ([http://www.splashdogs.com/](http://www.splashdogs.com/){:target="_blank"}) ‘Super Air’ dock jumping competition during 2016. Dock jumping is essentially a long jump sport for dogs. Dogs run along a ~12 meter dock and jump into the water, usually chasing a toy. Jumps are measured from the edge of the dock to the point where the base of the dog's tail first enters the water.
 
 <figure>
     <a href="/images/labrador.jpg"><img src="/images/labrador.jpg"></a>
         <figcaption>photo by Flickr user marabuchi; (CC BY-SA 2.0)</figcaption>
 </figure>
 
-This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/) that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way at the end of this post. All the code here is fully reroducible, although you may need to install some packages first. 
+This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/){:target="_blank"} that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way at the end of this post. All the code here is fully reroducible, although you may need to install some packages first. 
 
 ## Web scraping
 
-I did not find and Terms of Service prohibiting automated data grabbing or visualization by third parties anywhere on the SplashDogs website or in the site’s robots.txt file. Remember to always check if scraping is allowed and adhere to all Terms and Conditions. Here’s a [brief guide](https://blog.scrapinghub.com/2016/08/25/how-to-crawl-the-web-politely-with-scrapy/) on how to crawl the web politely. Take breaks between sequential requests, be kind to web servers when scraping, and just be nice in general. What would the dogs think if you crashed a site! 
+I did not find and Terms of Service prohibiting automated data grabbing or visualization by third parties anywhere on the SplashDogs website or in the site’s robots.txt file. Remember to always check if scraping is allowed and adhere to all Terms and Conditions. Here’s a [brief guide](https://blog.scrapinghub.com/2016/08/25/how-to-crawl-the-web-politely-with-scrapy/){:target="_blank"} on how to crawl the web politely. Take breaks between sequential requests, be kind to web servers when scraping, and just be nice in general. What would the dogs think if you crashed a site! 
 
 To scrape the data, I used _rvest_ to interact with the web form on the site, making queries for event results by breed and year. I was only after data for a few breeds, and I managed to abstract the scraping into a function and use _purrr_ (a first for me!) to iterate through a small vector of breeds that I chose following two main criteria: (personal bias, and representation in the competitions). I wanted to compare groups with several hundred entries (Labradors) vs groups with just a few (American Pit Bull Terriers). 
 
@@ -278,18 +278,21 @@ ggplot(dogbeesRev)+
 
 {% endhighlight%}
 
-Finally, the visual appeal of joyplots can make us get carried away, but as TJ Mahr and [Matti Vuore](https://vuorre.netlify.com/post/2017/visualizing-varying-effects-posteriors-with-joyplots/) pointed out, they can be used to [show posterior distributions of parameter estimates](http://rpubs.com/tjmahr/joyplot).  
+Finally, the visual appeal of joyplots can make us get carried away, but as TJ Mahr and [Matti Vuore](https://vuorre.netlify.com/post/2017/visualizing-varying-effects-posteriors-with-joyplots/){:target="_blank"} pointed out, they can be used to [show posterior distributions of parameter estimates](http://rpubs.com/tjmahr/joyplot){:target="_blank"}.  
 ## hrbrverse resources 
 
-Packages:
-[ggalt](https://github.com/hrbrmstr/ggalt) package (for a nice kerned density geom)
-[hrbrthemes](https://github.com/hrbrmstr/hrbrthemes) (crisp ggplot themes)
+Packages:  
+[ggalt](https://github.com/hrbrmstr/ggalt){:target="_blank"} package (for a nice kerned density geom)  
+[hrbrthemes](https://github.com/hrbrmstr/hrbrthemes){:target="_blank"} (crisp ggplot themes)
 
 scraping blog posts:
-[Real Estate](https://rud.is/b/2017/05/05/scrapeover-friday-a-k-a-another-r-scraping-makeover/)
-[Music Composers](https://rud.is/b/2017/04/23/decomposing-composers-with-r/)
+[Real Estate](https://rud.is/b/2017/05/05/scrapeover-friday-a-k-a-another-r-scraping-makeover/){:target="_blank"}
+[Music Composers](https://rud.is/b/2017/04/23/decomposing-composers-with-r/){:target="_blank"}
 
 Stack Overflow help:
-[Using geom_text with facet_grid](https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid)
+[Using geom_text with facet_grid](https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid){:target="_blank"}  
 
-[Advice on POST requests](https://stackoverflow.com/questions/39516673/rvest-could-not-find-possible-submission-target-when-submitting-form)
+[Advice on POST requests](https://stackoverflow.com/questions/39516673/rvest-could-not-find-possible-submission-target-when-submitting-form){:target="_blank"}
+
+
+If anything isn't working please let me know.
