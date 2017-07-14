@@ -47,7 +47,7 @@ To plot the distribution of variable values for different groups, I used the max
         <figcaption>photo by Flickr user marabuchi; (CC BY-SA 2.0)</figcaption>
 </figure>
 
-This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/){:target="_blank"} that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way at the end of this post. All the code here is fully reroducible, although you may need to install some packages first. 
+This post has three main steps: scraping the jump distance data, wrangling it, and plotting it. This post in particular could not be possible without all the resources and advice from [Bob Rudis](https://rud.is/b/){:target="_blank"} that are floating around the web. This includes posts on his blog, answers on random Stack Overflow questions, tweets, and his helpful R packages. I tried to add links to all the hrbrverse resources that helped me along the way at the end of this post. All the code here is fully reproducible, although you may need to install some packages first. 
 
 ## Web scraping
 
@@ -291,7 +291,6 @@ scraping blog posts:
 
 Stack Overflow help:  
 [Using geom_text with facet_grid](https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid){:target="_blank"},  
-
 [Advice on POST requests](https://stackoverflow.com/questions/39516673/rvest-could-not-find-possible-submission-target-when-submitting-form){:target="_blank"}
 
 
