@@ -290,7 +290,7 @@ scraping blog posts:
 [Music Composers](https://rud.is/b/2017/04/23/decomposing-composers-with-r/){:target="_blank"}
 
 Stack Overflow help:  
-[Using geom_text with facet_grid](https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid){:target="_blank"},  
+[Using geom_text with facet_grid](https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid){:target="_blank"}  
 [Advice on POST requests](https://stackoverflow.com/questions/39516673/rvest-could-not-find-possible-submission-target-when-submitting-form){:target="_blank"}
 
 
