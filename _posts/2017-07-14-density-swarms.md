@@ -282,7 +282,7 @@ Finally, the visual appeal of joyplots can make us get carried away, but as TJ M
 ## hrbrverse resources 
 
 Packages:  
-[ggalt](https://github.com/hrbrmstr/ggalt){:target="_blank"} package (for a nice kerned density geom)  
+[ggalt](https://github.com/hrbrmstr/ggalt){:target="_blank"} package (for a nice kernel density geom)  
 [hrbrthemes](https://github.com/hrbrmstr/hrbrthemes){:target="_blank"} (crisp ggplot themes)
 
 scraping blog posts:  
