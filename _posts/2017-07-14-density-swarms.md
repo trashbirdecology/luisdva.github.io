@@ -293,5 +293,35 @@ Stack Overflow help:
 [Using geom_text with facet_grid](https://stackoverflow.com/questions/15867263/ggplot2-geom-text-with-facet-grid){:target="_blank"}  
 [Advice on POST requests](https://stackoverflow.com/questions/39516673/rvest-could-not-find-possible-submission-target-when-submitting-form){:target="_blank"}
 
+> **Update 16/0/2017:** After posting this I was very impressed with the jumping prowess of dogs in general so I decided to add a comparison with human jumping skills. I found data for the London 2012 Olympics in this [Google Sheets document](https://www.theguardian.com/sport/datablog/interactive/2012/aug/03/london-2012-results-open-data){:target="_blank"} put together by The Guardian and used the _googlesheets_ package to download the data and repeat the process. The new figure and the code for downloading the data are below:
+
+<figure>
+    <a href="/images/IOCscaledDens.png"><img src="/images/IOCscaledDens.png"></a>
+        <figcaption>Includes Long Jump and Decathlon Long Jump</figcaption>
+</figure>
+
+Get the data by iterating through the sheets in the workbook. See this [GitHub issue](https://github.com/jennybc/googlesheets/issues/320){:target="_blank"} for a better explanation. 
+
+{% highlight r %}
+library("googlesheets")
+library("purrr")
+library("dplyr")
+  
+# sheet url  
+gsobjIOC <- gs_url("https://docs.google.com/spreadsheets/d/1eTjnarkVF5l1xnPVYzOJ6p0DE64_6FMHY-fyHsTqyrk/edit#gid=1")
+  
+# get all sheets in doc
+lond2012 <- 
+gsobjIOC %>%  
+  gs_ws_ls() %>% # names of all the sheets in the document
+  set_names %>%  # for naming the DFs
+    map(gs_read,ss=gsobjIOC) # iterate
+
+# remove probelmatic column
+lond2012 %>% map(select(-Position))
+# bind dfs
+lond2012df <- bind_rows(lond2012)  
+
+{% endhighlight %}
 
 If anything isn't working please let me know.
