@@ -1,5 +1,19 @@
 ---
-published: false
+title: "Reshaping and tidying data from awkward spreadsheet formats"
+layout: post
+excerpt: Wrangle duplicated variable names, weird header rows, and footnotes.
+category: rstats
+tags:
+  - spreadsheets
+  - iterate
+  - purrr
+  - untangle
+  - dog rescue
+image:
+  feature: featureAwk.jpg
+  credit: LD 
+  creditlink: 
+published: true
 ---
  
 The table below is a subset of data from a directory of dog rescue resources put together by [Speaking of Dogs](https://www.speakingofdogs.com/){:target="_blank"}, a volunteer-based dog rescue organization in Toronto, Canada. The information is real, but for this example I garbled the original data into a particular ‘spreadsheet’ format that I struggled with recently.  I chose this source of data in support of the Clear The H*ckin Shelters campaign happening this week (read more [here](https://www.gofundme.com/clear-the-hckin-shelters){:target="_blank"}).
