@@ -40,6 +40,7 @@ This data is not ‘analysis-ready’. Notice the three main issues that need to
 - There are header rows sprinkled throughout the Organization column. These non-data rows are used quite often when we want to save space by having the value in one cell somehow apply to cells below (until we find the next header row used for grouping). These are easy for humans to parse, but not computers. Read more about header rows [here](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}.
 
 - Some ‘cells’ have special characters, these are used to refer to footnotes/information in the table caption, but in this case we would prefer to have this information inside the data rectangle.
+
 This post goes through a possible solution to reshape the table and deal with the header rows and footnotes. Make sure you have the necessary R packages installed, and once you do all the code in this block should be fully reproducible.  
 
 Start by putting the data into a character vector by simply pasting the table, delimited by tabs and line breaks. 
