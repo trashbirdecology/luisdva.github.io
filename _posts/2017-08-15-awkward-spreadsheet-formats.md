@@ -98,7 +98,7 @@ map(unique(names(rescDF)), ~
   set_names(unique(names(rescDF)))
 {% endhighlight %}
 
-The data is looking better but we still need to sort out the awkward header rows. Fortunately, there’s a function for that. Read about it here. In brief, my bumbling attempt at tidy evaluation received a makeover from [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} and now we can define and use the _untangle2_ function.  When that happened, it was like having Xzibit knocking at my door offering to enhance my car. Since then, the _untangle2_ function has been helping me shred through other people’s data because in my field everything follows a taxonomic hierarchy and everyone likes to use header rows. I feel that _untangle_ belongs in _tidyr_, and maybe when I’m confident enough I’ll try to contribute to the _tidyverse_. 
+The data is looking better but we still need to sort out the awkward header rows. Fortunately, there’s a function for that. Read about it [here](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}. In brief, my bumbling attempt at tidy evaluation received a makeover from [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} and now we can define and use the _untangle2_ function.  When that happened, it was like having Xzibit knocking at my door offering to enhance my car. Since then, the _untangle2_ function has been helping me shred through other people’s data because in my field everything follows a taxonomic hierarchy and everyone likes to use header rows. I feel that _untangle_ belongs in _tidyr_, and maybe when I’m confident enough I’ll try to contribute to the _tidyverse_. 
 
 In this table, the header rows are quoted, making for smooth untangling.
 
