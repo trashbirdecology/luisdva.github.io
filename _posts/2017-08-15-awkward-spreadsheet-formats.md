@@ -33,7 +33,7 @@ Footnotes for the table:
 - † limited foster care available
 - ‡ phone may not be up to date
 
-This is not ‘analysis-ready’. Notice the three main issues that need to get sorted: 
+This data is not ‘analysis-ready’. Notice the three main issues that need to get sorted: 
 
 - The table has repeated columns. It appears that the table has been split in two (vertically) and the columns are stacked side-by-side in a sort of ‘wide’ format. We don’t really want duplicated variables because having duplicated column names is a very unnatural, complicated, and risky format for keeping data.
 
