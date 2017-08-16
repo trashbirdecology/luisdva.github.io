@@ -75,7 +75,7 @@ rescDF <- data_frame(unsep=unlist(strsplit(resc,"\n")))
 rescDF %<>% separate(unsep,into=unlist(strsplit(rescDF$unsep[1],"\t")),sep ="\t")
 {% endhighlight %}
 
-Now, to stack the table into a long form. When I asked for advice on Twitter the consensus was to use the gather function in tidyr after sorting out the duplicated variable names (or by referring to columns by number). The sensible answer for this issue is to not have duplicated names in the first place, and there are various tools and functions for avoiding or fixing them. 
+Now, to stack the table into a long form. When I asked for advice on Twitter the consensus was to use the _gather_ function in _tidyr_ after sorting out the duplicated variable names (or by referring to columns by number). The sensible answer for this issue is to not have duplicated names in the first place, and there are various tools and functions for avoiding or fixing them. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> crew: how can I use <a href="https://twitter.com/hashtag/purrr?src=hash">#purrr</a> to stack a &#39;wide&#39; df with duplicated variable names? <br>(I know I shouldn&#39;t have them in the first place) <a href="https://t.co/yxJoHMQ6N3">pic.twitter.com/yxJoHMQ6N3</a></p>&mdash; Luis D. Verde (@LuisDVerde) <a href="https://twitter.com/LuisDVerde/status/895439984966197249">August 10, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -128,7 +128,7 @@ After that, there are some repeated, empty, and NA rows that need to be filtered
 rescDFstacked %<>% filter(Organization != "Organization" & Organization != " ", !is.na(Organization))
 {% endhighlight %}
 
-The footnotes are the last major issue. To bring them into the data rectangle, I used _case/_when_ inside mutate to add the footnote text conditionally, but I’m not very happy with this approach. To figure out the columns to match with the different individual _grepl_ statements I used _map_ to iterate through the columns.
+The footnotes are the last major issue. To bring them into the data rectangle, I used _case\_when_ inside mutate to add the footnote text conditionally, but I’m not very happy with this approach. To figure out the columns to match with the different individual _grepl_ statements I used _map_ to iterate through the columns.
 
 Ideally, I wanted to iterate though the special characters and the columns at the same time, because any given observation could have any combination of footnotes (I couldn’t figure out _map2_ and list columns :( ).
 
