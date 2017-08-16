@@ -2,7 +2,7 @@
 published: false
 ---
  
-The table below is a subset of data from a directory of dog rescue resources put together by [Speaking of Dogs](https://www.speakingofdogs.com/), a volunteer-based dog rescue organization in Toronto, Canada. The information is real, but for this example I garbled the original data into a particular ‘spreadsheet’ format that I struggled with recently.  I chose this source of data in support of the Clear The H*ckin Shelters campaign happening this week (read more [here](https://www.gofundme.com/clear-the-hckin-shelters)).
+The table below is a subset of data from a directory of dog rescue resources put together by [Speaking of Dogs](https://www.speakingofdogs.com/){:target="_blank"}, a volunteer-based dog rescue organization in Toronto, Canada. The information is real, but for this example I garbled the original data into a particular ‘spreadsheet’ format that I struggled with recently.  I chose this source of data in support of the Clear The H*ckin Shelters campaign happening this week (read more [here](https://www.gofundme.com/clear-the-hckin-shelters){:target="_blank"}).
 
 **Organization**|**Contact name**|**phone**|**website**|**Organization**|**Contact name**|**phone**|**website**
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
@@ -15,7 +15,7 @@ Tiny Paws Rescue|Brenda|1-800-774-8315|www.tpdr.ca|Labrador Retriever Adoption S
 Speaking of Dogs Rescue|Lorraine|705-444-7637|www.speakingofdogs.com| | | |
 
 Footnotes for the table:
--  * includes other Flat faced dogs: Bulldogs, Boxers, Bostons, Pugs etc
+-  \* includes other Flat faced dogs: Bulldogs, Boxers, Bostons, Pugs etc
 - † limited foster care available
 - ‡ phone may not be up to date
 
@@ -23,7 +23,7 @@ This is not ‘analysis-ready’. Notice the three main issues that need to get 
 
 - The table has repeated columns. It appears that the table has been split in two (vertically) and the columns are stacked side-by-side in a sort of ‘wide’ format. We don’t really want duplicated variables because having duplicated column names is a very unnatural, complicated, and risky format for keeping data.
 
-- There are header rows sprinkled throughout the Organization column. These non-data rows are used quite often when we want to save space by having the value in one cell somehow apply to cells below (until we find the next header row used for grouping). These are easy for humans to parse, but not computers. Read more about header rows [here](http://rpubs.com/jennybc/untangle-tidyeval).
+- There are header rows sprinkled throughout the Organization column. These non-data rows are used quite often when we want to save space by having the value in one cell somehow apply to cells below (until we find the next header row used for grouping). These are easy for humans to parse, but not computers. Read more about header rows [here](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}.
 
 - Some ‘cells’ have special characters, these are used to refer to footnotes/information in the table caption, but in this case we would prefer to have this information inside the data rectangle.
 This post goes through a possible solution to reshape the table and deal with the header rows and footnotes. Make sure you have the necessary R packages installed, and once you do all the code in this block should be fully reproducible.  
@@ -65,7 +65,7 @@ Now, to stack the table into a long form. When I asked for advice on Twitter the
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> crew: how can I use <a href="https://twitter.com/hashtag/purrr?src=hash">#purrr</a> to stack a &#39;wide&#39; df with duplicated variable names? <br>(I know I shouldn&#39;t have them in the first place) <a href="https://t.co/yxJoHMQ6N3">pic.twitter.com/yxJoHMQ6N3</a></p>&mdash; Luis D. Verde (@LuisDVerde) <a href="https://twitter.com/LuisDVerde/status/895439984966197249">August 10, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-However, the real world is a harsh place and duplicated variables are pretty common. I found this [post](https://stackoverflow.com/questions/38839048/r-reshape-dataframe-from-duplicated-column-names-but-unique-values) on Stack Overflow for this exact problem, and SO user _akrun_ had a pretty clever solution.
+However, the real world is a harsh place and duplicated variables are pretty common. I found this [post](https://stackoverflow.com/questions/38839048/r-reshape-dataframe-from-duplicated-column-names-but-unique-values){:target="_blank"} on Stack Overflow for this exact problem, and SO user _akrun_ had a pretty clever solution.
 The suggestion was to:
 
 - iterate through the unique names to extract all the observations for each variable name 
@@ -83,7 +83,7 @@ map(unique(names(rescDF)), ~
   set_names(unique(names(rescDF)))
 {% endhighlight %}
 
-The data is looking better but we still need to sort out the awkward header rows. Fortunately, there’s a function for that. Read about it here. In brief, my bumbling attempt at tidy evaluation received a makeover from [Jenny Bryan](https://twitter.com/JennyBryan) and now we can define and use the _untangle2_ function.  When that happened, it was like having Xzibit knocking at my door offering to enhance my car. Since then, the _untangle2_ function has been helping me shred through other people’s data because in my field everything follows a taxonomic hierarchy and everyone likes to use header rows. I feel that _untangle_ belongs in _tidyr_, and maybe when I’m confident enough I’ll try to contribute to the _tidyverse_. 
+The data is looking better but we still need to sort out the awkward header rows. Fortunately, there’s a function for that. Read about it here. In brief, my bumbling attempt at tidy evaluation received a makeover from [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} and now we can define and use the _untangle2_ function.  When that happened, it was like having Xzibit knocking at my door offering to enhance my car. Since then, the _untangle2_ function has been helping me shred through other people’s data because in my field everything follows a taxonomic hierarchy and everyone likes to use header rows. I feel that _untangle_ belongs in _tidyr_, and maybe when I’m confident enough I’ll try to contribute to the _tidyverse_. 
 
 In this table, the header rows are quoted, making for smooth untangling.
 
@@ -159,8 +159,4 @@ Labrador Retriever Adoption Service|Laura or Karen |289-997-5227|www.lab-rescue.
 Dog Rescuers Inc|Joan|416-567-6249|www.thedogrescuersinc.ca|Labrador Retriever|phone may not be up to date
 
 That’s it. Let me know if anything isn’t working. 
-For reference, the table that inspired this post was Table 2 in [this](http://onlinelibrary.wiley.com/doi/10.1111/bij.12164/abstract) 2013 paper by Alvarez et al. 
-
-
-
- 
+For reference, the table that inspired this post was Table 2 in [this](http://onlinelibrary.wiley.com/doi/10.1111/bij.12164/abstract){:target="_blank"} 2013 paper by Alvarez et al.
