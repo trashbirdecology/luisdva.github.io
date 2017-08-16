@@ -128,9 +128,9 @@ After that, there are some repeated, empty, and NA rows that need to be filtered
 rescDFstacked %<>% filter(Organization != "Organization" & Organization != " ", !is.na(Organization))
 {% endhighlight %}
 
-The footnotes are the last major issue. To bring them into the data rectangle, I used _case\_when_ inside mutate to add the footnote text conditionally, but I’m not very happy with this approach. To figure out the columns to match with the different individual _grepl_ statements I used _map_ to iterate through the columns.
+The footnotes are the last major issue. To bring them into the data rectangle, I used _case\_when_ inside _mutate_ to add the footnote text conditionally, but I’m not very happy with this approach. To figure out the columns to match with the different individual _grepl_ statements I used _map_ to iterate through the columns.
 
-Ideally, I wanted to iterate though the special characters and the columns at the same time, because any given observation could have any combination of footnotes (I couldn’t figure out _map2_ and list columns :( ).
+Ideally, I wanted to iterate though the special characters and the columns at the same time, because any given observation could have any combination of footnotes. I couldn’t figure out _map2_ and list columns :( 
 
 {% highlight r %}
 
