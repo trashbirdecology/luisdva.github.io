@@ -2,27 +2,26 @@
 published: false
 ---
 ---
-title: "Reshaping and tidying data from awkward spreadsheet formats"
+title: "Limpiando datos en R"
 layout: post
-excerpt: Wrangle duplicated variable names, weird header rows, and footnotes.
-category: rstats
+excerpt: algunos pasos para reacomodar columnas repetidas, encabezados que no pertenecen, y notas al pie de página.
 tags:
-  - spreadsheets
-  - iterate
+  - datos horrendos
+  - iteraciones
   - purrr
-  - untangle
-  - dog rescue
+  - adopción canina
 image:
   feature: featureAwk.jpg
   credit: LD 
   creditlink: 
 published: false
 ---
-La siguente tabla contiene una muestra de los datos que .. en un directorio de centros de adopción canina en Canadá. Los datos son verdaderos y la información de contacto (correos y teléfonos) es reciente, y proviene de la página [Speaking of Dogs](https://www.speakingofdogs.com/){:target="_blank"}. 
 
-Para este ejemplo, desacomodé el formato orgiginal de los datos para que .. con un formato medio complicado que tuve que acomodar 
+> English version of this post available here
 
-but for this example I garbled the original data into a particular ‘spreadsheet’ format that I struggled with recently.  I chose this source of data in support of the Clear The H*ckin Shelters campaign happening this week (read more [here](https://www.gofundme.com/clear-the-hckin-shelters){:target="_blank"} and support dog shelters in general).
+La siguente tabla es una muestra reducida de los datos contenidos en un directorio de centros de adopción canina en Canadá. Los datos son verdaderos y toda la información de contacto (correos, teléfonos, etc.) es reciente, y proviene de la página [Speaking of Dogs](https://www.speakingofdogs.com/){:target="_blank"}. 
+
+Para este ejemplo, desacomodé el formato orgiginal de los datos para ponerlos en un formato medio complicado con el que he tenido que lidiar recientemente. Dejé el contenido de la tabla en inglés, el resto del texto en este ejemplo es en español. 
 
 **Organization**|**Contact name**|**phone**|**website**|**Organization**|**Contact name**|**phone**|**website**
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:
@@ -34,32 +33,35 @@ Tiny Paws Rescue|Brenda|1-800-774-8315|www.tpdr.ca|Labrador Retriever Adoption S
 "Senior Dogs"| | | |Dog Rescuers Inc|Joan|416-567-6249 ‡|www.thedogrescuersinc.ca
 Speaking of Dogs Rescue|Lorraine|705-444-7637|www.speakingofdogs.com| | | |
 
-Footnotes for the table:
+La tabla tiene unos cuantos datos adicionales:
 -  \* includes other Flat faced dogs: Bulldogs, Boxers, Bostons, Pugs etc
 - † limited foster care available
 - ‡ phone may not be up to date
 
-This data is not ‘analysis-ready’. Notice the three main issues that need to get sorted: 
+En este formato, la tabla no está lista para ser analizada. Hay tres problemitas que hay que resolver primero. 
 
-- The table has repeated columns. It appears that the table has been split in two (vertically) and the columns are stacked side-by-side in a sort of ‘wide’ format. We don’t really want duplicated variables because having duplicated column names is a very unnatural, complicated, and risky format for keeping data.
+- Hay columnas repetidas en la tabla. Es como si alguien (yo) hubiera partido la tabla en dos (verticalmente) para después acomodas las dos mitades lado a lado en un formacho 'ancho'. No conviene tener columnas/variables repetidas porque esta manera de guardar datos es medio riesgosa e incómoda. 
 
-- There are header rows sprinkled throughout the Organization column. These non-data rows are used quite often when we want to save space by having the value in one cell somehow apply to cells below (until we find the next header row used for grouping). These are easy for humans to parse, but not computers. Read more about header rows [here](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}.
+- Hay encabezados metidos dentro de la columna _Organization_. Estas filas se usan para avisar que los datos en las filas que siguen pertenencen a un grupo, pero estas variables que agrupan observaciones no pertenenen en la misma variable. La práctica de usar encabezados de esta forma es muy común, y en realidad es fácil deseguir visualmente pero complica la manipulación automatizada de datos. Aquí hay una mejor [descripción](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}.
 
-- Some ‘cells’ have special characters, these are used to refer to footnotes/information in the table caption, but in this case we would prefer to have this information inside the data rectangle.
+- Hay caracteres especiales en algunas celdas de la tabla, que se están usando para hacer referencia a algunos datos adicionales que están afuera de la misma (a manera de notas al pie de página).
 
-This post goes through a possible solution to reshape the table and deal with the header rows and footnotes. Make sure you have the necessary R packages installed, and once you do all the code in this block should be fully reproducible.  
+# Reestructuración de datos
 
-Start by putting the data into a character vector by simply pasting the table, delimited by tabs and line breaks. 
+Aquí explico algunos pasos que se pueden hacer para reacomodar y reestructurar la tabla usando R. Sólo hace falta instalar algunos paquetes adicionales, y el resto del código se puede sequir copiando y pegando.
+
+Para reproducir el ejemplo, lo primero que hay que hacer es pegar la tabla. Aquí viene como vector, con las columnas y filas delimitadas por tabulaciones y saltos de línea respectivamente.
+
 
 {% highlight r %}
-# load packages
+# cargar paquetes
 library(dplyr)
 library(magrittr)
 library(tidyr)
 library(rlang)
 library(purrr)
 
-# chr vector with delimited data
+# vector de datos 
 resc <- 
 c("Organization	Contact name	phone	website	Organization	Contact name	phone	website
 'Small Breed'				'Bulldog (English)'			
@@ -71,32 +73,31 @@ Tiny Paws Rescue	Brenda	1-800-774-8315	www.tpdr.ca	Labrador Retriever Adoption S
 Speaking of Dogs Rescue	Lorraine	705-444-7637	www.speakingofdogs.com")				
 {% endhighlight %}
 
-Make each line a row in a tibble, then separate into the corresponding variables (yes, they are still duplicated).
+Ahora podemos hacer que cada linea sea una fila dentro de una 'tibble', para después separar las columnas y de esta manera siguen habiendo variables repetidas.
 
 {% highlight r %}
-# lines to rows
+# pasar a filas
 rescDF <- data_frame(unsep=unlist(strsplit(resc,"\n")))
 
-# separate into variables (tab delimited)
+# separar variables
 rescDF %<>% separate(unsep,into=unlist(strsplit(rescDF$unsep[1],"\t")),sep ="\t")
 {% endhighlight %}
 
-Now, to stack the table into a long form. When I asked for advice on Twitter the consensus was to use the _gather_ function in _tidyr_ after sorting out the duplicated variable names (or by referring to columns by number). The sensible answer for this issue is to not have duplicated names in the first place, and there are various tools and functions for avoiding or fixing them. 
+Ahora toca apilar la tabla para que quede en formato 'largo' y no 'ancho'. En algún momento pregunté en Twitter cómo podía hacer ésto, y la recomendación general fue que usara la función _gather_ de _tidyr_. Esta solución sólo sirve si primero resolvemos el problema de las columnas repetidas o lo evitamos desde el principio.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash">#rstats</a> crew: how can I use <a href="https://twitter.com/hashtag/purrr?src=hash">#purrr</a> to stack a &#39;wide&#39; df with duplicated variable names? <br>(I know I shouldn&#39;t have them in the first place) <a href="https://t.co/yxJoHMQ6N3">pic.twitter.com/yxJoHMQ6N3</a></p>&mdash; Luis D. Verde (@LuisDVerde) <a href="https://twitter.com/LuisDVerde/status/895439984966197249">August 10, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-However, the real world is a harsh place and duplicated variables are pretty common. I found this [post](https://stackoverflow.com/questions/38839048/r-reshape-dataframe-from-duplicated-column-names-but-unique-values){:target="_blank"} on Stack Overflow for this exact problem, and SO user _akrun_ had a pretty clever solution.
-The suggestion was to:
+No siempre vamos a tener datos limpios y columnas que no se repitan, y por eso aquí vamos a seguir la propuesta que encontré en esta [discusión](https://stackoverflow.com/questions/38839048/r-reshape-dataframe-from-duplicated-column-names-but-unique-values){:target="_blank"}. El usuario _akrun_ propone una solución bastante ingeniosa:
 
-- iterate through the unique names to extract all the observations for each variable name 
-- unlist them  
-- put them into a data frame (with variable names)
+- extraer todas los observaciones para cada nombre de columna único iterativamente 
+- desvincularlos (unlist)  
+- acomodar todo en una tabla 
 
-All I did was replace _lapply_ with _map_ and used a tibble instead of a data frame for the output because I’m in the process of learning _purrr_, and because tibbles never convert strings to factors or create row names.
+Le hice algunos cambios a la propuesta original. Más que nada cambié el  _lapply_ y en su lugar usé  _map_ porque estoy tratando de aprender  _purrr_.
 
 {% highlight r %}
-# stack into long form
+# apilar
 rescDFstacked <- 
 map(unique(names(rescDF)), ~
       unlist(rescDF[names(rescDF)==.x], use.names = FALSE)) %>% 
@@ -104,12 +105,12 @@ map(unique(names(rescDF)), ~
   set_names(unique(names(rescDF)))
 {% endhighlight %}
 
-The data is looking better but we still need to sort out the awkward header rows. Fortunately, there’s a function for that. Read about it [here](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}. In brief, my bumbling attempt at tidy evaluation received a makeover from [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} and now we can define and use the _untangle2_ function.  When that happened, it was like having Xzibit knocking at my door offering to enhance my car. Since then, the _untangle2_ function has been helping me shred through other people’s data because in my field everything follows a taxonomic hierarchy and everyone likes to use header rows. I feel that _untangle_ belongs in _tidyr_, and maybe when I’m confident enough I’ll try to contribute to the _tidyverse_. 
+Los datos ya van tomando mejor forma pero aún falta sacar los encabezados que están metidos dentro de la columna _Organization_. La función _untangle2_ que está descrita [aquí](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"} es justo lo que necesitamos. Muchas gracias a [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} por mejorar la versión original. 
 
-In this table, the header rows are quoted, making for smooth untangling.
+En nuestro ejemplo los encabezados están entre comillas simples, y por eso es bastante fácil sacarlos y ponerlos en su lugar.
 
 {% highlight r %}
-# define untangle fn
+# definir la función untangle2
 untangle2 <- function(df, regex, orig, new) {
   orig <- enquo(orig)
   new <- sym(quo_name(enquo(new)))
@@ -123,49 +124,47 @@ untangle2 <- function(df, regex, orig, new) {
 }
 
 
-# deal with header rows (anything quoted)
+# sacar los encabezados (cualquier cosa entre comillas en la variable Organization)
 rescDFstacked %<>% untangle2("'",Organization,Category)
 {% endhighlight %}
 
-After that, there are some repeated, empty, and NA rows that need to be filtered out.
+Ahora hay que limipar las filas, quitando las que están vacías or repetidas.
 
 {% highlight r %}
-# remove repeated, NA, and empty rows
+# quitar filas repetidas, NA, o vacías
 rescDFstacked %<>% filter(Organization != "Organization" & Organization != " ", !is.na(Organization))
 {% endhighlight %}
 
-The footnotes are the last major issue. To bring them into the data rectangle, I used _case\_when_ inside _mutate_ to add the footnote text conditionally, but I’m not very happy with this approach. To figure out the columns to match with the different individual _grepl_ statements I used _map_ to iterate through the columns.
-
-Ideally, I wanted to iterate though the special characters and the columns at the same time, because any given observation could have any combination of footnotes. I couldn’t figure out _map2_ and list columns :( 
+Las notas al pie de página son el último problema. Para incorporar estos datos en la tabla, podemos usar 
+_case\_when_ y _mutate_ y así meter las notas en las filas en las que corresponden. No me gustó tanto esta forma de definir manualmente las columnas en las que había que buscar los diferentes caracteres especiales, pero no sabía qué más hacer.
 
 {% highlight r %}
 
-# bring footnotes into data rectangle
+# metar las notas a la tabla
 rescDFstacked %<>% mutate(observation = case_when(
   grepl("\\*",Organization)~"includes other Flat faced dogs: Bulldogs, Boxers, Bostons, Pugs etc",
   grepl("\u0086",`Contact name`)~"limited foster care available",
   grepl("\u0087",phone)~"phone may not be up to date"
   ))
 
-
-# how I figured out which columns contained which special char
+# para saber en qué columnas buscar con el regex
 rescDFstacked %>% map(~grepl("\\*",.x)) %>% map(~.x[.x==TRUE]) %>% unlist() %>% names()
 rescDFstacked %>% map(~grepl("\u0086",.x)) %>% map(~.x[.x==TRUE]) %>% unlist() %>% names()
 rescDFstacked %>% map(~grepl("\u0087",.x)) %>% map(~.x[.x==TRUE]) %>% unlist() %>% names()
 
-# DIDNT WORK
+# no sirvió
 # map2(rescDFstacked,c("\\*","\u0086","\u0087"),~ grepl(.y,.x))
 {% endhighlight %}
 
-Because the footnotes were informative enough, we can wrap things up by removing all the special characters.
+Finalmente, sólo hay que borrar los caracteres especiales.
 
 {% highlight r %}
 
-# remove special chars
+# quitar símbolos raros
 rescDFstacked %<>% mutate_all(funs(gsub("[†|‡|'|\\*]","",.)))
 {% endhighlight %}
 
-The final table looks like this:
+Así queda la tabla reestructurada:
 
 **Organization**|**Contact name**|**phone**|**website**|**Category**|**observation**
 :-----:|:-----:|:-----:|:-----:|:-----:|:-----:
@@ -179,5 +178,4 @@ unknown|Joan|416-738-6059 |unknown|Bulldog (English)|limited foster care availab
 Labrador Retriever Adoption Service|Laura or Karen |289-997-5227|www.lab-rescue.ca|Labrador Retriever|NA
 Dog Rescuers Inc|Joan|416-567-6249|www.thedogrescuersinc.ca|Labrador Retriever|phone may not be up to date
 
-That’s it. Let me know if anything isn’t working. 
-For reference, the table that inspired this post was Table 2 in [this](http://onlinelibrary.wiley.com/doi/10.1111/bij.12164/abstract){:target="_blank"} 2013 paper by Alvarez et al.
+Listo. Si hay alguna duda me pueden escribir.
