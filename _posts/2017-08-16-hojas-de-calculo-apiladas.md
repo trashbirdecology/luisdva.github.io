@@ -1,10 +1,7 @@
 ---
-published: false
----
----
 title: "Limpiando datos en R"
 layout: post
-excerpt: algunos pasos para reacomodar columnas repetidas, encabezados que no pertenecen, y notas al pie de página.
+excerpt: Algunos pasos para reacomodar tablas con columnas repetidas, encabezados que no pertenecen, y notas al pie de página.
 tags:
   - datos horrendos
   - iteraciones
@@ -14,10 +11,10 @@ image:
   feature: featureAwk.jpg
   credit: LD 
   creditlink: 
-published: false
+published: true
 ---
 
-> English version of this post available here
+> read this post in English [here](http://luisdva.github.io/rstats/awkward-spreadsheet-formats/){:target="_blank"}
 
 La siguente tabla es una muestra reducida de los datos contenidos en un directorio de centros de adopción canina en Canadá. Los datos son verdaderos y toda la información de contacto (correos, teléfonos, etc.) es reciente, y proviene de la página [Speaking of Dogs](https://www.speakingofdogs.com/){:target="_blank"}. 
 
