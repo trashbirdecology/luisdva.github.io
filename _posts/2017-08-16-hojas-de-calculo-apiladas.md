@@ -37,9 +37,9 @@ La tabla tiene unos cuantos datos adicionales:
 
 En este formato, la tabla no está lista para ser analizada. Hay tres problemitas que hay que resolver primero. 
 
-- Hay columnas repetidas en la tabla. Es como si alguien (yo) hubiera partido la tabla en dos (verticalmente) para después acomodas las dos mitades lado a lado en un formacho 'ancho'. No conviene tener columnas/variables repetidas porque esta manera de guardar datos es medio riesgosa e incómoda. 
+- Hay columnas repetidas en la tabla. Es como si alguien (yo) hubiera partido la tabla en dos (verticalmente) para después acomodar las dos mitades lado a lado en un formacho 'ancho'. No conviene tener columnas/variables repetidas porque esta manera de guardar datos es medio riesgosa e incómoda. 
 
-- Hay encabezados metidos dentro de la columna _Organization_. Estas filas se usan para avisar que los datos en las filas que siguen pertenencen a un grupo, pero estas variables que agrupan observaciones no pertenenen en la misma variable. La práctica de usar encabezados de esta forma es muy común, y en realidad es fácil deseguir visualmente pero complica la manipulación automatizada de datos. Aquí hay una mejor [descripción](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}.
+- Hay encabezados metidos dentro de la columna _Organization_. Estas filas se usan para avisar que los datos en las filas que siguen pertenencen a un grupo, pero estas variables que agrupan observaciones en realidad no pertenenen dentro de la misma variable. La práctica de usar encabezados de esta forma es muy común, y en realidad es fácil de seguir visualmente pero complica la manipulación automatizada de datos. Aquí hay una mejor [descripción](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}.
 
 - Hay caracteres especiales en algunas celdas de la tabla, que se están usando para hacer referencia a algunos datos adicionales que están afuera de la misma (a manera de notas al pie de página).
 
@@ -47,7 +47,7 @@ En este formato, la tabla no está lista para ser analizada. Hay tres problemita
 
 Aquí explico algunos pasos que se pueden hacer para reacomodar y reestructurar la tabla usando R. Sólo hace falta instalar algunos paquetes adicionales, y el resto del código se puede sequir copiando y pegando.
 
-Para reproducir el ejemplo, lo primero que hay que hacer es pegar la tabla. Aquí viene como vector, con las columnas y filas delimitadas por tabulaciones y saltos de línea respectivamente.
+Para reproducir el ejemplo, lo primero que hay que hacer es pegar la tabla. Aquí viene como vector, con las columnas y filas delimitadas por tabulaciones y saltos de línea, respectivamente.
 
 
 {% highlight r %}
@@ -70,7 +70,7 @@ Tiny Paws Rescue	Brenda	1-800-774-8315	www.tpdr.ca	Labrador Retriever Adoption S
 Speaking of Dogs Rescue	Lorraine	705-444-7637	www.speakingofdogs.com")				
 {% endhighlight %}
 
-Ahora podemos hacer que cada linea sea una fila dentro de una 'tibble', para después separar las columnas y de esta manera siguen habiendo variables repetidas.
+Ahora podemos hacer que cada linea sea una fila dentro de una 'tibble' para después separar las columnas, y que de esta manera siguen habiendo variables repetidas.
 
 {% highlight r %}
 # pasar a filas
@@ -87,8 +87,8 @@ Ahora toca apilar la tabla para que quede en formato 'largo' y no 'ancho'. En al
 
 No siempre vamos a tener datos limpios y columnas que no se repitan, y por eso aquí vamos a seguir la propuesta que encontré en esta [discusión](https://stackoverflow.com/questions/38839048/r-reshape-dataframe-from-duplicated-column-names-but-unique-values){:target="_blank"}. El usuario _akrun_ propone una solución bastante ingeniosa:
 
-- extraer todas los observaciones para cada nombre de columna único iterativamente 
-- desvincularlos (unlist)  
+- extraer todas las observaciones para cada nombre de columna único (iterativamente) 
+- desvincularlas (unlist)  
 - acomodar todo en una tabla 
 
 Le hice algunos cambios a la propuesta original. Más que nada cambié el  _lapply_ y en su lugar usé  _map_ porque estoy tratando de aprender  _purrr_.
