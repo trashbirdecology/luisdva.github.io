@@ -15,7 +15,8 @@ image:
   creditlink: 
 published: true
 ---
- 
+> la versión en español de esta publicación está [aquí](http://luisdva.github.io/hojas-de-calculo-apiladas/)
+
 The table below is a subset of data from a directory of dog rescue resources put together by [Speaking of Dogs](https://www.speakingofdogs.com/){:target="_blank"}, a volunteer-based dog rescue organization in Toronto, Canada. The information is real, but for this example I garbled the original data into a particular ‘spreadsheet’ format that I struggled with recently.  I chose this source of data in support of the Clear The H*ckin Shelters campaign happening this week (read more [here](https://www.gofundme.com/clear-the-hckin-shelters){:target="_blank"} and support dog shelters in general).
 
 **Organization**|**Contact name**|**phone**|**website**|**Organization**|**Contact name**|**phone**|**website**
@@ -40,6 +41,8 @@ This data is not ‘analysis-ready’. Notice the three main issues that need to
 - There are header rows sprinkled throughout the Organization column. These non-data rows are used quite often when we want to save space by having the value in one cell somehow apply to cells below (until we find the next header row used for grouping). These are easy for humans to parse, but not computers. Read more about header rows [here](http://rpubs.com/jennybc/untangle-tidyeval){:target="_blank"}.
 
 - Some ‘cells’ have special characters, these are used to refer to footnotes/information in the table caption, but in this case we would prefer to have this information inside the data rectangle.
+
+# rstats time
 
 This post goes through a possible solution to reshape the table and deal with the header rows and footnotes. Make sure you have the necessary R packages installed, and once you do all the code in this block should be fully reproducible.  
 
