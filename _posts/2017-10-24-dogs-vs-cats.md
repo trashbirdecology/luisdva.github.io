@@ -212,7 +212,7 @@ Now we know that the mean rating differs between dogs and cats. I’m a dog pers
 
 We can even calculate the correlations, which turn out to be quite weak. 
 
-{% highglight r %}
+{% highlight r %}
 # plot retweets
 rtplot <- 
 ggplot(alltweets,aes(x=rate, y=log(retweet_count)))+geom_sina(aes(fill=screen_name), pch=21)+
