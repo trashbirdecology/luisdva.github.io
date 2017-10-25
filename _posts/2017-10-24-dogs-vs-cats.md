@@ -1,7 +1,7 @@
 ---
 title: "Comparing dog and cat ratings"
 layout: post
-excerpt: Downloading, comparing, and visualizing ratings for dogs and cats. 
+excerpt: Downloading, comparing, and visualizing Twitter ratings for dogs and cats. 
 category: rstats
 tags:
   - rtweet
