@@ -148,7 +148,7 @@ plotAll(Bestdogscats)
 
 Setting up and running the model (with default settings and arguments) is pretty straightforward, and once it’s done we can look at the model summary. Basically, the difference of means being different from cero is a credible value given the data.
 
-{% highglight text %}
+{% highlight text %}
 
             mean median   mode HDI%  HDIlo  HDIup
 mu1       12.790 12.790 12.788   95 12.709 12.874
