@@ -28,12 +28,14 @@ Here are some examples:
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Elsie is always hungry &amp; waiting for food. 12/10 for being a lil fatty <a href="https://t.co/KFIMhlblU1">pic.twitter.com/KFIMhlblU1</a></p>&mdash; We Rate Cats 🐈 (@CatsRates) <a href="https://twitter.com/CatsRates/status/913916433175805952?ref_src=twsrc%5Etfw">September 30, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
+
 These are the main steps in the workflow:
 
--Get the tweets
--Extract the ratings
--Plot the data
--Test for differences
+- Get the tweets
+- Extract the ratings
+- Plot the data
+- Test for differences
 
 Downloading the tweets was super easy thanks to _rtweet_. Once you setup your app and authentication keys with this handy [guide](http://rtweet.info/index.html){:target="_blank"}, you should be able to reproduce everything in this post. 
 
@@ -199,4 +201,4 @@ ggplot(dogcatsDiffsDF)+geom_bkde(data=muDiff, aes(x=meandiff),fill="#335EAD",col
         <figcaption>click for gallery</figcaption>
 </figure>
 
-Now we know that the mean rating differs between dogs and cats. I’m a dog person so you can probably guess how I would interpret this result.
+Now we know that the mean rating differs between dogs and cats. I’m a dog person so you can probably guess how I would interpret this result. I'm happy to get any feedback on this.
