@@ -2,6 +2,7 @@
 published: false
 ---
 Here is yet another post about dogs and the [@dog_rates](https://twitter.com/dog_rates) Twitter account. I’m writing this as a way to try out the [rtweet](http://rtweet.info/) package (and to document some plotting code that I had to leave out of an unrelated paper).
+
 In this post, I’ll compare scores for two independent samples, represented here by ratings for around 200 dogs and 200 cats, sourced from two popular Twitter accounts that share user-provided photos with funny captions and a rating out of 10 for a different dog or cat. Cat ratings come from the [We Rate Cats](https://twitter.com/CatsRates) account, which has a big following, a good number of posts, and variation in the ratings for the various cats.
 
 Here are some examples:
@@ -39,6 +40,7 @@ twitter_token <- create_token(
   consumer_key = key,
   consumer_secret = secret)
 
+## retrieve the tweets
 # cat_rates tweets
 cat_tweets <-  get_timeline("CatsRates", n = 500)
 # dog_rates tweets
