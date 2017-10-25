@@ -203,7 +203,7 @@ ggplot(dogcatsDiffsDF)+geom_bkde(data=muDiff, aes(x=meandiff),fill="#335EAD",col
 
 Now we know that the mean rating differs between dogs and cats. I’m a dog person so you can probably guess how I would interpret this result. I'm happy to get any feedback on this.
 
-> Update: After sharing this post, [Maëlle Salmonn](https://twitter.com/ma_salmon){:target="_blank"} asked if maybe the ratings relate to the number of likes and retweets that a dog/cat is getting. Because the variables are right there in the data frame, I've added some code for a quick plot of retweets/likes ~ ratings. I logged the response variables, just because.
+> Update: After sharing this post, [Maëlle Salmon](https://twitter.com/ma_salmon){:target="_blank"} asked if maybe the ratings relate to the number of likes and retweets that a dog/cat is getting. Because the variables are right there in the data frame, I've added some code for a quick plot of retweets/likes ~ ratings. I logged the response variables, just because.
 
 <figure>
     <a href="/images/rtfavs.png"><img src="/images/rtfavs.png"></a>
