@@ -145,8 +145,8 @@ Bestdogscats <- BESTmcmc(dogratesVec, catratesVec)
 Bestdogscats # default reporting
 # for reporting results
 round(summary(Bestdogscats, credmass=0.99),3)
-#
-plotAll(Bestdogscats)
+# plot the difference of means
+plot(Bestdogscats)
 
 {% endhighlight %}
 
