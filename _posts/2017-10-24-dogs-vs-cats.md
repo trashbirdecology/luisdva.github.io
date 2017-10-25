@@ -23,6 +23,8 @@ Here are some examples:
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Meet Frida. She&#39;s in the search &amp; rescue division of the Mexican Navy along with two German shepherds. Sadly, she&#39;s been busy lately. 14/10 <a href="https://t.co/82nlfkvodW">pic.twitter.com/82nlfkvodW</a></p>&mdash; SpookyWeRateDogs™ (@dog_rates) <a href="https://twitter.com/dog_rates/status/910580043381923840?ref_src=twsrc%5Etfw">September 20, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Elsie is always hungry &amp; waiting for food. 12/10 for being a lil fatty <a href="https://t.co/KFIMhlblU1">pic.twitter.com/KFIMhlblU1</a></p>&mdash; We Rate Cats 🐈 (@CatsRates) <a href="https://twitter.com/CatsRates/status/913916433175805952?ref_src=twsrc%5Etfw">September 30, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
