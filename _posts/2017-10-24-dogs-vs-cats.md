@@ -206,7 +206,7 @@ Now we know that the mean rating differs between dogs and cats. I’m a dog pers
 > Update: After sharing this post, [Maëlle Salmon](https://twitter.com/ma_salmon){:target="_blank"} asked if maybe the ratings relate to the number of likes and retweets that a dog/cat is getting. Because the variables are right there in the data frame, I've added some code for a quick plot of retweets/likes ~ ratings. I logged the response variables, just because.
 
 <figure>
-    <a href="/images/rtfavs.png"><img src="/images/rtfavs.png"></a>
+    <a href="/images/rtfavs2.png"><img src="/images/rtfavs2.png"></a>
         <figcaption>how cool is the cowplot package?</figcaption>
 </figure>
 
