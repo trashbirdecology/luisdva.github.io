@@ -10,7 +10,7 @@ tags:
   - we rate dogs
 image:
   feature: featureDogsCats.jpg
-  credit: Pixabay CC0 imagephoto by user Nordseher
+  credit: Pixabay CC0 image, photo by user Nordseher
   creditlink:
 published: true
 ---
