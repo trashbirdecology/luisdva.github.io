@@ -202,3 +202,42 @@ ggplot(dogcatsDiffsDF)+geom_bkde(data=muDiff, aes(x=meandiff),fill="#335EAD",col
 </figure>
 
 Now we know that the mean rating differs between dogs and cats. I’m a dog person so you can probably guess how I would interpret this result. I'm happy to get any feedback on this.
+
+> Update: After sharing this post, [Maëlle Salmonn](https://twitter.com/ma_salmon){:target="_blank"} asked if maybe the ratings relate to the number of likes and retweets that a dog/cat is getting. Because the variables are right there in the data frame, I've added some code for a quick plot of retweets/likes ~ ratings. I logged the response variables, just because.
+
+<figure>
+    <a href="/images/rtfavs.png"><img src="/images/rtfavs.png"></a>
+        <figcaption>how cool is the cowplot package?</figcaption>
+</figure>
+
+We can even calculate the correlations, which turn out to be quite weak. 
+
+{% highglight r %}
+# plot retweets
+rtplot <- 
+ggplot(alltweets,aes(x=rate, y=log(retweet_count)))+geom_sina(aes(fill=screen_name), pch=21)+
+  geom_smooth(aes(group=screen_name),method = "lm", se = TRUE)+
+  theme_ipsum_rc(grid="y", base_size = 12,axis_title_size = 14)
+# plot likes
+favplot <- ggplot(alltweets,aes(x=rate, y=log(favorite_count)))+geom_sina(aes(fill=screen_name), pch=21)+
+  geom_smooth(aes(group=screen_name),method = "lm", se = TRUE)+
+  theme_ipsum_rc(grid="y", base_size = 12,axis_title_size = 14)
+
+library(cowplot)
+# arrange the plots side by side
+rtfavs <- plot_grid(rtplot + theme(legend.position="none"),favplot+ theme(legend.position="none"), nrow = 1)
+# for shared legend
+legendrtfav <- get_legend(rtplot)
+
+# add the legend to the row we made earlier. Give it one-third of the width
+# of one plot (via rel_widths).
+p <-  plot_grid(rtfavs, legendrtfav, rel_widths = c(3, .3))
+p
+
+# correlation
+alltweets %>% group_by(screen_name) %>% summarize(corFavs = cor(favorite_count,rate),
+                                                  corRTs  = cor(retweet_count,rate))
+{% endhighlight %}
+
+
+
