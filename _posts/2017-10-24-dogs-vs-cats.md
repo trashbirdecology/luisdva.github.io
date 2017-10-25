@@ -103,7 +103,10 @@ ggplot(alltweets)+
 
 {% endhighlight %}
 
-FIGUrE
+<figure>
+    <a href="/images/rateSina.png"><img src="/images/rateSina.png"></a>
+        <figcaption>each point is a rating</figcaption>
+</figure>
 
 We might typically use a two-sample t-test to compare the means of the two groups. This is assuming that both samples are random, independent, and come from normally distributed population with unknown but equal variances. However, the t-test has some problems. By assuming equal variances and normally distributed data, any F tests are sensitive to outliers and not that easy to interpret, because the best-fitting normal distributions do not describe the data well.  
 
@@ -143,7 +146,10 @@ muDiff     0.577  0.577  0.583   95  0.410  0.747
 
 Let’s look at it graphically. BEST has a built in plotting function that generates this figure.
 
-FIGUre
+<figure>
+    <a href="/images/defaultBEST.png"><img src="/images/defaultBEST.png"></a>
+        <figcaption>built-in defaults</figcaption>
+</figure>
 
 Because I get uncomfortable when I can’t change things in _ggplot_, the following code reuses values and elements from the output and summary of the BEST model to recode a similar plot, using a density plot instead of a histogram. 
 
@@ -173,6 +179,9 @@ ggplot(dogcatsDiffsDF)+geom_bkde(data=muDiff, aes(x=meandiff),fill="#335EAD",col
 
 {% endhighlight %}
 
-figure
+<figure>
+    <a href="/images/muDiff.png"><img src="/images/muDiff.png"></a>
+        <figcaption>click for gallery</figcaption>
+</figure>
 
 Now we know that the mean rating differs between dogs and cats. I’m a dog person so you can probably guess how I would interpret this result.
