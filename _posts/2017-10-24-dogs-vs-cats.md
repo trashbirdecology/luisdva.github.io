@@ -1,9 +1,22 @@
 ---
+title: "Comparing dog and cat ratings"
+layout: post
+excerpt: Downloading, comparing, and visualizing ratings for dogs and cats. 
+category: rstats
+tags:
+  - rtweet
+  - bayesian
+  - cats
+  - we rate dogs
+image:
+  feature: featureDogsCats.jpg
+  credit: Pixabay CC0 imagephoto by user Nordseher
+  creditlink:
 published: false
 ---
-Here is yet another post about dogs and the [@dog_rates](https://twitter.com/dog_rates) Twitter account. I’m writing this as a way to try out the [rtweet](http://rtweet.info/) package (and to document some plotting code that I had to leave out of an unrelated paper).
+Here is yet another post about dogs and the [@dog_rates](https://twitter.com/dog_rates){:target="_blank"} Twitter account. I’m writing this as a way to try out the [rtweet](http://rtweet.info){:target="_blank"} package (and to document some plotting code that I had to leave out of an unrelated paper).
 
-In this post, I’ll compare scores for two independent samples, represented here by ratings for around 200 dogs and 200 cats, sourced from two popular Twitter accounts that share user-provided photos with funny captions and a rating out of 10 for a different dog or cat. Cat ratings come from the [We Rate Cats](https://twitter.com/CatsRates) account, which has a big following, a good number of posts, and variation in the ratings for the various cats.
+In this post, I’ll compare scores for two independent samples, represented here by ratings for around 200 dogs and 200 cats, sourced from two popular Twitter accounts that share user-provided photos with funny captions and a rating out of 10 for a different dog or cat. Cat ratings come from the [We Rate Cats](https://twitter.com/CatsRates){:target="_blank"} account, which has a big following, a good number of posts, and variation in the ratings for the various cats.
 
 Here are some examples:
 
@@ -20,7 +33,7 @@ These are the main steps in the workflow:
 -Plot the data
 -Test for differences
 
-Downloading the tweets was super easy thanks to _rtweet_. Once you setup your app and authentication keys with this handy [guide](http://rtweet.info/index.html), you should be able to reproduce everything in this post. 
+Downloading the tweets was super easy thanks to _rtweet_. Once you setup your app and authentication keys with this handy [guide](http://rtweet.info/index.html){:target="_blank"}, you should be able to reproduce everything in this post. 
 
 {% highlight r %}
 # load libraries (install first if needed)
@@ -71,7 +84,7 @@ alltweets %>% count(screen_name)
 
 {% endhighlight %}
 
-To extract the ratings into a new column, we can use stringr again with some hacky regex to pull out digits preceding the string /10 (positive lookahead). After converting the column to numeric, this data is ready for visualization.
+To extract the ratings into a new column, we can use _stringr_ again with some hacky regex to pull out digits preceding the string /10 (positive lookahead). After converting the column to numeric, this data is ready for visualization.
 
 {% highlight r %}
 # new var with rating
@@ -86,7 +99,7 @@ alltweets %>% group_by(screen_name) %>% summarise(meanRating=mean(rate), n=n()) 
 
 {% endhighlight %}
 
-To show the difference in ratings, I used a sina plot, implemented in the [ggforce](https://github.com/thomasp85/ggforce) package. It is like a strip chart but with the points jittered according to their local density. I feel that this type of plot shows the distribution of the points well. Most dogs received a 13/10, while cats got mainly 12/10 with more variation around this value. 
+To show the difference in ratings, I used a sina plot, implemented in the [ggforce](https://github.com/thomasp85/ggforce){:target="_blank"} package. It is like a strip chart but with the points jittered according to their local density. I feel that this type of plot shows the distribution of the points well. Most dogs received a 13/10, while cats got mainly 12/10 with more variation around this value. 
 
 {% highlight r %}
 # plotting libraries
@@ -114,7 +127,7 @@ Rather than testing whether two groups are different, we could aim to estimate h
 
 BEST estimates the difference in means between two groups (expressed as the mean differences of the marginal posterior distributions) and provides a probability distribution over the difference. From this distribution of credible values we consider the mean value as our best guess of the actual difference and a Highest Density Interval (HDI) as the range where the actual difference is, with X% credibility (e.g. 95 or 99%). If the HDI does not include zero, then zero is not a credible value for the difference of means between groups. 
 
-Although I didn’t go into it, BEST also provides complete distributions of credible values for the effect size, standard deviations and their difference, and the normality of the data. Read more about BEST [here](http://www.dataminingapps.com/2016/03/update-your-beliefs-a-bayesian-approach-to-two-sample-comparison/ "BEST overview"), [here](http://docs.pymc.io/notebooks/BEST.html "python implementation"), and in this puppy-themed [book](https://sites.google.com/site/doingbayesiandataanalysis/) by J.K. Kruschke himself.  
+Although I didn’t go into it, BEST also provides complete distributions of credible values for the effect size, standard deviations and their difference, and the normality of the data. Read more about BEST [here](http://www.dataminingapps.com/2016/03/update-your-beliefs-a-bayesian-approach-to-two-sample-comparison/ "BEST overview"){:target="_blank"}, [here](http://docs.pymc.io/notebooks/BEST.html "python implementation"){:target="_blank"}, and in this puppy-themed [book](https://sites.google.com/site/doingbayesiandataanalysis/){:target="_blank"} by J.K. Kruschke himself.  
 
 {% highlight r %}
 # separate vectors for t tests
