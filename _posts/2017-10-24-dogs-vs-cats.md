@@ -12,7 +12,7 @@ image:
   feature: featureDogsCats.jpg
   credit: Pixabay CC0 imagephoto by user Nordseher
   creditlink:
-published: false
+published: true
 ---
 Here is yet another post about dogs and the [@dog_rates](https://twitter.com/dog_rates){:target="_blank"} Twitter account. I’m writing this as a way to try out the [rtweet](http://rtweet.info){:target="_blank"} package (and to document some plotting code that I had to leave out of an unrelated paper).
 
