@@ -314,7 +314,7 @@ gsobjIOC %>%
   set_names %>%  # for naming the DFs
     map(gs_read,ss=gsobjIOC) # iterate
 
-# remove probelmatic column
+# remove problematic column
 lond2012 %>% map(select(-Position))
 # bind dfs
 lond2012df <- bind_rows(lond2012)  
