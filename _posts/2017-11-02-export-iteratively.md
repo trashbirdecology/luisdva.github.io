@@ -12,7 +12,7 @@ image:
   feature: featureRish.jpg
   credit: Pixabay CC0 image
   creditlink:
-published: false
+published: true
 ---
 After running some data wrangling demo sessions with my research group, a lab mate emailed me with the following question:
 
@@ -54,5 +54,10 @@ I used _split_ to create a list of data frames for each group, then _map_ to app
 
 I’m using _walk_ because _write.csv()_ returns nothing and creates the csv file as a side effect, and as explained in the documentation, _walk_ calls functions for their side effects.   
 
-Because I was so excited about actually getting everything to work, I put together this cheatsheet-style graphic to describe the workflow.  
+Because I was so excited about actually getting everything to work, I put together this cheatsheet-style graphic to describe the workflow. This approach already saved me and my labmate lots of time. I hope others find it useful too. 
+
+<figure>
+    <a href="/images/purrrPost.png"><img src="/images/purrrPost.png"></a>
+        <figcaption>click to enlarge</figcaption>
+</figure>
 
