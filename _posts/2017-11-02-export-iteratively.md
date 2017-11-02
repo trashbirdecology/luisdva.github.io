@@ -33,7 +33,7 @@ batRecs %>% count(family)
 # drop na, split, remove duplicates, write to disk
 batRecs %>%  na.omit() %>% 
   split(.$family) %>% map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE)) %>% 
-  walk(~.x, write.csv(file = paste0("nov1_",unique(.x$family),".csv"),
+  walk(~.x %>%  write.csv(file = paste0("nov1_",unique(.x$family),".csv"),
                    row.names = FALSE))
 {% endhighlight %}
 
