@@ -1,4 +1,17 @@
 ---
+title: "Using purrr and dplyr to apply functions to lists and write each element to disk"
+layout: post
+excerpt: Split a table by a grouping variable, apply functions to each element, and export to separate files. 
+category: rstats
+tags:
+  - dplyr
+  - each element
+  - walk
+  - purrr
+image:
+  feature: featureRish.jpg
+  credit: Pixabay CC0 image
+  creditlink:
 published: false
 ---
 After running some data wrangling demo sessions with my research group, a lab mate emailed me with the following question:
