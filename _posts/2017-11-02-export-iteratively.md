@@ -1,0 +1,45 @@
+---
+published: false
+---
+After running some data wrangling demo sessions with my research group, a lab mate emailed me with the following question:
+
+> “I have a table with almost 20000 point occurrence records for bats in Peru. I need to split this into separate files for each species, keeping only distinct records (distinct latitude/longitude combinations).”
+
+The only time I ever did something like that before I ended up cutting and pasting the records for each group by hand in Excel. I usually use one input file and one output file at a time, but this sounded like something that could be done in R.
+
+Grouping data and removing duplicated rows is straightforward using _dplyr_, so the challenge would be to split the groups and apply functions to each one before finally exporting them as separate files. I’ve been getting into using the _purrr_ package for iterating over lists and vectors, and after lots of trial and error all the steps worked out OK.
+
+For this post, I’ll go over the steps for splitting a table by a grouping variable, then applying functions to each element created by the split, which are then exported to separate files. 
+This example uses a random subsample of some point occurrence records for bats that I downloaded from the Universidad Nacional Autonóma de México (UNAM) [Open Data portal](https://datosabiertos.unam.mx/).
+
+With the code below, we are going to:
+
+-keep only the complete cases
+-split the dataset by taxonomic families
+-remove duplicates in each family (note the keep_all argument)
+-export the table for each family as a csv file
+
+{% highlight r %}
+# load libraries
+library(dplyr)
+library(purrr)
+
+# read csv from web
+batRecs <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/batRecords.csv",stringsAsFactors = FALSE)
+
+# preview how many files we should be ending up with
+batRecs %>% count(family)
+
+# drop na, split, remove duplicates, write to disk
+batRecs %>%  na.omit() %>% 
+  split(.$family) %>% map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE)) %>% 
+  walk(~.x, write.csv(file = paste0("nov1_",unique(.x$family),".csv"),
+                   row.names = FALSE))
+{% endhighlight %}
+
+I used _split_ to create a list of data frames for each group, then _map_ to apply functions to each list element. I used _paste0_ to create a path for each file to be written, including a prefix for the date. In this case the five new files (one for each bat family) will end up in the working directory, but if we would want to do this with more files and dedicated directories then using the _here_ and _glue_ packages is probably a good idea. 
+
+I’m using _walk_ because _write.csv()_ returns nothing and creates the csv file as a side effect, and as explained in the documentation, _walk_ calls functions for their side effects.   
+
+Because I was so excited about actually getting everything to work, I put together this cheatsheet-style graphic to describe the workflow.  
+
