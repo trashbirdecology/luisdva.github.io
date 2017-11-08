@@ -273,12 +273,12 @@ ggtree(dogCladesTree,aes(color=dsize)) %<+% dogCladesC  +
  
 Because these plots are actually showing data related to dogs, I’m well justified in using my silly [ggpup](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} function to add two dog photos next to my plot objects. The original _ggpup_ function scraped two photos at random from a possible set of almost 200 breeds. I modified the function (see the gist at the end of this post) so that it now takes a vector of breeds to choose from, which will be matched against the available photos before sampling two at random. This way, the dog images added to the breed cladogram can actually correspond to breeds that appear in the tree. 
 
-The function itself has many dependencies and is a mess in terms of functional programming but it works, and writing it helped me learn about webscraping, working with grid objects, and table joins.
+The function itself has many dependencies and is a mess in terms of functional programming but it works, and writing it helped me learn about webscraping, working with grid objects, and table joins. I made some updates so that the scraped photos appear with labels. 
 
 
 <figure>
     <a href="/images/ggpuphmap.png"><img src="/images/ggpuphmap.png"></a>
-        <figcaption>heatmap shows shedding, cold tolerance and trainability</figcaption>
+        <figcaption>the heatmap shows fur shedding, cold tolerance, and trainability</figcaption>
 </figure>
 
 
