@@ -231,7 +231,7 @@ ggtree(dogCladesTreeOTU,aes(color=group)) %<+% dogCladesC  +
 {% endhighlight %}
 
 <figure>
-    <a href="cutes2.png"><img src="cutes2.png"></a>
+    <a href="/images/cutes2.png"><img src="/images/cutes2.png"></a>
         <figcaption>Red: European Mastiff Clade, Blue: Alpine Clade, Green: Retriever Clade; asterisks show cutest breeds</figcaption>
 </figure>
 
@@ -269,7 +269,7 @@ ggtree(dogCladesTree,aes(color=dsize)) %<+% dogCladesC  +
   
 {% endhighlight %}
   
- After plotting trees, the **gheatmap** function in comes in handy to show an associated data matrix. After associating the breed attribute data to the phylo object, we can draw a heatmap next to the tree to show some breed properties. Here I decided to plot the values for fur shedding, cold tolerance, and trainability for each breed. I arbitrarily categorized the breed scores into low, medium and high for a simpler three-color scheme. 
+After plotting trees, the **gheatmap** function in comes in handy to show an associated data matrix. After associating the breed attribute data to the phylo object, we can draw a heatmap next to the tree to show some breed properties. Here I decided to plot the values for fur shedding, cold tolerance, and trainability for each breed. I arbitrarily categorized the breed scores into low, medium and high for a simpler three-color scheme. 
  
 Because these plots are actually showing data related to dogs, I’m well justified in using my silly [ggpup](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} function to add two dog photos next to my plot objects. The original _ggpup_ function scraped two photos at random from a possible set of almost 200 breeds. I modified the function (see the gist at the end of this post) so that it now takes a vector of breeds to choose from, which will be matched against the available photos before sampling two at random. This way, the dog images added to the breed cladogram can actually correspond to breeds that appear in the tree. 
 
@@ -277,7 +277,7 @@ The function itself has many dependencies and is a mess in terms of functional p
 
 
 <figure>
-    <a href="lilili.jpg"><img src="lilili.jpg"></a>
+    <a href="/images/lilili.jpg"><img src="/images/lilili.jpg"></a>
         <figcaption>the heatmap shows fur shedding, cold tolerance, and trainability</figcaption>
 </figure>
 
