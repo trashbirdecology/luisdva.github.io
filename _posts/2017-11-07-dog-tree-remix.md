@@ -15,7 +15,11 @@ image:
   creditlink: 
 published: false
 ---
+
+> This is an updated version of a [post](http://luisdva.github.io/rstats/dog-tree/){:target="_blank"} from May 2017. I updated the code to keep up with updates in some packages, replaced all the functions from the **apply** family with **map** functions from the purrr package, replaced the figures with high-res versions, and added more detailed code annotations. 
+
 >The function for adding dog images next to any plot object is in the Gist at the end of this post.
+
 
 A recent [study](<http://www.cell.com/cell-reports/abstract/S2211-1247(17)30456-4>){:target="_blank"} led by Heidi Parker produced some very interesting results about the origin of different dogs breeds, and how desirable traits from certain breeds have been bred into others. Read more about it [here](http://www.sciencemag.org/news/2017/04/where-did-your-dog-come-new-tree-breeds-may-hold-answer?utm_source=newsfromscience&utm_medium=twitter&utm_campaign=dogbreeds-12632){:target="_blank"}. This dog breed genome paper had a very pretty figure showing the relationship between 161 breeds. Fortunately, the authors made their phylogeny available. Supplementary dataset S2 provides a bootstrapped consensus cladogram built using genomic distances for over 1300 individuals. Having access to these data led to yet another dog-themed and R-themed post.  
 
@@ -44,7 +48,7 @@ All the R code in the code blocks should be fully reproducible. All the necessar
 library(tidyjson)
 library(dplyr)
 
-# download and define json array from json file
+# download and define json array from json file, note that we use as.tbl_from jsonlite
 dogAttributes <- "https://raw.githubusercontent.com/ericdrowell/DogBreedChart/master/dogs.json" %>% as.tbl_json()
 
 # make into tidy  format
@@ -194,13 +198,6 @@ This is the tree in fan layout, and unsurprisingly, with this many tips it gets 
 
 Once you get used to it, _ggtree_ can be pretty flexible. Here I took advantage of _ggtree_ to highlight some tips, change the fonts, and show the clades on the tree.  
 
-<figure>
-    <a href="/images/coloredclades.png"><img src="/images/coloredclades.png"></a>
-        <figcaption>Red: European Mastiff Clade, Blue: Alpine Clade, Green: Retriever Clade; asterisks show cutest breeds</figcaption>
-</figure>
-
-Showing the different clades on the figures already implies combining the tree topology with additional data, and _ggtree_ has a convenient way to attach data to a tree (the %<+% operator). Here I used a nifty _ggtree_ function (groupOTU()) for grouping coloring clades.  
-
 {% highlight r %}
 # subset a few clades
 dogClades <- dogTraitsFnum %>% dplyr::filter(Clade=="Retriever"| Clade=="Alpine"|
@@ -233,13 +230,14 @@ ggtree(dogCladesTreeOTU,aes(color=group)) %<+% dogCladesC  +
   
 {% endhighlight %}
 
-
-  
-
 <figure>
-    <a href="/images/ggpuphmap.png"><img src="/images/ggpuphmap.png"></a>
-        <figcaption>heatmap shows shedding, cold tolerance and trainability</figcaption>
+    <a href="/images/coloredclades.png"><img src="/images/coloredclades.png"></a>
+        <figcaption>Red: European Mastiff Clade, Blue: Alpine Clade, Green: Retriever Clade; asterisks show cutest breeds</figcaption>
 </figure>
+
+Showing the different clades on the figures already implies combining the tree topology with additional data, and _ggtree_ has a convenient way to attach data to a tree (the %<+% operator). Here I used a nifty _ggtree_ function (groupOTU()) for grouping coloring clades.  
+
+
 
 {% highlight r %}
 # to group Clades
@@ -271,9 +269,18 @@ ggtree(dogCladesTree,aes(color=dsize)) %<+% dogCladesC  +
   
 {% endhighlight %}
   
- After plotting trees, the **gheatmap** function in comes in handy to show an associated data matrix. After associating the breed attribute data to the phylo object, we can draw a heatmap next to the tree to show some breed properties. Here I decided to plot the values for shedding, cold tolerance, and trainability for each breed. I arbitrarily categorized the breed scores into low, medium and high for a simpler three-color scheme. 
+ After plotting trees, the **gheatmap** function in comes in handy to show an associated data matrix. After associating the breed attribute data to the phylo object, we can draw a heatmap next to the tree to show some breed properties. Here I decided to plot the values for fur shedding, cold tolerance, and trainability for each breed. I arbitrarily categorized the breed scores into low, medium and high for a simpler three-color scheme. 
  
 Because these plots are actually showing data related to dogs, I’m well justified in using my silly [ggpup](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} function to add two dog photos next to my plot objects. The original _ggpup_ function scraped two photos at random from a possible set of almost 200 breeds. I modified the function (see the gist at the end of this post) so that it now takes a vector of breeds to choose from, which will be matched against the available photos before sampling two at random. This way, the dog images added to the breed cladogram can actually correspond to breeds that appear in the tree. 
+
+The function itself has many dependencies and is a mess in terms of functional programming but it works, and writing it helped me learn about webscraping, working with grid objects, and table joins.
+
+
+<figure>
+    <a href="/images/ggpuphmap.png"><img src="/images/ggpuphmap.png"></a>
+        <figcaption>heatmap shows shedding, cold tolerance and trainability</figcaption>
+</figure>
+
 
 {% highlight r %}
 # categories from continuous data
@@ -302,7 +309,7 @@ hmapOBJ <- gheatmap(treeobj,dogAttrMat,width = 0.4,offset = 1200,
                     font.size = 3, colnames_position = "top") %>% scale_x_ggtree()
 
 # source the modified ggpup function 
-source("https://gist.githubusercontent.com/luisDVA/101374d9d6b569d887a1a2c7654cd3a4/raw/a98641561afbe7efa4d8ed6d7e1aac6f62abe2e2/ggpup.R")
+source("https://gist.githubusercontent.com/luisDVA/9c12fff91cf1df47645c03ad224db9bc/raw/6e4a043edbb7c273ffa296b912534968cf0c677c/ggpupBV.R")
 
 # vector of breeds to match
 forggpup <- as.character(dogCladesC$breedname.y)
