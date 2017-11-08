@@ -190,8 +190,8 @@ ggtree(dogTreeF,layout = "fan")
 
 
 <figure>
-    <a href="/images/doggenfan.png"><img src="/images/doggenfan.png"></a>
-        <figcaption>Fan layout</figcaption>
+    <a href="/images/fannew.png"><img src="/images/fannew.png"></a>
+        <figcaption>Fan layout with labels</figcaption>
 </figure>
 
 This is the tree in fan layout, and unsurprisingly, with this many tips it gets pretty cluttered. The dog genome paper provides additional information about the clades that different breeds belong to, so for a less cluttered visualization I chose a subset of some clades that I like and then trimmed the tree with another helpful set of [steps](http://blog.phytools.org/2011/03/prune-tree-to-list-of-taxa.html){:target="_blank"} also provided by Liam Revell.  I worked with this subset of breeds for the rest of the post.
@@ -231,7 +231,7 @@ ggtree(dogCladesTreeOTU,aes(color=group)) %<+% dogCladesC  +
 {% endhighlight %}
 
 <figure>
-    <a href="/images/coloredclades.png"><img src="/images/coloredclades.png"></a>
+    <a href="cutes2.png"><img src="cutes2.png"></a>
         <figcaption>Red: European Mastiff Clade, Blue: Alpine Clade, Green: Retriever Clade; asterisks show cutest breeds</figcaption>
 </figure>
 
@@ -277,7 +277,7 @@ The function itself has many dependencies and is a mess in terms of functional p
 
 
 <figure>
-    <a href="/images/ggpuphmap.png"><img src="/images/ggpuphmap.png"></a>
+    <a href="lilili.jpg"><img src="lilili.jpg"></a>
         <figcaption>the heatmap shows fur shedding, cold tolerance, and trainability</figcaption>
 </figure>
 
