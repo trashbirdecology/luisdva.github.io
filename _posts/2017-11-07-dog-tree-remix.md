@@ -17,7 +17,7 @@ published: false
 ---
 >The function for adding dog images next to any plot object is in the Gist at the end of this post.
 
-This recent [study](<http://www.cell.com/cell-reports/abstract/S2211-1247(17)30456-4>) led by Heidi Parker produced some enlightening results about the origin of different dogs, and how desirable traits from certain breeds have been bred into others. Read more about it [here](http://www.sciencemag.org/news/2017/04/where-did-your-dog-come-new-tree-breeds-may-hold-answer?utm_source=newsfromscience&utm_medium=twitter&utm_campaign=dogbreeds-12632). This dog breed genome paper had a pretty figure showing the relationship between 161 breeds, and straight away I checked to see if the authors had shared the tree. Fortunately, they did. Supplementary dataset S2 provides a bootstrapped consensus cladogram built using genomic distances for over 1300 individuals.
+A recent [study](<http://www.cell.com/cell-reports/abstract/S2211-1247(17)30456-4>){:target="_blank"} led by Heidi Parker produced some enlightening results about the origin of different dogs, and how desirable traits from certain breeds have been bred into others. Read more about it [here](http://www.sciencemag.org/news/2017/04/where-did-your-dog-come-new-tree-breeds-may-hold-answer?utm_source=newsfromscience&utm_medium=twitter&utm_campaign=dogbreeds-12632){:target="_blank"}. This dog breed genome paper had a pretty figure showing the relationship between 161 breeds, and straight away I checked to see if the authors had shared the tree. Fortunately, they did. Supplementary dataset S2 provides a bootstrapped consensus cladogram built using genomic distances for over 1300 individuals.
 Having access to these data led to what is now my third consecutive dog-themed and R-themed post.  
 
 This post goes through three main steps:
@@ -28,16 +28,16 @@ This post goes through three main steps:
 
 ## Importing dog breed data
 
-Knowing that reading and manipulate the dog breed tree shouldn’t be too much of a problem, I started searching the web for dog breed data that I could match up with the cladogram. I found several relevant databases (such as [this collection of spreadsheets](http://www.informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/)) but I went with one in particular simply because of the format it came in.
+Knowing that reading and manipulate the dog breed tree shouldn’t be too much of a problem, I started searching the web for dog breed data that I could match up with the cladogram. I found several relevant databases (such as [this collection of spreadsheets](http://www.informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/){:target="_blank"}) but I went with one in particular simply because of the format it came in.
 
-The [Dog Breed Chart](http://www.dogbreedchart.com/) by [Eric D. Rowell](https://twitter.com/ericdrowell) contains numerical values for several breed attributes for 199 different breeds. Also, it has its source data as a json file on GitHub. Until now I had been too intimidated to mess with json using R, despite it being an increasingly widespread format (I’d like to thank dogs for getting me to finally learn more about json). JSON stands for JavaScript Object Notation, it is meant to be a lightweight data-interchange format and it describes itself as “easy for humans to read and write” as well as “easy for machines to parse and generate”. 
+The [Dog Breed Chart](http://www.dogbreedchart.com/){:target="_blank"} by [Eric D. Rowell](https://twitter.com/ericdrowell){:target="_blank"} contains numerical values for several breed attributes for 199 different breeds. Also, it has its source data as a json file on GitHub. Until now I had been too intimidated to mess with json using R, despite it being an increasingly widespread format (I’d like to thank dogs for getting me to finally learn more about json). JSON stands for JavaScript Object Notation, it is meant to be a lightweight data-interchange format and it describes itself as “easy for humans to read and write” as well as “easy for machines to parse and generate”. 
 
-After deciding to tackle json files I had to figure out how to work with this format in R, and once again I followed some of the steps that [Jim Vallandingham]( https://twitter.com/vlandham) used to analyse [Kung Fu movies]( http://vallandingham.me/shaw_bros_analysis.html). This meant using the [_tidyjson_](https://github.com/sailthru/tidyjson) package to read the json file and wrangle it into a tidy table structure. There are other packages for working with json data in R, but _tidyjson_ has really smooth integration with _dplyr_ and that sealed the deal.
+After deciding to tackle json files I had to figure out how to work with this format in R, and I followed some of the steps that [Jim Vallandingham]( https://twitter.com/vlandham){:target="_blank"} used to analyse [Kung Fu movies]( http://vallandingham.me/shaw_bros_analysis.html){:target="_blank"}. This meant using the [_tidyjson_](https://github.com/sailthru/tidyjson){:target="_blank"} package to read the json file and wrangle it into a tidy table structure. There are other packages for working with json data in R, but _tidyjson_ has really smooth integration with _dplyr_ and that sealed the deal.
 
 All the R code in the code blocks should be fully reproducible, <del> and the only file that needs to be 
 downloaded locally first is the json file (I think the read_json function breaks with URL file paths - I’ve already created an issue). </del>
 
-> **Update - 20/06/2017:** It looks like the _read_json_ function will be revamped soon. In the meantime, _jsonlite::fromJSON_ works fine with URL sources, and that is what _as.tbl_json_ calls behind the scenes. See the issue comments [here](https://github.com/sailthru/tidyjson/issues/57#issuecomment-306458366).
+> **Update - 20/06/2017:** It looks like the _read_json_ function will be revamped soon. In the meantime, _jsonlite::fromJSON_ works fine with URL sources, and that is what _as.tbl_json_ calls behind the scenes. See the issue comments [here](https://github.com/sailthru/tidyjson/issues/57#issuecomment-306458366){:target="_blank"}.
 
 The updated code will download the json file directly from a URL, without the need for saving it to your workspace beforehand.
 
@@ -83,7 +83,9 @@ dogAttributesTbl <-
         <figcaption>Tidy data makes Jango happy.</figcaption>
 </figure>
 
-Once we have the data from the json file we can match it up with a table from the Parker et al. paper that explains the breed abbreviations and the clades they belong to. This way we can filter out the rows that aren’t present in the tree. To relate the breeds on the tree with the breed traits previously imported, I used the _fuzzyjoin_ package to merge the table with the tip labels, with the breed names, with the table of breed attributes. The process of maximizing overlap between the taxa present in a tree and the taxa that have trait data available is a big deal in comparative studies. By using _fuzzyjoin_, I managed to avoid losing information in the case of typos or minor variations in spelling. For example, “Toy Mnachester Terrier” is misspelled in the genome paper table but I was still able to match it, and the _stringdist_ join also caught the alternative spellings of Xoloizcuintle. In the end I still had to make some matches manually (for example: change Pug to Pug Dog and specify that Foxhound in one table refers to American Foxhound in another).
+Once we have the data from the json file we can match it up with a table from the Parker et al. paper that explains the breed abbreviations and the clades they belong to. This way we can filter out the rows that aren’t present in the tree. To relate the breeds on the tree with the breed traits previously imported, I used the _fuzzyjoin_ package to merge the table with the tip labels, with the breed names, with the table of breed attributes. The process of maximizing overlap between the taxa present in a tree and the taxa that have trait data available is a big deal in comparative studies. 
+
+By using _fuzzyjoin_, I managed to avoid losing information in the case of typos or minor variations in spelling. For example, “Toy Mnachester Terrier” is misspelled in the genome paper table but I was still able to match it, and the _stringdist_ join also caught the alternative spellings of Xoloizcuintle. In the end I still had to make some matches manually (for example: change Pug to Pug Dog and specify that Foxhound in one table refers to American Foxhound in another).
 
 {% highlight r %}
 #write to disk
@@ -108,7 +110,11 @@ dogsAttrFilt <- joinedTabs %>% filter(!is.na(breedname.y))
 
 ## Reading and pruning the tree
 
-The cladogram provided as supplementary data is in nexus format (that for some reason came as plain text inside a pdf). Reading nexus files is straight-forward using _ape_, and because we are interested in a tree with only one tip for each breed, we can prune it using this clever set of steps written by Liam Revell [(link here)]( http://blog.phytools.org/2014/11/pruning-trees-to-one-member-per-genus.html). 
+The cladogram provided as supplementary data is in nexus format (that for some reason came as plain text inside a pdf). Reading nexus files is straight-forward using _ape_, and because we are interested in a tree with only one tip for each breed, we can prune it using this clever set of steps written by Liam Revell [(link here)]( http://blog.phytools.org/2014/11/pruning-trees-to-one-member-per-genus.html){:target="_blank"}. 
+
+I rewrote the steps so that we use _map_ functions from the _purrr_ package to apply functions iteratively. The original steps use the _apply_ family of functions, which I find more difficult to read and always end up using blindly hoping that they will work.
+
+If you do any systematics or phylogeography work these steps are probably useful when you have a tree that contains many individuals from the same species and you only need one 
 
 #### Importing the tree
 
