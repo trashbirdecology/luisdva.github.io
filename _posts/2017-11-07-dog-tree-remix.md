@@ -115,9 +115,12 @@ If you do any systematics or phylogeography work these steps are probably useful
 #### Importing the tree
 
 {% highlight r %}
-# read the tree
+# load more libraries
 library(ape)
-#read in tree (from text extracted from the Parker et al 2017 PDF supplement)
+library(dplyr)
+library(purrr)
+
+# read in tree (from text extracted from the Parker et al 2017 PDF supplement)
 dogtree <- read.nexus("https://raw.githubusercontent.com/luisDVA/codeluis/master/dogtree.txt")
 
 # pruning tree to 1 tip per breed
@@ -127,14 +130,22 @@ tipsbreeds<-dogtree$tip.label
 # look at the label structure (breed_SAMPLE)
 tipsbreeds
 # split to keep first part of string, keep unique
-splitbreed<-unique(sapply(strsplit(tipsbreeds,"_"),function(x) x[1]))
+## split, take the first element of the string we split, keep unique values
+splitbreed<- strsplit(tipsbreeds,"_") %>% map_chr(pluck(1)) %>% unique()
+# have a look
+splitbreed
 ## dropping tips
 #set up index
-ii<-sapply(splitbreed,function(x,y) grep(x,y)[1],y=tipsbreeds)
+# create a named vector, matching the split string with all the tips
+ii<-splitbreed %>% set_names() %>%  map(~grep(.x,tipsbreeds)) %>% map_int(pluck(1))
 # drop the tips
 dogtreeTrimmed<-drop.tip(dogtree,setdiff(dogtree$tip.label,tipsbreeds[ii]))
 # update labels
-dogtreeTrimmed$tip.label<-sapply(strsplit(dogtreeTrimmed$tip.label,"_"),function(x) x[1])
+dogtreeTrimmed$tip.label<- strsplit(dogtreeTrimmed$tip.label,"_") %>% map_chr(pluck(1))
+
+# have a look
+plot(dogtreeTrimmed)
+
 {% endhighlight %}
 
 Afterwards, the tree can be matched up with the previously wrangled dog breed data using _geiger_ to get both a trimmed tree and a trimmed dataset, sorted and ready for use. After these steps we end up with 136 breeds that are both present in the tree and in the table with the breed traits.
@@ -168,8 +179,7 @@ We can plot the tree in any number of ways. Lately I’ve been partial to [Guang
 #biocLite("ggtree", type = "source")
 library(ggtree)
 
-# different plot types
-gtree(dogTreeF)+geom_tiplab(size=2, align=TRUE, linesize=.5)+ggplot2::xlim(0, 3000)
+# try out different plot types
 ggtree(dogTreeF,layout="fan")+geom_tiplab2(size=2.5, align=TRUE, linesize=.5)+ggplot2::xlim(0, 4000)
 ggtree(dogTreeF,layout = "fan")
 {% endhighlight %}
