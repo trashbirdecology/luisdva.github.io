@@ -184,35 +184,31 @@ ggtree(dogTreeF,layout="fan")+geom_tiplab2(size=2.5, align=TRUE, linesize=.5)+gg
 ggtree(dogTreeF,layout = "fan")
 {% endhighlight %}
 
-<figure>
-    <a href="/images/doggenrec.png"><img src="/images/doggenrec.png"></a>
-        <figcaption>Rectangular layout w/ branch lengths.</figcaption>
-</figure>
 
 <figure>
     <a href="/images/doggenfan.png"><img src="/images/doggenfan.png"></a>
-        <figcaption>Fan layout, possible aliasing issues.</figcaption>
+        <figcaption>Fan layout</figcaption>
 </figure>
 
-This is the tree in rectangular and fan layout, and unsurprisingly, with this many tips it gets pretty cluttered. The dog genome paper provides additional information about the clades that different breeds belong to, so for a less cluttered visualization I chose a subset of some clades that I like and then trimmed the tree with another helpful set of [steps](http://blog.phytools.org/2011/03/prune-tree-to-list-of-taxa.html){:target="_blank"} also provided by Liam Revell.  I worked with this subset of breeds for the rest of the post.
+This is the tree in fan layout, and unsurprisingly, with this many tips it gets pretty cluttered. The dog genome paper provides additional information about the clades that different breeds belong to, so for a less cluttered visualization I chose a subset of some clades that I like and then trimmed the tree with another helpful set of [steps](http://blog.phytools.org/2011/03/prune-tree-to-list-of-taxa.html){:target="_blank"} also provided by Liam Revell.  I worked with this subset of breeds for the rest of the post.
 
-Once you get used to it, ggtree can be pretty flexible. Here I took advantage of ggtree to highlight some tips, change the fonts, and show the clades on the tree.  
+Once you get used to it, _ggtree_ can be pretty flexible. Here I took advantage of _ggtree_ to highlight some tips, change the fonts, and show the clades on the tree.  
 
 <figure>
     <a href="/images/coloredclades.png"><img src="/images/coloredclades.png"></a>
-        <figcaption>Red: European Mastiffs, Blue: Alpine Clade, Green: Retrievers; asterisks show cutest breeds ever</figcaption>
+        <figcaption>Red: European Mastiff Clade, Blue: Alpine Clade, Green: Retriever Clade; asterisks show cutest breeds</figcaption>
 </figure>
 
-Showing the different clades on the figures already implies combining the tree topology with additional data, and ggtree has a convenient way to attach data to a tree (the %<+% operator).
+Showing the different clades on the figures already implies combining the tree topology with additional data, and _ggtree_ has a convenient way to attach data to a tree (the %<+% operator). Here I used a nifty _ggtree_ function (groupOTU()) for grouping coloring clades.  
 
 {% highlight r %}
 # subset a few clades
 dogClades <- dogTraitsFnum %>% dplyr::filter(Clade=="Retriever"| Clade=="Alpine"|
-                                               Clade=="Retriev{:target="_blank"}er*"|Clade=="European Mastiff") %>%
+                                               Clade=="Retriever*"|Clade=="European Mastiff") %>%
   dplyr::select(tiplabs,everything()) 
 
 # put the tips we want to keep into a vector
-tokeep <- dogClades$tiplabs
+tokeep <- dogClades$tiplabs1
 
 # use a different pruning/indexing sequence (by L. Revell) to drop remaining tips
 dogCladesTree<-drop.tip(dogTreeF,dogTreeF$tip.label[-match(tokeep, dogTreeF$tip.label)])
@@ -221,21 +217,24 @@ dogCladesC <- dogClades %>% mutate(cutest=case_when(.$tiplabs=="Golden_Retriever
                                                     .$tiplabs=="Dogue_de_Bordeaux"~"yes",
                                                     .$tiplabs=="French_Bulldog"~"yes"))  
 
-# plot with extra data
-ggtree(dogCladesTree) %<+% dogCladesC  + 
-  geom_tiplab(family="serif",align=TRUE, linesize=.5,aes(label=breedname.y),offset=100)+
-  geom_tippoint(aes(color=cutest),shape=8)+scale_color_manual(values=c("blue", "white"))+
+# to group Clades
+# merge Retrievers (there is Retriever and Retriever*)
+dogCladesC$Clade <- gsub("\\*","",dogCladesC$Clade)
+library(extrafont)
+loadfonts(device="win")
+# make a list of clade membership
+cladelist <- split(dogCladesC$tiplabs,factor(dogCladesC$Clade))
+dogCladesTreeOTU <- groupOTU(dogCladesTree, cladelist)
+# plot
+ggtree(dogCladesTreeOTU,aes(color=group)) %<+% dogCladesC  + 
+  geom_tiplab(family="Roboto Condensed",align=TRUE, linesize=.5,aes(label=breedname.y),offset=100,color="black")+
+  geom_tippoint(aes(color=cutest),shape=8)+scale_color_manual(values=c("grey","#233A85","#EB5160","#43AD4B","black"))+
   ggplot2::xlim(0, 3000)
+  
 {% endhighlight %}
 
-The breed attributes table contains columns with numerical values for different dog traits, all of them ranging from one to five. I don’t know much about the source of this ratings, but for this post I simply assumed that they represent a coarse continuous variable (instead of an ordinal variable). Just to play around, we can add some of these variables to the tree visualizations. First as continuous values, then as categories.  
 
-<figure>
-    <a href="/images/sizesPlot.png"><img src="/images/sizesPlot.png"></a>
-        <figcaption>mapping sizes directly onto branches</figcaption>
-</figure>
-
-To categorize the ‘continuous’ values, I used case_when and some pretty arbitrary tresholds. After that, the gheatmap function in ggtree comes in handy to show an associated data matrix. Because these plots are actually showing data related to dogs, I’m well justified in using my silly [ggpup](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} function to add two dog photos next to my plot objects. The original _ggpup_ function scraped two photos at random from a possible set of almost 200 breeds. I modified the function (see the gist at the end of this post) so that it now takes a vector of breeds to choose from, which will be matched against the available photos before sampling two at random. This way, the dog images added to the breed cladogram can actually correspond to breeds that appear in the tree.   
+  
 
 <figure>
     <a href="/images/ggpuphmap.png"><img src="/images/ggpuphmap.png"></a>
@@ -268,7 +267,15 @@ ggtree(dogCladesTree,aes(color=dsize)) %<+% dogCladesC  +
   scale_color_continuous(name="Dog size class",low='#6CBEED', high='#D62828')+
   theme(legend.position="top")+
   ggplot2::xlim(0, 3000)
+  
+  
+{% endhighlight %}
+  
+ After plotting trees, the **gheatmap** function in comes in handy to show an associated data matrix. After associating the breed attribute data to the phylo object, we can draw a heatmap next to the tree to show some breed properties. Here I decided to plot the values for shedding, cold tolerance, and trainability for each breed. I arbitrarily categorized the breed scores into low, medium and high for a simpler three-color scheme. 
+ 
+Because these plots are actually showing data related to dogs, I’m well justified in using my silly [ggpup](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} function to add two dog photos next to my plot objects. The original _ggpup_ function scraped two photos at random from a possible set of almost 200 breeds. I modified the function (see the gist at the end of this post) so that it now takes a vector of breeds to choose from, which will be matched against the available photos before sampling two at random. This way, the dog images added to the breed cladogram can actually correspond to breeds that appear in the tree. 
 
+{% highlight r %}
 # categories from continuous data
 
 dogCladesC <-  dogCladesC %>% mutate(shed=case_when(.$shedding == 5 ~ "Low",
