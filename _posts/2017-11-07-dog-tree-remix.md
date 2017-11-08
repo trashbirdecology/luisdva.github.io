@@ -1,7 +1,7 @@
 ---
 title: "The tRee of dog bReeds (version 2)"
 layout: post
-excerpt: Working with data describing dog breeds and how they are related. 
+excerpt: Manipulate and visualize data describing dog breeds and how they are related. 
 category: rstats
 tags:
   - ggtree
@@ -17,8 +17,7 @@ published: false
 ---
 >The function for adding dog images next to any plot object is in the Gist at the end of this post.
 
-A recent [study](<http://www.cell.com/cell-reports/abstract/S2211-1247(17)30456-4>){:target="_blank"} led by Heidi Parker produced some enlightening results about the origin of different dogs, and how desirable traits from certain breeds have been bred into others. Read more about it [here](http://www.sciencemag.org/news/2017/04/where-did-your-dog-come-new-tree-breeds-may-hold-answer?utm_source=newsfromscience&utm_medium=twitter&utm_campaign=dogbreeds-12632){:target="_blank"}. This dog breed genome paper had a pretty figure showing the relationship between 161 breeds, and straight away I checked to see if the authors had shared the tree. Fortunately, they did. Supplementary dataset S2 provides a bootstrapped consensus cladogram built using genomic distances for over 1300 individuals.
-Having access to these data led to what is now my third consecutive dog-themed and R-themed post.  
+A recent [study](<http://www.cell.com/cell-reports/abstract/S2211-1247(17)30456-4>){:target="_blank"} led by Heidi Parker produced some enlightening results about the origin of different dogs, and how desirable traits from certain breeds have been bred into others. Read more about it [here](http://www.sciencemag.org/news/2017/04/where-did-your-dog-come-new-tree-breeds-may-hold-answer?utm_source=newsfromscience&utm_medium=twitter&utm_campaign=dogbreeds-12632){:target="_blank"}. This dog breed genome paper had a pretty figure showing the relationship between 161 breeds. Fortunately, the authors made their phylogeny available. Supplementary dataset S2 provides a bootstrapped consensus cladogram built using genomic distances for over 1300 individuals. Having access to these data led to yet another dog-themed and R-themed post.  
 
 This post goes through three main steps:
 
@@ -78,9 +77,11 @@ dogAttributesTbl <-
         <figcaption>Tidy data makes Jango happy.</figcaption>
 </figure>
 
+# Match the tips labels with a separate table, even when there are errors or spelling variations
+
 Once we have the data from the json file we can match it up with a table from the Parker et al. paper that explains the breed abbreviations and the clades they belong to. This way we can filter out the rows that aren’t present in the tree. To relate the breeds on the tree with the breed traits previously imported, I used the _fuzzyjoin_ package to merge the table with the tip labels, with the breed names, with the table of breed attributes. The process of maximizing overlap between the taxa present in a tree and the taxa that have trait data available is a big deal in comparative studies. 
 
-By using _fuzzyjoin_, I managed to avoid losing information in the case of typos or minor variations in spelling. For example, “Toy Mnachester Terrier” is misspelled in the genome paper table but I was still able to match it, and the _stringdist_ join also caught the alternative spellings of Xoloizcuintle. In the end I still had to make some matches manually (for example: change Pug to Pug Dog and specify that Foxhound in one table refers to American Foxhound in another).
+By using _fuzzyjoin_, I managed to avoid losing information in the case of typos or minor variations in spelling. For example, “Toy **Mnachester** Terrier” is misspelled in the genome paper table but I was still able to match it, and the _stringdist_ join also caught the alternative spellings of Xoloizcuintle. In the end I still had to make some matches manually (for example: change Pug to Pug Dog and specify that Foxhound in one table refers to American Foxhound in another).
 
 {% highlight r %}
 #write to disk
@@ -109,7 +110,7 @@ The cladogram provided as supplementary data is in nexus format (that for some r
 
 I rewrote the steps so that we use _map_ functions from the _purrr_ package to apply functions iteratively. The original steps use the _apply_ family of functions, which I find more difficult to read and always end up using blindly hoping that they will work.
 
-If you do any systematics or phylogeography work these steps are probably useful when you have a tree that contains many individuals from the same species and you only need one 
+If you do any systematics or phylogeography work these steps are probably useful when you have a tree that contains many individuals from the same species and you only need one tip per species, or if you need only one species per genus from a tree.
 
 #### Importing the tree
 
