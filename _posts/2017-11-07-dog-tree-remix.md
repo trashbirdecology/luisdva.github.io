@@ -34,12 +34,7 @@ The [Dog Breed Chart](http://www.dogbreedchart.com/){:target="_blank"} by [Eric 
 
 After deciding to tackle json files I had to figure out how to work with this format in R, and I followed some of the steps that [Jim Vallandingham]( https://twitter.com/vlandham){:target="_blank"} used to analyse [Kung Fu movies]( http://vallandingham.me/shaw_bros_analysis.html){:target="_blank"}. This meant using the [_tidyjson_](https://github.com/sailthru/tidyjson){:target="_blank"} package to read the json file and wrangle it into a tidy table structure. There are other packages for working with json data in R, but _tidyjson_ has really smooth integration with _dplyr_ and that sealed the deal.
 
-All the R code in the code blocks should be fully reproducible, <del> and the only file that needs to be 
-downloaded locally first is the json file (I think the read_json function breaks with URL file paths - I’ve already created an issue). </del>
-
-> **Update - 20/06/2017:** It looks like the _read_json_ function will be revamped soon. In the meantime, _jsonlite::fromJSON_ works fine with URL sources, and that is what _as.tbl_json_ calls behind the scenes. See the issue comments [here](https://github.com/sailthru/tidyjson/issues/57#issuecomment-306458366){:target="_blank"}.
-
-The updated code will download the json file directly from a URL, without the need for saving it to your workspace beforehand.
+All the R code in the code blocks should be fully reproducible. All the necessary data will be loaded directly from URLS.
 
 #### Importing the breed attribute data
 
@@ -140,7 +135,9 @@ dogtreeTrimmed<-drop.tip(dogtree,setdiff(dogtree$tip.label,tipsbreeds[ii]))
 # update labels
 dogtreeTrimmed$tip.label<-sapply(strsplit(dogtreeTrimmed$tip.label,"_"),function(x) x[1])
 {% endhighlight %}
+
 Afterwards, the tree can be matched up with the previously wrangled dog breed data using _geiger_ to get both a trimmed tree and a trimmed dataset, sorted and ready for use. After these steps we end up with 136 breeds that are both present in the tree and in the table with the breed traits.
+
 {% highlight r %}
 # trim tree using trait data
 library(geiger)
@@ -156,11 +153,12 @@ dogTraitsFnum <- dogTraitsF %>% mutate_at(5:16,funs(as.numeric))
 # swap out labels
 dogTraitsFnum$tiplabs <- gsub(" ","_",dogTraitsFnum$breedname.y)
 dogTreeF$tip.label <- dogTraitsFnum$tiplabs
+
 {% endhighlight %}
 
 ## Visualize the tree and associated data
 
-We can plot the tree in any number of ways. Lately I’ve been partial to [Guangchuang Yu’s](https://guangchuangyu.github.io/) _ggtree_ package.
+We can plot the tree in any number of ways. Lately I’ve been partial to [Guangchuang Yu’s](https://guangchuangyu.github.io/){:target="_blank"} _ggtree_ package.
 
 {% highlight r %}
 # plotting the tree
@@ -185,7 +183,7 @@ ggtree(dogTreeF,layout = "fan")
         <figcaption>Fan layout, possible aliasing issues.</figcaption>
 </figure>
 
-This is the tree in rectangular and fan layout, and unsurprisingly, with this many tips it gets pretty cluttered. The dog genome paper provides additional information about the clades that different breeds belong to, so for a less cluttered visualization I chose a subset of some clades that I like and then trimmed the tree with another helpful set of [steps](http://blog.phytools.org/2011/03/prune-tree-to-list-of-taxa.html) also provided by Liam Revell.  I worked with this subset of breeds for the rest of the post.
+This is the tree in rectangular and fan layout, and unsurprisingly, with this many tips it gets pretty cluttered. The dog genome paper provides additional information about the clades that different breeds belong to, so for a less cluttered visualization I chose a subset of some clades that I like and then trimmed the tree with another helpful set of [steps](http://blog.phytools.org/2011/03/prune-tree-to-list-of-taxa.html){:target="_blank"} also provided by Liam Revell.  I worked with this subset of breeds for the rest of the post.
 
 Once you get used to it, ggtree can be pretty flexible. Here I took advantage of ggtree to highlight some tips, change the fonts, and show the clades on the tree.  
 
@@ -199,7 +197,7 @@ Showing the different clades on the figures already implies combining the tree t
 {% highlight r %}
 # subset a few clades
 dogClades <- dogTraitsFnum %>% dplyr::filter(Clade=="Retriever"| Clade=="Alpine"|
-                                               Clade=="Retriever*"|Clade=="European Mastiff") %>%
+                                               Clade=="Retriev{:target="_blank"}er*"|Clade=="European Mastiff") %>%
   dplyr::select(tiplabs,everything()) 
 
 # put the tips we want to keep into a vector
@@ -226,7 +224,7 @@ The breed attributes table contains columns with numerical values for different 
         <figcaption>mapping sizes directly onto branches</figcaption>
 </figure>
 
-To categorize the ‘continuous’ values, I used case_when and some pretty arbitrary tresholds. After that, the gheatmap function in ggtree comes in handy to show an associated data matrix. Because these plots are actually showing data related to dogs, I’m well justified in using my [ggpup](http://luisdva.github.io/rstats/ggpup/) function to add two dog photos next to my plot objects. The original ggpup function scraped two photos at random from a possible set of almost 200 breeds. I modified the function (see the gist at the end of this post) so that it now takes a vector of breeds to choose from, which will be matched against the available photos before sampling two at random. This way, the dog images added to the breed cladogram can actually correspond to breeds that appear in the tree.   
+To categorize the ‘continuous’ values, I used case_when and some pretty arbitrary tresholds. After that, the gheatmap function in ggtree comes in handy to show an associated data matrix. Because these plots are actually showing data related to dogs, I’m well justified in using my silly [ggpup](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} function to add two dog photos next to my plot objects. The original _ggpup_ function scraped two photos at random from a possible set of almost 200 breeds. I modified the function (see the gist at the end of this post) so that it now takes a vector of breeds to choose from, which will be matched against the available photos before sampling two at random. This way, the dog images added to the breed cladogram can actually correspond to breeds that appear in the tree.   
 
 <figure>
     <a href="/images/ggpuphmap.png"><img src="/images/ggpuphmap.png"></a>
@@ -240,9 +238,9 @@ dogCladesC$Clade <- gsub("\\*","",dogCladesC$Clade)
 
 # make a list of clade membership
 cladelist <- split(dogCladesC$tiplabs,factor(dogCladesC$Clade))
-dogCladesTreeOTU <- groupOTU(dogCladesTree, cladelist)
-# plot
-ggtree(dogCladesTreeOTU,aes(color=group)) %<+% dogCladesC  + 
+dogCladesTreeOTU <- groupOTsilly U(dogCladesTree, cladelist)
+# pl_ot
+gg_tree(dogCl{:target="_blank"}adesTreeOTU,aes(color=group)) %<+% dogCladesC  + 
   geom_tiplab(family="kid",align=TRUE, linesize=.5,aes(label=breedname.y),offset=100,color="black")+
   geom_tippoint(aes(color=cutest),shape=8)+scale_color_manual(values=c("grey","#233A85","#EB5160","#43AD4B","black"))+
   ggplot2::xlim(0, 3000)
