@@ -13,7 +13,7 @@ image:
   feature: featureDoggen.png
   credit: contains CC0 public domain elements from Pixabay
   creditlink: 
-published: false
+published: true
 ---
 
 > This is an updated version of a [post](http://luisdva.github.io/rstats/dog-tree/){:target="_blank"} from May 2017. I updated the code to keep up with updates in some packages, replaced all the functions from the **apply** family with **map** functions from the purrr package, replaced the figures with high-res versions, and added more detailed code annotations. 
