@@ -277,7 +277,7 @@ The function itself has many dependencies and is a mess in terms of functional p
 
 
 <figure>
-    <a href="/images/lilili.jpg"><img src="/images/lilili.jpg"></a>
+    <a href="/images/lilili.jpeg"><img src="/images/lilili.jpeg"></a>
         <figcaption>the heatmap shows fur shedding, cold tolerance, and trainability</figcaption>
 </figure>
 
