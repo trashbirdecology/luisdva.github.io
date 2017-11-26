@@ -14,9 +14,9 @@ image:
   creditlink: https://commons.wikimedia.org/wiki/File:Dock_jumping_splash.jpg
 published: true
 ---
-> **pupdate - Nov. 2017.** Claus Wilke has added a 'jittered points' option to the ridgeline geom that basically does the same as my hacky beeswarm approach but with less code. Here's an example.  
+> **pupdate - Nov 2017.** Claus Wilke has added a 'jittered points' option to the ridgeline geom that basically does the same as my hacky beeswarm approach but with less code. Here's an example.  
 
-> **pupdate. 31/10/2017.** I've update this post to reflect the project-wide renaming of the _ggridges_ package and added more code annotation.
+> **pupdate - Oct 2017.** I've update this post to reflect the project-wide renaming of the _ggridges_ package and added more code annotation.
 
 In recent weeks there has been much interest in making cool-looking plots of overlapping density distributions. Basically: stacking many overlapping polygons/ribbons for a nice visual effect. 
 
