@@ -257,7 +257,7 @@ I suspect that what I’ve done with the beeswarm points can be made into a geom
 </figure>
 
 {% highlight r%}
-## joyplot
+## ridgeline plot
 library(ggridges)
 dogbeesRev <- dogbees
 
@@ -274,6 +274,26 @@ ggplot(dogbeesRev)+
         plot.margin = unit(c(2,3,2,2), "cm"))
 
 {% endhighlight%}
+
+> pupdate - Nov. 2017: Claus Wilke has added a **'jittered points'** option to the ridgeline geom, that basically does the same as my hacky beeswarm approach but with less code. Here's an example.
+
+<figure>
+    <a href="/images/ridgepoints.png"><img src="/images/ridgepoints.png"></a>
+        <figcaption>good handling of the plotting order</figcaption>
+</figure>
+
+{% highlight r%}
+# after installing the latest version of ggridges
+ggplot(dogbeesRev,aes(x=jumpDist,y=fct_rev(breedR)))+
+  geom_density_ridges(aes(height=..density..),scale=1.9,
+                      col="#0094D3",fill="#D1D5DB",jittered_points=TRUE,point_shape=21,
+                      point_fill="#231F20")+
+  theme_minimal(base_family = "Roboto") +
+  labs(x="\njump distance (m)",y="density")+
+    theme(axis.title = element_text(size=rel(1.3)),
+        axis.text = element_text(size=rel(1.1)))
+{% endhighlight%}
+
 
 Finally, the visual appeal of ridgeline plots can make us get carried away, but as TJ Mahr and [Matti Vuore](https://vuorre.netlify.com/post/2017/visualizing-varying-effects-posteriors-with-joyplots/){:target="_blank"} pointed out, they can be used to [show posterior distributions of parameter estimates](http://rpubs.com/tjmahr/joyplot){:target="_blank"}.  
 ## hrbrverse resources 
