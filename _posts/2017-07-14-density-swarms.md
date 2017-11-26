@@ -14,7 +14,7 @@ image:
   creditlink: https://commons.wikimedia.org/wiki/File:Dock_jumping_splash.jpg
 published: true
 ---
-> **pupdate - Nov 2017.** Claus Wilke has added a 'jittered points' option to the ridgeline geom that basically does the same as my hacky beeswarm approach but with less code. Here's an example.  
+> **pupdate - Nov 2017.** Claus Wilke has added a 'jittered points' option to the ridgeline geom that basically does the same as my hacky beeswarm approach but with less code. I added an example of this feature to the post.  
 
 > **pupdate - Oct 2017.** I've update this post to reflect the project-wide renaming of the _ggridges_ package and added more code annotation.
 
