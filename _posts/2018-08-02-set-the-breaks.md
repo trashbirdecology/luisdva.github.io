@@ -20,17 +20,17 @@ Last month I was trying to make a figure in ggplot in which the legend did not i
 
  This is my actual search history from that day:
 
-> ggplot2 omit legend element
-> tidyverse ggplot legend guide
-> ggplot remove legend element
-> ggplot2 remove legend item
-> ggplot r exclude from legend
-> extra legend elements ggplot2
-> remove legend portion ggplot
-> tidyverse legend guide
-> Ctenomys leucodon
-> r suppress legend factor
-> ggplot legends cookbook
+> ggplot2 omit legend element  
+> tidyverse ggplot legend guide  
+> ggplot remove legend element  
+> ggplot2 remove legend item  
+> ggplot r exclude from legend  
+> extra legend elements ggplot2  
+> remove legend portion ggplot  
+> tidyverse legend guide  
+> Ctenomys leucodon  
+> r suppress legend factor  
+> ggplot legends cookbook  
 
 None of the search results seemed to point me in the right direction, and after not getting anywhere I decided to ask on Twitter:
 
@@ -48,8 +48,7 @@ Luckily, Hadley Wickham solved my question with this three-word tweet:
 
 It looks like the _breaks_ argument that goes into the _scale_ */__ functions (fill, colour, linetype, shape, etc.) can not only be used to reorder items in the legend, but also to exclude them. I guess it rarely makes sense to have things on a plot with no corresponding legend entry, but I’m posting this to document this use-case and behavior of setting the breaks. Various other ggplot users were unaware of this, so I don’t feel too silly writing this post. 
 
-
-The (legend guide) in the official Tidyverse ggplot2 documentation does not include the terms exclude, omit, or drop. Maybe there’s a good reason for this, but in any case I was feeling emboldened by a talk I saw at RStudio::conf about contributing to the Tidyverse, so I’ve created a pull request to incorporate an example like the one below into the documentation. 
+The [legend Guide](http://ggplot2.tidyverse.org/reference/guide_legend.html){:target="_blank"} in the official Tidyverse ggplot2 documentation does not include the terms exclude, omit, or drop. Maybe there’s a good reason for this, but in any case I was feeling emboldened by a talk I saw at RStudio::conf about contributing to the Tidyverse, so I’ve created a pull request to incorporate an example like the one below into the documentation. 
 
 Let’s try it out.
 
