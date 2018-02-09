@@ -13,7 +13,7 @@ image:
   feature: sample-image-4.jpg
   credit: 
   creditlink: 
-published: false
+published: true
 ---
 
 Last month I was trying to make a figure in ggplot in which the legend did not include certain elements present in the plot. I though it would be straightforward, but I was wrong.
@@ -68,6 +68,7 @@ ggplot(mtcars) +
         <figcaption>4, 6, and 8 cylinders</figcaption>
 </figure>
 
+
 This will generate the same plot, but excluding the six cylinder category from the items in the legend. The points are still in the plot and in this case it’s kind of weird to not show what they represent.
 
 {% highlight r %}
@@ -80,6 +81,7 @@ ggplot(mtcars) +
     <a href="/images/p2.png"><img src="/images/p2.png"></a>
         <figcaption>just 4 and 8</figcaption>
 </figure>
+
 
 I you’re a phylo person and use ggtree to highlight clades this will come in handy, otherwise I hope this is still a somewhat useful resource on setting breaks. I was so happy and thankful to complete my figure that I asked Hadley for a permanent reminder to set the breaks in my R4DS book.
  
