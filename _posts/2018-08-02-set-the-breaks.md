@@ -10,8 +10,8 @@ tags:
   - tidyverse
   - ggplot
 image:
-  feature: featureDoggen.png
-  credit: contains CC0 public domain elements from Pixabay
+  feature: sample-image-4.jpg
+  credit: 
   creditlink: 
 published: false
 ---
