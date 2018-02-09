@@ -46,7 +46,7 @@ Luckily, Hadley Wickham solved my question with this three-word tweet:
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">Set the breaks</p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/950924598136201216?ref_src=twsrc%5Etfw">January 10, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-It looks like the _breaks_ argument that goes into the _scale_ */__ functions (fill, colour, linetype, shape, etc.) can not only be used to reorder items in the legend, but also to exclude them. I guess it rarely makes sense to have things on a plot with no corresponding legend entry, but I’m posting this to document this use-case and behavior of setting the breaks. Various other ggplot users were unaware of this, so I don’t feel too silly writing this post. 
+It looks like the _breaks_ argument that goes into the _scale_ *__ functions (fill, colour, linetype, shape, etc.) can not only be used to reorder items in the legend, but also to exclude them. I guess it rarely makes sense to have things on a plot with no corresponding legend entry, but I’m posting this to document this use-case and behavior of setting the breaks. Various other ggplot users were unaware of this, so I don’t feel too silly writing this post. 
 
 The [legend Guide](http://ggplot2.tidyverse.org/reference/guide_legend.html){:target="_blank"} in the official Tidyverse ggplot2 documentation does not include the terms exclude, omit, or drop. Maybe there’s a good reason for this, but in any case I was feeling emboldened by a talk I saw at RStudio::conf about contributing to the Tidyverse, so I’ve created a pull request to incorporate an example like the one below into the documentation. 
 
@@ -63,7 +63,10 @@ ggplot(mtcars) +
   
 {% endhighlight %}
 
-figure 
+<figure>
+    <a href="/images/p1.png"><img src="/images/p1.png"></a>
+        <figcaption>4, 6, and 8 cylinders</figcaption>
+</figure>
 
 This will generate the same plot, but excluding the six cylinder category from the items in the legend. The points are still in the plot and in this case it’s kind of weird to not show what they represent.
 
@@ -73,8 +76,14 @@ ggplot(mtcars) +
   scale_color_discrete(breaks=c(4,8), name="Cylinders")
 {% endhighlight r %} 
 
-figure
+<figure>
+    <a href="/images/p2.png"><img src="/images/p2.png"></a>
+        <figcaption>just 4 and 8</figcaption>
+</figure>
 
-I you’re a phylo person and use ggtree to highlight clades this will come in handy, otherwise I hope this is still a somewhat useful resource on setting breaks. I was so happy and thankful to complete my figure that I asked Hadley for a permanent reminder to set the breaks.
+I you’re a phylo person and use ggtree to highlight clades this will come in handy, otherwise I hope this is still a somewhat useful resource on setting breaks. I was so happy and thankful to complete my figure that I asked Hadley for a permanent reminder to set the breaks in my R4DS book.
  
-figure
+<figure>
+    <a href="/images/breaks.jpg"><img src="/images/breaks.jpg"></a>
+        <figcaption>Tidy data makes Jango happy.</figcaption>
+</figure>
