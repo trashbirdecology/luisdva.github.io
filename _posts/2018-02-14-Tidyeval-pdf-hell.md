@@ -10,7 +10,7 @@ tags:
   - tidyverse
   - slice
 image:
-  feature: featureUnbreak.jpg
+  feature: featureUnbreak.png
   credit: 
   creditlink: 
 published: true
@@ -20,9 +20,9 @@ Tidyeval meets pdf table hell
 Although it first became a feature of _dplyr_ in [June of 2017](https://blog.rstudio.com/2017/06/13/dplyr-0-7-0/){:target="_blank"}, tidy evaluation is once again in the spotlight after the 2018 RStudio conference.  This is a good [compilation](https://maraaverick.rbind.io/2017/08/tidyeval-resource-roundup/){:target="_blank"} of _tidyeval_ resources, and I suggest watching [this](https://www.youtube.com/watch?v=nERXS3ssntw){:target="_blank"} five-minute video of Hadley Wickham explaining the big ideas behind tidy evaluation while wearing a stylish sweater. 
 
  
-When _tidyeval_ originally came out, I jumped at the chance to program with _dplyr_.  I blogged about writing a function to deal with non-data rows embedded as hierarchical headers in the data rectangle. Unsurprisingly, I butchered the use of tidyeval and function writing in general, but I was rescued by Jenny Bryan in this post.
+When _tidyeval_ originally came out, I jumped at the chance to program with _dplyr_.  I [blogged](http://luisdva.github.io/rstats/tidyeval/){:target="_blank"} about writing a function to deal with non-data rows embedded as hierarchical headers in the data rectangle. Unsurprisingly, I butchered the use of tidyeval and function writing in general, but I was rescued by [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} in this [post](http://rstudio-pubs-static.s3.amazonaws.com/287966_3967f466282b4260a0163d9d9acdad57.html){:target="_blank"}.
 
-As a biologist, the ‘untangle’ function has saved me hours upon hours of work, because comparative data always has taxonomic header rows that I usually had to tidy up by hand in a spreadsheet program. 
+As a biologist, the ‘untangle’ function that came out of that exchange has saved me hours upon hours of work, because comparative data always has taxonomic header rows that I usually had to tidy up by hand in a spreadsheet program. 
 
 ## PDF table hell
 
