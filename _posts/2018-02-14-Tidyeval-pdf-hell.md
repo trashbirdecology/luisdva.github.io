@@ -1,7 +1,7 @@
 ---
 title: "Tidyeval meets PDF table hell"
 layout: post
-excerpt: Using tidy evaluation to clean up broken up values. 
+excerpt: Using tidy evaluation to fix values broken up across rows. 
 category: rstats
 tags:
   - tidyeval
