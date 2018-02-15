@@ -61,7 +61,7 @@ This is what the table should look like:
 |London 2012      |UK        |Mexico            |
 
 
-Using Jenny Bryan’s version of the _untangle_ function as a template, I wrote this function to unbreak values using _tidyeval_. 
+Using Jenny Bryan’s version of the _untangle_ function as a template, I wrote the 'unbreak_vals' function below to unbreak values using _tidyeval_. 
 
 Assuming that:
 
@@ -105,7 +105,7 @@ Let's check it out
 
 Unbreak the lines, matching strings that start with a number
 {% highlight r %}
-unbreak_lines <- function(df,regex,ogcol,newcol){
+unbreak_vals <- function(df,regex,ogcol,newcol){
   ogcol <- enquo(ogcol)
   newcol <- sym(quo_name(enquo(newcol)))
   
@@ -121,7 +121,7 @@ unbreak_lines <- function(df,regex,ogcol,newcol){
     select(-!!ogcol)
 }
 
-OGames %>% unbreak_lines("^[0-9]",Games,Games_unbroken) %>% 
+OGames %>% unbreak_vals("^[0-9]",Games,Games_unbroken) %>% 
   select(Games_unbroken,everything())
 {% endhighlight %}
 
@@ -162,7 +162,7 @@ dogsDesc <- tibble(dogs=c("Terrier","(Lakeland)","Terrier","(Soft-coated wheaten
 
 Matching the opening bracket with the regex:
 {% highlight r %}
-dogsDesc %>% unbreak_lines("^\\(",dogs,dogs_desc)
+dogsDesc %>% unbreak_vals("^\\(",dogs,dogs_desc)
 {% endhighlight %}
 
 {% highlight text %}
@@ -176,4 +176,4 @@ dogsDesc %>% unbreak_lines("^\\(",dogs,dogs_desc)
 {% endhighlight %}
 
 
-I have lots to learn about writing functions, but so far this unbreak function has already saved me lots of time and  hassle and painful spreadsheet editing. If you have any questions or if you find this helpful please let me know. 
+I have lots to learn about writing functions, but so far this 'unbreak_vals' function has already saved me lots of time and  hassle and painful spreadsheet editing. If you have any questions or if you find this helpful please let me know. 
