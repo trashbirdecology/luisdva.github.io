@@ -13,7 +13,7 @@ image:
   feature: featureUnbreak.jpg
   credit: 
   creditlink: 
-published: false
+published: true
 ---
 Tidyeval meets pdf table hell
 
@@ -30,9 +30,12 @@ In my ongoing work with other people’s data, I came across values that are bro
 
 I encounter broken-up values frequently in my biology research, here’s an example that isn’t made up.
 
-<becerra>
+<figure>
+    <a href="/images/becerra12.png"><img src="/images/becerra12.png"></a>
+        <figcaption>Thrichomys cunicularius is broken up into two lines</figcaption>
+</figure>
 
-This is a very common practice, a lot of the pdf tables that I work with (using the awesome tabulizer package) have ‘merged’ cells that end up as broken values.
+This is a very common practice, a lot of the pdf tables that I work with (using the awesome _tabulizer_ package) have ‘merged’ cells that end up as broken values.
 
 Here’s a toy example with some data from the summer Olympics.
 
@@ -59,7 +62,7 @@ This is what the table should look like:
 |London 2012      |UK        |Mexico            |
 
 
-Using Jenny Bryan’s version of the untangle function as a template, I wrote this function to unbreak values using tidyeval. 
+Using Jenny Bryan’s version of the _untangle_ function as a template, I wrote this function to unbreak values using _tidyeval_. 
 
 Assuming that:
 
@@ -74,24 +77,103 @@ After loading the _tidyverse_ set of packages and _rlang_, we’ll create the ab
 
 
 {% highlight r %}
+library(tidyverse)
+library(rlang)
+
+OGames <- tibble(Games = c("Los Angeles 1984","Barcelona","1992","Atlanta 1996","Sydney 2000","London","2012"),
+                Country = c("USA","Spain",NA,"USA","Australia","UK",NA),
+                Soccer_gold_medal = c("France","Spain",NA,"Nigeria","Cameroon","Mexico",NA))
+
 
 {% endhighlight %}
 
+Let's check it out
+
+{% highlight text %}
+> OGames
+# A tibble: 7 x 3
+  Games            Country   Soccer_gold_medal
+  <chr>            <chr>     <chr>            
+1 Los Angeles 1984 USA       France           
+2 Barcelona        Spain     Spain            
+3 1992             NA        NA               
+4 Atlanta 1996     USA       Nigeria          
+5 Sydney 2000      Australia Cameroon         
+6 London           UK        Mexico           
+7 2012             NA        NA 
+{% endhighlight %}
+
+Unbreak the lines, matching strings that start with a number
+{% highlight r %}
+unbreak_lines <- function(df,regex,ogcol,newcol){
+  ogcol <- enquo(ogcol)
+  newcol <- sym(quo_name(enquo(newcol)))
+  
+  df %>% 
+    mutate(
+      !!newcol := ifelse(grepl(regex,!!ogcol),
+                         yes = paste(lag(!!ogcol),!!ogcol),
+                         no = !!ogcol)
+    ) %>% 
+    fill(everything()) %>% 
+    slice(-(which(str_detect(!!ogcol,regex))-1)
+    ) %>%
+    select(-!!ogcol)
+}
+
+OGames %>% unbreak_lines("^[0-9]",Games,Games_unbroken) %>% 
+  select(Games_unbroken,everything())
+{% endhighlight %}
+
+It worked!
+
+{% highlight text %}
+A tibble: 5 x 3
+  Games_unbroken   Country   Soccer_gold_medal
+  <chr>            <chr>     <chr>            
+1 Los Angeles 1984 USA       France           
+2 Barcelona 1992   Spain     Spain            
+3 Atlanta 1996     USA       Nigeria          
+4 Sydney 2000      Australia Cameroon         
+5 London 2012      UK        Mexico      
+{% endhighlight %}
+
+
+Another case of broken values that I’ve seen is when additional descriptions are interspersed below the original values in separate rows. This is a single column-example from a spreadsheet I had lying around.  
 
 {% highlight r %}
+dogsDesc <- tibble(dogs=c("Terrier","(Lakeland)","Terrier","(Soft-coated wheaten)","Bulldog","(English)","Bulldog","(French)"))
 {% endhighlight %}
 
+{% highlight text %}
+> dogsDesc
+# A tibble: 8 x 1
+  dogs                 
+  <chr>                
+1 Terrier              
+2 (Lakeland)           
+3 Terrier              
+4 (Soft-coated wheaten)
+5 Bulldog              
+6 (English)            
+7 Bulldog              
+8 (French) 
+{% endhighlight %}
+
+Matching the opening bracket with the regex:
 {% highlight r %}
+dogsDesc %>% unbreak_lines("^\\(",dogs,dogs_desc)
 {% endhighlight %}
 
-Another case of broken values that I’ve seen is when additional descriptions are interspersed below the original values in separate row. This is a single column example from a spreadsheet I had lying around.  
-
-{% highlight r %}
-
+{% highlight text %}
+# A tibble: 4 x 1
+  dogs_desc                    
+  <chr>                        
+1 Terrier (Lakeland)           
+2 Terrier (Soft-coated wheaten)
+3 Bulldog (English)            
+4 Bulldog (French)   
 {% endhighlight %}
 
-{% highlight r %}
-
-{% endhighlight %}
 
 I have lots to learn about writing functions, but so far this unbreak function has already saved me lots of time and  hassle and painful spreadsheet editing.
