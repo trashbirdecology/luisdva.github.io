@@ -15,7 +15,6 @@ image:
   creditlink: 
 published: true
 ---
-Tidyeval meets pdf table hell
 
 Although it first became a feature of _dplyr_ in [June of 2017](https://blog.rstudio.com/2017/06/13/dplyr-0-7-0/){:target="_blank"}, tidy evaluation is once again in the spotlight after the 2018 RStudio conference.  This is a good [compilation](https://maraaverick.rbind.io/2017/08/tidyeval-resource-roundup/){:target="_blank"} of _tidyeval_ resources, and I suggest watching [this](https://www.youtube.com/watch?v=nERXS3ssntw){:target="_blank"} five-minute video of Hadley Wickham explaining the big ideas behind tidy evaluation while wearing a stylish sweater. 
 
@@ -67,6 +66,7 @@ Using Jenny Bryan’s version of the _untangle_ function as a template, I wrote 
 Assuming that:
 
 > the NA values in the table only correspond to the rows with broken-up values  
+  
 > the broken-up values can be matched with regex 
 
 this function will glue the two value fragments together and get rid of the extra row (via a hacky fill-then-slice operation). 
@@ -176,4 +176,4 @@ dogsDesc %>% unbreak_lines("^\\(",dogs,dogs_desc)
 {% endhighlight %}
 
 
-I have lots to learn about writing functions, but so far this unbreak function has already saved me lots of time and  hassle and painful spreadsheet editing.
+I have lots to learn about writing functions, but so far this unbreak function has already saved me lots of time and  hassle and painful spreadsheet editing. If you have any questions or if you find this helpful please let me know. 
