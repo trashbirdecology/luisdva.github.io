@@ -17,9 +17,9 @@ _Three common bad practices in sharing tables and spreadsheets and how to avoid 
 
 > Update. 27/02/2018: I noticed that this post is regularly receiving visitors from other sites such as the ones linked below, so I've made some updates. I expanded some explanations and now link to a way of tidying up annoying header rows (non-data rows embedded in the data rectangle).
 
-[Data Champions](http://bioinformatics-core-shared-training.github.io/avoid-data-disaster/)
-[Karl Broman's Data Organization resources](http://kbroman.org/dataorg/pages/resources.html)
-[Jenny Bryan spreadsheet resources](https://github.com/jennybc/2016-06_spreadsheets)
+[Data Champions](http://bioinformatics-core-shared-training.github.io/avoid-data-disaster/)  
+[Karl Broman's Data Organization resources](http://kbroman.org/dataorg/pages/resources.html)  
+[Jenny Bryan spreadsheet resources](https://github.com/jennybc/2016-06_spreadsheets)  
 
 > Update. 16/5/2016: After writing this post I, came across [this](http://cottagelabs.com/weave/csvconf) presentation by Richard Jones at the recent CSV2016 conference, which includes a slide on "The weird things humans do with spreadsheets". Check it out.
 
@@ -58,7 +58,7 @@ Merged cells will look good in the final version of a table, but they can lead t
         <figcaption>merged and centered</figcaption>
 </figure>
 
-Duplicate the content that was merged in the first place. This kind of melted presentation is actually preferable when analyzing or visualizing the data.
+Suggestion: Duplicate the content that was merged in the first place. This kind of melted presentation is actually preferable when analyzing or visualizing the data.
 
 <figure>
     <a href="/images/xlsEx2.1.png"><img src="/images/xlsEx2.1.png"></a>
