@@ -16,9 +16,9 @@ image:
 published: true
 ---
 
-Last week, the American Kennel Club announced the 2017 rankings of dog breed [popularity](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"} in the USA. A few days later, Dominik Koch [blogged](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in ggplot2 to show changes in rank over time. 
+Last week, the American Kennel Club announced the 2017 rankings of dog breed [popularity](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"} in the USA. A few days later, Dominik Koch [blogged](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in R using _ggplot2_ to show changes in rank over time. 
 
-The ACK also released an [update](http://www.akc.org/expert-advice/news/most-popular-dog-breeds-full-ranking-list/){:target="_blank"} to the full list of breed rankings from 2013 to 2017, and it looked like a good dataset to try out the code for making bump charts. 
+The ACK also released an [update](http://www.akc.org/expert-advice/news/most-popular-dog-breeds-full-ranking-list/){:target="_blank"} (a.k.a. _pupdate_) to the full list of breed rankings from 2013 to 2017, and it looked like a good dataset to try out the code for making bump charts. 
 
 For this post, I was only interested in the top ten breeds of 2017 and how they’ve changed in ranking since 2013. 
 
@@ -67,7 +67,7 @@ data.frame(stringsAsFactors=FALSE,
 
 {% endhighlight %}
 
-To annotate the plots with my own dog drawings, I simply needed to add a variable containing the filenames that correspond to each breed. After that, wrangling the data into a long form suitable for making the bump chart was pretty easy thanks to various functions from _dplyr_ and _tidyr_. The image files are in the working directory in this example.
+To annotate the plots with my own dog drawings, I simply needed to add a variable containing the filenames that correspond to each breed. After that, wrangling the data into a long form suitable for making the bump chart was pretty easy thanks to various functions from _dplyr_ and _tidyr_. The image files are in the working directory.
 
 {% highlight r %}
 # reorder years
@@ -127,9 +127,10 @@ Now we just need to change the labels and margins so that breed names and breed 
 
 
 {% highlight r %}
+ggplot(data = rankslong, aes(x = year, y = Rank, group = Breed)) +
   geom_line(aes(color = Breed, alpha = 1), size = 2) +
   geom_point(aes(color = Breed, alpha = 1), size = 4) +
-  scale_x_discrete(expand = c(1,0))+
+  scale_x_discrete(expand = c(0.85,0))+
   scale_y_reverse(breaks = 1:nrow(rankslong))+
   theme(legend.position = "none") +
   labs(x = "year",
@@ -141,8 +142,9 @@ Now we just need to change the labels and margins so that breed names and breed 
 {% endhighlight %}
 
 # Final plot
-This is what the final chart looks like. 
-A lot of the media coverage of the recent rankings noted how French bulldogs have increased in popularity significantly, and this visualization really shows it. 
+This is what the final chart looks like.  
+
+A lot of the media coverage of the recent rankings noted how French bulldogs have increased in popularity significantly, and this visualization really shows it. Yorkies show the opposite pattern.
 
 <figure>
     <a href="/images/akcranks.png"><img src="/images/akcranks.png"></a>
@@ -151,5 +153,6 @@ A lot of the media coverage of the recent rankings noted how French bulldogs hav
 
 Thanks for reading. Feel free to contact me if anything isn't working.
 
+  
 > Cuteness aside, I'm aware of the health issues of brachycephalous breeds and I oppose selective inbreeding (line breeding) to meet arbitrary standards. Also: I'm very biased towards retrievers.   
 
