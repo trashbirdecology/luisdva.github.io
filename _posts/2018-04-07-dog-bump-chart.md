@@ -1,7 +1,7 @@
 ---
 title: "Dog breeds bump chart"
 layout: post
-excerpt: Showing how popularity rankings for dog breeds change through time. 
+excerpt: Plotting how popularity rankings for dog breeds change through time. 
 category: rstats
 tags:
   - ggplot2
@@ -16,7 +16,7 @@ image:
 published: true
 ---
 
-Last week, the American Kennel Club announced the 2017 rankings of dog breed popularity in the USA (news story [here](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"}). A few days later, Dominik Koch [blogged] (https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in ggplot2 to show changes in rank over time. 
+Last week, the American Kennel Club announced the 2017 rankings of dog breed [popularity](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"} in the USA. A few days later, Dominik Koch [blogged] (https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in ggplot2 to show changes in rank over time. 
 
 The ACK also released an [update](http://www.akc.org/expert-advice/news/most-popular-dog-breeds-full-ranking-list/){:target="_blank"} to the full list of breed rankings from 2013 to 2017, and it looked like a good dataset to try out the code for making bump charts. 
 
@@ -24,12 +24,12 @@ For this post, I was only interested in the top ten breeds of 2017 and how they�
 
 In the original bump chart example with Olympic medal rankings, countries are labeled using little flags and the _ggflags_ package. I wanted to use custom images as labels, and the [ggimage](https://github.com/GuangchuangYu/ggimage){:target="_blank"} package worked out great for that. I’ve written code to [scrape and download dog photos](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} by breed in the past, but for this post I drew each dog by hand. 
 
-Side note: I used this nifty function by Maelle Salmon for batch resizing images using purrr and magick. I uploaded all the drawings [here](https://github.com/luisDVA/luisdva.github.io/tree/master/images/pup){:target="_blank"}. 
+Side note: I used this nifty function by [Maëlle Salmon](https://twitter.com/ma_salmon){:target="_blank"} for batch resizing images using the packages _purrr_ and _magick_. I uploaded all the drawings [here](https://github.com/luisDVA/luisdva.github.io/tree/master/images/pup){:target="_blank"}. 
 
 {% highlight r %}
 library(magick)
 library(purrr)
-# batch resizing from Maelle Salmon's blog
+# batch resizing fn by Maëlle Salmon's blog
 reduce_image <- function(path){
   magick::image_read(path) %>%
     magick::image_scale("50x48!") %>%
@@ -148,3 +148,8 @@ A lot of the media coverage of the recent rankings noted how French bulldogs hav
     <a href="/images/akcranks.png"><img src="/images/akcranks.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
+
+Thanks for reading. Feel free to contact me if anything isn't working.
+
+> Cuteness aside, I'm aware of the health issues of brachycephalous breeds and I oppose selective inbreeding (line breeding) to meet arbitrary standard. Also: I'm very biased towards retrievers.   
+
