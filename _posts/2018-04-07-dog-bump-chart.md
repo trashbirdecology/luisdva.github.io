@@ -140,4 +140,11 @@ Now we just need to change the labels and margins so that breed names and breed 
   geom_text(data =dogranks,aes(y=r2013,x=0.6,label=Breed),hjust="right")
 {% endhighlight %}
 
-Final plot
+# Final plot
+This is what the final chart looks like. 
+A lot of the media coverage of the recent rankings noted how French bulldogs have increased in popularity significantly, and this visualization really shows it. 
+
+<figure>
+    <a href="/images/p2.png"><img src="/images/p2.png"></a>
+        <figcaption>just 4 and 8</figcaption>
+</figure>
