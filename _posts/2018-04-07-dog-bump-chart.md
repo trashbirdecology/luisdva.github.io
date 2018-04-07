@@ -11,9 +11,9 @@ tags:
   - pup
 image:
   feature: featureDoggs.png
-  credit: 
+  credit: Pixabay CC0 image
   creditlink: 
-published: false
+published: true
 ---
 
 Last week, the American Kennel Club announced the 2017 rankings of dog breed popularity in the USA (news story [here](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"}). A few days later, Dominik Koch [blogged] (https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in ggplot2 to show changes in rank over time. 
