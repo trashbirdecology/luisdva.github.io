@@ -16,7 +16,7 @@ image:
 published: true
 ---
 
-Last week, the American Kennel Club announced the 2017 rankings of dog breed [popularity](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"} in the USA. A few days later, Dominik Koch [blogged] (https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in ggplot2 to show changes in rank over time. 
+Last week, the American Kennel Club announced the 2017 rankings of dog breed [popularity](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"} in the USA. A few days later, Dominik Koch [blogged](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in ggplot2 to show changes in rank over time. 
 
 The ACK also released an [update](http://www.akc.org/expert-advice/news/most-popular-dog-breeds-full-ranking-list/){:target="_blank"} to the full list of breed rankings from 2013 to 2017, and it looked like a good dataset to try out the code for making bump charts. 
 
