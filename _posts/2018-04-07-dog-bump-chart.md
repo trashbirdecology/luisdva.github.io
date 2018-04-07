@@ -151,5 +151,5 @@ A lot of the media coverage of the recent rankings noted how French bulldogs hav
 
 Thanks for reading. Feel free to contact me if anything isn't working.
 
-> Cuteness aside, I'm aware of the health issues of brachycephalous breeds and I oppose selective inbreeding (line breeding) to meet arbitrary standard. Also: I'm very biased towards retrievers.   
+> Cuteness aside, I'm aware of the health issues of brachycephalous breeds and I oppose selective inbreeding (line breeding) to meet arbitrary standards. Also: I'm very biased towards retrievers.   
 
