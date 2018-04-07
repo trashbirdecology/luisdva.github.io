@@ -145,6 +145,6 @@ This is what the final chart looks like.
 A lot of the media coverage of the recent rankings noted how French bulldogs have increased in popularity significantly, and this visualization really shows it. 
 
 <figure>
-    <a href="/images/p2.png"><img src="/images/p2.png"></a>
-        <figcaption>just 4 and 8</figcaption>
+    <a href="/images/akcranks.png"><img src="/images/akcranks.png"></a>
+        <figcaption>click to enlarge</figcaption>
 </figure>
