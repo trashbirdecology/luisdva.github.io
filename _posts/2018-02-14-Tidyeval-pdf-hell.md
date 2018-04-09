@@ -15,6 +15,7 @@ image:
   creditlink: 
 published: true
 ---
+> Update - April 2018 - In the most recent release of _rlang_ (0.2.0), we can use ensym() as a new variant of enexpr() for cleaner code. I've updated the code to reflect this change. Thanks to Hadley Wickham for the heads up. 
 
 Although it first became a feature of _dplyr_ in [June of 2017](https://blog.rstudio.com/2017/06/13/dplyr-0-7-0/){:target="_blank"}, tidy evaluation is once again in the spotlight after the 2018 RStudio conference.  This is a good [compilation](https://maraaverick.rbind.io/2017/08/tidyeval-resource-roundup/){:target="_blank"} of _tidyeval_ resources, and I suggest watching [this](https://www.youtube.com/watch?v=nERXS3ssntw){:target="_blank"} five-minute video of Hadley Wickham explaining the big ideas behind tidy evaluation while wearing a stylish sweater. 
 
@@ -107,7 +108,7 @@ Unbreak the lines, matching strings that start with a number
 {% highlight r %}
 unbreak_vals <- function(df,regex,ogcol,newcol){
   ogcol <- enquo(ogcol)
-  newcol <- sym(quo_name(enquo(newcol)))
+  newcol <- ensym(newcol)
   
   df %>% 
     mutate(
