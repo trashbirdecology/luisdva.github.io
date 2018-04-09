@@ -29,7 +29,7 @@ Side note: I used this nifty function by [Maëlle Salmon](https://twitter.com/ma
 {% highlight r %}
 library(magick)
 library(purrr)
-# batch resizing fn by Maëlle Salmon's blog
+# batch resizing fn from Maëlle Salmon's blog
 reduce_image <- function(path){
   magick::image_read(path) %>%
     magick::image_scale("50x48!") %>%
