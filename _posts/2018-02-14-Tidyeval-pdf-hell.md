@@ -140,7 +140,7 @@ A tibble: 5 x 3
 {% endhighlight %}
 
 
-Another case of broken values that I’ve seen is when additional descriptions are interspersed below the original values in separate rows. This is a single column-example from a spreadsheet I had lying around.  
+Another case of broken values that I’ve seen is when additional descriptions are interspersed below the original values in separate rows. This is a single-column example from a spreadsheet I had lying around.  
 
 {% highlight r %}
 dogsDesc <- tibble(dogs=c("Terrier","(Lakeland)","Terrier","(Soft-coated wheaten)","Bulldog","(English)","Bulldog","(French)"))
