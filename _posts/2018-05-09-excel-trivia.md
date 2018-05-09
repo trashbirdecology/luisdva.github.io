@@ -196,8 +196,10 @@ Resulting in:
 4 Normal adult dogs have how ma… 1               dogs     1            d             36    
 {% endhighlight %}
 
-At this point we can reshape the tibble again so that it resembles the original format in the Excel file. It took me a while to figure everyhing out, and it seems like a lot of work, but I really wanted to share this workflow and publicly thank the maintainers of all the libraries that make this possible. 
+At this point we can reshape the tibble again so that it resembles the original format in the Excel file. 
+It took me a while to figure everyhing out, and it seems like a lot of work, but I really wanted to share this workflow and publicly thank the maintainers of all the libraries that make this possible. 
 
+Because the original point of this was to iterate through the Excel file and output human-readable questions and answers with numbered questions and itemized answers, we can use the following code to prepare the data and ultimately stack everything into a single column w
 {% highligh r %}
 {% endhighlight %}
 {% highligh r %}
