@@ -199,8 +199,108 @@ Resulting in:
 At this point we can reshape the tibble again so that it resembles the original format in the Excel file. 
 It took me a while to figure everyhing out, and it seems like a lot of work, but I really wanted to share this workflow and publicly thank the maintainers of all the libraries that make this possible. 
 
-Because the original point of this was to iterate through the Excel file and output human-readable questions and answers with numbered questions and itemized answers, we can use the following code to prepare the data and ultimately stack everything into a single column w
-{% highligh r %}
+{% highlight r %}
+# reshape
+all_QA_Form_wide <- 
+  all_QA_Form %>% spread(key = option_letter, value = answer) %>% arrange(question_number)
+{% endhighlight%}
+
+Back to the original structure.
+{% highlight text %}
+> all_QA_Form_wide
+# A tibble: 4 x 8
+  question               question_number category bycat_number a      b      c        d    
+  <chr>                  <chr>           <chr>    <chr>        <chr>  <chr>  <chr>    <chr>
+1 Normal adult dogs hav… 1               dogs     1            20     **42** 18       36   
+2 What is the most comm… 2               dogs     2            Stay   Fetch  **Sit**  Atta…
+3 How many claws do hou… 3               cats     1            **18** 16     11       14   
+4 Which cat breed does … 4               cats     2            Persi… Siame… Weird h… **Ma…
+
 {% endhighlight %}
-{% highligh r %}
+
+The original aim was to iterate through the Excel file and output human-readable questions and answers with numbered questions and itemized answers. For this, we can use the following code to prepare the data and ultimately stack everything into a single column, add grouping variables, and finally walk through the groupw with purrr and knitr. 
+
+The cool/hacky part here was to stack the rows using matrix() and t(). 
+
+{% highlight r %}
+# prepare data for stacking into a single column df
+forStack <- all_QA_Form_wide %>% select(-question_number,-bycat_number)
+forStack <- forStack %>% select(category,everything()) %>% arrange(category)
+# unite answers
+forStack <- forStack %>% unite(answers,c("a","b","c","d"), sep = ", ")
+# count the number of topics
+ntopics <- length(unique(forStack$category))
+# how many q's of each category (should be the same for all categories anyway)
+nquestions <- forStack %>% count(category) %>% pluck(2,1)
+# number the q's  
+forStack <-  forStack %>% mutate(num_q=rep(1:ntopics,each=nquestions,times=1)) %>% 
+  unite(question,num_q,question,sep=". ")
+
+# stack wide
+stacked <- 
+  data.frame(values=matrix(t(forStack))) 
+
+# total number of cards
+# each question takes up three rows (topic, question,answers)
+ncards <- nrow(stacked)/((3*nquestions))
+
+# groups for each question (3 is the number of rows per question)
+stacked <- stacked %>% mutate(card=rep(1:ncards,each=3,times=ntopics))
+
 {% endhighlight %}
+
+With a grouping variable for card numbers, we end up with the questions from the different topics interspersed. 
+
+{% highlight text %}
+> head(stacked,9)
+                                           values card
+1                                            cats    1
+2           1. How many claws do house cats have?    1
+3                              **18**, 16, 11, 14    1
+4                                            cats    2
+5        1. Which cat breed does not have a tail?    2
+6 Persian, Siamese, Weird hairless cats, **Manx**    2
+7                                            dogs    1
+8       2. Normal adult dogs have how many teeth?    1
+9                              20, **42**, 18, 36    1
+{% endhighlight %}
+
+We won't be generating separate output files for printing game cards, but the Question/Answers below come directly from the stacked data. For this step we'll be using purrrlyr and knitr.
+
+{% highlight r%}
+library(purrrlyr)
+library(knitr)
+
+# list of kables
+Question_kables <- 
+  stacked  %>% 
+  slice_rows(c("card")) %>% 
+  by_slice(kable,caption=NULL,col.names="")
+# print each element
+Question_kables %>% walk(print)
+
+
+{% endhighlight %}
+
+I simply copied and pasted the output. 
+
+|                                          |
+|:-----------------------------------------|
+|cats                                      |
+|1. How many claws do house cats have?     |
+|**18**, 16, 11, 14                        |
+|dogs                                      |
+|2. Normal adult dogs have how many teeth? |
+|20, **42**, 18, 36                        |
+
+[[2]]
+
+
+|                                                            |
+|:-----------------------------------------------------------|
+|cats                                                        |
+|1. Which cat breed does not have a tail?                    |
+|Persian, Siamese, Weird hairless cats, **Manx**             |
+|dogs                                                        |
+|2. What is the most common training command taught to dogs? |
+|Stay, Fetch, **Sit**, Attack                                |
