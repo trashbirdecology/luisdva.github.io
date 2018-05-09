@@ -283,6 +283,9 @@ Question_kables %>% walk(print)
 {% endhighlight %}
 
 I simply copied and pasted the output. 
+With this code, we won't have to copy and paste manually for hundreds of questions across six different topics.  
+
+[[1]]
 
 |                                          |
 |:-----------------------------------------|
