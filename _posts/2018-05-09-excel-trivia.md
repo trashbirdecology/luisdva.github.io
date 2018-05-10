@@ -41,7 +41,7 @@ A) 20
 C) 18  
 D) 36  
 
-The correct answer (42) is highlighted with bold font. In the Excel format I was dealing with, the same question looks like this:
+The correct answer (42) is highlighted with bold font. In the Excel format I was dealing with, the same question looks like this (the one on the first row):
 
 <figure>
     <a href="/images/dogQs.png"><img src="/images/dogQs.png"></a>
@@ -118,7 +118,7 @@ The resulting tibble has everything we need, but we lost the correct answers whe
 {% endhighlight %}
 
 
-Now, let’s check out the power of _tidyxl_. The package functions expose cell content, position, formatting, and comments in a tidy structure for further manipulation. The package has excellent documentation, and I refereed to the free online cookbook [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/){:target="_blank"} by tidyxl maintainer [Duncan Garmonsway](https://twitter.com/nacnudus){:target="_blank"}.
+Now, let’s check out the power of _tidyxl_. The package functions expose cell content, position, formatting, and comments in a tidy structure for further manipulation. The package has excellent documentation, and I referred to the free online cookbook [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/){:target="_blank"} by _tidyxl_ maintainer [Duncan Garmonsway](https://twitter.com/nacnudus){:target="_blank"}.
 
 We can use _tidyxl_ to get the local formatting for each cell, and use some indexing to figure out which of our values represent the correct answers. 
 
@@ -186,7 +186,7 @@ Let's see
 
 {% endhighlight %}
 
-This data structure is more flexible and for whatever we need to do to create game cards, quizzes, school exams, etc.
+This data structure is more flexible and ready for whatever we need to do to create game cards, quizzes, school exams, etc.
 
 I was specifically asked to output the questions and answers to a Word document, keeping the bold formatting as the indicator of each correct answer. To encode this information, we can wrap asterisks conditionally around the correct answers for markdown formatting (thanks to [Hao Ye](https://twitter.com/Hao_and_Y){:target="_blank"} for the suggestion!).
 
@@ -210,7 +210,7 @@ Resulting in:
 {% endhighlight %}
 
 At this point we can reshape the tibble again so that it resembles the original format in the Excel file. 
-It took me a while to figure everyhing out, and it seems like a lot of work, but I really wanted to share this workflow and publicly thank the maintainers of all the libraries that make this possible. 
+It took me a while to figure everything out, and it seems like a lot of work, but I really wanted to share this workflow and publicly thank the maintainers of all the libraries that make this possible. 
 
 {% highlight r %}
 # reshape
