@@ -213,7 +213,7 @@ It took me a while to figure everyhing out, and it seems like a lot of work, but
 # reshape
 all_QA_Form_wide <- 
   all_QA_Form %>% spread(key = option_letter, value = answer) %>% arrange(question_number)
-{% endhighligh t%}
+{% endhighlight %}
 
 Back to the original structure.
 {% highlight text %}
