@@ -52,6 +52,11 @@ However, before importing anything, let’s consider:
 - formatting in a spreadsheet cell does not carry over to values in a data frame 
 - behind the cells we see in Excel spreadsheets there are compressed XML markup files 
 
+This sums it up nicely..
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This is your spreadsheet.<br>This is your spreadsheet on XML. <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/yzRahnEBO9">pic.twitter.com/yzRahnEBO9</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/700904316714876928?ref_src=twsrc%5Etfw">February 20, 2016</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 Having the correct answer randomized and identified only through cell formatting had me stumped for days, but some web searches led me to this tweet and onto the tidyxl package. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">When your spreadsheet is too 😱😩😡 for readxl, tidyxl + unpivotr helps you tackle charming features like “data as formatting” and “data in the layout”. <a href="https://t.co/ABerpfHT8W">https://t.co/ABerpfHT8W</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/938834824688689152?ref_src=twsrc%5Etfw">December 7, 2017</a></blockquote>
@@ -141,7 +146,7 @@ We now have a little tibble with the correct answer for each question.
 4     4 cats      2 Manx  
 {%% endhighlight}
 
-Once we know which of the possible answers for each question is the correct one, we can merge this data with a tidier, reshaped version of the question/answer data and ultimately create have a logical variable that indicates which is the correct answer. This follows the recommendation by Broman and Woo (2017) of using indicator variables instead of using formatting as a way to store information. 
+Once we know which of the possible answers for each question is the correct one, we can merge this data with a tidier, reshaped version of the question/answer data and ultimately create have a logical variable that indicates which is the correct answer. This follows the recommendation by [Broman and Woo (2017)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) of using indicator variables instead of using formatting as a way to store information. 
 
 {% highlight r %}
 ### melt wide to long
