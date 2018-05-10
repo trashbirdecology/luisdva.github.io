@@ -26,6 +26,11 @@ All I had to do was wrangle the questions and answers into little tables with on
 
 Everything seemed fine, until I opened the spreadsheet and realized that the correct answers were highlighted in bold, and the position of the correct answer for each question was already randomized. I’ve written about [not using formatting this way](http://luisdva.github.io/pls-don't-do-this/) (and so have many others before me, see [here](http://kbroman.org/dataorg/pages/resources.html)) , but I personally hadn’t had to deal with this kind of dataset before. 
 
+<figure>
+    <a href="/images/eichornli.png"><img src="/images/eichornli.png"></a>
+        <figcaption>made with CC0 images</figcaption>
+</figure>
+
 For this post I’ll walk through a brief example using multiple choice questions derived from these [trivia](https://www.triviaplaying.com/203-Cat-Trivia-questions.htm) [pages](https://www.petful.com/misc/dog-trivia-questions/). For two different topics, I’ve organized two questions per topic into an Excel file similar to the one I worked with. 
 
 A multiple choice question with its answers would typically look like this:
