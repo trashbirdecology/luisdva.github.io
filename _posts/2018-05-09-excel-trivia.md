@@ -39,7 +39,7 @@ D) 36
 The correct answer (42) is highlighted with bold font. In the Excel format I was dealing with, the same question looks like this:
 
 <figure>
-    <a href="/images/dogsQ.png"><img src="/images/dogsQ.png"></a>
+    <a href="/images/dogQs.png"><img src="/images/dogQs.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 
