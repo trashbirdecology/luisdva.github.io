@@ -10,7 +10,7 @@ tags:
   - readxl
   - tidyxl
 image:
-  feature: featureDoggs.png
+  feature: featureExcel.png
   credit: Pixabay CC0 image
   creditlink: 
 published: false
@@ -62,7 +62,7 @@ To follow along, download this xlsx file to your working directory.
 
 First, we iterate through the sheets to get a single data frame with all the questions and answers, labeled according to their topic.
 
-{% highligh r %}
+{% highlight r %}
 # load packages
 library(readxl)
 library(tidyxl)
@@ -143,7 +143,7 @@ We now have a little tibble with the correct answer for each question.
 
 Once we know which of the possible answers for each question is the correct one, we can merge this data with a tidier, reshaped version of the question/answer data and ultimately create have a logical variable that indicates which is the correct answer. This follows the recommendation by Broman and Woo (2017) of using indicator variables instead of using formatting as a way to store information. 
 
-{% highligh r %}
+{% highlight r %}
 ### melt wide to long
 all_qs_lab_long <- all_qs_lab %>% gather(option_letter,answer,3:6) %>% arrange(question_number)
 
@@ -177,7 +177,7 @@ This data structure is more flexible and for whatever we need to do to create ga
 
 I was specifically asked to output the questions and answers to a Word document, keeping the bold formatting as the indicator of each correct answer. To encode this information, we can wrap asterisks conditionally around the correct answers for markdown formatting (thanks to [Hao Ye](https://twitter.com/Hao_and_Y) for the suggestion!).
 
-{% highligh r %}
+{% highlight r %}
 # confer formatting
 all_QA_Form <- 
   all_QA %>% mutate(answer=if_else(bold==TRUE,paste0("**",answer,"**"),answer)) %>% 
