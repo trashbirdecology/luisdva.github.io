@@ -24,14 +24,14 @@ When it was first described to me, the data structure seemed sensible:
 
 All I had to do was wrangle the questions and answers into little tables with one question from each topic and put them in MS Word documents that would then be given to a graphic designer at the print shop.
 
-Everything seemed fine, until I opened the spreadsheet and realized that the correct answers were highlighted in bold, and the position of the correct answer for each question was already randomized. I’ve written about [not using formatting this way](http://luisdva.github.io/pls-don't-do-this/) (and so have many others before me, see [here](http://kbroman.org/dataorg/pages/resources.html)) , but I personally hadn’t had to deal with this kind of dataset before. 
+Everything seemed fine, until I opened the spreadsheet and realized that the correct answers were highlighted in bold, and the position of the correct answer for each question was already randomized. I’ve written about [not using formatting this way](http://luisdva.github.io/pls-don't-do-this/){:target="_blank"} (and so have many others before me, see [here](http://kbroman.org/dataorg/pages/resources.html){:target="_blank"}) , but I personally hadn’t had to deal with this kind of dataset before. 
 
 <figure>
     <a href="/images/eichornli.png"><img src="/images/eichornli.png"></a>
         <figcaption>made with CC0 images</figcaption>
 </figure>
 
-For this post I’ll walk through a brief example using multiple choice questions derived from these [trivia](https://www.triviaplaying.com/203-Cat-Trivia-questions.htm) [pages](https://www.petful.com/misc/dog-trivia-questions/). For two different topics, I’ve organized two questions per topic into an Excel file similar to the one I worked with. 
+For this post I’ll walk through a brief example using multiple choice questions derived from these [trivia](https://www.triviaplaying.com/203-Cat-Trivia-questions.htm){:target="_blank"} [pages](https://www.petful.com/misc/dog-trivia-questions/){:target="_blank"}. For two different topics, I’ve organized two questions per topic into an Excel file similar to the one I worked with. 
 
 A multiple choice question with its answers would typically look like this:
 
@@ -50,7 +50,7 @@ The correct answer (42) is highlighted with bold font. In the Excel format I was
 
 ## Getting the data into R
 
-Thanks to the hard work of Jenny Bryan and the tidyverse team, reading Excel files into R with readxl is easy, and we can even use purrr to read multiple worksheets at once. 
+Thanks to the hard work of Jenny Bryan and the _tidyverse_ team, reading Excel files into R with _readxl_ is easy, and we can even use _purrr_ to read multiple worksheets at once. 
 
 However, before importing anything, let’s consider:
 
@@ -62,7 +62,7 @@ This sums it up nicely..
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-Having the correct answer randomized and identified only through cell formatting had me stumped for days, but some web searches led me to this tweet and onto the tidyxl package. 
+Having the correct answer randomized and identified only through cell formatting had me stumped for days, but some web searches led me to this tweet and onto the _tidyxl_ package. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">When your spreadsheet is too 😱😩😡 for readxl, tidyxl + unpivotr helps you tackle charming features like “data as formatting” and “data in the layout”. <a href="https://t.co/ABerpfHT8W">https://t.co/ABerpfHT8W</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/938834824688689152?ref_src=twsrc%5Etfw">December 7, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -115,7 +115,7 @@ The resulting tibble has everything we need, but we lost the correct answers wit
 {% endhighlight %}
 
 
-Now, let’s check out the power of tidyxl. The package functions expose cell content, position, formatting, and comments in a tidy structure for further manipulation. The package has excellent documentation, and I refereed to the free online cookbook [Spreadsheet Munging Strategies] (https://nacnudus.github.io/spreadsheet-munging-strategies/) by tidyxl maintainer [Duncan Garmonsway](https://twitter.com/nacnudus).
+Now, let’s check out the power of tidyxl. The package functions expose cell content, position, formatting, and comments in a tidy structure for further manipulation. The package has excellent documentation, and I refereed to the free online cookbook [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/){:target="_blank"} by tidyxl maintainer [Duncan Garmonsway](https://twitter.com/nacnudus){:target="_blank"}.
 
 We can use tidyxl to get the local formatting for each cell, and use some indexing to figure out which of our values represent the correct answers. 
 
@@ -151,7 +151,7 @@ We now have a little tibble with the correct answer for each question.
 4     4 cats      2 Manx  
 {% endhighlight %}
 
-Once we know which of the possible answers for each question is the correct one, we can merge this data with a tidier, reshaped version of the question/answer data and ultimately create have a logical variable that indicates which is the correct answer. This follows the recommendation by [Broman and Woo (2017)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) of using indicator variables instead of using formatting as a way to store information. 
+Once we know which of the possible answers for each question is the correct one, we can merge this data with a tidier, reshaped version of the question/answer data and ultimately create have a logical variable that indicates which is the correct answer. This follows the recommendation by [Broman and Woo (2017)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989){:target="_blank"} of using indicator variables instead of using formatting as a way to store information. 
 
 {% highlight r %}
 ### melt wide to long
@@ -185,7 +185,7 @@ Let's see
 
 This data structure is more flexible and for whatever we need to do to create game cards, quizzes, school exams, etc.
 
-I was specifically asked to output the questions and answers to a Word document, keeping the bold formatting as the indicator of each correct answer. To encode this information, we can wrap asterisks conditionally around the correct answers for markdown formatting (thanks to [Hao Ye](https://twitter.com/Hao_and_Y) for the suggestion!).
+I was specifically asked to output the questions and answers to a Word document, keeping the bold formatting as the indicator of each correct answer. To encode this information, we can wrap asterisks conditionally around the correct answers for markdown formatting (thanks to [Hao Ye](https://twitter.com/Hao_and_Y){:target="_blank"} for the suggestion!).
 
 {% highlight r %}
 # confer formatting
