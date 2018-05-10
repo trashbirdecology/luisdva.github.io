@@ -68,7 +68,10 @@ Having the correct answer randomized and identified only through cell formatting
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Let’s see how we can tackle mutli-sheet Excel files that use formatting to convey information.
-To follow along, download this xlsx file to your working directory.
+
+# Getting started
+
+To follow along, download this [xlsx file](https://github.com/luisDVA/codeluis/raw/master/exclread.xlsx) to your working directory.
 
 First, we iterate through the sheets to get a single data frame with all the questions and answers, labeled according to their topic.
 
@@ -102,7 +105,7 @@ all_sheets %>% map2(names(all_sheets),~mutate(.x,name=.y)) %>%
   group_by(category) %>% mutate(bycat_number = row_number()) %>% ungroup
 {% endhighlight %}
 
-The resulting tibble has everything we need, but we lost the correct answers with the formatting.
+The resulting tibble has everything we need, but we lost the correct answers when we lost the formatting.
 
 {% highlight text %}
 # A tibble: 4 x 8
@@ -115,9 +118,9 @@ The resulting tibble has everything we need, but we lost the correct answers wit
 {% endhighlight %}
 
 
-Now, let’s check out the power of tidyxl. The package functions expose cell content, position, formatting, and comments in a tidy structure for further manipulation. The package has excellent documentation, and I refereed to the free online cookbook [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/){:target="_blank"} by tidyxl maintainer [Duncan Garmonsway](https://twitter.com/nacnudus){:target="_blank"}.
+Now, let’s check out the power of _tidyxl_. The package functions expose cell content, position, formatting, and comments in a tidy structure for further manipulation. The package has excellent documentation, and I refereed to the free online cookbook [Spreadsheet Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/){:target="_blank"} by tidyxl maintainer [Duncan Garmonsway](https://twitter.com/nacnudus){:target="_blank"}.
 
-We can use tidyxl to get the local formatting for each cell, and use some indexing to figure out which of our values represent the correct answers. 
+We can use _tidyxl_ to get the local formatting for each cell, and use some indexing to figure out which of our values represent the correct answers. 
 
 {% highlight r %}
 # sort out formatting
@@ -228,9 +231,9 @@ Back to the original structure.
 
 {% endhighlight %}
 
-The original aim was to iterate through the Excel file and output human-readable questions and answers with numbered questions and itemized answers. For this, we can use the following code to prepare the data and ultimately stack everything into a single column, add grouping variables, and finally walk through the groupw with purrr and knitr. 
+The original aim was to iterate through the Excel file and output human-readable questions and answers with numbered questions and itemized answers. For this, we can use the following code to prepare the data and ultimately stack everything into a single column, add grouping variables, and finally walk through the groups with _purrr_, _purrrlyr_, and _knitr_. 
 
-The cool/hacky part here was to stack the rows using matrix() and t(). 
+The cool/hacky part here was to stack the rows using _matrix()_ and _t()_. 
 
 {% highlight r %}
 # prepare data for stacking into a single column df
@@ -259,7 +262,7 @@ stacked <- stacked %>% mutate(card=rep(1:ncards,each=3,times=ntopics))
 
 {% endhighlight %}
 
-With a grouping variable for card numbers, we end up with the questions from the different topics interspersed. 
+With a grouping variable for card numbers, we end up with the questions from the different topics intercallated. 
 
 {% highlight text %}
 > head(stacked,9)
@@ -275,7 +278,7 @@ With a grouping variable for card numbers, we end up with the questions from the
 9                              20, **42**, 18, 36    1
 {% endhighlight %}
 
-We won't be generating separate output files for printing game cards, but the Question/Answers below come directly from the stacked data. For this step we'll be using purrrlyr and knitr.
+We won't be generating separate output files for printing game cards, but the Question/Answers below come directly from the stacked data. For this step we'll be using _purrrlyr_ and _knitr_.
 
 {% highlight r %}
 library(purrrlyr)
@@ -293,7 +296,7 @@ Question_kables %>% walk(print)
 {% endhighlight %}
 
 I simply copied and pasted the output. 
-With this code, we won't have to copy and paste manually for hundreds of questions across six different topics.  
+With this code, we won't have to copy and paste manually the hundreds of questions across six different topics in the actual production file for the board game.  
 
 [[1]]
 
@@ -317,3 +320,10 @@ With this code, we won't have to copy and paste manually for hundreds of questio
 |dogs                                                        |
 |2. What is the most common training command taught to dogs? |
 |Stay, Fetch, **Sit**, Attack                                |
+
+
+I hope you found this post useful. Once again, I want to thank the teams and developers that brought us _readxl_ and _tidyxl_, and also [Maëlle Salmon](https://twitter.com/ma_salmon), [Ken Butler](https://twitter.com/KenButler12), and [Achim Zeileis](https://twitter.com/AchimZeileis) for their inputs via Twitter. Achim even provided some custom code to plug the tidy question/answer data into the _rexams_ package. Check it out below:
+
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">## source data frame<br>df &lt;- data.frame(<br>  question = &quot;How many beaver species are there?&quot;,<br>  category = &quot;mammals&quot;,<br>  answer = c(2, 7, 10),<br>  correct = c(&quot;T&quot;, &quot;F&quot;, &quot;F&quot;),<br>  stringsAsFactors = FALSE<br>)<br><br>## destination file<br>f &lt;- paste0(df$category[1], &quot;.Rmd&quot;)<br><br>## -&gt; Markdown template</p>&mdash; Achim Zeileis (@AchimZeileis) <a href="https://twitter.com/AchimZeileis/status/986723275723165696?ref_src=twsrc%5Etfw">April 18, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
