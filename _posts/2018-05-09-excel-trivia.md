@@ -119,7 +119,7 @@ Now, let’s check out the power of tidyxl. The package functions expose cell co
 
 We can use tidyxl to get the local formatting for each cell, and use some indexing to figure out which of our values represent the correct answers. 
 
-{% highligh r %}
+{% highlight r %}
 # sort out formatting
 all_cells <- xlsx_cells(file,sheets = NA) %>% filter(is_blank!=TRUE)
 formats <- xlsx_formats(file)
@@ -149,7 +149,7 @@ We now have a little tibble with the correct answer for each question.
 2     2 dogs      2 Sit       
 3     3 cats      1 18        
 4     4 cats      2 Manx  
-{%% endhighlight}
+{% endhighlight %}
 
 Once we know which of the possible answers for each question is the correct one, we can merge this data with a tidier, reshaped version of the question/answer data and ultimately create have a logical variable that indicates which is the correct answer. This follows the recommendation by [Broman and Woo (2017)](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) of using indicator variables instead of using formatting as a way to store information. 
 
@@ -213,7 +213,7 @@ It took me a while to figure everyhing out, and it seems like a lot of work, but
 # reshape
 all_QA_Form_wide <- 
   all_QA_Form %>% spread(key = option_letter, value = answer) %>% arrange(question_number)
-{% endhighlight%}
+{% endhighligh t%}
 
 Back to the original structure.
 {% highlight text %}
@@ -277,7 +277,7 @@ With a grouping variable for card numbers, we end up with the questions from the
 
 We won't be generating separate output files for printing game cards, but the Question/Answers below come directly from the stacked data. For this step we'll be using purrrlyr and knitr.
 
-{% highlight r%}
+{% highlight r %}
 library(purrrlyr)
 library(knitr)
 
