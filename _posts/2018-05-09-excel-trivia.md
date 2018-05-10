@@ -13,7 +13,7 @@ image:
   feature: featureExcel.png
   credit: Pixabay CC0 image
   creditlink: 
-published: false
+published: true
 ---
 
 I recently offered to help create the game cards for a mammalogy-themed trivia board game that will be made available later in the year. The questions and answers had already been prepared and they were stored in an Excel file.  
