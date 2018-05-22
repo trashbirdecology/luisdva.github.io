@@ -21,7 +21,7 @@ Last week, the article "Space use by two arboreal rodent species in a Neotropica
 
 We studied two Neotomine-peromyscine cricetids: _Habromys schmidlyi_ and _Reithrodontomys microdon_. In general, we don't know much about the ecology of most arboreal small mammals, and there are few studies with rodents in Mesoamerica. We found vertical stratification in the rodent community in this particular study site, and provide the first published estimates of home range sizes and preferences for particular forest strata for these two species. 
 
-Both species had home range ares of roughly 0.5 ha, but this includes going up and down the trees in the cloud forst. Harvest mice in the genus _Reithrodontomys_ are known to be good climbers, but it was still surprising to see that _R. microdon_ likes to hang out high up in the forest canopy, while _H. schmidlyi_ were more abundant in the understory (up to 10 meters high).   
+Both species had home range ares of roughly 0.5 ha, but this includes going up and down the trees in the cloud forest. Harvest mice in the genus _Reithrodontomys_ are known to be good climbers, but it was still surprising to see that _R. microdon_ likes to hang out high up in the forest canopy (11 to 20 meters), while _H. schmidlyi_ were more abundant in the understory (up to 10 meters high).   
 
 <figure>
     <a href="/images/cutemice.jpg"><img src="/images/cutemice.jpg"></a>
