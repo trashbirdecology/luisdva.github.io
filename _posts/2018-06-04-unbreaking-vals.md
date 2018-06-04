@@ -11,7 +11,7 @@ tags:
   - dplyr
 image:
   feature: featureUnbrk.png
-  credit: 
+  credit: CC2.0, photo by Emmanuel Milou
   creditlink: 
 published: false
 ---
@@ -24,7 +24,9 @@ Let’s say that we come across a table like this one in a report, book, or publ
 </figure>
 
 The table actually looks nice: it has merged cells, custom borders and lines, and some values for are wrapped across multiple lines so that everything is easy to read and fits on a sheet of paper or a computer screen. I often come across tables like this in the PDFs of relatively older scientific papers, and the trouble starts when I want to read or import the data from these tables into something more structured and manageable.
+
  Without cell merging, the data tends to look like this:
+ 
 |player           | listed_height_m.|teams_chronological |position       |
 |:----------------|----------------:|:-------------------|:--------------|
 |Marcus Camby     |             2.11|Raptors             |Power forward  |
@@ -41,9 +43,11 @@ The table actually looks nice: it has merged cells, custom borders and lines, an
 |NA               |               NA|Timberwolves        |NA             |
 
 There is an inconsistent number of empty or NA values padding out the vertical space in some of the columns. Lately I’ve had to ‘unbreak’ the values in these types of tables and get rid of all the unnecessary NAs before doing any further wrangling. I’ve written about unbreaking values in the past, but that approach was tailored for a very specific use case and not very flexible. I was getting nowhere until I found this post by Mark Needham about squashing multiple rows per group into one. 
+
 Mark’s post took advantage of how dplyr::summarize reduces multiple values down to a single value, and fed this output into the _paste_ function. My sneaky upgrade to this post was to first sort out a grouping variable, and then use summarize_all to summarize multiple columns, using an na.omit() all to get rid of the NA values. Thanks to tidyeval, I was able to write this into a function that has saved me lots of time. 
 
 Let’s check it out, using the example from before.
+
 Set up the data
 {% highlight r %}
 # load all the necessary packages
@@ -78,9 +82,11 @@ The tibble formatting in RStudio shows the NA mess.
 </figure>
 
 For summarize to work on grouped data, we use tidyr::fill to populate missing values in a column with the previous entry until the value changes.
+
 {% highlight r %}
 nyk %>% fill(player)
 {% endhighlight %}
+
 {% highlight text%}
 # A tibble: 12 x 4
    player           listed_height_m. teams_chronological position      
@@ -99,7 +105,9 @@ nyk %>% fill(player)
 12 Latrell Sprewell            NA    Timberwolves        NA            
 
 {% endhighlight %}
+
 This structure is ready for the summarize_all approach
+
 {% highlight r %}
 nyk %>% fill(player) %>% 
         group_by(player) %>% 
@@ -114,8 +122,11 @@ nyk %>% fill(player) %>%
 2 Latrell Sprewell 1.96             Warriors, Knicks, Timberwolves         Small forward
 3 Marcus Camby     2.11             Raptors, Knicks, Nuggets, Clippers, T~ Power forwar~
 {% endhighlight %}
+
 It works!
+
 Now let’s write that into a function that takes in the data, the name of the grouping variable, and whatever we want to use to separate the pasted values (i.e. the collapse argument).
+
 {% highlight r %}
 unwrap_cols <- function(df,groupingVar,separator){
     groupingVar <- enquo(groupingVar)
@@ -143,4 +154,6 @@ nyk %>% unwrap_cols(groupingVar = player, separator = ", ")
 {% endhighlight %}
 
 
-I’m not referring to this as squashing or squishing because those terms are already used in other packages and they mean different things. I´ll stick with unbreaking. Note that stri_wrap from the stringi package does more or less the opposite of this. 
+I’m not referring to this as squashing or squishing because those terms are already used in other packages and they mean different things. I´ll stick with unbreaking. Note that stri_wrap from the stringi package does more or less the opposite of this. Finally, this also works with blank values, we just need to replace empty with NA. 
+
+
