@@ -13,7 +13,7 @@ image:
   feature: featureUnbrk.png
   credit: CC2.0, photo by Emmanuel Milou
   creditlink: 
-published: false
+published: true
 ---
 
 The example below shows some data for three players on the 1999 New York Knicks roster. Tables often look like this one in reports, books, or publications. 
