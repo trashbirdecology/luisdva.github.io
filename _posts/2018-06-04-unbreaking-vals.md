@@ -42,13 +42,13 @@ The table actually looks nice: it has merged cells, custom borders and lines, an
 |NA               |               NA|Knicks              |NA             |
 |NA               |               NA|Timberwolves        |NA             |
 
-There is an inconsistent number of empty or NA values padding out the vertical space in some of the columns. Lately I’ve had to ‘unbreak’ the values in these types of tables and get rid of all the unnecessary NAs before doing any further wrangling. I’ve written about unbreaking values in the [past](https://luisdva.github.io/rstats/Tidyeval-pdf-hell/), but that approach was tailored for a very specific use case and not very flexible. I was getting nowhere until I found this post by [Mark Needham](https://twitter.com/markhneedham) about [squashing multiple rows per group into one](https://markhneedham.com/blog/2015/06/27/r-dplyr-squashing-multiple-rows-per-group-into-one/). 
+There is an inconsistent number of empty or NA values padding out the vertical space in some of the columns. Lately I’ve had to ‘unbreak’ the values in these types of tables and get rid of all the unnecessary NAs before doing any further wrangling. I’ve written about unbreaking values in the [past](https://luisdva.github.io/rstats/Tidyeval-pdf-hell/){:target="_blank"}, but that approach was tailored for a very specific use case and not very flexible. I was getting nowhere until I found this post by [Mark Needham](https://twitter.com/markhneedham){:target="_blank"} about [squashing multiple rows per group into one](https://markhneedham.com/blog/2015/06/27/r-dplyr-squashing-multiple-rows-per-group-into-one/){:target="_blank"}. 
 
-Mark’s post took advantage of how _dplyr::summarize()_ reduces multiple values down to a single value, and fed this output into the _paste()_ function. My sneaky upgrade to this post was to first sort out a grouping variable, and then use _summarize\_all()_ to summarize multiple columns, using an _na.omit()_ call to get rid of the NA values. Thanks to _tidyeval_, I was able to write this into a function that has saved me lots of time. 
+Mark’s post took advantage of how _dplyr::summarize()_ reduces multiple values down to a single value, and fed this output into the _paste()_ function. My sneaky upgrade to his post was to first sort out a grouping variable, and then use _summarize\_all()_ to summarize multiple columns, using an _na.omit()_ call to get rid of the NA values. Thanks to _tidyeval_, I was able to write this into a function that has saved me lots of time. 
 
 Let’s check it out, using the example from before.
 
-Set up the data
+**Set up the data**
 {% highlight r %}
 # load all the necessary packages
 library(dplyr)
@@ -154,6 +154,6 @@ nyk %>% unwrap_cols(groupingVar = player, separator = ", ")
 {% endhighlight %}
 
 
-I’m not referring to this as squashing or squishing because those terms are already used in other packages and they mean different things. I´ll stick with unbreaking. Note that _stri_\wrap()_ from the _stringi_ package does more or less the opposite of this. Finally, this also works with blank values, we just need to replace empty with NA. 
+I’m not referring to this as squashing or squishing because those terms are already used in other packages and they mean different things. I´ll stick with unbreaking. Note that _stri\_wrap()_ from the _stringi_ package does more or less the opposite of this. Finally, this also works with blank values, we just need to replace empty with NA. 
 
 Let me know if you find this useful, or if anything is working as advertised. Thanks for reading.
