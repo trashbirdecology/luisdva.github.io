@@ -17,7 +17,12 @@ published: false
 ---
 
 Let’s say that we come across a table like this one in a report, book, or publication. The example below shows some data for three players on the 1999 New York Knicks roster.
-Img tag
+
+<figure>
+    <a href="/images/knicks.png"><img src="/images/knicks.png"></a>
+        <figcaption></figcaption>
+</figure>
+
 The table actually looks nice: it has merged cells, custom borders and lines, and some values for are wrapped across multiple lines so that everything is easy to read and fits on a sheet of paper or a computer screen. I often come across tables like this in the PDFs of relatively older scientific papers, and the trouble starts when I want to read or import the data from these tables into something more structured and manageable.
  Without cell merging, the data tends to look like this:
 |player           | listed_height_m.|teams_chronological |position       |
@@ -64,6 +69,14 @@ nyk <- tribble(
                                )
 
 {% endhighlight %}
+
+The tibble formatting in RStudio shows the NA mess. 
+
+<figure>
+    <a href="/images/knickstibb.png"><img src="/images/knickstibb.png"></a>
+        <figcaption></figcaption>
+</figure>
+
 For summarize to work on grouped data, we use tidyr::fill to populate missing values in a column with the previous entry until the value changes.
 {% highlight r %}
 nyk %>% fill(player)
