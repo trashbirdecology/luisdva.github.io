@@ -23,7 +23,7 @@ The example below shows some data for three players on the 1999 New York Knicks 
         <figcaption></figcaption>
 </figure>
 
-The table actually looks nice: it has merged cells, custom borders and lines, and some values for are wrapped across multiple lines so that everything is easy to read and fits on a sheet of paper or a computer screen. I often come across tables like this in the PDFs of relatively old scientific papers, and the trouble starts when I want to read or import the data from these tables into something more structured and manageable.
+The table actually looks nice: it has merged cells, custom borders and lines, and some values are wrapped across multiple lines so that everything is easy to read and fits on a sheet of paper or a computer screen. I often come across tables like this in the PDFs of relatively old scientific papers, and the trouble starts when I want to read or import the data from these tables into something more structured and manageable.
 
  Without cell merging, the data tends to look like this:
  
