@@ -14,9 +14,7 @@ image:
 published: true
 ---
 
-
-
-
+> **Update - June 2018 -** an API is now necessary to download IUCN Red List data. This is easy to request though.
 
 
 ### Red Lists of Threatened Species
