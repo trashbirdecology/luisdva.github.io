@@ -19,7 +19,7 @@ share: false
 
 
 ## This site
-Welcome to my personal research page. I'll be using this site for news, updates on research articles, R code, and blog posts. The layout and design are work in progress, as I slowly learn more about Git, Markdown and Jekyll. 
+Welcome to my personal research page. I'll be using this site for news, updates on research articles, R code, and blog posts. The layout and design are work in progress, as I slowly learn more about Git, Markdown and Jekyll. I often share the R-related posts on [R Weekly](https://rweekly.org).
 
 ## Research
 
@@ -39,3 +39,4 @@ I am a mammalogist by training. For my PhD (University of Queensland: 2010-2014)
 ## Contact 
 
 [Email me](mailto:luisd@ciencias.unam.mx) with any feeback about my research or this site, or for potential collaboration. Find me on Twitter by clicking on the bird icon in the navigation pane.
+
