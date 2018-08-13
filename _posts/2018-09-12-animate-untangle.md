@@ -152,6 +152,7 @@ ut_animation <-
 
 {% endhighlight %}
 
+![gif demo]({{ site.baseurl }}/images/untangledemo.gif)
 
 ![](https://github.com/luisDVA/luisdva.github.io/blob/master/images/untangledemo.gif)
 
