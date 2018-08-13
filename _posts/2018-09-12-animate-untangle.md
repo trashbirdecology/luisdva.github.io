@@ -22,10 +22,10 @@ Yesterday I tweeted this gif showing what we can do about non-data grouping rows
 
 There was some interest in the code behind the animation, and I wanted to share it anyway because it’s based on actual data and I think that’s pretty cool. 
 
-This is all made possible thanks to Thomas Lin Pedersen’s ['gganimate'](https://github.com/thomasp85/gganimate) package, a cool [usecase](https://coolbutuseless.github.io/2018/08/12/gganimate-with-bitmap-fonts/) with _geom\_tile()_ plots by [@mikefc](https://twitter.com/coolbutuseless), and this [post](https://rpubs.com/dgrtwo/tidying-enron) by [David Robison](https://twitter.com/drob) where he melts a table into long format with indices for each row and column and a variable holding the value for each cell. 
+This is all made possible thanks to Thomas Lin Pedersen’s ['gganimate'](https://github.com/thomasp85/gganimate){:target="_blank"} package, a cool [usecase](https://coolbutuseless.github.io/2018/08/12/gganimate-with-bitmap-fonts/){:target="_blank"} with _geom\_tile()_ plots by [@mikefc](https://twitter.com/coolbutuseless){:target="_blank"}, and this [post](https://rpubs.com/dgrtwo/tidying-enron){:target="_blank"} by [David Robison](https://twitter.com/drob){:target="_blank"} where he melts a table into long format with indices for each row and column and a variable holding the value for each cell. 
 
 We can use real data from this table, originally from a book chapter about rodent sociobiology by Ojeda et al. (2016). I had a PDF version of the chapter, and I got the data into R following this [post](
-https://rud.is/b/2018/07/02/freeing-pdf-data-to-account-for-the-unaccounted/) by [Bob Rudis](https://twitter.com/hrbrmstr). I highly recommend 'pdftools' and 'readr' for importing PDF tables.
+https://rud.is/b/2018/07/02/freeing-pdf-data-to-account-for-the-unaccounted/){:target="_blank"} by [Bob Rudis](https://twitter.com/hrbrmstr){:target="_blank"}. I highly recommend 'pdftools' and 'readr' for importing PDF tables.
 
 The book cover.
 <figure>
@@ -151,6 +151,9 @@ ut_animation <-
   ease_aes('sine-in-out')  
 
 {% endhighlight %}
+
+
+![](https://github.com/luisDVA/luisdva.github.io/blob/master/images/untangledemo.gif)
 
 <figure>
     <a href="/images/untangledemo.gif"><img src="/images/untanglegemo.gif"></a>
