@@ -1,7 +1,7 @@
 ---
 title: "Animate your data wrangling"
 layout: post
-excerpt:  Using _gganimate_ to animate the data-munging process.
+excerpt:  Using gganimate to animate the data-munging process.
 category: rstats
 tags:
   - unheadr
@@ -36,7 +36,7 @@ The book cover.
 The first few lines of the table looked like this, and for this demo we can just set up the data directly as a tibble.
 
 <figure>
-    <a href="/images/OjedaT1.png"><img src="/images/OjedaT1.png"></a>
+    <a href="/images/ojedaT1.png"><img src="/images/ojedaT1.png"></a>
         <figcaption>PDF table</figcaption>
 </figure>
 
@@ -131,7 +131,7 @@ ggplot(longTabs_both,aes(column, -row, fill = celltype)) +
         <figcaption>with facet wrapping</figcaption>
 </figure>
 
-For now, gganimate is only available on GitHub. Once we have installed it, ‘transition_states’ does all the magic.
+For now, 'gganimate' is only available on GitHub. Once we have installed it, ‘transition_states’ does all the magic.
 
 {% highlight r %}
 ut_animation <-  
