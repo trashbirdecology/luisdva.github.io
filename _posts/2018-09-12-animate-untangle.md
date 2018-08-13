@@ -152,16 +152,10 @@ ut_animation <-
 
 {% endhighlight %}
 
+Check it out!
+
 ![gif demo]({{ site.baseurl }}/images/untangledemo.gif)
 
-![](https://github.com/luisDVA/luisdva.github.io/blob/master/images/untangledemo.gif)
-
-<figure>
-    <a href="/images/untangledemo.gif"><img src="/images/untanglegemo.gif"></a>
-        <figcaption>so smooth!</figcaption>
-</figure>
-
-<img src="https://github.com/luisDVA/luisdva.github.io/blob/master/images/untangledemo.gif" />
 
 Once the animation is rendered we can save it to disk using _anim\_save()_.
 
