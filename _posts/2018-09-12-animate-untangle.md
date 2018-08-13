@@ -160,6 +160,8 @@ ut_animation <-
         <figcaption>so smooth!</figcaption>
 </figure>
 
+<img src="https://github.com/luisDVA/luisdva.github.io/blob/master/images/untangledemo.gif" />
+
 Once the animation is rendered we can save it to disk using _anim\_save()_.
 
 This approach seems like a good way to animate various types of common steps in data munging, and it should work nicely to illustrate how several 'dplyr' or 'tidyr' verbs work. I’ll make more animations in the near future.
