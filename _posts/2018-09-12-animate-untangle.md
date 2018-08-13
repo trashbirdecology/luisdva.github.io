@@ -9,10 +9,10 @@ tags:
   - gifs
   - tile plots
 image:
-  feature: featurePCKG.png
-  credit: Unsplash photo by Maarten van den Heuvel
+  feature: featureAnimate.png
+  credit: clipartXtras
   creditlink: 
-published: false
+published: true
 ---
 
 Yesterday I tweeted this gif showing what we can do about non-data grouping rows embedded in the data rectangle using the 'unheadr' package (we can and we should put them into their own variable in a tidier way). Please ignore the typo in the tweet. 
@@ -22,7 +22,7 @@ Yesterday I tweeted this gif showing what we can do about non-data grouping rows
 
 There was some interest in the code behind the animation, and I wanted to share it anyway because it’s based on actual data and I think that’s pretty cool. 
 
-This is all made possible thanks to Thomas Lin Pedersen’s [gganimate](https://github.com/thomasp85/gganimate), a cool [usecase](https://coolbutuseless.github.io/2018/08/12/gganimate-with-bitmap-fonts/) with geom_tile() plots by [@mikefc](https://twitter.com/coolbutuseless), and this [post](https://rpubs.com/dgrtwo/tidying-enron) by [David Robison](https://twitter.com/drob) where he melts a table into long format with indices for each row and column and a variable holding the value for each cell. 
+This is all made possible thanks to Thomas Lin Pedersen’s ['gganimate'](https://github.com/thomasp85/gganimate) package, a cool [usecase](https://coolbutuseless.github.io/2018/08/12/gganimate-with-bitmap-fonts/) with _geom\_tile()_ plots by [@mikefc](https://twitter.com/coolbutuseless), and this [post](https://rpubs.com/dgrtwo/tidying-enron) by [David Robison](https://twitter.com/drob) where he melts a table into long format with indices for each row and column and a variable holding the value for each cell. 
 
 We can use real data from this table, originally from a book chapter about rodent sociobiology by Ojeda et al. (2016). I had a PDF version of the chapter, and I got the data into R following this [post](
 https://rud.is/b/2018/07/02/freeing-pdf-data-to-account-for-the-unaccounted/) by [Bob Rudis](https://twitter.com/hrbrmstr). I highly recommend 'pdftools' and 'readr' for importing PDF tables.
@@ -42,12 +42,13 @@ The first few lines of the table looked like this, and for this demo we can just
 
 Setting up the data.
 {% highlight r %}
-ibrary(tibble)
+# load libraries
+library(tibble)
 library(dplyr)
 library(unheadr)
 library(purrr)
 library(gganimate)
-
+# tibble
 table1 <- tribble(
   ~Taxon,                                     ~Ecoregions,                      ~Macroniches,    ~Body_mass,
   "Erethizontidae",                                              NA,                                NA,            NA,
@@ -74,7 +75,7 @@ There are grouping values for the taxonomic families that the different genera b
 table1_tidy <- table1 %>%  untangle2("dae$",Taxon,Family) 
 {% endhighlight %}
 
-Once we have the original and ‘untangled’ version of the table, we define a function (inspired by drob) to melt the data and apply it to each one.
+Once we have the original and ‘untangled’ version of the table, we define a function (inspired by _@drob_) to melt the data and apply it to each one.
 
 {% highlight r %}
 longDat <- function(x){
@@ -111,7 +112,7 @@ tab1_long_untangled <- long_tables[[2]] %>%
 
 {% endhighlight %}
 
-After binding the two together, we can plot the tables as geom_tiles and use the ‘tstep’ variable to view them side by side, or one after the other.
+After binding the two together, we can plot the tables as geom_tiles and use the ‘tstep’ variable to view them either side by side, or one after the other.
 
 {% highlight r %}
 longTabs_both <- bind_rows(tab1_long_og,tab1_long_untangled)
@@ -124,9 +125,10 @@ ggplot(longTabs_both,aes(column, -row, fill = celltype)) +
                     labels=c(c(paste("group",seq(1:4)),"data","NA")))
 {% endhighlight %}
 
+
 <figure>
-    <a href="/images/untangledemo.gif"><img src="/images/untanglegemo.gif"></a>
-        <figcaption>so smooth!</figcaption>
+    <a href="/images/sidebyside.png"><img src="/images/sidebyside.png"></a>
+        <figcaption>with facet wrapping</figcaption>
 </figure>
 
 For now, gganimate is only available on GitHub. Once we have installed it, ‘transition_states’ does all the magic.
@@ -149,8 +151,14 @@ ut_animation <-
   ease_aes('sine-in-out')  
 
 {% endhighlight %}
+
+<figure>
+    <a href="/images/untangledemo.gif"><img src="/images/untanglegemo.gif"></a>
+        <figcaption>so smooth!</figcaption>
+</figure>
+
 Once the animation is rendered we can save it to disk using _anim\_save()_.
 
-This approach seems like a good way to animate various types of common steps in data munging, and it should work nicely several dplyr or tidyr verbs. I’ll most like make more animations in the near future.
+This approach seems like a good way to animate various types of common steps in data munging, and it should work nicely to illustrate how several 'dplyr' or 'tidyr' verbs work. I’ll make more animations in the near future.
  
 Thanks for reading!
