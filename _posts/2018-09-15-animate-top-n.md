@@ -29,7 +29,7 @@ For previous posts, I've made graphical summaries of R functions such as this on
 
 Now that I know how to make crude animations of the data-wrangling process, I made this animation of various tidyerse functions piped together. I focused on the _top\_n()_ function in 'dplyr' because I've written about it in the past and the posts still seem to get pretty regular traffic (links below).
 
-
+![gif demo]({{ site.baseurl }}/images/topndemo.gif)
  
 [English version](https://luisdva.github.io/rstats/Top-and-bottom-values-for-groups/)  
 [Spanish version](https://luisdva.github.io/Valores-m%C3%A1ximos-y-m%C3%ADnimos-para-datos-agrupados/) 
@@ -44,8 +44,7 @@ Say we have a dataset with three dogs, three cats, and three birds. We have name
 
 These are Luna and Lili, respectively. 
 
-
 <figure>
-    <a href="/images/ojedaT1.png"><img src="/images/ojedaT1.png"></a>
-        <figcaption>PDF table</figcaption>
+    <a href="/images/cutest.jpg"><img src="/images/cutest.jpg"></a>
+        <figcaption></figcaption>
 </figure>
