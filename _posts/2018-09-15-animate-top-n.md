@@ -46,5 +46,10 @@ These are Luna and Lili, respectively.
 
 <figure>
     <a href="/images/cutest.jpg"><img src="/images/cutest.jpg"></a>
-        <figcaption></figcaption>
+        <figcaption>cutest</figcaption>
 </figure>
+
+peace!
+
+the code:
+{% gist luisDVA/91c99f0df5995e85f725ff134b792c18 %}
