@@ -12,7 +12,7 @@ image:
   feature: featureAnimate.png
   credit: clipartXtras
   creditlink: 
-published: false
+published: true
 ---
 
 Thanks to the 'gganimate' package, expository demos are in season:
@@ -49,7 +49,7 @@ These are Luna and Lili, respectively.
         <figcaption>cutest</figcaption>
 </figure>
 
-peace!
+peace!  
 
 the code:
 {% gist luisDVA/91c99f0df5995e85f725ff134b792c18 %}
