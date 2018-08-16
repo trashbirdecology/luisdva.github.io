@@ -31,11 +31,14 @@ Now that I know how to make crude animations of the data-wrangling process, I ma
 
 ![gif demo]({{ site.baseurl }}/images/topndemo.gif)
  
+top_n() posts:  
 [English version](https://luisdva.github.io/rstats/Top-and-bottom-values-for-groups/)  
 [Spanish version](https://luisdva.github.io/Valores-m%C3%A1ximos-y-m%C3%ADnimos-para-datos-agrupados/) 
 
 
 Say we have a dataset with three dogs, three cats, and three birds. We have names for each one, plus their 'cuteness' rating as a continuous value. The code to create the animation is in the gist at the end of this post (full of hacks but reproducible).
+
+I pasted the code as the plot title, but we can interpret each step like so:
 
 - Mutate to modify character strings, using multiple conditional statements.
 - Filter to discard birds.
