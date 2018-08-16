@@ -27,10 +27,12 @@ For previous posts, I've made graphical summaries of R functions such as this on
         <figcaption></figcaption>
 </figure>
 
-Now that I know how to make crude animations of the data-wrangling process, I made this animation of various tidyerse functions piped together. I focused on the _top\_n()_ function in 'dplyr' because I've written about it in the past and the posts seem to get pretty regular traffic (links below).
+Now that I know how to make crude animations of the data-wrangling process, I made this animation of various tidyerse functions piped together. I focused on the _top\_n()_ function in 'dplyr' because I've written about it in the past and the posts still seem to get pretty regular traffic (links below).
 
-English version
-Spanish version
+
+ 
+[English version](https://luisdva.github.io/rstats/Top-and-bottom-values-for-groups/)  
+[Spanish version](https://luisdva.github.io/Valores-m%C3%A1ximos-y-m%C3%ADnimos-para-datos-agrupados/) 
 
 
 Say we have a dataset with three dogs, three cats, and three birds. We have names for each one, plus their 'cuteness' rating as a continuous value. The code to create the animation is in the gist at the end of this post (full of hacks but reproducible).
@@ -40,7 +42,8 @@ Say we have a dataset with three dogs, three cats, and three birds. We have name
 - Group by the type of animal.
 - Get the top value for each group.
 
-The first few lines of the table looked like this, and for this demo we can just set up the data directly as a tibble.
+These are Luna and Lili, respectively. 
+
 
 <figure>
     <a href="/images/ojedaT1.png"><img src="/images/ojedaT1.png"></a>
