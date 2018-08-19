@@ -12,7 +12,7 @@ image:
   feature: featureAcost.png
   credit: Pixabay CC0 image
   creditlink: 
-published: false
+published: true
 ---
 
 Storing information in PDFs often adds lots of steps (and tears) before we can finally extract and reshape the data into a usable format and structure. Tables in PDFs are just strategically-positioned line borders and text, so we cannot just copy and paste the values into new aggregate datasets, or import them directly into our preferred statistical software. Tables in PDFs do not retain a sense of the rows and columns that hold the values, and that is a problem.
