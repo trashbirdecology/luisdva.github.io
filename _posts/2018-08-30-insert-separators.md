@@ -8,11 +8,11 @@ tags:
   - tidyr
   - pdf
   - regex
-image:
-  feature: 
-  credit: 
+image: 
+  feature: featureTuco.jpg 
+  credit: Wikimedia Commons
   creditlink: 
-published: false
+published: true
 ---
 
 Here’s another quick post about turning human-readable data into something we can actually work with. 
@@ -23,8 +23,7 @@ For my research, I was cleaning some data about rodent specimens from different 
 This is what the first few entries of the table look like.
 
 <figure>
-    <a href="/images/acost.png"><img src="/images/acost.png"></a>
-        <figcaption>this table is on page 3 of the report</figcaption>
+    <a href="/images/arauj.png"><img src="/images/arauj.png"></a>
 </figure>
 
 We are interested in the last column “Sex and collection number”. Two different variables have been condensed in a single column, but that’s fine because there are consistent delimiters and separators. Also, consecutive numbers have been shortened to imply a sequence. 
@@ -33,8 +32,7 @@ The trickiest part are the specimen ID values. These are made up of an acronym a
 
 
 <figure>
-    <a href="/images/acost.png"><img src="/images/acost.png"></a>
-        <figcaption>this table is on page 3 of the report</figcaption>
+    <a href="/images/araujnot.png"><img src="/images/araujnot.png"></a>
 </figure>
 
 The non-delimited collection acronyms are the obvious challenge here. I had encountered this issue before, but I always gave up and solved this through laborious manual editing. Now that I found an adequate solution, I’m using this post to share it and to document my progress with using _tidyr_ and with writing regular expressions (instead of my previous method of blindly copying regex from StackOverflow and hoping it works).
@@ -110,11 +108,11 @@ We can now unnest the collections using these new delimiters
 dat <- dat %>% unnest(specimen = strsplit(specimen, ";")) %>% mutate(specimen=str_squish(specimen))
 {% endhighlight %}
 
-I recommend this book by ... as a handy guide to regex. Important concepts are well explained, and it has a bat on the cover.
+I recommend this book by Michael Fitzgerald as a handy guide to regex. Important concepts are well explained, and it has a bat on the cover.
 
 <figure>
-    <a href="/images/acost.png"><img src="/images/acost.png"></a>
-        <figcaption>this table is on page 3 of the report</figcaption>
+    <a href="/images/regexcover.jpg"><img src="/images/regexcover.jpg"></a>
+        <figcaption>the bat has a baby :)</figcaption>
 </figure>
 
 Afterwards, we can put the collection acronyms into a new variable and unnest the specimens (this part is a little hacky but it works).
