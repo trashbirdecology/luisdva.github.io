@@ -9,7 +9,7 @@ tags:
   - pdf
   - regex
 image: 
-  feature: featureTuco.jpg 
+  feature: featureTuco.png
   credit: Wikimedia Commons
   creditlink: 
 published: true
