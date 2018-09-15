@@ -1,5 +1,5 @@
 ---
-title: "Spreadsheet tomfoolery"
+title: "Spreadsheet hijinks"
 layout: post
 excerpt: The results from crowd-sourcing a suitable term for a common spreadsheet practice.
 tags:
@@ -11,7 +11,7 @@ image:
   feature: featureExcel.png
   credit: 
   creditlink: 
-published: false
+published: true
 ---
 Earlier in the week Jenny Bryan helped me ask the Twitter community what to call this widely used spreadsheet habit (see the image in my Tweet).
 
@@ -66,7 +66,7 @@ and again as a proper table...
 |Third Abnormal Form                                                      |@pitakakariki    |
 |Hydra                                                                    |@JasonWilliamsNY |
 |stubs                                                                    |@IanDennisMiller |
-|nuisance categorical ( or subgroup) variables                            |@nspyrison       |
+|nuisance categorical (or subgroup) variables                             |@nspyrison       |
 |Categorical nuisance formatting                                          |@nspyrison       |
 |Business logic                                                           |@doomsuckle      |
 |Data beheading! Factorless features, grouping gone wrong...              |@SamanthaSifleet |
@@ -76,10 +76,16 @@ and again as a proper table...
 |murder of rows                                                           |@RileenSinha     |
 |GroupNotRow                                                              |@kevin_lanning   |
 
-Overall, there seemed to be no clear-cut consensus but a few themes kept popping up, such as: groups/subgroups, headers, row groups, etc. Everyone is familiar with this somewhat annoying practice, and people from different 
+Overall, there seemed to be no clear-cut consensus but a few themes kept popping up, such as: groups, subgroups, headers, row groups, etc. Everyone is familiar with this somewhat annoying practice, and people from different disciplines pitched in with interpretations that often invoked concepts from database normalization or pivot tables.
 
-In the end, this is what I'll 
+Personally, I'm now partial to calling these things **embedded subheaders**. The header row typically contains the variable names, and the subheader concept seems more flexible and in this case they are embedded in the data rectangle to define subgroups or slices of data, equivalent to the **small multiples** concept from data visualization, as suggested by Duncan Garmonsway in his [Spreadsheet Munging](https://nacnudus.github.io/spreadsheet-munging-strategies/index.html) book. 
 
-mention **attribution by adjacency** (apparently a term from computer science used when defining clauses to parsisng text strings) , because these embedded subheaders are used to imply that the rows below them belong to a subgroup until a new subheader indicates otherwise. 
+I particularly liked  **adjacent attribution** (suggested by Daniel Goodman) as a way to explain how embedded subheaders are expected to work. From what I could find out, this is a term from computer science used when defining clauses used to parse text strings. Embedded subheaders imply that the rows below them belong to a subgroup until a new subheader indicates otherwise, so establishing membership across different groups is a good example of attribution by adjaceny. 
 
-I like the name factros (factor rows), it has a cool tidyverse ring to it and I when I update the documentation for _unheadr_
+Lastly, I liked the name _factros_ (factor rows) suggested by Emily Riederer, it has a cool _tidyverse_ ring to it and I when I update the documentation for _unheadr_ (an [R](https://github.com/luisDVA/unheadr) package that can untangle most cases of embedded subheaders) with everyone's feedback I will try to work it in.
+
+
+If you have any other suggestions please let me know.
+
+
+
