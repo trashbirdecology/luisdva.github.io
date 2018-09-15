@@ -12,6 +12,9 @@ image:
 
 Here is the work that I have presented at international scientific meetings so far.
 
++ Verde Arregoitia, L.D. 2018. Sharing analysis-ready data for macroecological research
+. _British Ecological Society Macroecology Special Interest Group meeting_. Saint Andrews, United Kingdom 
+
 + Verde Arregoitia, L.D. 2017. Publication rates and presenter demographics at the 25th ICCB (Auckland 2011). _28th International Congress for Conservation Biology_. Cartagena, Colombia 
 
 + Verde Arregoitia, L.D. 2016. Rethinking omnivory in rodents. _Rodens et Spatium: the 15th International Conference on Rodent Biology_. Olomouc, Czech Republic
