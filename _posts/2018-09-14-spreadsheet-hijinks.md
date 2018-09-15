@@ -20,7 +20,6 @@ Earlier in the week Jenny Bryan helped me ask the Twitter community what to call
 
 I kept track of the replies to my tweet and to Jenny's retweet, and here are _most_ of the suggested names... 
 
-
 <figure>
     <a href="/images/factros.png"><img src="/images/factros.png"></a>
 </figure>
@@ -77,7 +76,7 @@ and again as a proper table...
 |murder of rows                                                           |@RileenSinha     |
 |GroupNotRow                                                              |@kevin_lanning   |
 
-Overall, there seems to be no clear-cut consensus but a few themes kept popping up, 
+Overall, there seemed to be no clear-cut consensus but a few themes kept popping up, such as: groups/subgroups, headers, row groups, etc. Everyone is familiar with this somewhat annoying practice, and people from different 
 
 In the end, this is what I'll 
 
