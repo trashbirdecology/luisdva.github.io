@@ -12,7 +12,7 @@ image:
   feature: featureMapas.png
   credit: Lake Retba, Senegal. Photo by user aliunix on Unsplash.
   creditlink: 
-published: false
+published: true
 ---
 
 Here is some code and a few recommendations for creating spatially-explicit plots using R and the _ggplot_ and _sf_ packages. 
