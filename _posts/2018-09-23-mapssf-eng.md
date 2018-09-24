@@ -17,9 +17,9 @@ published: true
 
 Here is some code and a few recommendations for creating spatially-explicit plots using R and the _ggplot_ and _sf_ packages. 
 
-Lets suppose that we want to plot country outlines and occurrence points for two species of animals. Without having to download Shapefiles or import spreadsheets, we can use data bundled with or imported by  _rnaturalearth_ (a package from the rOpenSci crew that interacts with Natural Earth, a public domain spatial dataset). We’ll be generating random points to represent point occurrence data for the two species of animals (or plants?).
+Lets suppose that we want to plot country outlines and occurrence points for two species of animals. Without having to download Shapefiles or import spreadsheets, we can use data bundled with or imported by  _rnaturalearth_ (a package from the rOpenSci crew that interacts with Natural Earth, a public domain spatial dataset). We’ll be generating random points to represent point occurrence data for the two species of animals.
 
-We’ll work with Senegal for this post. We can assign an sf (simple features) object for all of Africa, and then filter is by country name. After that, random points for our two hypothetical species can be generated within the Senegal polygon using _st\_sample_.
+We’ll work with Senegal for this post. We can assign an sf (simple features) object for all of Africa, and then filter it by country name. After that, random points for our two hypothetical species can be generated within the Senegal polygon using _st\_sample_.
 
 {% highlight r %}
 # load libraries (install first if needed)
@@ -79,7 +79,7 @@ ptsmerged <- bind_cols(pts,data.frame(ptsMat)) %>% left_join(ptdens,by=c("X"="lo
 
 > **be aware** that the _pointdensity_ function arranges the output table by density, so we need to merge or join this with our sf object. If we simply bind the columns we lose all sense of the actual densities for each point (I learned that the hard way).
 
-We can also improve our map by adding some geographic context. Plotting the neighboring countries can add this useful context. The _st\_touches_ functions tells us which feature share boundaries with our target object, Senegal. This way, we can assign a new object with the neighbors by slicing the one we had for all of Africa. 
+We can also improve our map by adding some geographic context. Plotting the neighboring countries can add this useful context. The _st\_touches_ functions tells us which features share boundaries with our target object, Senegal. This way, we can assign a new object with the neighbors by slicing the one we had for all of Africa. 
  
 {% highlight r %}
 # context
@@ -135,7 +135,7 @@ library(fs)
 dir_ls(glob = "*.png") %>% map(image_read) %>% 
   image_join() %>% image_morph(frames = 20) %>%
   image_animate(fps = 5) %>% 
-  image_write("mapas.gif")
+  image_write("mapas_e.gif")
 {% endhighlight %}
 
 ![gif anim]({{ site.baseurl }}/images/mapas_e.gif)
