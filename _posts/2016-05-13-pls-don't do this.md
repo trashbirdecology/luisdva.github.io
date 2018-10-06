@@ -21,7 +21,7 @@ _Three common bad practices in sharing tables and spreadsheets and how to avoid 
 
 Content from this post appears in the following relevant links:  
 
-[Mark Isken Busniness Analytics coursework - Spreadsheet resources](http://www.sba.oakland.edu/faculty/isken/courses/mis5460_f18/data_org_principles_spreadsheets.html)
+[Mark Isken Busniness Analytics coursework - Spreadsheet resources](http://www.sba.oakland.edu/faculty/isken/courses/mis5460_f18/data_org_principles_spreadsheets.html)  
 [Data Champions](http://bioinformatics-core-shared-training.github.io/avoid-data-disaster/)  
 [Karl Broman's Data Organization resources](http://kbroman.org/dataorg/pages/resources.html)  
 [Jenny Bryan spreadsheet resources](https://github.com/jennybc/2016-06_spreadsheets)  
