@@ -10,6 +10,9 @@ image:
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
+
++ **Luis D. Verde Arregoitia**, Giovani Hernández-Canchola, Luca Santini, Manuel Schweizer, Martín Cabrera-Garrido, & Livia León-Paniagua (2018) Co-occurrence and character convergence in two Neotropical bats, _Journal of Mammalogy_, 99(5):1055–1064, DOI: 10.1093/jmammal/gyy112
+
 + Tania Marines-Macías, Pablo Colunga-Salas, **Luis D. Verde Arregoitia**, Eduardo J. Naranjo & Livia León-Paniagua (2018) Space use by two arboreal rodent species in a Neotropical cloud forest, _Journal of Natural History_, 52:21-22, 1417-1431, DOI: 10.1080/00222933.2018.1459921
 
 + Alaei Kakhki N., Aliabadian M., Förschler M.I., Ghasempouri S.M., Kiabi B.H., **Verde Arregoitia, L.D.**, Schweizer, M. Phylogeography of the Oenanthe hispanica–pleschanka–cypriaca complex (Aves, Muscicapidae: Saxicolinae): Diversification history of open-habitat specialists based on climate niche models, genetic data, and morphometric data.(2018) _J Zool Syst Evol Res_. 00:1–20. 
