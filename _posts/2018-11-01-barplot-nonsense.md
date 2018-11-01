@@ -37,13 +37,32 @@ This tweet speaks for itself, and all those options can be made in ggplot with t
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 If we absolutely need to plot bars for multiple observations per group, the approach below may be an option. 
-The code for this is at the end of this post. At this point it's pretty hacky, but I think something like this could be made into a custom geom by anyone who is good at ggproto. The 
+At this point it's pretty hacky, but I think something like this could be made into a custom geom by anyone who is good at ggproto. 
 
 1. Generate random values within the bounds of the mean plus or minus the standard error.
 2. Overlay semi-transparent bars to show the range of the standard error.
 3. Draw a bars with an outline but no fill to show the point estimate (means).
 
-This is not meant to show the sample size or underlying distribution of the data, but it shows the estimate and standard error without looking as lame. 
+This is not meant to show the sample size or underlying distribution of the data, but it shows the estimates and standard errors without looking as lame. I was mostly interested in learning the data manipulation steps needed to generate the random values. I have to admit that I could not figure out how to add the layers iteratively, so there is a lot of copying and pasting.  
+
+This are the means for one of the variables (mean sleeping time) in the built-in mammalian sleep dataset, by dietary guild.
+{%%}
+{%%}
+
+Now with error bars.
+{%%}
+{%%}
+
+We need several steps to create a separate wide-form dataset of random values within the range of the standard errors for each group.
+{%%}
+{%%}
+
+The plotting code is a mess but bear with me.
+{%%}
+{%%}
+
+
+
 
 <figure>
     <a href="/images/failammac.png"><img src="/images/failammac.png"></a>
