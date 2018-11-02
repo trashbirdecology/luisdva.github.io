@@ -1,5 +1,5 @@
 ---
-title: "No more bar charts with error bars please"
+title: "Less bar charts with error bars please"
 layout: post
 excerpt: ggplot2 alternatives to dynamite plunger plots
 category: rstats
