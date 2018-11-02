@@ -12,7 +12,7 @@ image:
   feature:  
   credit: 
   creditlink: 
-published: false
+published: true
 ---
 
 Computer scientists, psychologists, and statisticians have all studied how to create visualizations that communicate data effectively. Graphical perception experiments showed that the human visual system is pretty good at decoding numerical data mapped to the spatial position of a graphical feature (Heer et al. 2010). This may be why bar charts are so popular and widely-used.  
