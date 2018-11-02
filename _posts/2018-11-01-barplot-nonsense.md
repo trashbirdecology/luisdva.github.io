@@ -19,7 +19,7 @@ Computer scientists, psychologists, and statisticians have all studied how to cr
 
 <figure>
     <a href="/images/graph3d.jpg"><img src="/images/graph3d.jpg"></a>
-        <figcaption></figcaption>
+        <figcaption>CCO image</figcaption>
 </figure>
 
 
@@ -28,14 +28,14 @@ To show counts or frequencies of observations for different groups, we can make 
 
 <figure>
     <a href="/images/dynam.jpg"><img src="/images/dynam.jpg"></a>
-        <figcaption></figcaption>
+        <figcaption>CCO image</figcaption>
 </figure>
 
 Bar charts for multiple observations are not good because:
 - they conceal the underlying data, so we cannot see the its distribution or the sample size  
 - they look pretty lame  
 
-I'm writing this quick post after teaching a ggplot workshop last month, followed by two biology conferences where I saw these plots used by students, plenary speakers, bioinformaticians, and various other researchers. In 2016, Helena Jambor also noted how [prevalent](http://thenode.biologists.com/barbarplots/) these charts are, even in top journals. 
+I'm writing this quick post after teaching a ggplot workshop last month, followed by attending two biology conferences where I saw these plots used by students, plenary speakers, bioinformaticians, and various other researchers. In 2016, Helena Jambor also noted how [prevalent](http://thenode.biologists.com/barbarplots/) these charts are, even in top journals. 
 
 ## Alternatives to the bar chart
 
@@ -97,7 +97,7 @@ ggplot(msleep_summary,aes(diet,total_sleep))+
 
 <figure>
     <a href="/images/02_barsdyn.png"><img src="/images/02_barsdyn.png"></a>
-        <figcaption></figcaption>
+        <figcaption>yuck!</figcaption>
 </figure>
 
 Now bars for the means, and the lower and upper bounds of the estimates.
