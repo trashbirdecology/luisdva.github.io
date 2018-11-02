@@ -1,7 +1,7 @@
 ---
 title: "No more bar charts with error bars please"
 layout: post
-excerpt: some ggplot2 alternatives to dynamite-plunger plots
+excerpt: ggplot2 alternatives to dynamite plunger plots
 category: rstats
 tags:
   - bar chart
@@ -179,8 +179,6 @@ msleep %>% filter(!is.na(vore)) %>%
 </figure>
 
 Contact me if you have any feedback or questions.
-Salu2,
-Luis
 
 ## References 
 Heer, Jeffrey, Michael Bostock, and Vadim Ogievetsky. "A tour through the visualization zoo." Commun. Acm 53.6 (2010): 59-67.
