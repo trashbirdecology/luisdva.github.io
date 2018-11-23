@@ -69,7 +69,7 @@ beer_prices <- beer_prices %>% strsplit("\n") %>% unlist() %>% data_frame(prices
 {% endhighlight %}
 
 In tibble form:  
-{% highlighttext %}
+{% highlight text %}
 # A tibble: 15 x 1
    prices                               
    <chr>                                
@@ -109,7 +109,7 @@ beer_prices %>% separate(prices,into = c("beer","price"),sep = " \\$") %>%
 
 End result:
 
-{% highlighttext %}
+{% highlight text %}
 # A tibble: 13 x 3
    beer                              price type             
    <chr>                             <dbl> <chr>            
@@ -144,7 +144,7 @@ beer_prices %>% mutate(prices_usd = price*0.05)
 Let's have a look at the results:
 
 # Average prices
-{% highlighttext %}
+{% highlight text %}
 # A tibble: 2 x 2
   type              avg_price
   <chr>                 <dbl>
@@ -153,7 +153,7 @@ Let's have a look at the results:
 {% endhighlight %}
 
 # Most expensive commercial beer
-{% highlighttext %}
+{% highlight text %}
 # A tibble: 1 x 3
   beer           price type             
   <chr>          <dbl> <chr>            
@@ -161,7 +161,7 @@ Let's have a look at the results:
 {% endhighlight %}
   
 # Least expensive (three-way tie)
-{% highlighttext %}
+{% highlight text %}
 # A tibble: 3 x 3
   beer           price type             
   <chr>          <dbl> <chr>            
@@ -171,7 +171,7 @@ Let's have a look at the results:
 {% endhighlight %}
   
 # Convert prices to USD
-{% highlighttext %}
+{% highlight text %}
 # A tibble: 13 x 4
    beer                       price type          prices_usd
    <chr>                      <dbl> <chr>              <dbl>
