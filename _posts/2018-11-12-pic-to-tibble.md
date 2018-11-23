@@ -23,7 +23,7 @@ After a recent [update](https://ropensci.org/technotes/2018/11/06/tesseract-40/)
         <figcaption></figcaption>
 </figure>
 
-The menu is from a nice taco place in Puerto Vallarta. I cropped the photo the to beer selection. There are craft beers and commercial beers as little subsets of the menu, each with their own heading. 
+The menu is from a nice taco place in Puerto Vallarta. I cropped the photo to the beer selection. There are craft beers and commercial beers as little subsets of the menu, each with their own heading. 
 
 ## Code-through
 
