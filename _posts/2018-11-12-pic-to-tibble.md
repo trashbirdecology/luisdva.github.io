@@ -23,13 +23,13 @@ After a recent [update](https://ropensci.org/technotes/2018/11/06/tesseract-40/)
         <figcaption></figcaption>
 </figure>
 
-The menu is from a nice taco place in Puerto Vallarta. I cropped the photo to beer selection. There are craft beers and commercial beers as little subsets of the menu, each with their own heading. 
+The menu is from a nice taco place in Puerto Vallarta. I cropped the photo the to beer selection. There are craft beers and commercial beers as little subsets of the menu, each with their own heading. 
 
 ## Code-through
 
 Let's ocr the text and then restructure the data.
 
-To prepare the image for ocr, I followed some existing _imagemagick_ tutorials, and the implementation in _magick_ lets us chain the different operations together, making for very readable code. The code below will read the photo striaght from the web, so anyone can follow after installing all the required packages.
+To prepare the image for ocr, I followed some existing _imagemagick_ tutorials, and the implementation in _magick_ lets us chain the different operations together, making for very readable code. The code below will read the photo striaght from the web, so anyone can follow along after installing all the required packages.
 
 {% highlight r %}
 # load packages
