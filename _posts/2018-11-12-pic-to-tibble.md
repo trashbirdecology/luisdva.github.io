@@ -12,7 +12,7 @@ image:
   feature: featurePV.png
   credit: LV
   creditlink: 
-published: false
+published: true
 ---
 When I first wrote about tidy evaluation and the [_untangle2_ function](https://luisdva.github.io/rstats/tidyeval/), I used restaurant menus as an example of how embedded subheaders are used to create small multiples of data (by type of menu item). 
 
