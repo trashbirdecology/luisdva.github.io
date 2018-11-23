@@ -9,8 +9,8 @@ tags:
   - ocr
   - subheaders
 image: 
-  feature:  
-  credit: 
+  feature: featurePV.png
+  credit: LV
   creditlink: 
 published: false
 ---
@@ -18,19 +18,18 @@ When I first wrote about tidy evaluation and the untangle2 function, I used rest
 
 After a recent [update](https://ropensci.org/technotes/2018/11/06/tesseract-40/) to the _tesseract_ optical character recognition (ocr) engine, I decided to try and digitize and parse a restaruant menu from a photo. I wanted to try with a real photo from a real menu, and I found this photo in my camera roll.  
 
-PHOTO
+<figure>
+    <a href="/images/beer.jpg"><img src="/images/beer.jpg"></a>
+        <figcaption></figcaption>
+</figure>
 
 The menu is from a nice taco place in Puerto Vallarta. I cropped the photo to beer selection, there are craft beers and commercial beers as little subsets of the menu and each with their own heading. 
 
+## Code-through
 
-<figure>
-    <a href="/images/graph3d.jpg"><img src="/images/graph3d.jpg"></a>
-        <figcaption>CCO image</figcaption>
-</figure>
+Let's ocr the text and then restructure the data.
 
-Let's go through the code needed to ocr the text and then restructure the data.
-
-To prepare the image for ocr, I followed some existing imagemagick tutorials, and the implementation in _magick_ lets us chain the different operations together, making for very readable code. 
+To prepare the image for ocr, I followed some existing imagemagick tutorials, and the implementation in _magick_ lets us chain the different operations together, making for very readable code. The code below will read the photo striaght from the web, so anyone can follow after installing all the required packages.
 
 {% highlight r %}
 
@@ -39,7 +38,7 @@ To prepare the image for ocr, I followed some existing imagemagick tutorials, an
 The resulting image looks like this (even though we don't need to write it to disk for the ocr process).
 
 <figure>
-    <a href="/images/graph3d.jpg"><img src="/images/graph3d.jpg"></a>
+    <a href="/images/blcean.jpg"><img src="/images/bclean.jpeg"></a>
         <figcaption>CCO image</figcaption>
 </figure>
 
