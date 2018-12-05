@@ -14,6 +14,8 @@ image:
   creditlink:
 published: true
 ---
+## Dec/2018: I've updated the code in this post to use functions from dplyr 0.8.0 and a tidier approach in general. Read more about this upcoming release [here](https://www.tidyverse.org/articles/2018/12/dplyr-0-8-0-release-candidate/). 
+
 After running some data wrangling demo sessions with my research group, a lab mate emailed me with the following question:
 
 > “I have a table with almost 20000 point occurrence records for bats in Peru. I need to split this into separate files for each species, keeping only distinct records (distinct latitude/longitude combinations).”
@@ -35,8 +37,11 @@ With the code below, we are going to:
 
 {% highlight r %}
 # load libraries
-library(dplyr)
+# devtools::install_github("tidyverse/dplyr") # for 0.8.0 release
+library(dplyr)  
 library(purrr)
+library(tidyr)
+library(readr)
 
 # read csv from web
 batRecs <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/batRecords.csv",stringsAsFactors = FALSE)
@@ -44,16 +49,17 @@ batRecs <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/b
 # preview how many files we should be ending up with
 batRecs %>% count(family)
 
+
 # drop na, split, remove duplicates, write to disk
-batRecs %>%  na.omit() %>% 
-  split(.$family) %>% map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE)) %>% 
-  walk(~.x %>%  write.csv(file = paste0("nov1_",unique(.x$family),".csv"),
-                   row.names = FALSE))
+batRecs %>%  drop_na() %>% 
+  group_by(family) %>% group_map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE)) %>% 
+  group_split() %>% 
+  walk(~.x %>%  write_csv(path = paste0("dec_",unique(.x$family),".csv")))
 {% endhighlight %}
 
-I used _split_ to create a list of data frames for each group, then _map_ to apply functions to each list element. I used _paste0_ to create a path for each file to be written, including a prefix for the date. In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the _here_ and _glue_ packages is probably a good idea. 
+I used _group\_by_ and _group\_map_ to create a grouped tibble and apply functions to each group. After that, _group\_split_ splits the tibble into a list, and I used _paste0_ to create a path for each file to be written, including a custom prefix. In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the _here_ and _glue_ packages is probably a good idea. 
 
-I’m using _walk_ because _write.csv_ returns nothing and creates the csv file as a side effect, and as explained in the documentation, _walk_ calls functions for their side effects.   
+I’m using _walk_ because _write\_csv_ returns nothing and creates the csv file as a side effect, and as explained in the documentation, _walk_ calls functions for their side effects.   
 
 Because I was so excited about actually getting everything to work, I put together this cheatsheet-style graphic to describe the workflow. This approach already saved me and my labmate lots of time. I hope others find it useful too. 
 
