@@ -20,7 +20,7 @@ After running some data wrangling demo sessions with my research group, a lab ma
 
 > “I have a table with almost 20000 point occurrence records for bats in Peru. I need to split this into separate files for each species, keeping only distinct records (distinct latitude/longitude combinations).”
 
-The only time I ever did something like that before I ended up cutting and pasting the records for each group by hand in Excel. I usually use one input file and one output file at a time, but this sounded like something that could be done in R.
+The only time I ever did something like that before I ended up cutting and pasting the records for each group by hand in Excel. I generally use one input file and one output file at a time, but this sounded like something that could be done in R.
 
 Grouping data and removing duplicated rows is straightforward using _dplyr_, so the challenge would be to split the groups and apply functions to each one before finally exporting them as separate files. I’ve been getting into the _purrr_ package for iterating over lists and vectors, and after lots of trial and error all the steps worked out OK.
 
