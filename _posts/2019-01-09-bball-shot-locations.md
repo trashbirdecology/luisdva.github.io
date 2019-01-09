@@ -11,7 +11,7 @@ image:
   feature: featureBallin.png
   credit: 
   creditlink: 
-published: false
+published: true
 ---
 
 Here's a follow up to my previous [post](https://luisdva.github.io/rstats/bball-shots/) about using _nbastatr_ and _gganimate_ to visualize a player's shots throughout an NBA game.
