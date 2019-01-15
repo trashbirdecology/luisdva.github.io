@@ -11,7 +11,7 @@ image:
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
 + Galán-Acedo, C., Arroyo-Rodríguez, V., Andresen, E., **Verde Arregoitia, L.D.,** Vega, E., Peres, C.A. & Ewers, R.M. (2019)  	
-The conservation value of human-modified landscapes for the world’s primates , _Nature Communications_, 10(152), DOI:  10.1038/s41467-018-08139-0
+The conservation value of human-modified landscapes for the world’s primates , _Nature Communications_, 10(1), 152 DOI:  10.1038/s41467-018-08139-0
 
 + **Luis D. Verde Arregoitia**, Giovani Hernández-Canchola, Luca Santini, Manuel Schweizer, Martín Cabrera-Garrido, & Livia León-Paniagua (2018) Co-occurrence and character convergence in two Neotropical bats, _Journal of Mammalogy_, 99(5):1055–1064, DOI: 10.1093/jmammal/gyy112
 
