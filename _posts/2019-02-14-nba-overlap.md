@@ -1,5 +1,5 @@
 ---
-title: "Quantifying overlap across NBA player's most frequent shooting locations"
+title: "Quantifying point overlap for NBA shot chart data"
 layout: post
 excerpt: Find the most and least similar shot patterns for basketall players.
 category: rstats
@@ -52,8 +52,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
         <figcaption>court plot courtesy of ballR</figcaption>
 </figure>
 <br><br>  
-  
-- Once we have a court as a simple feature object, we can overlap a grid on in and get the shot richness. Here's an example of the intermediate steps involved. 
+- Once we have a court as a simple feature object, we can overlap a grid on in and get the shot richness. Here's an example of the intermediate steps involved, shown for only one of the players. 
   
 
 <figure>
@@ -76,7 +75,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
 
 - Subset the data for the pairs with the highest and the lowest values (most and least spatial overlap).  
 - Plot the shot centroids (with some jitter to show any overlapping grid centroids).  
-
+<br><br>     
 <figure>
     <a href="/images/topbottomOw.png"><img src="/images/topbottomOw.png"></a>
         <figcaption></figcaption>
