@@ -51,7 +51,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
     <a href="/images/court_grid.png"><img src="/images/court_grid.png"></a>
         <figcaption>court plot courtesy of ballR</figcaption>
 </figure>
-  
+<br><br>  
   
 - Once we have a court as a simple feature object, we can overlap a grid on in and get the shot richness. Here's an example of the intermediate steps involved. 
   
@@ -60,7 +60,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
     <a href="/images/jtinterm.png"><img src="/images/jtinterm.png"></a>
         <figcaption>the 'bamako' palette is very fitting for the Celtics</figcaption>
 </figure>
-  
+<br><br>  
 
 - Now the 'top' cells and their centroids.  
   
@@ -68,7 +68,8 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
     <a href="/images/jtinterm2.png"><img src="/images/jtinterm2.png"></a>
         <figcaption></figcaption>
 </figure>
-  
+<br><br>
+
 - Finally, calculate O for every combination of two players.  
 
 > The value of _O_ is bounded between 0 and 1. Values close to zero indicate little spatial overlap, while a value of ~0.5 is expected if the occurrence points of the two samples are randomly and independently distributed across the same area. In the intended implementation of the _O_ metric for co-occurring species, values between 0.5 and 1 would be possible in cases of strong intraspecific competition, but in this case these values > 0.5 would more or less indicate spatial clustering of the two samples. Broadly, the highest and lowest values in the matrix of pairwise comparisons would show us the most and least overlap in shooting ‘preferences’, which can then be plotted.  
@@ -80,7 +81,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
     <a href="/images/topbottomO.png"><img src="/images/topbottomO.png"></a>
         <figcaption></figcaption>
 </figure>
-
+<br><br>
 
 To get an idea of the rest of the pairwise comparisons, we can draw the matrix of all pairwise comparisons using the new _gt_ package (this is a screenshot, the functions for exporting gt objects as images seem to be in development). 
 
@@ -89,7 +90,7 @@ To get an idea of the rest of the pairwise comparisons, we can draw the matrix o
     <a href="/images/OVals.png"><img src="/images/Ovals.png"></a>
         <figcaption></figcaption>
 </figure>
-  
+<br><br>  
 
 I didn't test the sensitivity of this approach to the size of grid cells, and to the number of top shots specified. For more fun and interactivity, this is the kind of project that could be made into a Shiny app but I lack the time and expertise, so contact me if you’d like to collaborate. 
 
