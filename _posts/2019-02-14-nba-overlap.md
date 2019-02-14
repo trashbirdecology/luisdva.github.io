@@ -11,7 +11,7 @@ image:
   feature: featureBallin.png
   credit: 
   creditlink: 
-published: false
+published: true
 ---
 
 I saw this [article](http://www.espn.com/nba/story/_/id/25867382/trae-young-says-luka-doncic-trade-worked-teams) about similarities and differences between NBA rookies Trae Young and Luka Doncic, and it made me wonder if parts of their game could be summarized and compared using shot chart data. 
