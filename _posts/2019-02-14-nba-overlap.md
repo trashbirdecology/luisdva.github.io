@@ -78,7 +78,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
 - Plot the shot centroids (with some jitter to show any overlapping grid centroids).  
 
 <figure>
-    <a href="/images/topbottomO.png"><img src="/images/topbottomO.png"></a>
+    <a href="/images/topbottomOw.png"><img src="/images/topbottomOw.png"></a>
         <figcaption></figcaption>
 </figure>
 <br><br>
@@ -97,3 +97,5 @@ I didn't test the sensitivity of this approach to the size of grid cells, and to
 
 Keep ballin'  
 
+The code:
+{% gist luisDVA/fac90ae68b5a95ea497853dbb52d51a2%}
