@@ -22,7 +22,7 @@ To summarize shot chart data, I went with a grid-cell approach to identify the s
 
 All the code is in the gist at the end of the post, and the code should be fully reproducible as long as the relevant packages are installed. 
 
-Below are the main steps in the workflow. Instead of copying and pasting extensively, I rolled some of the steps into functions that take lists and iterate over data frames of shot chart data for many players. The functions are pretty rough, and it was my first writing functions without for loops. I’m mostly comparing data from the ongoing season for point and shooting guards, but I added some of my favorite players from past seasons just for fun. 
+Below are the main steps in the workflow. Instead of copying and pasting extensively, I rolled some of the steps into functions that take lists and iterate over data frames of shot chart data for many players. The functions are pretty rough, and it was my first writing functions using _purrr_ instead of _for_ loops. I’m mostly comparing data from the ongoing season for point and shooting guards, but I added some of my favorite players from past seasons just for fun. 
 
 All shot chart data corresponds to the 2019 season, except for the three Knicks legends (1999 season). 
  
