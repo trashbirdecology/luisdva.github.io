@@ -10,6 +10,8 @@ image:
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
++ **Verde Arregoitia, L.D.** & González‐Suárez, M. 2019. From conference abstract to publication in the conservation science literature. Conservation Biology https://doi.org/10.1111/cobi.13296
+
 + **Verde Arregoitia, L.D.**, Cooper. N., & D’Elía, G. 2018. Good practices for sharing analysis-ready data in mammalogy and biodiversity research. Hystrix, the Italian Journal of Mammalogy 29: 155-161 https://doi.org/10.4404/hystrix-00133-2018
 
 + Galán-Acedo, C., Arroyo-Rodríguez, V., Andresen, E., **Verde Arregoitia, L.D.,** Vega, E., Peres, C.A. & Ewers, R.M. (2019)  	
