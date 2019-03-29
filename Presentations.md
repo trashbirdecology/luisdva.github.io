@@ -12,6 +12,9 @@ image:
 
 Here is the work that I have presented at international scientific meetings so far.
 
++ Verde Arregoitia, L.D. & Guillermo D'Elía. 2018. Aggregating phylogenetic and trait data to study
+the ecomorphology of caviomorph rodents. _British Ecological Society, Annual Meeting_. Birmingham, United Kingdom
+
 + Verde Arregoitia, L.D. 2018. Sharing analysis-ready data for macroecological research
 . _British Ecological Society Macroecology Special Interest Group meeting_. Saint Andrews, United Kingdom 
 
