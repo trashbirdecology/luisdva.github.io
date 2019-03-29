@@ -83,7 +83,7 @@ A quick glimpse of the resulting tibbles shows us how the plotting variables (x,
 # … with 252 more rows
 {% endhighlight %} 
 
-Now we can start plotting. The suitable geom here is _geom\_col_ because we want the bars to add up to 1. This approach lets us control the spacing of different locations by using facets, the *expand* argument for the scales, and the *panel.spacing* argument for the overall plot theme. Note how the scales and space arguments to _facet\_grid_ help us accommodate the different number of individuals per location. *Switch* places the facet labels below the plot. We can use _fct\_inorder_ from the 'forcats' package to avoid alphabetic arrangement of the facets.
+Now we can start plotting. The suitable geom here is _geom\_col_ because we want the bars to add up to 1. This approach lets us control the spacing of different locations by using facets, the *expand* argument for the scales, and the *panel.spacing* argument for the overall plot theme. Note how the *scales* and *space* arguments to _facet\_grid_ help us accommodate the different number of individuals per location. *Switch* places the facet labels below the plot. We can use _fct\_inorder_ from the 'forcats' package to avoid alphabetic arrangement of the facets.
 
 {% highlight r %}
 # plotting
