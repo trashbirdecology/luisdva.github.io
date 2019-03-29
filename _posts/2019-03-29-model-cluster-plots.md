@@ -162,7 +162,7 @@ The output should look like this:
 </figure>
 <br><br>  
 
-The plots with simulated data probably look hideous to anyone who studies real populations, but this should be a useful outline for those who have real data. Thanks to urban evolutionary biologist Liz Carlen for the inspiration. Feel free to contact me with any feedback or questions.  
+The plots with simulated data probably look hideous to anyone who studies real populations (given the lack of structure), but this should be a useful outline for those who have real data. Thanks to urban evolutionary biologist Liz Carlen for the inspiration. Feel free to contact me with any feedback or questions.  
 
 LD
 
