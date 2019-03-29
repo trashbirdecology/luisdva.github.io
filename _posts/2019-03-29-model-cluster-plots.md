@@ -16,7 +16,7 @@ published: true
 ---
 
 
-Here’s one approach for plotting a set of faceted stacked barplots showing the output from popular software (e.g. Structure, DAPC, or Admixture) used for population genetics/genomics and phylogeography. This code may come in handy when plotting individuals from different locations and models with different numbers of proposed ancestral populations. 
+Here’s one approach for plotting a set of faceted stacked barplots showing the output from popular software and methods (e.g. Structure, DAPC, or Admixture) used for population genetics/genomics and phylogeography. This code may come in handy when plotting individuals from different locations and models with different numbers of proposed ancestral populations. 
 
 To make the plots with made up data, let’s write a quick function to generate random proportions for an arbitrary number of proposed ancestral populations and samples. We can leverage the ‘long’ output from _tibble’s_ 'enframe' function and end up with a ggplot-ready tibble. For real data such as Admixture Q files, this table shape can also be accomplished easily with the _tidyr_ 'gather' function (and its upcoming replacement).
   
