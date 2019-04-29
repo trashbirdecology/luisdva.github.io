@@ -16,13 +16,19 @@ image:
 published: false
 ---
 
-The American Kennel Club just announced the 2017 rankings of dog breed [popularity](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"} in the USA. A few days later, Dominik Koch [blogged](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in R using _ggplot2_ to show changes in rank over time. 
+The American Kennel Club just announced the 2018 rankings of dog breed [popularity](https://www.akc.org/expert-advice/news/most-popular-dog-breeds-of-2018/){:target="_blank"}, collected from registration data in the USA. 
 
-The ACK also released an [update](http://www.akc.org/expert-advice/news/most-popular-dog-breeds-full-ranking-list/){:target="_blank"} (a.k.a. _pupdate_) to the full list of breed rankings from 2013 to 2017, and it looked like a good dataset to try out the code for making bump charts. 
+Last year, I followed this [post](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} by Dominik Koch about creating bump charts in R using _ggplot2_ to show changes in rank over time, and applied it to dog breed popularity rankings from 2017-2018. The resulting chart looks like this and the code is detailed in this [entry](https://luisdva.github.io/rstats/dog-bump-chart/){:target="_blank"}.
 
-For this post, I was only interested in the top ten breeds of 2017 and how they’ve changed in ranking since 2013. 
 
-In the original bump chart example with Olympic medal rankings, countries are labeled using little flags and the _ggflags_ package. I wanted to use custom images as labels, and the [ggimage](https://github.com/GuangchuangYu/ggimage){:target="_blank"} package worked out great for that. I’ve written code to [scrape and download dog photos](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} by breed in the past, but for this post I drew each dog by hand. 
+<figure>
+    <a href="/images/akcranks.png"><img src="/images/akcranks.png"></a>
+        <figcaption>click to enlarge</figcaption>
+</figure>
+
+For this post, I was only interested in the top ten breeds of 2018 and how they’ve changed in ranking since 2013. 
+
+I wanted to use custom images as labels, and the [ggimage](https://github.com/GuangchuangYu/ggimage){:target="_blank"} package worked out great for that. I’ve written code to [scrape and download dog photos](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} by breed in the past, but for this post I drew each dog by hand. 
 
 Side note: I used this nifty function by [Maëlle Salmon](https://twitter.com/ma_salmon){:target="_blank"} for batch resizing images using the packages _purrr_ and _magick_. I uploaded all the drawings [here](https://github.com/luisDVA/luisdva.github.io/tree/master/images/pup){:target="_blank"}. 
 
@@ -153,6 +159,5 @@ A lot of the media coverage of the recent rankings noted how French bulldogs hav
 
 Thanks for reading. Feel free to contact me if anything isn't working.
 
-  
-> Cuteness aside, I'm aware of the health issues of brachycephalous breeds and I oppose selective inbreeding (line breeding) to meet arbitrary standards. Also: I'm very biased towards retrievers.   
+
 
