@@ -13,12 +13,12 @@ image:
   feature: featureDoggs.png
   credit: Pixabay CC0 image
   creditlink: 
-published: false
+published: true
 ---
 
 The American Kennel Club just announced the 2018 rankings of dog breed [popularity](https://www.akc.org/expert-advice/news/most-popular-dog-breeds-of-2018/){:target="_blank"}, collected from registration data in the USA. 
 
-Last year, I followed this [post](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} by Dominik Koch about creating bump charts in R using _ggplot2_ to show changes in rank over time, and applied it to dog breed popularity rankings from 2013-2017. The resulting chart is below, and the code is detailed in this [entry](https://luisdva.github.io/rstats/dog-bump-chart/){:target="_blank"}.
+Last year, I followed this [post](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} by Dominik Koch about creating bump charts in R using _ggplot2_ to show changes in rank over time, and applied it to dog breed popularity rankings from 2013-2017. The resulting chart is below, and the code is detailed in this [entry](https://luisdva.github.io/rstats/dog-bump-chart/){:target="_blank"}.  
 
 
 <figure>
@@ -38,7 +38,7 @@ The new dog drawings look like this. I assembled the little collage using Maëll
 </figure>
 <br><br>
 
-...and here's the updated plot:
+...and here's the updated plot:  
 
 <figure>
     <a href="/images/akcranks2019.png"><img src="/images/akcranks2019.png"></a>
