@@ -27,7 +27,7 @@ Last year, I followed this [post](https://dominikkoch.github.io/Bump-Chart/){:ta
 </figure>
 <br><br>
 
-With the new rankings out, here's a quick update to last year's post. I drew more dogs for use as custom image labels with [ggimage](https://github.com/GuangchuangYu/ggimage){:target="_blank"}, and this time they are full-size pngs with transparent backgrounds, available [here](https://raw.githubusercontent.com/luisDVA/luisdva.github.io/master/images/pups/){:target="_blank"}. 
+With the new rankings out, here's a quick update to last year's post. I drew more dogs for use as custom image labels with [ggimage](https://github.com/GuangchuangYu/ggimage){:target="_blank"}, and this time they are full-size pngs with transparent backgrounds, available [here](https://github.com/luisDVA/luisdva.github.io/tree/master/images/pups/){:target="_blank"}. 
 
 The new dog drawings look like this. I assembled the little collage using Maëlle Salmon's _magick_ [resources](https://masalmon.eu/tags/collage/){:target="_blank"}.
 
