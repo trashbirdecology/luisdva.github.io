@@ -25,20 +25,26 @@ Last year, I followed this [post](https://dominikkoch.github.io/Bump-Chart/){:ta
     <a href="/images/akcranks.png"><img src="/images/akcranks.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
+<br><br>
 
 With the new rankings out, here's a quick update to last year's post. I drew more dogs for use as custom image labels with [ggimage](https://github.com/GuangchuangYu/ggimage){:target="_blank"}, and this time they are full-size pngs with transparent backgrounds, available [here](https://raw.githubusercontent.com/luisDVA/luisdva.github.io/master/images/pups/){:target="_blank"}. 
 
 Here's the updated plot:
+
 <figure>
     <a href="/images/akcranks2019.png"><img src="/images/akcranks2019.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
-
+<br><br>
 
 The code for the updated chart is in the gist at the end of this post. The plotting code is less fiddly and I was more careful with paths when working with the images. 
 
 
 Thanks for reading. Let me know if anything isn't working and feel free to reuse the dog drawings (with attribution). 
 
+
+
+The code:
+{% gist luisDVA/fac90ae68b5a95ea497853dbb52d51a2%}
 
 
