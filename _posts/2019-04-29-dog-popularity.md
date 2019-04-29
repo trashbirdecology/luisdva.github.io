@@ -53,6 +53,6 @@ Thanks for reading. Let me know if anything isn't working and feel free to reuse
 
 
 The code:
-{% gist luisDVA/1678e030a3c33cb18f4e53a1a83357be}
+{% gist luisDVA/1678e030a3c33cb18f4e53a1a83357be %}
 
 
