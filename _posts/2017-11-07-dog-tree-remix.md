@@ -275,6 +275,7 @@ Because these plots are actually showing data related to dogs, I’m well justif
 
 The function itself has many dependencies and is a mess in terms of functional programming but it works, and writing it helped me learn about webscraping, working with grid objects, and table joins. I made some updates so that the scraped photos appear with labels. 
 
+> This [guide](https://yourdogadvisor.com/smartest-dog-breeds/){:target="_blank"} by [Your Dog Advisor](https://yourdogadvisor.com/smartest-dog-breeds/){:target="_blank"} on the smartest dog breeds is now available, and it also contains trait data that we could draw alongside the tree tips. 
 
 <figure>
     <a href="/images/lilili.jpeg"><img src="/images/lilili.jpeg"></a>
