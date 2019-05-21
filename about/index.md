@@ -28,7 +28,7 @@ I'm interested in mammal diversity - past, and present. Through my research I ai
 From July 2015 until October 2016 I was a postdoctoral research fellow in the Vertebrates Department at the [Natural History Musem Bern](https://www.nmbe.ch/en). My project involved relating ecology to morphology to phylogeny in rodents using museum collections and phylogenies. I am currently a postdoctoral researcher at the Instituto de Ciencias Ambientales y Evolutivas, Universidad Austral de Chile. I will be studying the ecomorphological evolution of South American rodents until April 2020.
 
 <figure>
-    <a href="/images/luisdrst.jpg"><img src="/images/luisdrst.jpg"></a>
+    <a href="/images/luisdrst.JPG"><img src="/images/luisdrst.JPG"></a>
         <figcaption>photo by JD Long</figcaption>
 </figure>
 
