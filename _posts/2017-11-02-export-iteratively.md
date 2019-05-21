@@ -14,7 +14,8 @@ image:
   creditlink:
 published: true
 ---
-## Dec/2018: I've updated the code in this post to use functions from dplyr 0.8.0 and a tidier approach in general. Read more about this upcoming release [here](https://www.tidyverse.org/articles/2018/12/dplyr-0-8-0-release-candidate/). 
+## May-2019: Updated again to keep up with changes to the _group\_map_ function in _dplyr_ 0.8.1.  
+### Dec-2018: Updated the code in this post to use functions from _dplyr_ 0.8.0 and a tidier approach in general. Read more about this upcoming release [here](https://www.tidyverse.org/articles/2018/12/dplyr-0-8-0-release-candidate/). 
 
 After running some data wrangling demo sessions with my research group, a lab mate emailed me with the following question:
 
@@ -37,7 +38,6 @@ With the code below, we are going to:
 
 {% highlight r %}
 # load libraries
-# devtools::install_github("tidyverse/dplyr") # for 0.8.0 release
 library(dplyr)  
 library(purrr)
 library(tidyr)
@@ -52,14 +52,13 @@ batRecs %>% count(family)
 
 # drop na, split, remove duplicates, write to disk
 batRecs %>%  drop_na() %>% 
-  group_by(family) %>% group_map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE)) %>% 
-  group_split() %>% 
+  group_by(family) %>% group_map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE),keep = TRUE) %>% 
   walk(~.x %>%  write_csv(path = paste0("dec_",unique(.x$family),".csv")))
 {% endhighlight %}
 
-I used _group\_by_ and _group\_map_ to create a grouped tibble and apply functions to each group. After that, _group\_split_ splits the tibble into a list, and I used _paste0_ to create a path for each file to be written, including a custom prefix. In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the _here_ and _glue_ packages is probably a good idea. 
+We use _group\_by_ and _group\_map_ to create a grouped tibble and apply functions to each group. _group\_map_ returns a list, so we can use _paste0_ to create a path for each file to be written, including a custom prefix. In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the _here_ and _glue_ packages is probably a good idea. Not the _keep_ argument for _group\_map_, which we set to TRUE so that the grouping variable isn't discarded. 
 
-I’m using _walk_ because _write\_csv_ returns nothing and creates the csv file as a side effect, and as explained in the documentation, _walk_ calls functions for their side effects.   
+I’m using _walk_ because _write\_csv_ returns nothing and writes csv files as a side effect, and as explained in the documentation, _walk_ calls functions for their side effects.   
 
 Because I was so excited about actually getting everything to work, I put together this cheatsheet-style graphic to describe the workflow. This approach already saved me and my labmate lots of time. I hope others find it useful too. 
 
