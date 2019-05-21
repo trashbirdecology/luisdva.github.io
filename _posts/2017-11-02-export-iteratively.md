@@ -1,5 +1,5 @@
 ---
-title: "Using purrr and dplyr to apply functions to lists and write each element to disk"
+title: "Apply functions to grouped data and write each element to disk"
 layout: post
 excerpt: Split a table by a grouping variable, apply functions to each element, and export to separate files. 
 category: rstats
@@ -64,6 +64,6 @@ Because I was so excited about actually getting everything to work, I put togeth
 
 <figure>
     <a href="/images/purrrPost.png"><img src="/images/purrrPost.png"></a>
-        <figcaption>click to enlarge</figcaption>
+        <figcaption>somewhat out of date now</figcaption>
 </figure>
 
