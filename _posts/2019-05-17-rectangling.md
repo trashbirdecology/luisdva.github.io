@@ -15,26 +15,23 @@ image:
 published: false
 ---
 
-From the tidyr package vignette:
-https://tidyr.tidyverse.org/dev/articles/rectangle.html
+Earlier this month, I spotted this definition in the _tidyr_ package [vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html):
 
-Rectangling is the art and craft of taking a deeply nested list (often sourced from wild caught JSON or XML) and taming it into a tidy data set of rows and columns. 
+> Rectangling is the art and craft of taking a deeply nested list (often sourced from wild caught JSON or XML) and taming it into a tidy data set of rows and columns.   
 
 “Data rectangling” was coined by [Jenny Bryan](https://twitter.com/JennyBryan) around 2016 and has been making the rounds ever since.
-
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">“Rectangling” should be in the running for the merriam webster word of the year.</p>&mdash; Martin Frigaard (@mjfrigaard) <a href="https://twitter.com/mjfrigaard/status/990307358596259840?ref_src=twsrc%5Etfw">April 28, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
 
 <script async class="speakerdeck-embed" data-id="907f3dc0cdb5496c8d35efca70e5f6bd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>  
 
 Data rectangling originally meant taking nested data and lists of lists, and ultimately getting a nice rectangular data frame thanks to the flexibility of list-columns.
 
-Lego example
+<img src="https://raw.githubusercontent.com/jennybc/lego-rstats/master/lego-rstats_013.jpg" > 
+
 
 In parallel, this great guide on [data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989) 
 by Karl Broman and Kara Woo also suggests making data rectangular, with rows corresponding to subjects and columns corresponding to variables. This recommendation addresses flat tables and their layouts without necessarily mentioning nested arrays, lists or JSON/XML formats.
 
-In a recent [guide](https://doi.org/10.4404/hystrix-00133-2018) for sharing human and machine-readable biodiversity data, we (myself, Natalie Cooper and Guillermo D’Elía) kept the same focus on layouts when referring explicitly to data rectangling, but I made sure to mention nested data and JSON files.
+In a recent [guide](https://doi.org/10.4404/hystrix-00133-2018) for sharing human and machine-readable biodiversity data, we (myself, [Natalie Cooper](https://twitter.com/nhcooper123) and [Guillermo D’Elía](https://twitter.com/GuillermoDElia)) kept the same focus on layouts when referring explicitly to data rectangling. As examples of of non-rectangular data, we mentioned unstructured text, spreadsheets holding multiple disparate tables, nested lists, or more complex data structures such as JavaScript Object Notation (JSON) files.
 
 The focus on layouts in these two publications is somewhat in conflict with the original definition of data rectangling, which focuses on the nested data.
 
@@ -49,8 +46,7 @@ However, Jenny said of the same examples that those data are ‘rectangular’ i
 
 
 
-Other common examples of non-rectangular data include unstructured text, spreadsheets holding
-multiple disparate tables, nested lists, or more complex data structures such as JavaScript Object Notation (JSON) files.
+
 
 in a spectrum of untidy data, to deeply nested lists and 
 
@@ -60,11 +56,9 @@ Data rectangling . JB Rstudio talk. And slides
 
 Rectangling layout and untidy 
 
-Data organization in spreadsheets
-https://doi.org/10.1080/00031305.2017.1375989
+[Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
 
-Good practices for sharing ….
-https://doi.org/10.4404/hystrix-00133-2018
+[Good practices for sharing biodiversity data](https://doi.org/10.4404/hystrix-00133-2018)
 
 Get good data out of bad spreadsheets
 [Duncan Garmonsway](https://twitter.com/nacnudus) beheads and unpivots messy spreadsheet data, a c
@@ -79,6 +73,8 @@ https://vallandingham.me/shaw_bros_analysis.html
 tidyr
 
 tidyjson
+
+https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html
 
 Relevant packages
 
