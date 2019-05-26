@@ -52,7 +52,7 @@ However, Jenny said of the same examples that those data are ‘rectangular’ i
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <br>
-Wherever we decide to place 'data rectangling' on the spectrum of untidy data to deeply nested lists and complex objects, here are some relevant resources I've found useful in the past. 
+Wherever we decide to place 'data rectangling' on the spectrum of untidy data to deeply nested lists and complex objects, here are some relevant resources: 
 
 
 ## Principles
