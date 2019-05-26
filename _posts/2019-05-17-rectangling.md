@@ -27,7 +27,7 @@ Data rectangling originally meant taking nested data and lists of lists, and ult
 
 Here is a very suitable example ([from Jenny's Lego-Rstats gallery](https://github.com/jennybc/lego-rstats)) of how data can be nested and/or rectangled:
 
-<img src="https://raw.githubusercontent.com/jennybc/lego-rstats/master/lego-rstats_013.jpg" > 
+<img src="https://raw.githubusercontent.com/jennybc/lego-rstats/master/lego-rstats_013-smaller.jpg" > 
 
 
 In parallel, this great guide on [data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989) 
@@ -39,7 +39,11 @@ The focus on layouts in these two publications is somewhat in conflict with the 
 
 When I asked for clarification, and [Hadley Wickham](https://twitter.com/hadleywickham) rightfully noted that in the examples of ‘non-rectangular’ data from both of these publications, the data are already in a single rectangle with rows and columns and that ‘data tidying’ would be more suitable for the process of making such data usable. 
 
-examples
+<figure>
+    <a href="/images/rectfigs.png"><img src="/images/rectfigs.png"></a>
+        <figcaption>click to enlarge</figcaption>
+</figure>
+<br>
 
 However, Jenny said of the same examples that those data are ‘rectangular’ in the same way that this cat is bowl-shaped.
 
@@ -47,27 +51,26 @@ However, Jenny said of the same examples that those data are ‘rectangular’ i
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
+Wherever y'all place 'data rectangling' on the spectrum of untidy data to deeply nested lists and complex objects, here are some relevant resources I've found useful in the past. 
 
 
-
-in a spectrum of untidy data, to deeply nested lists and 
-
-Principles and definitions
+## Principles and definitions
 Data rectangling . JB Rstudio talk. And slides
 
 
-Rectangling layout and untidy 
+## Rectangling (non-nested data) 
 
 [Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
 
 [Good practices for sharing biodiversity data](https://doi.org/10.4404/hystrix-00133-2018)
 
-Get good data out of bad spreadsheets
-[Duncan Garmonsway](https://twitter.com/nacnudus) beheads and unpivots messy spreadsheet data, a c
+*Get good data out of bad spreadsheets*
+[Duncan Garmonsway](https://twitter.com/nacnudus) beheads and unpivots messy and not very rectangular spreadsheet data, in this recent talk.
 
-[slides](https://docs.google.com/presentation/d/1tVwn_-QVGZTflnF9APiPACNvyAKqujdl6JmxmrdDjok/edit?usp=sharing) and [video](https://www.youtube.com/watch?v=PYAxTuPk1mc)
+- [slides](https://docs.google.com/presentation/d/1tVwn_-QVGZTflnF9APiPACNvyAKqujdl6JmxmrdDjok/edit?usp=sharing)  
+- [video](https://www.youtube.com/watch?v=PYAxTuPk1mc)
 
-Nested objects
+## Nested data
 
 Shaw Bros 
 https://vallandingham.me/shaw_bros_analysis.html
@@ -78,18 +81,18 @@ tidyjson
 
 https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html
 
-Relevant packages
+## Relevant packages
 
-R  
+_R_  
 [tidyr](https://tidyr.tidyverse.org/dev/index.html) - 
 [tidyxl](https://github.com/nacnudus/tidyxl) - 
 [tidyjson](https://github.com/sailthru/tidyjson) - A pipe and _dplyr_-friendy way to parse JSON files.
 [unpivotr](https://github.com/nacnudus/unpivotr) - 
 [unheadr](https://github.com/luisDVA/unheadr) - 
 
+_Python_
 
-Python  
-[Databaker](https://databaker.sensiblecode.io/)
+- [Databaker](https://databaker.sensiblecode.io/)
 
 
 
