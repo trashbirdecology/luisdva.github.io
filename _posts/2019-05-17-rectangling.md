@@ -60,11 +60,13 @@ Data rectangling . JB Rstudio talk. And slides
 
 ## Rectangling (non-nested data) 
 
-[Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
+[Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)  
+Must-read guide for data entry and management. 
 
 [Good practices for sharing biodiversity data](https://doi.org/10.4404/hystrix-00133-2018)
+Tips for creating and sharing human and machine-readable data.
 
-*Get good data out of bad spreadsheets*
+*Get good data out of bad spreadsheets*  
 [Duncan Garmonsway](https://twitter.com/nacnudus) beheads and unpivots messy and not very rectangular spreadsheet data, in this recent talk.
 
 - [slides](https://docs.google.com/presentation/d/1tVwn_-QVGZTflnF9APiPACNvyAKqujdl6JmxmrdDjok/edit?usp=sharing)  
@@ -84,15 +86,19 @@ https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html
 ## Relevant packages
 
 _R_  
-[tidyr](https://tidyr.tidyverse.org/dev/index.html) - 
-[tidyxl](https://github.com/nacnudus/tidyxl) - 
+[tidyr](https://tidyr.tidyverse.org/dev/index.html) - Reshaping and unnesting data, tidyverse style.  
+
+[tidyxl](https://github.com/nacnudus/tidyxl) - Rectangling spreadsheets and dealing with meaningful formatting.
+
 [tidyjson](https://github.com/sailthru/tidyjson) - A pipe and _dplyr_-friendy way to parse JSON files.
-[unpivotr](https://github.com/nacnudus/unpivotr) - 
-[unheadr](https://github.com/luisDVA/unheadr) - 
+
+[unpivotr](https://github.com/nacnudus/unpivotr) - For complex and irregular data layouts. Especially useful for data with mutliple headers.
+
+[unheadr](https://github.com/luisDVA/unheadr) - For subheaders embedded in the data rectangle.
 
 _Python_
 
-- [Databaker](https://databaker.sensiblecode.io/)
+- [Databaker](https://databaker.sensiblecode.io/) - Jupyter notebook tool for working with spreadsheets.
 
 
 
