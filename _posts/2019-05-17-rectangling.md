@@ -27,8 +27,8 @@ Data rectangling originally meant taking nested data and lists of lists, and ult
 
 Here is a very suitable example ([from Jenny's Lego-Rstats gallery](https://github.com/jennybc/lego-rstats)) of how data can be nested and/or rectangled:
 
+Data frames are not limited to atomic vectors.
 <img src="https://raw.githubusercontent.com/jennybc/lego-rstats/master/lego-rstats_013-smaller.jpg" > 
-
 
 In parallel, this great guide on [data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989) 
 by Karl Broman and Kara Woo also suggests making data rectangular, with rows corresponding to subjects and columns corresponding to variables. This recommendation addresses flat tables and their layouts without necessarily mentioning nested arrays, lists or JSON/XML formats.
@@ -63,7 +63,7 @@ Data rectangling . JB Rstudio talk. And slides
 [Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)  
 Must-read guide for data entry and management. 
 
-[Good practices for sharing biodiversity data](https://doi.org/10.4404/hystrix-00133-2018)
+[Good practices for sharing biodiversity data](https://doi.org/10.4404/hystrix-00133-2018)  
 Tips for creating and sharing human and machine-readable data.
 
 *Get good data out of bad spreadsheets*  
@@ -74,18 +74,19 @@ Tips for creating and sharing human and machine-readable data.
 
 ## Nested data
 
-Shaw Bros 
-https://vallandingham.me/shaw_bros_analysis.html
+[tidyr vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html)  
+Three worked examples with geocoding data, Game of Thrones, and discographic material
 
-tidyr
+[Kung Fu films analysys](https://vallandingham.me/shaw_bros_analysis.html)  
+Exploring martial arts film trends from a JSON data source, by [Jim Vallandingham](https://twitter.com/vlandham).
 
-tidyjson
-
-https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html
+[list-column tutorial](https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html)
+Essential background reading, from a _purrr_ tutorial by Jenny Bryan.
 
 ## Relevant packages
 
-_R_  
+_R_
+---
 [tidyr](https://tidyr.tidyverse.org/dev/index.html) - Reshaping and unnesting data, tidyverse style.  
 
 [tidyxl](https://github.com/nacnudus/tidyxl) - Rectangling spreadsheets and dealing with meaningful formatting.
@@ -97,8 +98,8 @@ _R_
 [unheadr](https://github.com/luisDVA/unheadr) - For subheaders embedded in the data rectangle.
 
 _Python_
-
-- [Databaker](https://databaker.sensiblecode.io/) - Jupyter notebook tool for working with spreadsheets.
+---
+[Databaker](https://databaker.sensiblecode.io/) - Jupyter notebook tool for working with spreadsheets.
 
 
 
