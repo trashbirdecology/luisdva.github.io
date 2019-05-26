@@ -50,12 +50,14 @@ However, Jenny said of the same examples that those data are ‘rectangular’ i
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">but sometimes such data is “rectangular” in the same sense that this cat is “bowl-shaped” 😂 <a href="https://t.co/ZmxvgcV57d">pic.twitter.com/ZmxvgcV57d</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/1126582138344595456?ref_src=twsrc%5Etfw">May 9, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<br>
+Wherever we decide to place 'data rectangling' on the spectrum of untidy data to deeply nested lists and complex objects, here are some relevant resources I've found useful in the past. 
 
-Wherever y'all place 'data rectangling' on the spectrum of untidy data to deeply nested lists and complex objects, here are some relevant resources I've found useful in the past. 
 
-
-## Principles and definitions
-Data rectangling . JB Rstudio talk. And slides
+## Principles
+Presentation by Jenny Bryan at RStudio::conf  
+-[video](https://www.rstudio.com/resources/videos/data-rectangling/)
+-[slides](https://speakerdeck.com/jennybc/data-rectangling-1)
 
 
 ## Rectangling (non-nested data) 
@@ -77,10 +79,10 @@ Tips for creating and sharing human and machine-readable data.
 [tidyr vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html)  
 Three worked examples with geocoding data, Game of Thrones, and discographic material
 
-[Kung Fu films analysys](https://vallandingham.me/shaw_bros_analysis.html)  
+[Kung Fu films analysis](https://vallandingham.me/shaw_bros_analysis.html)  
 Exploring martial arts film trends from a JSON data source, by [Jim Vallandingham](https://twitter.com/vlandham).
 
-[list-column tutorial](https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html)
+[list-column tutorial](https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html)  
 Essential background reading, from a _purrr_ tutorial by Jenny Bryan.
 
 ## Relevant packages
@@ -103,4 +105,6 @@ _Python_
 
 
 
+
+If I'm missing anything let me know and I'll add it.
 
