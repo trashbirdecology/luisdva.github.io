@@ -15,29 +15,30 @@ image:
 published: true
 ---
 
-Earlier this month, I spotted this definition in the _tidyr_ package [vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html):
+Earlier this month, I spotted this definition in the _tidyr_ package [vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html){:target="_blank"}:
 
 > Rectangling is the art and craft of taking a deeply nested list (often sourced from wild caught JSON or XML) and taming it into a tidy data set of rows and columns.   
 
-“Data rectangling” was coined by [Jenny Bryan](https://twitter.com/JennyBryan) around 2016 and has been making the rounds ever since.
+“Data rectangling” was coined by [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} around 2016 and has been making the rounds ever since.
 
-<script async class="speakerdeck-embed" data-id="907f3dc0cdb5496c8d35efca70e5f6bd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>  
+<script async class="speakerdeck-embed" data-slide="2" data-id="b17d10a4f8d84b768caa82fdacfa2e05" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>  
+
 
 Data rectangling originally meant taking nested data and lists of lists, and ultimately getting a nice rectangular data frame thanks to the flexibility of list-columns.
 
-Here is a very suitable example ([from Jenny's Lego-Rstats gallery](https://github.com/jennybc/lego-rstats)) of how data can be nested and/or rectangled:
+Here is a very suitable example ([from Jenny's Lego-Rstats gallery](https://github.com/jennybc/lego-rstats){:target="_blank"}) of how data can be nested and/or rectangled:
 
 Data frames are not limited to atomic vectors.
 <img src="https://raw.githubusercontent.com/jennybc/lego-rstats/master/lego-rstats_013-smaller.jpg" > 
 
-In parallel, this great guide on [data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989) 
+In parallel, this great guide on [data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989){:target="_blank"} 
 by Karl Broman and Kara Woo also suggests making data rectangular, with rows corresponding to subjects and columns corresponding to variables. This recommendation addresses flat tables and their layouts without necessarily mentioning nested arrays, lists or JSON/XML formats.
 
-In a recent [guide](https://doi.org/10.4404/hystrix-00133-2018) for sharing human and machine-readable biodiversity data, we (myself, [Natalie Cooper](https://twitter.com/nhcooper123) and [Guillermo D’Elía](https://twitter.com/GuillermoDElia)) kept the same focus on layouts when referring explicitly to data rectangling. As examples of of non-rectangular data, we mentioned unstructured text, spreadsheets holding multiple disparate tables, nested lists, or more complex data structures such as JavaScript Object Notation (JSON) files.
+In a recent [guide](https://doi.org/10.4404/hystrix-00133-2018){:target="_blank"} for sharing human and machine-readable biodiversity data, we (myself, [Natalie Cooper](https://twitter.com/nhcooper123){:target="_blank"} and [Guillermo D’Elía](https://twitter.com/GuillermoDElia){:target="_blank"}) kept the same focus on layouts when referring explicitly to data rectangling. As examples of of non-rectangular data, we mentioned unstructured text, spreadsheets holding multiple disparate tables, nested lists, or more complex data structures such as JavaScript Object Notation (JSON) files.
 
 The focus on layouts in these two publications is somewhat in conflict with the original definition of data rectangling, which focuses on the nested data.
 
-When I asked for clarification, and [Hadley Wickham](https://twitter.com/hadleywickham) rightfully noted that in the examples of ‘non-rectangular’ data from both of these publications, the data are already in a single rectangle with rows and columns and that ‘data tidying’ would be more suitable for the process of making such data usable. 
+When I asked for clarification, and [Hadley Wickham](https://twitter.com/hadleywickham){:target="_blank"} rightfully noted that in the examples of ‘non-rectangular’ data from both of these publications, the data are already in a single rectangle with rows and columns and that ‘data tidying’ would be more suitable for the process of making such data usable. 
 
 <figure>
     <a href="/images/rectfigs.png"><img src="/images/rectfigs.png"></a>
@@ -56,52 +57,52 @@ Wherever we decide to place 'data rectangling' on the spectrum of untidy data to
 
 ## Principles
 Presentation by Jenny Bryan at RStudio::conf  
--[video](https://www.rstudio.com/resources/videos/data-rectangling/)  
--[slides](https://speakerdeck.com/jennybc/data-rectangling-1)  
+-[video](https://www.rstudio.com/resources/videos/data-rectangling/){:target="_blank"}  
+-[slides](https://speakerdeck.com/jennybc/data-rectangling-1){:target="_blank"}  
 
 
 ## Rectangling (non-nested data) 
 
-[Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)  
+[Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989){:target="_blank"}  
 Must-read guide for data entry and management. 
 
-[Good practices for sharing biodiversity data](https://doi.org/10.4404/hystrix-00133-2018)  
+[Good practices for sharing biodiversity data](https://doi.org/10.4404/hystrix-00133-2018){:target="_blank"}  
 Tips for creating and sharing human and machine-readable data.
 
 *Get good data out of bad spreadsheets*  
-[Duncan Garmonsway](https://twitter.com/nacnudus) beheads and unpivots messy and not very rectangular spreadsheet data, in this recent talk.
+[Duncan Garmonsway](https://twitter.com/nacnudus){:target="_blank"} beheads and unpivots messy and not very rectangular spreadsheet data in this recent talk.
 
-- [slides](https://docs.google.com/presentation/d/1tVwn_-QVGZTflnF9APiPACNvyAKqujdl6JmxmrdDjok/edit?usp=sharing)  
-- [video](https://www.youtube.com/watch?v=PYAxTuPk1mc)
+- [slides](https://docs.google.com/presentation/d/1tVwn_-QVGZTflnF9APiPACNvyAKqujdl6JmxmrdDjok/edit?usp=sharing){:target="_blank"}  
+- [video](https://www.youtube.com/watch?v=PYAxTuPk1mc){:target="_blank"}  
 
 ## Nested data
 
-[tidyr vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html)  
+[tidyr vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html){:target="_blank"}  
 Three worked examples with geocoding data, Game of Thrones, and discographic material
 
-[Kung Fu films analysis](https://vallandingham.me/shaw_bros_analysis.html)  
-Exploring martial arts film trends from a JSON data source, by [Jim Vallandingham](https://twitter.com/vlandham).
+[Kung Fu films analysis](https://vallandingham.me/shaw_bros_analysis.html){:target="_blank"}  
+Exploring martial arts film trends from a JSON data source, by [Jim Vallandingham](https://twitter.com/vlandham){:target="_blank"}.
 
-[list-column tutorial](https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html)  
+[list-column tutorial](https://jennybc.github.io/purrr-tutorial/ls13_list-columns.html){:target="_blank"}  
 Essential background reading, from a _purrr_ tutorial by Jenny Bryan.
 
 ## Relevant packages
 
 _R_
 ---
-[tidyr](https://tidyr.tidyverse.org/dev/index.html) - Reshaping and unnesting data, tidyverse style.  
+[tidyr](https://tidyr.tidyverse.org/dev/index.html){:target="_blank"} - Reshaping and unnesting data, tidyverse style.  
 
-[tidyxl](https://github.com/nacnudus/tidyxl) - Rectangling spreadsheets and dealing with meaningful formatting.
+[tidyxl](https://github.com/nacnudus/tidyxl){:target="_blank"} - Rectangling spreadsheets and dealing with meaningful formatting.
 
-[tidyjson](https://github.com/sailthru/tidyjson) - A pipe and _dplyr_-friendy way to parse JSON files.
+[tidyjson](https://github.com/sailthru/tidyjson){:target="_blank"} - A pipe and _dplyr_-friendy way to parse JSON files.
 
-[unpivotr](https://github.com/nacnudus/unpivotr) - For complex and irregular data layouts. Especially useful for data with mutliple headers.
+[unpivotr](https://github.com/nacnudus/unpivotr){:target="_blank"} - For complex and irregular data layouts. Especially useful for data with mutliple headers.
 
-[unheadr](https://github.com/luisDVA/unheadr) - For subheaders embedded in the data rectangle.
+[unheadr](https://github.com/luisDVA/unheadr){:target="_blank"} - For subheaders embedded in the data rectangle.
 
 _Python_
 ---
-[Databaker](https://databaker.sensiblecode.io/) - Jupyter notebook tool for working with spreadsheets.
+[Databaker](https://databaker.sensiblecode.io/){:target="_blank"} - Jupyter notebook tool for working with spreadsheets.
 
 
 
