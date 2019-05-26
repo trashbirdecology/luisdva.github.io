@@ -56,8 +56,8 @@ Wherever we decide to place 'data rectangling' on the spectrum of untidy data to
 
 ## Principles
 Presentation by Jenny Bryan at RStudio::conf  
--[video](https://www.rstudio.com/resources/videos/data-rectangling/)
--[slides](https://speakerdeck.com/jennybc/data-rectangling-1)
+-[video](https://www.rstudio.com/resources/videos/data-rectangling/)  
+-[slides](https://speakerdeck.com/jennybc/data-rectangling-1)  
 
 
 ## Rectangling (non-nested data) 
