@@ -25,6 +25,8 @@ Earlier this month, I spotted this definition in the _tidyr_ package [vignette](
 
 Data rectangling originally meant taking nested data and lists of lists, and ultimately getting a nice rectangular data frame thanks to the flexibility of list-columns.
 
+Here is a very suitable example ([from Jenny's Lego-Rstats gallery](https://github.com/jennybc/lego-rstats)) of how data can be nested and/or rectangled:
+
 <img src="https://raw.githubusercontent.com/jennybc/lego-rstats/master/lego-rstats_013.jpg" > 
 
 
