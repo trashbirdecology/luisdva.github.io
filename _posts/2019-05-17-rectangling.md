@@ -19,10 +19,10 @@ Earlier this month, I spotted this definition in the _tidyr_ package [vignette](
 
 > Rectangling is the art and craft of taking a deeply nested list (often sourced from wild caught JSON or XML) and taming it into a tidy data set of rows and columns.   
 
-“Data rectangling” was coined by [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} around 2016 and has been making the rounds ever since.
+“Data rectangling” was coined by [Jenny Bryan](https://twitter.com/JennyBryan){:target="_blank"} around 2016-2017 and has been making the rounds ever since.
 
 <script async class="speakerdeck-embed" data-slide="2" data-id="b17d10a4f8d84b768caa82fdacfa2e05" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>  
-
+<br>
 
 Data rectangling originally meant taking nested data and lists of lists, and ultimately getting a nice rectangular data frame thanks to the flexibility of list-columns.
 
@@ -32,13 +32,13 @@ Data frames are not limited to atomic vectors.
 <img src="https://raw.githubusercontent.com/jennybc/lego-rstats/master/lego-rstats_013-smaller.jpg" > 
 
 In parallel, this great guide on [data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989){:target="_blank"} 
-by Karl Broman and Kara Woo also suggests making data rectangular, with rows corresponding to subjects and columns corresponding to variables. This recommendation addresses flat tables and their layouts without necessarily mentioning nested arrays, lists or JSON/XML formats.
+by [Karl Broman](https://twitter.com/kwbroman){:target="_blank"} and [Kara Woo](https://twitter.com/kara_woo){:target="_blank"} also suggests making data rectangular, with rows corresponding to subjects and columns corresponding to variables. This recommendation addresses flat tables and their layouts without necessarily mentioning nested arrays, lists or JSON/XML formats.
 
 In a recent [guide](https://doi.org/10.4404/hystrix-00133-2018){:target="_blank"} for sharing human and machine-readable biodiversity data, we (myself, [Natalie Cooper](https://twitter.com/nhcooper123){:target="_blank"} and [Guillermo D’Elía](https://twitter.com/GuillermoDElia){:target="_blank"}) kept the same focus on layouts when referring explicitly to data rectangling. As examples of of non-rectangular data, we mentioned unstructured text, spreadsheets holding multiple disparate tables, nested lists, or more complex data structures such as JavaScript Object Notation (JSON) files.
 
 The focus on layouts in these two publications is somewhat in conflict with the original definition of data rectangling, which focuses on the nested data.
 
-When I asked for clarification, and [Hadley Wickham](https://twitter.com/hadleywickham){:target="_blank"} rightfully noted that in the examples of ‘non-rectangular’ data from both of these publications, the data are already in a single rectangle with rows and columns and that ‘data tidying’ would be more suitable for the process of making such data usable. 
+When I asked for clarification, [Hadley Wickham](https://twitter.com/hadleywickham){:target="_blank"} rightfully noted that in the examples of ‘non-rectangular’ data from both of these publications, the data are already in a single rectangle with rows and columns and that ‘data tidying’ would be more suitable for the process of making such data usable. 
 
 <figure>
     <a href="/images/rectfigs.png"><img src="/images/rectfigs.png"></a>
