@@ -12,7 +12,7 @@ image:
   feature: featureRectangle.png
   credit: 
   creditlink: 
-published: false
+published: true
 ---
 
 Earlier this month, I spotted this definition in the _tidyr_ package [vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html):
