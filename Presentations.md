@@ -16,7 +16,7 @@ Work that I have presented at scientific meetings so far.
 + Verde Arregoitia, L.D. & Guillermo D'Elía. 2018. Aggregating phylogenetic and trait data to study
 the ecomorphology of caviomorph rodents. _British Ecological Society, Annual Meeting_. Birmingham, United Kingdom
 
-+ Verde Arregoitia, L.D. 2018. Disparidad funcional roedores caviomorfos. _IV Congreso Peruano de Mastozoología_. Cusco, Peru
++ Verde Arregoitia, L.D. 2018. Disparidad funcional en roedores caviomorfos. _IV Congreso Peruano de Mastozoología_. Cusco, Peru
 
 + Verde Arregoitia, L.D. 2018. Uso de fotografía estereoscópica para el estudio de patrones de disparidad morfológica en roedores caviomorfos. _XIV Congreso Nacional de Mastozoología AMMAC_. Merida, Yucatan, Mexico
 
@@ -47,4 +47,4 @@ the ecomorphology of caviomorph rodents. _British Ecological Society, Annual Mee
 
 + Verde Arregoitia, L.D. 2012. Modern threats to older species: evolutionary age and extinction risk in mammals. _Student Conference on Conservation Science New York_. New York City, New York
 
-+ Verde Arregoitia, L.D., Rios-Muñoz, C.A. and Leon, L. 2007. Seasonal niches of migratory bats: spatial and temporal distribution of the Mexican free-tailed bat Tadarida brasiliensis mexicana.  _XIV International Bat Research Conference / 37th NASBR_, Merida, Mexico
++ Verde Arregoitia, L.D., Rios-Muñoz, C.A. and Leon, L. 2007. Seasonal niches of migratory bats: spatial and temporal distribution of the Mexican free-tailed bat Tadarida brasiliensis mexicana.  _XIV International Bat Research Conference / 37th NASBR_, Merida, Yucatan, Mexico
