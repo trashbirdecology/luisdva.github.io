@@ -9,7 +9,6 @@ image:
 ---
 
 
-
 Work that I have presented at scientific meetings so far.
 
 + Verde Arregoitia, L.D. & Guillermo D'Elía. 2019. Identifying Convergent Evolution in New World Rodents. _99th Annual Meeting of the American Society of Mammalogists_. Washington D.C., USA
@@ -17,10 +16,14 @@ Work that I have presented at scientific meetings so far.
 + Verde Arregoitia, L.D. & Guillermo D'Elía. 2018. Aggregating phylogenetic and trait data to study
 the ecomorphology of caviomorph rodents. _British Ecological Society, Annual Meeting_. Birmingham, United Kingdom
 
-+ Verde Arregoitia, L.D. 2018. Uso de fotografía estereoscópica para el estudio de patrones de disparidad morfológica en roedores caviomorfos. _XIV CongresoNacional de Mastozoología AMMAC_. Merida, Yucatan, Mexico
++ Verde Arregoitia, L.D. 2018. Disparidad funcional roedores caviomorfos. _IV Congreso Peruano de Mastozoología_. Cusco, Peru
+
++ Verde Arregoitia, L.D. 2018. Uso de fotografía estereoscópica para el estudio de patrones de disparidad morfológica en roedores caviomorfos. _XIV Congreso Nacional de Mastozoología AMMAC_. Merida, Yucatan, Mexico
 
 + Verde Arregoitia, L.D. 2018. Sharing analysis-ready data for macroecological research
 . _British Ecological Society Macroecology Special Interest Group meeting_. Saint Andrews, United Kingdom 
+
++ Verde Arregoitia, L.D. 2017. Recursos morfológicos y filogenéticos para estudiar la ecología y evolución de los roedores caviomorfos. _XXX Jornadas Argentinas de Mastozoología_. Bahia Blanca, Argentina 
 
 + Verde Arregoitia, L.D. 2017. Publication rates and presenter demographics at the 25th ICCB (Auckland 2011). _28th International Congress for Conservation Biology_. Cartagena, Colombia 
 
