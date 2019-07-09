@@ -5,6 +5,6 @@ permalink: /cursosR/
 published: false
 share: false
 image:
-  feature: slider5.jpg
+  feature: featureHabr.jpg
 ---
 test
