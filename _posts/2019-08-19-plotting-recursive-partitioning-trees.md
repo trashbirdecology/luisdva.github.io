@@ -13,13 +13,21 @@ published: false
 ---
 
 This is an update to a [post](https://luisdva.github.io/rstats/Plotting-conditional-inference-trees-in-R/){:target="_blank"}  I wrote in 2015 on plotting conditional inference trees for dichotomous response variables using R. I actually used the code from that post to plot a conditional inference tree in this recent [publication](https://doi.org/10.1111/cobi.13296){:target="_blank"}  (see below), but it is now way easier to plot all kinds of tree objects thanks to the new _ggparty_ package by Martin Borkovec and Niyaz Madin.
-
+ 
+ 
 <figure>
-    <a href="/images/plotRaw.png"><img src="/images/plotRaw.png"></a>
-        <figcaption>plot with default settings</figcaption>
+    <a href="/images/figConditional.png"><img src="/images/figConditional.png"></a>
+        <figcaption>recent figure I made</figcaption>
 </figure>
 
+
 Here, we’ll walk through the code to plot this tree from a publication by [Lawes et al. 2015](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130626){:target="_blank"} , in which the figure is the default plot output for an object of class ‘BinaryTree’ produced by party::ctree(). In short, the authors were investigating the factors behind population declines for some species of Australian rodents. See my previous post for a more throrough interpretation of the results and an overview of recursive partitioning methods. 
+
+<figure>
+    <a href="/images/ctreeDefault.png"><img src="/images/ctreeDefault.png"></a>
+        <figcaption>default plotting</figcaption>
+</figure>
+
 
 We’ll use the same data and modeling approach, but we’ll plot the tree without having to fiddle with functions of class _grapcon___generator_ and instead use a _grammar of graphics_ approach. Rather than using the ‘party’ package to fit the model, we’ll use partykit (a reimplementation by the same team) and get the same result but in an object of class ‘party’ that feeds into ggparty. 
 
@@ -30,12 +38,9 @@ As in the previous post, we’ll enhance the interpretation of the default plot 
 - adding a more informative piece of information to the inner nodes: the number of species at each branching node and not just at the terminal nodes. 
 
 - adding direct labels to the terminal plots with the number of observations with positive outcomes (species that have declined) 
-
  
 
 The [ggparty vignette](https://cran.r-project.org/web/packages/ggparty/vignettes/ggparty-graphic-partying.html){:target="_blank"}  is quite clear and has lots of examples, so I was able to customize all the elements I needed. The main point to keep in mind is that ggplot is called repeatedly for each of the terminal nodes, so we need to use "," instead of "+" to combine the components of the list with geoms and other plotting parameters.
-
-
 
 
 First, we load the relevant packages, download the supporting data directly from the journal’s repository, and change some columns to match the labeling in the paper.
@@ -139,8 +144,8 @@ ggparty(rodCT) +
 The plot looks good already, and in my opinion it shows good balance between a graphical depiction of how the observations are split with explicit data on the numbers of observations at the nodes and the relevant values in the predictors that define the splits. 
 
 <figure>
-    <a href="/images/plotRaw.png"><img src="/images/plotRaw.png"></a>
-        <figcaption>plot with default settings</figcaption>
+    <a href="/images/ggBarsProp.png"><img src="/images/ggBarsProp.png"></a>
+        <figcaption>cool!</figcaption>
 </figure>
 
 
@@ -180,7 +185,7 @@ ggparty(rodCT) +
 {% endhighlight %}
 
 <figure>
-    <a href="/images/plotRaw.png"><img src="/images/plotRaw.png"></a>
+    <a href="/images/ggBarsabs.png"><img src="/images/ggBarsabs.png"></a>
         <figcaption>plot with default settings</figcaption>
 </figure>
 
