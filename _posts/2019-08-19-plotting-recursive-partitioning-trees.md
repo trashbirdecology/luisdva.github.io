@@ -141,7 +141,7 @@ ggparty(rodCT) +
 {% endhighlight %}
 
 
-The plot looks good already, and in my opinion it shows good balance between a graphical depiction of how the observations are split with explicit data on the numbers of observations at the nodes and the relevant values in the predictors that define the splits. 
+The plot looks good already, and in my opinion it shows good balance between a graphical depiction of how the observations are split, with explicit data on the numbers of observations at the nodes and the relevant values in the predictors that define the splits. 
 
 <figure>
     <a href="/images/ggBarsProp.png"><img src="/images/ggBarsProp.png"></a>
