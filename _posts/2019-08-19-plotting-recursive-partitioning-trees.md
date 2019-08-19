@@ -19,7 +19,7 @@ This is an update to a [post](https://luisdva.github.io/rstats/Plotting-conditio
     <a href="/images/figConditional.png"><img src="/images/figConditional.png"></a>
         <figcaption>recent figure I made</figcaption>
 </figure>
-
+<br><br>
 
 Here, we’ll walk through the code to plot this tree from a publication by [Lawes et al. 2015](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130626){:target="_blank"} , in which the figure is the default plot output for an object of class ‘BinaryTree’ produced by party::ctree(). In short, the authors were investigating the factors behind population declines for some species of Australian rodents. See my previous post for a more throrough interpretation of the results and an overview of recursive partitioning methods. 
 
@@ -27,7 +27,7 @@ Here, we’ll walk through the code to plot this tree from a publication by [Law
     <a href="/images/ctreeDefault.png"><img src="/images/ctreeDefault.png"></a>
         <figcaption>default plotting</figcaption>
 </figure>
-
+<br><br>
 
 We’ll use the same data and modeling approach, but we’ll plot the tree without having to fiddle with functions of class _grapcon___generator_ and instead use a _grammar of graphics_ approach. Rather than using the ‘party’ package to fit the model, we’ll use partykit (a reimplementation by the same team) and get the same result but in an object of class ‘party’ that feeds into ggparty. 
 
@@ -147,7 +147,7 @@ The plot looks good already, and in my opinion it shows good balance between a g
     <a href="/images/ggBarsProp.png"><img src="/images/ggBarsProp.png"></a>
         <figcaption>cool!</figcaption>
 </figure>
-
+<br><br>
 
 We could also do away with the “position_fill()” argument and show the absolute numbers of observations at each terminal node. 
 
@@ -186,9 +186,9 @@ ggparty(rodCT) +
 
 <figure>
     <a href="/images/ggBarsabs.png"><img src="/images/ggBarsabs.png"></a>
-        <figcaption>plot with default settings</figcaption>
+        <figcaption>another option</figcaption>
 </figure>
-
+<br><br>
 
 As usual, let me know if there are any mistakes in the code or if anything isn't well explained. Big shout out to the creators of _ggparty_!
 
