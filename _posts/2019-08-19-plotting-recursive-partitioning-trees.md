@@ -12,7 +12,7 @@ image:
 published: true
 ---
 
-This is an update to a [post](https://luisdva.github.io/rstats/Plotting-conditional-inference-trees-in-R/){:target="_blank"}  I wrote in 2015 on plotting conditional inference trees for dichotomous response variables using R. I actually used the code from that post to plot a conditional inference tree in this recent [publication](https://doi.org/10.1111/cobi.13296){:target="_blank"}  (see below), but it is now way easier to plot all kinds of tree objects thanks to the new _ggparty_ package by Martin Borkovec and Niyaz Madin.
+This is an update to a [post](https://luisdva.github.io/rstats/Plotting-conditional-inference-trees-in-R/){:target="_blank"}  I wrote in 2015 on plotting conditional inference trees for dichotomous response variables using R. I actually used the code from that post to plot a conditional inference tree in this recent [publication](https://doi.org/10.1111/cobi.13296){:target="_blank"}  (see below), but it is now way easier to plot all kinds of tree objects thanks to the new [ggparty](https://github.com/martin-borkovec/ggparty){:target="_blank"}  package by Martin Borkovec and Niyaz Madin. (Thanks to [Heidi Seibold](https://twitter.com/HeidiBaya){:target="_blank"} for pointing it out on Twitter.)
  
  
 <figure>
@@ -29,7 +29,7 @@ Here, we’ll walk through the code to plot this tree from a publication by [Law
 </figure>
 <br><br>
 
-We’ll use the same data and modeling approach, but we’ll plot the tree without having to fiddle with functions of class _grapcon___generator_ and instead use a _grammar of graphics_ approach. Rather than using the ‘party’ package to fit the model, we’ll use partykit (a reimplementation by the same team) and get the same result but in an object of class ‘party’ that feeds into ggparty. 
+We’ll use the same data and modeling approach, but we’ll plot the tree without having to fiddle with functions of class _grapcon___generator_ and instead use a _grammar of graphics_ approach. Rather than using the ‘party’ package to fit the model, we’ll use 'partykit' (a reimplementation by the same team) and get the same result but in an object of class ‘party’ that feeds into ggparty. 
 
 Part of the makeover will show how flexible this approach is, and how those familiar with _ggplot2_ should have no trouble applying their experience to these types of plots.
 
@@ -40,7 +40,7 @@ As in the previous post, we’ll enhance the interpretation of the default plot 
 - adding direct labels to the terminal plots with the number of observations with positive outcomes (species that have declined) 
  
 
-The [ggparty vignette](https://cran.r-project.org/web/packages/ggparty/vignettes/ggparty-graphic-partying.html){:target="_blank"}  is quite clear and has lots of examples, so I was able to customize all the elements I needed. The main point to keep in mind is that ggplot is called repeatedly for each of the terminal nodes, so we need to use "," instead of "+" to combine the components of the list with geoms and other plotting parameters.
+The [ggparty vignette](https://cran.r-project.org/web/packages/ggparty/vignettes/ggparty-graphic-partying.html){:target="_blank"}  is quite clear and has lots of examples, so I was able to customize all the elements I needed. The main point to keep in mind is that ggplot() is called repeatedly for each of the terminal nodes, so we need to use "," instead of "+" to combine the components of the list with geoms and other plotting parameters.
 
 
 First, we load the relevant packages, download the supporting data directly from the journal’s repository, and change some columns to match the labeling in the paper.
