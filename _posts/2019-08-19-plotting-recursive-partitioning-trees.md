@@ -9,7 +9,7 @@ tags:
   - partykit
 image: 
   feature: featureRFs.jpg
-published: false
+published: true
 ---
 
 This is an update to a [post](https://luisdva.github.io/rstats/Plotting-conditional-inference-trees-in-R/){:target="_blank"}  I wrote in 2015 on plotting conditional inference trees for dichotomous response variables using R. I actually used the code from that post to plot a conditional inference tree in this recent [publication](https://doi.org/10.1111/cobi.13296){:target="_blank"}  (see below), but it is now way easier to plot all kinds of tree objects thanks to the new _ggparty_ package by Martin Borkovec and Niyaz Madin.
