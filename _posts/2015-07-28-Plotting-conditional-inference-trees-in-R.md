@@ -13,7 +13,8 @@ published: true
 ---
 
 
-## Visualizing conditional inference trees for dichotomous response variables in R
+## UPDATE - August 2019 - recursive partitioning objects can now be plotted using ggplot2 thanks to {ggparty}, this [post](https://luisdva.github.io/rstats/plotting-recursive-partitioning-trees/) is a better option now 
+
 
 Machine learning approaches are becoming popular options for comparative analyses. Random forest (RF) techniques emerged as an extension of classification-tree analysis and are now widespread counterparts to multiple regression. Random forests provide accurate predictions and useful information about the underlying data, even when there are complex interactions between predictors. RF algorithms partition data into groups of increasingly similar observations based on the predictors, and average the results over a forest of many trees built from bootstrapping observations. 
 
