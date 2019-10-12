@@ -56,7 +56,7 @@ batRecs %>%  drop_na() %>%
   walk(~.x %>%  write_csv(path = paste0("dec_",unique(.x$family),".csv")))
 {% endhighlight %}
 
-We use _group\_by_ and _group\_map_ to create a grouped tibble and apply functions to each group. _group\_map_ returns a list, so we can use _paste0_ to create a path for each file to be written, including a custom prefix. In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the _here_ and _glue_ packages is probably a good idea. Not the _keep_ argument for _group\_map_, which we set to TRUE so that the grouping variable isn't discarded. 
+We use _group\_by_ and _group\_map_ to create a grouped tibble and apply functions to each group. _group\_map_ returns a list, so we can use _paste0_ to create a path for each file to be written, including a custom prefix. In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the _here_ and _glue_ packages is probably a good idea. Note the _keep_ argument for _group\_map_, which we set to TRUE so that the grouping variable isn't discarded. 
 
 I’m using _walk_ because _write\_csv_ returns nothing and writes csv files as a side effect, and as explained in the documentation, _walk_ calls functions for their side effects.   
 
