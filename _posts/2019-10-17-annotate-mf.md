@@ -13,7 +13,7 @@ image:
 published: true
 ---
 
-At some point, we all have had to deal with spreadsheets in which group membership was color coded (see the replies to this tweet):
+At some point, we all have had to deal with spreadsheets in which group membership was color coded (see the replies to this [tweet](https://twitter.com/JennyBryan/status/722954354198597632){:target="_blank"}):
 
 <blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">I&#39;m seeking TRUE, crazy spreadsheet stories. Happy to get the actual sheet or just a description of the crazy. Also: I can keep a secret.</p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/722954354198597632?ref_src=twsrc%5Etfw">April 21, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>   
 
@@ -114,7 +114,7 @@ regexp_annotation
 dog_test <- dog_test_ut %>% select(-Task_annotated) %>% 
   mutate(task_type=str_remove(task_type,regexp_annotation))
 {% endhighlight %}
->select: dropped one variable (Task_annotated)
+>select: dropped one variable (Task_annotated)  
 >mutate: changed 8 values (100%) of 'task_type' (0 new NA)
 
 The data in a tidy structure:
@@ -139,7 +139,7 @@ Now we can summarize the scores for each task type, and they should match the ca
 {% highlight r %}
 dog_test %>% group_by(task_type) %>% summarize(mean_score=mean(Score))
 {% endhighlight %}
-> group_by: one grouping variable (task_type)
+> group_by: one grouping variable (task_type)  
 >summarize: now 3 rows and 2 columns, ungrouped
 
 {% highlight text %}
@@ -157,12 +157,9 @@ dog_test %>% group_by(task_type) %>% summarize(mean_score=mean(Score))
 
 Further reading:  
 
-meaningful formatting: 
-https://nacnudus.github.io/spreadsheet-munging-strategies/tidy-formatted-rows.html{:target="_blank"}   
+[meaningful formatting](https://nacnudus.github.io/spreadsheet-munging-strategies/tidy-formatted-rows.html){:target="_blank"}     
 
-embedded subheaders:  
-https://doi.org/10.4404/hystrix-00133-2018{:target="_blank"}   
+[embedded subheaders](https://doi.org/10.4404/hystrix-00133-2018){:target="_blank"}   
 
-data organization in spreadsheets:  
-https://github.com/jennybc/2016-06_spreadsheets{:target="_blank"}   
+[data organization in spreadsheets](https://github.com/jennybc/2016-06_spreadsheets){:target="_blank"}   
 
