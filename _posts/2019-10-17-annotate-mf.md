@@ -10,9 +10,8 @@ tags:
   - Excel
 image: 
   feature: featurepls.png
-published: false
+published: true
 ---
-
 
 At some point, we all have had to deal with spreadsheets in which group membership was color coded (see the replies to this tweet):
 
