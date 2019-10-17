@@ -32,7 +32,7 @@ To work with this in R, we need to translate the colors and font faces into some
 
 For educational purposes, this example uses the `RverbalExpressions` package by [Tyler Littlefield](https://rverbalexpressions.netlify.com/index.html){:target="_blank"}  to build regular expressions, and I loaded `tidylog` by [Benjamin Elbers](https://github.com/elbersb/tidylog){:target="_blank"}  to print some feedback about the `dplyr` operations happening. This is optional.
 
-Once we load (install first if necessary) the required packages, the `dog_test` spreadsheet is bundled in `unheadr` and can be loaded with `system.file()`. We then tell `annotate_mf()` which variable has the meaningful formatting we want to annotate, and the name of the new annotated variable.
+Once we load (install first if necessary) the required packages, the `dog_test` spreadsheet is bundled in `unheadr` and can be loaded with `system.file()`. We then tell `annotate_mf()` which variable has the meaningful formatting we want to annotate, and the name of the new annotated variable. This new function calls various useful tools from the `tidyxl` package (available on CRAN) by [Duncan Garmonsway](https://twitter.com/nacnudus){:target="_blank"}. 
 
 {% highlight r %}
 # remotes::install_github("luisDVA/unheadr")
