@@ -17,14 +17,18 @@ published: true
 
 > Esta publicación está disponible en español [aqui](http://luisdva.github.io/Valores-m%C3%A1ximos-y-m%C3%ADnimos-para-datos-agrupados/)  
 
-## Update - August 2018: Click [here](https://luisdva.github.io/rstats/animate-top-n/) for an animated demo of the top_n function. 
+## Update - August 2018: Click [here](https://luisdva.github.io/rstats/animate-top-n/) for an animated demo of the top_n function.
+![gif demo]({{ site.baseurl }}/images/topndemo.gif)
 
-In tables that contain data for many different groups, getting the maximum and minimum values (or the top _n_ or bottom _n_ values) of a continuous variable within each group is (I think) a common enough task. These are some simple examples:
+When tables contain data for many different groups, getting the maximum and minimum values (or the top _n_ or bottom _n_ values) of a continuous variable within each group is a common task.   
 
-- largest and smallest species in an order or family
--  best represented taxonomic groups in a collection, grouped by geographic unit
+These are some simple examples from my work in biology:
+
+- largest and smallest species in a taxonomic group (e.g. birds, mammals, reptiles)  
+- best represented taxonomic groups in a collection, grouped by country
 
 Despite the prevalence of this task in data wrangling for biodiversity research, I couldn’t find any documentation online so I thought I should contribute. 
+
 The following is an approach that I saw someone else do using a spreadsheet program, and it inspired this post. There’s nothing particularly wrong with doing it this way, it just takes more time, is harder to document, and has to be repeated manually in case the original table is modified.
 
 1. Make a new copy of the original spreadsheet. 
