@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Merging rows in R
-excerpt: "Verb-like function to identify and merge rows using R"
+excerpt: "Verb-like function to identify and merge rows"
 category: rstats
 tags: 
   - merging
@@ -9,20 +9,20 @@ tags:
   - tidyr
   - tidyeval
 image: 
-  feature: featureRectangling.png
+  feature: featureRectangle.png
 published: true
 ---
 
 Recently, I was tagged in a tweet seeking advice for rectangling a particularly messy data structure.  
 
-<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">depending on whether they need to procrastinate on something even more odious, I could imagine <a href="https://twitter.com/nacnudus?ref_src=twsrc%5Etfw">@nacnudus</a> or <a href="https://twitter.com/LuisDVerde?ref_src=twsrc%5Etfw">@LuisDVerde</a> getting sucked in by certain aspects of this 😉</p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/1204242138357096449?ref_src=twsrc%5Etfw">December 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">depending on whether they need to procrastinate on something even more odious, I could imagine <a href="https://twitter.com/nacnudus?ref_src=twsrc%5Etfw">@nacnudus</a> or <a href="https://twitter.com/LuisDVerde?ref_src=twsrc%5Etfw">@LuisDVerde</a> getting sucked in by certain aspects of this 😉</p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/1204242138357096449?ref_src=twsrc%5Etfw">December 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>   
+<br>
+The data in question and a nice way to restructure them are found in this [gist](https://gist.github.com/brooke-watson/ccf3d1b1f4449ab55a72f7835a52e599){:target="_blank"}. I could not come up with a general approach, but there were several helpful solutions in the replies to the tweet, This data structure is now described as an [issue](https://github.com/nacnudus/unpivotr/issues/31){:target="_blank"} in the `unpivotr` repository by Duncan Garmonsway.
 
-The data in question and a nice way to restructure them are found in this [gist](https://gist.github.com/brooke-watson/ccf3d1b1f4449ab55a72f7835a52e599). I could not come up with a general approach, but there were several helpful solutions in the replies to the tweet, This data structure is now described as an [issue](https://github.com/nacnudus/unpivotr/issues/31) in the `unpivotr` repository by Duncan Garmonsway.
+Although there wasn't much I could do, I noted that the data had two issues relevant to my work with the `unheadr` [package](https://github.com/luisDVA/unheadr/){:target="_blank"}. 
 
-Although there wasn't much I could do, I noted that the data had two issues relevant to my work with the `unheadr` [package](https://github.com/luisDVA/unheadr/). 
-
-- small multiples (subsets of the same data stacked on top of each other)
-- broken rows (values of two contiguous rows broken up and padded with empty or NA values)
+- Small multiples (subsets of the same data stacked on top of each other)
+- Broken rows (values of two contiguous rows broken up and padded with empty or NA values)
 
 <img src="https://pbs.twimg.com/media/ELY0RkBWwAAGrJv?format=png&name=900x900" alt="star wars mess" width="300"/>
 
