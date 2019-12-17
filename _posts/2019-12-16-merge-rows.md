@@ -9,8 +9,8 @@ tags:
   - tidyr
   - tidyeval
 image: 
-  feature: featurepls.png
-published: false
+  feature: featureRectangling.png
+published: true
 ---
 
 Recently, I was tagged in a tweet seeking advice for rectangling a particularly messy data structure.  
@@ -406,4 +406,4 @@ A tidier version of the data:
 </table>
 
 
-
+Is this helpful? let me know 🧐
