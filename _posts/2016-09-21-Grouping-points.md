@@ -100,7 +100,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 </figure>
 
 # Encircle
-This third option is what I ended up using for my own figures. It uses`geom_encircle`, a new geometry provided in the [`ggalt`](https://github.com/hrbrmstr/ggalt "ggalt on github"){:target="_blank"} package. This geom uses polynomial splines to draw nice smoothed polygons around the groups of points. It has flexible options for color, fill, and the smoothness of the polygons that it draws. This method is nice for highlighting groups visually and indicate cohesion, and not necessarily for performing any further analyses on the polygons themselves (e.g. using the areas or the amount of overlap for other subsequent tests).   
+This option is what I ended up using for my own figures. It uses`geom_encircle`, a new geometry provided in the [`ggalt`](https://github.com/hrbrmstr/ggalt "ggalt on github"){:target="_blank"} package. This geom uses polynomial splines to draw nice smoothed polygons around the groups of points. It has flexible options for color, fill, and the smoothness of the polygons that it draws. This method is nice for highlighting groups visually and indicate cohesion, and not necessarily for performing any further analyses on the polygons themselves (e.g. using the areas or the amount of overlap for other subsequent tests).   
 
 {% highlight r %}
 
