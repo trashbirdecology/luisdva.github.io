@@ -50,7 +50,7 @@ ggplot(birdsAll,aes(x=mass,y=length,color=age))+geom_point()+theme_bw()
 
 # Convex hulls
 
-Convex hulls are one of the most common methods for grouping points. Convex hulls have a formal geometric definition, but basically they are like stretching a rubber band around the outermost points in the group. We can now calculate the convex hulls for many groups using _ggforce_.  
+Convex hulls are one of the most common methods for grouping points. Convex hulls have a formal geometric definition, but basically they are like stretching a rubber band around the outermost points in the group. We can now calculate the convex hulls for many groups using `ggforce`.  
 {% highlight r %}
 
 # calculating convex hulls
@@ -83,7 +83,8 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 
 
 # Ellipses 
-Another common alternative is to group points using ellipses. `ggforce` can also plot the ellipses.
+Another common alternative is to group points using ellipses. We can plot the ellpises with `ggforce`, although `ggplot::stat_ellipse` is also an option.
+
 {% highlight r %}
 
 # plot with ellipse
