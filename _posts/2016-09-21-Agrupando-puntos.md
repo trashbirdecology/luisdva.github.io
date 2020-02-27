@@ -78,7 +78,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 </figure>
 
 
-Otra opción muy común es la de agrupar puntos usando **elipses**. ´ggforce´ puede calclular y trazar elipses, que además hereda los parámetros gráficos necesarios para dibujar los colores y la leyenda sin necesidad de especificarlos por separado.
+Otra opción muy común es la de agrupar puntos usando **elipses**. `ggforce` puede calclular y trazar elipses, que además hereda los parámetros gráficos necesarios para dibujar los colores y la leyenda sin necesidad de especificarlos por separado.
 
 {% highlight r %}
 # graficar con elipse
@@ -94,7 +94,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
         <figcaption>elipse con color</figcaption>
 </figure>
 
-Esta otra opción es la que yo terminé utilizando en mis figuras. Se trata de  ´geom_encircle´, una geometría adicional que es parte del paquete [ggalt](https://github.com/hrbrmstr/ggalt){:target="_blank"}. Este método utiliza curvas diferenciables definidas en porciones mediante polinomios, y termina dibujando polígonos redondeados que se ven bastante bien. Este método es más que nada para agrupar puntos y destacarlos visualmente, y no necesariamente para hacer otros análisis basados en el área del polígono (como ocurre en el caso de las envolturas convexas). 
+Esta otra opción es la que yo terminé utilizando en mis figuras. Se trata de  `geom_encircle`, una geometría adicional que es parte del paquete [`ggalt`](https://github.com/hrbrmstr/ggalt){:target="_blank"}. Este método utiliza curvas diferenciables definidas en porciones mediante polinomios, y termina dibujando polígonos redondeados que se ven bastante bien. Este método es más que nada para agrupar puntos y destacarlos visualmente, y no necesariamente para hacer otros análisis basados en el área del polígono (como ocurre en el caso de las envolturas convexas). 
 
 {% highlight r %}
 # graficar con poligonos redondeados
