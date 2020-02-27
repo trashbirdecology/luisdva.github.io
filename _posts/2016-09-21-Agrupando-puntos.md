@@ -14,7 +14,7 @@ published: true
 ---
 ## Agrupando puntos en dos dimensiones con ggplot
 
-> Actualizado en febrero de 2020 para incluir funciones del paquete `ggforce`.
+> Actualizado en febrero de 2020 para incluir funciones del paquete `ggforce`.  
 > This post is available in English [here](http://luisdva.github.io/rstats/Grouping-points/ "Anglais")
 
 Para varios tipos de análisis, es común terminar con gráficas que muestran puntos de dos o más grupos en dos dimensiones. Por ejemplo: análisis de componentes principales, perfiles bioclimáticos, o cualquier combinación de valores en dos ejes. Colaborando en diferentes proyectos, me he encontrado con estas alternativas para agrupar puntos y las quiero compartir en una misma publicación.
