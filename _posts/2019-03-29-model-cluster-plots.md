@@ -18,7 +18,7 @@ published: true
 
 Here’s one approach for plotting a set of faceted stacked barplots showing the output from popular software and methods (e.g. Structure, DAPC, or Admixture) used for population genetics/genomics and phylogeography. This code may come in handy when plotting individuals from different locations and models with different numbers of proposed ancestral populations. 
 
-To make the plots with made up data, let’s write a quick function to generate random proportions for an arbitrary number of proposed ancestral populations and samples. We can leverage the ‘long’ output from _tibble’s_ 'enframe' function and end up with a ggplot-ready tibble. For real data such as Admixture Q files, this table shape can also be accomplished easily with the _tidyr_ 'gather' function (and its upcoming replacement).
+To make the plots with made up data, let’s write a quick function to generate random proportions for an arbitrary number of proposed ancestral populations and samples. We can leverage the ‘long’ output from `tibble`'s `enframe` function and end up with a ggplot-ready tibble. For real data such as Admixture Q files, this table shape can also be accomplished easily with the `tidyr::gather` function (and its upcoming replacement).
   
 {% highlight r %}
 library(dplyr)
@@ -83,7 +83,7 @@ A quick glimpse of the resulting tibbles shows us how the plotting variables (x,
 # … with 252 more rows
 {% endhighlight %} 
 
-Now we can start plotting. The suitable geom here is _geom\_col_ because we want the bars to add up to 1. This approach lets us control the spacing of different locations by using facets, the *expand* argument for the scales, and the *panel.spacing* argument for the overall plot theme. Note how the *scales* and *space* arguments to _facet\_grid_ help us accommodate the different number of individuals per location. *Switch* places the facet labels below the plot. We can use _fct\_inorder_ from the 'forcats' package to avoid alphabetic arrangement of the facets.
+Now we can start plotting. The suitable geom here is `geom_col` because we want the bars to add up to 1. This approach lets us control the spacing of different locations by using facets, the *expand* argument for the scales, and the *panel.spacing* argument for the overall plot theme. Note how the *scales* and *space* arguments to _facet\_grid_ help us accommodate the different number of individuals per location. *Switch* places the facet labels below the plot. We can use `fct_inorder` from the `forcats` package to avoid alphabetic arrangement of the facets.
 
 {% highlight r %}
 # plotting
@@ -116,7 +116,7 @@ The above code produces this:
 <br><br>  
 
 
-After making some minor aesthetic choices, we can stack the plots for the different values of K in a single figure using patchwork. 
+After making some minor aesthetic choices, we can stack the plots for the different values of K in a single figure using `patchwork`. 
 
 
 {% highlight r %}
