@@ -55,7 +55,7 @@ Suggestion: add additional indicator columns with the information that was being
         <figcaption>much better</figcaption>
 </figure>
 
-R users can now handle formatted Excel spreadsheets thanks to Duncan Garmonsway's `tidyxl` package, which is very well documented in the associated [Data Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/index.html){:target="_blank"} book. I used it to deal with formatted data in this [post](https://luisdva.github.io/rstats/excel-trivia/){:target="_blank"}, and as of early 2020 meaningful formatting can be flattened into text annotations using the `unheadr`[package](https://undeadr.liomys.mx){:target="_blank"}. 
+R users can now handle formatted Excel spreadsheets thanks to Duncan Garmonsway's `tidyxl` package, which is very well documented in the associated [Data Munging Strategies](https://nacnudus.github.io/spreadsheet-munging-strategies/index.html){:target="_blank"} book. I used it to deal with formatted data in this [post](https://luisdva.github.io/rstats/excel-trivia/){:target="_blank"}, and as of early 2020 meaningful formatting can be flattened into text annotations using the `unheadr`[package](https://unheadr.liomys.mx){:target="_blank"}. 
 
 # 2. Merged cells
 
