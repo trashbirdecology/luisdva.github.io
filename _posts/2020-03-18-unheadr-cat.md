@@ -27,6 +27,9 @@ The breeds are embedded in the same column (variable) that holds the names of th
 To work with these data in R, we can use the `readxl` package to import the xlsx file. 
 
 {% highlight r %}
+library(dplyr) # A Grammar of Data Manipulation
+library(unheadr) # Handle Data with Messy Header Rows and Broken Values
+
 # get the spreadsheet
 CATspsheet <- tempfile(fileext = ".xlsx")
 curl::curl_download("https://github.com/luisDVA/codeluis/blob/master/fastCAT2015.xlsx?raw=true", CATspsheet)
