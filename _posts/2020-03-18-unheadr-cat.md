@@ -10,7 +10,7 @@ tags:
   - AKC
 image: 
   feature: featureCAT20.png
-published: false
+published: true
 ---
 [`unheadr`](https://unheadr.liomys.mx){:target="_blank"} 
 0.2.1 is now on CRAN, so here is an updated example for using the two main functions in the package.
