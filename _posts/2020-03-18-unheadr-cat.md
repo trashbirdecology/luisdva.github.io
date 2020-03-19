@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tidying formatted spreadsheets using unheadr
+title: Tidying formatted spreadsheets with unheadr
 excerpt: "Rectangling formatted spreadsheet data"
 category: rstats
 tags: 
@@ -22,7 +22,7 @@ The screenshot below comes from a spreadsheet with data from a regional event fo
         <figcaption>cell and font formatting</figcaption>
 </figure>
 <br><br>
-The breeds are embedded in the same column (variable) that holds the names of the individual dogs. Fortunately, the rows with the breeds have cell highlighting . Otherwise there would be no easy way to identify the breed names without prior knowledge (e.g. is Vizsla a name or a breed?). These ‘embedded subheaders’ approach is not quite tidy, and it would not be easy to, for example, calculate the average time by breed.
+The breeds are embedded in the same column (variable) that holds the names of the individual dogs. Fortunately, the rows with the breeds have cell highlighting. Otherwise there would be no easy way to identify the breed names without prior knowledge (e.g. is Vizsla a name or a breed?). These ‘embedded subheaders’ approach is not quite tidy, and it would not be easy to, for example, calculate the average time by breed.
 
 To work with these data in R, we can use the `readxl` package to import the xlsx file. 
 
@@ -34,7 +34,7 @@ curl::curl_download("https://github.com/luisDVA/codeluis/blob/master/fastCAT2015
 readxl::read_excel(CATspsheet)
 {% endhighlight %}
 
-Let’s have a look at the ouput from `readxl::read_excel`.
+Let’s have a look at the ouput from `readxl::read_excel()`.
 
 {% highlight text %}
 # A tibble: 32 x 3                                                
@@ -61,7 +61,7 @@ breeds_dat <- annotate_mf(CATspsheet, orig = Dog, new = dog_annotated)
 breeds_dat
 {% endhighlight %}
 
-Applying the `annotate_mf()` function to annotate the Dogs variable, which adds a new variable that tells us about the type of formatting in each cell. The cell highlighting and HTML color code are appended onto the variable of interest.
+Applying the `annotate_mf()` function to annotate the `Dogs` variable, which adds a new variable that tells us about the type of formatting in each cell. The cell highlighting and HTML color code are appended onto the variable of interest.
  
 {% highlight text %}
 # A tibble: 32 x 4
@@ -109,7 +109,7 @@ Tidiness
 # … with 14 more rows
 {% endhighlight %}
  
-On the event website, I later learned that italic text in the ‘Time’ variable indicates that a dog was disqualified (for whatever reason). We can repeat the previous steps with the times variable, and join the resulting tables.
+On the event website, I later learned that italic text in the `Time` variable indicates that a dog was disqualified (for whatever reason). We can repeat the previous steps with the times variable, and join the resulting tables.
 
 {% highlight r %}
 # repeat with Time variable
