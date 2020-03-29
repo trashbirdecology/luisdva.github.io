@@ -12,7 +12,15 @@ image:
   creditlink: null
 published: true
 ---
-# Extraer valores de uno o más raster a partir de coordenadas xy usando R. 
+> # Una versión actualizada (marzo 2020) de esta guía está disponible en: https://luisdva.github.io/rspatial-es/. 
+
+
+
+
+
+
+
+#### Extraer valores de uno o más raster a partir de coordenadas xy usando R. 
 
 En temas de biodiversidad, es común trabajar con registros puntuales de la distribución de una o más especies, generalmente representadas en coordenadas geográficas xy (longitud/latitud). Para ciertos análisis en macroecología, conservación, y biogeografía, necesitamos datos sobre las condiciones ambientales en cada registro. Estos datos de clima, vegetación, uso de suelo, etc. generalmente existen como capas raster (una representación del área de estudio en formato de matriz dividida en celdas con valores únicos).
 
