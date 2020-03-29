@@ -12,7 +12,7 @@ image:
   creditlink: null
 published: true
 ---
-> # Una versión actualizada (marzo 2020) de esta guía está disponible en: https://luisdva.github.io/rspatial-es/. 
+> # Una versión actualizada (marzo 2020) de esta guía está disponible [aquí](https://luisdva.github.io/rspatial-es/).
 
 
 
