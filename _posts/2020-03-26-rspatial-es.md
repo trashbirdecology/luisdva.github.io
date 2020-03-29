@@ -1,5 +1,6 @@
 ---
 layout: post
+title: SIG con R - Actualización 
 excerpt: Extraer valores de uno o más raster a partir de coordenadas xy usando R.
 tags:
   - rstats
@@ -23,7 +24,7 @@ Extraer el valor de las celdas en donde ocurren nuestros registros puntuales es 
 
 En este caso usé los raster de temperatura y precipitación anual del proyecto [CHELSA Climate](http://chelsa-climate.org/){:target="_blank"}. Estos datos tienen mejor exactitud en zonas montañosas que otras opciones existentes como WorldClim. Aquí se pueden descargar los datos de clima en formato _geotiff_. 
 
-Son archivos grandes, pero gracias al paquete `stars` no hace falta cargarlos a la memoria para varias operaiones, y yo no tuve problema para manipularlos en una pc vieja. En este ejemplo, obtuve simultáneamente los valores de dos raster para 150 localidades: la temperatura media anual y la precicipitación anual. Para reproducirlo, hay que descargar los archivos de clima desde esta [página de descargas](http://chelsa-climate.org/downloads/){:target="_blank"} , y las coordenadas se pueden leer directamente de [este](https://raw.githubusercontent.com/luisDVA/codeluis/master/localidades.csv){:target="_blank"}  archivo csv. 
+Son archivos grandes, pero gracias al paquete `stars` no hace falta cargarlos a la memoria para varias operaciones, y yo no tuve problema para manipularlos en una pc vieja. En este ejemplo, obtuve simultáneamente los valores de dos raster para 150 localidades: la temperatura media anual y la precicipitación anual. Para reproducirlo, hay que descargar los archivos de clima desde esta [página de descargas](http://chelsa-climate.org/downloads/){:target="_blank"} , y las coordenadas se pueden leer directamente de [este](https://raw.githubusercontent.com/luisDVA/codeluis/master/localidades.csv){:target="_blank"}  archivo csv. 
 
 Los raster de clima los manejamos como objetos `stars`, y los datos puntuales como un objeto `simple feature` del paquete `sf`.
 
@@ -52,7 +53,7 @@ climStack <- c(annTemp, annPrec)
 
 Utilizando el argumento _proxy_ de `read_stars()`, no se carga todo el archivo a la memoria y así evitamos que colapse la sesión de R por falta de RAM.
 
-Para que sea más práctico el manejo de los raster, los podemos recortar a la extensión geográfica de nuestros datos puntuals (también podrían ser polígonos y el método es el mismo). En este caso, usé un _buffer_ de 3 grados alrededor de los cuatro valores que definen los valores máximos y mínimos de los puntos en ambos ejes. El 4326 es el código EPSG (European Petroleum Survey Group) de la proyección genérica WGS84.
+Para que sea más práctico el manejo de los raster, los podemos recortar a la extensión geográfica de nuestros datos puntuals (también podrían ser polígonos y el método es el mismo). En este caso, usé un _buffer_ de 3 grados alrededor de los cuatro valores que definen los valores máximos y mínimos de los puntos en ambos ejes. El 4326 es el código EPSG (European Petroleum Survey Group) de la proyección geográfica WGS84.
 
 La pila de rasters se recorta con `st_crop()`, y los raster recortados se pueden exportar/importar.
 
