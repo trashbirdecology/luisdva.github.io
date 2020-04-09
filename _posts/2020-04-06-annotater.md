@@ -14,7 +14,7 @@ image:
 published: false
 ---
 
-Last year, I was helping some labmates with their R code, and I noticed that they couldn't run their analyses because their scripts had many `library()` calls for obscure remote sensing and oceanography packages they didn't need, some of which had installation issues, dependencies, and masked functions. 
+Last year, I was helping some labmates with their R code, and I noticed that they couldn't run their analyses because their scripts had many `library()` calls for obscure packages they didn't need, some of which had installation issues, dependencies, and masked functions. 
 
 We started looking up each of these packages to see what they're for, and when working offline, we used the `utils::packageDescription()` function to parse the DESCRIPTION files for the already installed packages. For more informative scripts, we commented the `libary()` load calls with the 'Title' field from each package.
 
