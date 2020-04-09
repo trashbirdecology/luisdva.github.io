@@ -14,9 +14,23 @@ image:
 published: false
 ---
 
-Last year, I was helping some labmates that were having issues with their R code, and I noticed that they were struggling in part because the scripts they were using had many `library()` calls for obscure remote sensing and oceanography packages they didn't need, some of which had installation and dependency issues. 
+Last year, I was helping some labmates with their R code, and I noticed that they couldn't run their analyses because their scripts had many `library()` calls for obscure remote sensing and oceanography packages they didn't need, some of which had installation issues, dependencies, and masked functions. 
 
-At the time, 
+We started looking up each of these packages to see what they're for, and when working offline, we used the `utils::packageDescription()` function to parse the DESCRIPTION files for the already installed packages. For more informative scripts, we commented the `libary()` load calls with the 'Title' field from each package.
+
+For example:
+
+{% highlighttext %}
+# package load ------------------------------------------------------------
+library(readr) # Read Rectangular Text Data
+library(dplyr) # A Grammar of Data Manipulation
+library(sensiPhy) # Sensitivity Analysis for Comparative Methods
+library(tibble) # Simple Data Frames
+library(weatherData) # Get Weather Data from the Web
+{% endhighlight%}
+
+After that, it seemed like a good idea to automate this annotation process. 
+
 To illustrate  a recent update to `ggplot2`, 
 
 
