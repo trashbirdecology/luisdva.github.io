@@ -5,7 +5,7 @@ excerpt: "RStudio addins to annotate R code with details on the packages being l
 category: rstats
 tags: 
   - styler
-  - addin
+  - reproducibility
   - scripts
   - version
 image: 
@@ -29,7 +29,9 @@ library(tibble) # Simple Data Frames
 library(weatherData) # Get Weather Data from the Web
 {% endhighlight%}
 
-After that, it seemed like a good idea to automate this annotation process. 
+After that, it seemed like a good idea to automate this annotation process. The `annotater` package adds a few addins to RStudio so we can easily add these comments to our code. This package follows the approach in `styler` package for automatically adapting code to a formatting style.  
+
+
 
 To illustrate  a recent update to `ggplot2`, 
 
