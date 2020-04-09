@@ -20,7 +20,7 @@ Last year, I was helping some labmates with their R code, and I noticed that the
 
 For example:
 
-{% highlighttext %}
+{% highlight text %}
 # package load ------------------------------------------------------------
 library(readr) # Read Rectangular Text Data
 library(dplyr) # A Grammar of Data Manipulation
