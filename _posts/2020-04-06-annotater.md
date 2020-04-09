@@ -14,9 +14,9 @@ image:
 published: false
 ---
 
-Last year, I was helping some labmates that were having issues with their R scripts, and I noticed that they were struggling simply because the scripts they were using had many `library()` calls for obscure remote sensing packages they didn't need, some of which had installation and dependency issues. 
+Last year, I was helping some labmates that were having issues with their R code, and I noticed that they were struggling in part because the scripts they were using had many `library()` calls for obscure remote sensing and oceanography packages they didn't need, some of which had installation and dependency issues. 
 
-
+At the time, 
 To illustrate  a recent update to `ggplot2`, 
 
 
