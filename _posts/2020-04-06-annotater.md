@@ -1,18 +1,21 @@
 ---
 layout: post
-title: Tidying formatted spreadsheets with unheadr
-excerpt: "Rectangling formatted spreadsheet data"
+title: annotater
+excerpt: "RStudio addins to annotate R code with details on the packages being loaded"
 category: rstats
 tags: 
-  - italic
-  - meaningful formatting
-  - xlsx
-  - AKC
+  - styler
+  - addin
+  - scripts
+  - version
 image: 
   feature: featureAnnot.png
   credit: Image by Engin_Akyurt from Pixabay
 published: false
 ---
+
+Last year, I was helping some labmates that were having issues with their R scripts, and I noticed that they were struggling simply because the scripts they were using had many `library()` calls for obscure remote sensing packages they didn't need, some of which had installation and dependency issues. 
+
 
 To illustrate  a recent update to `ggplot2`, 
 
