@@ -45,7 +45,7 @@ Here's the other function in action:
 
 ![look\!](https://raw.githubusercontent.com/luisdva/annotater/master/inst/media/repos1.gif)
 
-I've been using these addins to annotate scripts in my own research, for previous posts on this site, and when sharing code with colleagues, and it helps 
+I've been using these addins to annotate scripts in my own research, for previous posts on this site, and when sharing code with colleagues, and so far I've found it helpful. 
 
 📦 Read more about `ànnotater `[here](https://github.com/luisDVA/annotater){:target="_blank"}   
 
