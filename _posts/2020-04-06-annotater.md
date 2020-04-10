@@ -55,4 +55,4 @@ Install from GitHub like so:
 remotes::install_github("luisdva/annotater")
 {% endhighlight %}
 
-All feedback is welcome!
+The package is a work in process, and all feedback is welcome!
