@@ -16,6 +16,8 @@ image:
 published: true
 ---
 
+> ## [English-language version](https://luisdva.github.io/rstats/seal-maps/) 
+
 Esta es una guía bastante breve para hacer mapas con R, a través de `ggplot2` y `sf`, orientada a regiones de alta latitud. El ejemplo en esta guía es con datos puntuales que muestran la distribución de dos especies de foca cerca de la Península Antártica.
 
 Vamos a descargar registros de foca de Wedell y de elefante marino del portal de biodiversidad [gbif](https://www.gbif.org/){:target="_blank"} con `rgbif`, así como polígonos de costas con `rnaturalearth`. El mapa lleva una proyección geográfica azimutal para mostrar adecuadamente estas regiones tan australes. Los parámetros de la proyección provienen de la aplicación  [Projection Wizard web app](https://projectionwizard.org/){:target="_blank"} de Oregon State University.
