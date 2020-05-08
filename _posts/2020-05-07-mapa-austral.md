@@ -2,6 +2,7 @@
 layout: post
 title: Mapas de altas latitudes en R
 excerpt: Ilustrando la distribución de dos especies de focas antárticas con R y ggplot2.
+category: rstats
 tags:
   - rstats
   - gis
