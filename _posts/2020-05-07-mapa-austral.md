@@ -16,9 +16,9 @@ image:
 published: true
 ---
 
-Esta es una guía bastante breve para hacer mapas con R, a través de `ggplot2` y `sf`, orientado a regiones de alta latitud. El ejemplo en esta guía es con datos puntuales que muestran la distribución de dos especies de foca cerca de la Península Antártica.
+Esta es una guía bastante breve para hacer mapas con R, a través de `ggplot2` y `sf`, orientada a regiones de alta latitud. El ejemplo en esta guía es con datos puntuales que muestran la distribución de dos especies de foca cerca de la Península Antártica.
 
-Vamos a descargar registros de foca de Wedell y de elefante marino del portal de biodiversidad [gbif](https://www.gbif.org/){:target="_blank"} con `rgbif`, así como polígonos de costas con `rnaturalearth`. El mapa lleva una proyección geográfica azimutal para mostrar adecuadamente estas regiones tan australes. Los parámetrosde la proyección provienen de la aplicación  [Projection Wizard web app](https://projectionwizard.org/){:target="_blank"} de Oregon State University.
+Vamos a descargar registros de foca de Wedell y de elefante marino del portal de biodiversidad [gbif](https://www.gbif.org/){:target="_blank"} con `rgbif`, así como polígonos de costas con `rnaturalearth`. El mapa lleva una proyección geográfica azimutal para mostrar adecuadamente estas regiones tan australes. Los parámetros de la proyección provienen de la aplicación  [Projection Wizard web app](https://projectionwizard.org/){:target="_blank"} de Oregon State University.
 
 Veamos.
 
@@ -40,7 +40,7 @@ mlsealsdat <- mlseals$data
 wsealsdat <-wseals$data
 {% endhighlight %}
 
-Pasamos estos datos a objectos "sf". Solo hay que especificar cuales son las variables con las coordenadas y cual es su proyección. Decidí filtar los datos por longitud y latitud antes de proyectarlos y antes de crear un objeto con los límites espaciales del mapa que vamos a dibujar.
+* Pasamos estos datos a objectos "sf". Solo hay que especificar cuales son las variables con las coordenadas y cual es su proyección. Decidí filtar los datos por longitud y latitud antes de proyectarlos y antes de crear un objeto con los límites espaciales del mapa que vamos a dibujar.
 
 {% highlight r %}
 
@@ -66,7 +66,7 @@ boundss <- st_bbox(st_buffer(sealsproj,500000))
 xydatbuffer <- st_as_sf(st_as_sfc(boundss))
 {% endhighlight %}
 
-Ahora cargamos la división política de [Natural Earth](https://www.naturalearthdata.com/){:target="_blank"} (un juego de datos espaciales abiertos) y la proyectamos.
+* Ahora cargamos la división política de [Natural Earth](https://www.naturalearthdata.com/){:target="_blank"} (un juego de datos espaciales abiertos) y la proyectamos.
 
 {% highlight r %}
 
@@ -79,7 +79,7 @@ regsAr <- ne_states(country = "Argentina",returnclass = "sf") %>%
   st_transform("+proj=aea +lat_1=-67.64292238209752 +lat_2=-43.70345673689002 +lon_0=-60.46875")
 {% endhighlight %}
 
-Ya podemos apilar todas estas capas en `ggplot`. Para mostrar un posible uso de `ggimage` y para decorar un poco el mapa, podemos armar una tabla con la ubicación geográfica y las rutas de algunas imágenes que podemos sobreponer en la figura. Vamos a agregar dibujos de las dos especies de foca, ilustrados por [Julia Saravia](https://twitter.com/JujuSaravia){:target="_blank"}, genetista austral y divulgadora.
+* Ya podemos apilar todas estas capas en `ggplot`. Para mostrar un posible uso de `ggimage` y para decorar un poco el mapa, podemos armar una tabla con la ubicación geográfica y las rutas de algunas imágenes que podemos sobreponer en la figura. Vamos a agregar dibujos de las dos especies de foca, ilustrados por [Julia Saravia](https://twitter.com/JujuSaravia){:target="_blank"}, genetista austral y divulgadora.
 
 {% highlight r %}
 
