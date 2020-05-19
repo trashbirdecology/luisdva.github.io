@@ -26,7 +26,7 @@ Recently, I saw this tweet by Mara Averick mentioning a spreadsheet in which bol
 After also seeing some COVID-related spreadsheets where bold = negative, it seemed like a good idea to generalize the approach and have a single function that annotates meaningful formatting for all the cells in all the columns of a spreadsheet.
 
 <figure>
-    <a href="/images/eichornli.png"><img src="/images/eichornli.png" style="width 40%"></a>
+    <a href="/images/eichornli.png"><img src="/images/eichornli.png" width= "400"></a>
         <figcaption>what</figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ After also seeing some COVID-related spreadsheets where bold = negative, it seem
 Let’s try it out with the example data bundled with the package. It is an .xlsx file that looks like this.
 
 <figure>
-    <a href="/images/boutiques.png"><img src="/images/boutiques.png" style="width 90%"></a>
+    <a href="/images/boutiques.png"><img src="/images/boutiques.png" style="width 95%"></a>
         <figcaption>nice colors bro</figcaption>
 </figure>
 
