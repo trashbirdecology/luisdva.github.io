@@ -19,20 +19,21 @@ published: true
 
 Late last year I added functionality to `unheadr` for importing and working with formatted spreadsheet data (see this [post](https://luisdva.github.io/rstats/annotate-mf/){:target="_blank"}).
 
-Recently, I saw this tweet by Mara Averick mentioning a spreadsheet where negative values are indicated by bold text. The `unheadr::annotate_mf` function can translate cell formatting into text annotations within a data frame or tibble, but only for one target variable at a time. 
+Recently, I saw this tweet by Mara Averick mentioning a spreadsheet in which bold text = negative values. The `unheadr::annotate_mf` function can translate cell formatting into text annotations within a data frame or tibble, but only for one target variable at a time. 
  
 <blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Based on true events of this afternoon...<br><br>I know, I know there&#39;s <a href="https://twitter.com/nacnudus?ref_src=twsrc%5Etfw">@nacnudus</a>&#39; {unpivotr}, but seriously?! 🤬<br><br>I know, <a href="https://twitter.com/ChelseaParlett?ref_src=twsrc%5Etfw">@ChelseaParlett</a>, it&#39;s not exactly <a href="https://twitter.com/hashtag/statsTikTok?src=hash&amp;ref_src=twsrc%5Etfw">#statsTikTok</a>, but the feels are real! <a href="https://t.co/QbngGYLoPd">pic.twitter.com/QbngGYLoPd</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/1255614002618458112?ref_src=twsrc%5Etfw">April 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-After also seeing some COVID-related spreadsheets where bold = negative. It seemed like a good idea to generalize the approach and have a single function that annotates meaningful formatting for all the cells in all the columns of a spreadsheet.
+After also seeing some COVID-related spreadsheets where bold = negative, it seemed like a good idea to generalize the approach and have a single function that annotates meaningful formatting for all the cells in all the columns of a spreadsheet.
 
 <figure>
-    <a href="/images/eichornli.png"><img src="/images/eichornli.png" style="width 60%"></a>
+    <a href="/images/eichornli.png"><img src="/images/eichornli.png" style="width 40%"></a>
         <figcaption>what</figcaption>
 </figure>
 
-`annotate_mf_all` is now part of `unheadr` (dev version)
+## Introducing `annotate_mf_all()`
 
-Let’s try it out with the example data bundled with the package. It is an xlsx file that looks like this.
+`annotate_mf_all` is now part of `unheadr` (dev version). Install from GitHub if you haven't already.
+Let’s try it out with the example data bundled with the package. It is an .xlsx file that looks like this.
 
 <figure>
     <a href="/images/boutiques.png"><img src="/images/boutiques.png" style="width 90%"></a>
@@ -41,7 +42,8 @@ Let’s try it out with the example data bundled with the package. It is an xlsx
 
 _boutiques.xlsx_ is toy dataset with Q1 profits for different store locations. Additional information is encoded as meaningful formatting. Bold indicates losses (negative values), colors indicate continent, and italic indicates a second location in the same city.
 
-If we know what the different formatting options represent,and have them embedded as text within each cell (value) in an R object, we can in a relatively simple workflow. A walkthrough:
+If we know what the different formatting options represent, and have them embedded as text within each cell (value) in an R object, we can parse the formatting and do some cleanup following a relatively simple workflow. A walkthrough:
+
 Load the relevant packages and data
 {% highlight r %}
 # remotes::install_github("luisdva/unheadr")
