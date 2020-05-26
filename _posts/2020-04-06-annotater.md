@@ -14,7 +14,7 @@ image:
 published: true
 ---
 
-Last year, I was helping some labmates with their R code, and I noticed that they couldn't run their analyses because their scripts had many `library()` calls for obscure packages they didn't need, some of which had installation issues, dependencies, and masked functions. 
+While helping some labmates with their R code last year, I noticed that sometimes they couldn't run their analyses because their scripts had many `library()` calls for obscure packages they didn't need, some of which had installation issues, dependencies, version conflicts, or masked functions. 
 
 📦 We started looking up each of these packages to see what they're for, and when working offline, we used the `utils::packageDescription()` function to parse the DESCRIPTION files for the already installed packages. For more informative scripts, we commented the `libary()` load calls with the 'Title' field from each package.
 
@@ -43,7 +43,7 @@ It seemed like good idea to also add the package version to the annotations to a
 
 Here's the other function in action:  
 
-![look\!](https://raw.githubusercontent.com/luisdva/annotater/master/inst/media/repos1.gif)
+![look\!](https://raw.githubusercontent.com/luisdva/annotater/master/inst/media/repos2.gif)
 
 I've been using these addins to annotate scripts in my own research, for previous posts on this site, and when sharing code with colleagues, and so far I've found it helpful. 
 
