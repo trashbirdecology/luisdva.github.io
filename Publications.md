@@ -10,11 +10,11 @@ image:
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
-+ **Verde Arregoitia, L.D.**, Teta, P. & D’Elía, G., 2020. Patterns in research and data sharing for the study of form and function in caviomorph rodents. _Journal of Mammalogy_. https://doi.org/10.1093/jmammal/gyaa002
++ **Verde Arregoitia, L.D.**, Teta, P. & D’Elía, G., 2020. Patterns in research and data sharing for the study of form and function in caviomorph rodents. _Journal of Mammalogy_. 101 (2), 604-612. https://doi.org/10.1093/jmammal/gyaa002
 
 + Colunga‐Salas, P., Sánchez‐Montes, S., Grostieta, E., **Verde Arregoitia, L.D.**, Cabrera‐Garrido, M.Y., Becker, I. & León‐Paniagua, L., 2020. What do studies in wild mammals tell us about human emerging viral diseases in Mexico?. _Transboundary and emerging diseases_, 67(1), pp.33-45.
 
-+ **Verde Arregoitia, L.D.** & González‐Suárez, M. (2019) From conference abstract to publication in the conservation science literature. _Conservation Biology_ https://doi.org/10.1111/cobi.13296
++ **Verde Arregoitia, L.D.** & González‐Suárez, M. (2019) From conference abstract to publication in the conservation science literature. _Conservation Biology_. 33 (5), 1164-1173. https://doi.org/10.1111/cobi.13296
 
 + **Verde Arregoitia, L.D.**, Cooper. N., & D’Elía, G. (2018) Good practices for sharing analysis-ready data in mammalogy and biodiversity research. Hystrix, the Italian Journal of Mammalogy 29: 155-161 https://doi.org/10.4404/hystrix-00133-2018
 
