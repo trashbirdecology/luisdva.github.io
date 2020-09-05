@@ -15,5 +15,9 @@ image:
 published: false
 ---
 
+Our new paper, [Classifying rodent diets for comparative research](https://doi.org/10.1111/mam.12214){:target="_blank"}, is now published in Mammal Review. 
 
-[gbif](https://www.gbif.org/){:target="_blank"} 
+
+If you reviewed an 
+
+feel free to reuse the original illustrations, which I released as CC-BY-SA here. 
