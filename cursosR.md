@@ -10,7 +10,7 @@ image:
 
 ## Cursos de R impartidos
 
-Pronto compartiré los materiales y diapositvas de los cursos impartidos en formato interactivo utilizando [Binder](https://mybinder.org).
+Pronto compartiré los materiales y diapositivas de los cursos impartidos en formato interactivo utilizando [Binder](https://mybinder.org).
 
 - Visualización de datos y producción de figuras para publicaciones utilizando R y ggplot2. 2018. _Curso teórico-práctico impartido durante el XIV Congreso Nacional de Mastozoología_.
 
