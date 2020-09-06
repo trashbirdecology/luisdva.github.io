@@ -27,12 +27,12 @@ You may have seen a preprint version floating around from 2016, entitled "Rethin
 If you liked the little drawings used in Figure 2, the originals are here. Feel free to reuse the original illustrations, which I released as CC-BY-SA [here](https://github.com/luisDVA/rodent-illustrations){:target="_blank"}. A few examples below:
 
 <figure>
-    <a href="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/granivore.png"><img src="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/granivore.png"> width= "660"</a>
+    <a href="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/granivore.png"><img src="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/granivore.png" width= "660"></a>
         <figcaption>my rendition of a kangaroo rat</figcaption>
 </figure>
 
 <figure>
-    <a href="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/folivore.png"><img src="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/folivore.png"> width= "660"</a>
+    <a href="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/folivore.png"><img src="https://raw.githubusercontent.com/luisDVA/rodent-illustrations/master/png-imgs/folivore.png" width= "660"></a>
         <figcaption>my rendition of a vole</figcaption>
 </figure>
 
