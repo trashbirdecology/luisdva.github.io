@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Classifying rodent diets
-excerpt: New publication: Classifying rodents diets for comparative research
+excerpt: New publication - Classifying rodents diets for comparative research
 tags:
   - rats
   - omnivore
