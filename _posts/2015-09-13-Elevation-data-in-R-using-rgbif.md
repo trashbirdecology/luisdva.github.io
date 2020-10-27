@@ -39,6 +39,8 @@ Localities <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/maste
 
 After loading the data, I used `dplyr` to rename some columns, convert the coordinates into decimal degrees, and discard records that already have elevation data. Then I tried out the `elevation()` function. Because I already had columns named 'decimalLatitude' and 'decimalLongitude', the only arguments needed were the name of the data frame and my GeoNames username (which is easy to obtain, see the help file for `elevation()`).
 
+After signing up for GeoNames account and going through the account validation process, make sure to **enable Free Web Services** at the [account management page](https://www.geonames.org/manageaccount), otherwise you will get a 401 error and the `elevation` function will not run.  
+
 {% highlight r %}
 LocalitiesNoElevation <- Localities %>%
   filter(is.na(Elevation)) %>%
