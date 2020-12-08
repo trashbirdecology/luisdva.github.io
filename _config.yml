@@ -15,7 +15,6 @@ sass:
   style: compressed
 gems:
   - jekyll-sitemap
-emote_theme: "mmistakes/minimal-mistakes@4.21.0"
 
 kramdown:
   auto_ids: true
