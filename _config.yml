@@ -20,7 +20,7 @@ title                    : "LDVA"
 title_separator          : "-"
 subtitle                 : "data.ecology.evolution.conservation.biogeography"
 name                     : "Luis D. Verde Arregoitia"
-description              : "An amazing website."
+description              : "Personal site."
 url                      : https://luisdva.github.io
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -96,7 +96,7 @@ author:
   name             : "Luis D. Verde Arregoitia"
   avatar           : https://pbs.twimg.com/profile_images/988264733294788608/AfgxWLOK_400x400.jpg
   bio              : "Personal site"
-  location         : "Somewhere"
+  location         : 
   email            :
   links:
     - label: "Email"
@@ -117,7 +117,10 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
-
+  publons: 980996
+  researchgate: Luis_Verde_Arregoitia
+  gscholar: Ii0dP6kAAAAJ
+  
 # Site Footer
 footer:
   links:
