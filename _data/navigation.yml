@@ -1,22 +1,22 @@
 # Site navigation links
+main:
+ - title: Home
+   url: /
 
-- title: Home
-  url: /
-
-- title: About
-  url: /about/
+ - title: About
+   url: /about/
   
-- title: All posts
-  url: /posts/
+ - title: All posts
+   url: /posts/
 
-- title: Publications
-  url: /Publications/
+ - title: Publications
+   url: /Publications/
 
-- title: Presentations
-  url: /Presentations/
+ - title: Presentations
+   url: /Presentations/
   
-- title: R blog
-  url: /rposts/
+ - title: R blog
+   url: /rposts/
   
-- title: Cursos R
-  url: /cursosR/
+ - title: Cursos R
+   url: /cursosR/
