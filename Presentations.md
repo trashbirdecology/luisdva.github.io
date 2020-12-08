@@ -4,8 +4,8 @@ title: Presentations
 permalink: /Presentations/
 published: true
 share: false
-image:
-  feature: slider5.jpg
+header:
+  image:
 ---
 
 
