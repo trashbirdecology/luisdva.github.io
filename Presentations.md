@@ -5,7 +5,7 @@ permalink: /Presentations/
 published: true
 share: false
 header:
-  image:
+  image: slider5.jpg
 ---
 
 
