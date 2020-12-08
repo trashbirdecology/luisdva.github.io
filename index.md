@@ -1,16 +1,9 @@
 ---
 layout: home
-title: Homepage
-excerpt: "mammals, ecology, evolution, conservation - Luis D. Verde Arregoitia Research Page"
-tags: 
-  - mammals
-  - conservation  
-  - updates
-  - blog
-  - LuisDVerde
+excerpt: "A minimal Jekyll theme for your blog by designer Michael Rose."
+tags: [Jekyll, theme, responsive, blog, template]
 image:
-  feature: featurerat2.jpg
-
-published: true
+  feature: sample-image-1.jpg
+  credit: WeGraphics
+  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
-
