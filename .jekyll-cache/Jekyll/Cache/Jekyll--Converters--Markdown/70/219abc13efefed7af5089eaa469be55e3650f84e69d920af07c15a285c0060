@@ -1,0 +1,286 @@
+I"0�<blockquote>
+  <p><strong>Update - June 2018 -</strong> an API is now necessary to download IUCN Red List data. This is easy to request though.</p>
+</blockquote>
+
+<h3 id="red-lists-of-threatened-species">Red Lists of Threatened Species</h3>
+
+<p>This June, the <a href="http://www.birdlife.org/europe-and-central-asia/european-red-list-birds-0">European Red List of Birds</a> revealed that almost 20% of bird species in Europe are facing extinction. This report is the result of three years of hard work by a consortium led by BirdLife International. This list, and similar recent publications (i.e the <a href="http://www.theguardian.com/environment/2015/jun/03/40-of-europes-sharks-and-rays-face-extinction">European Red List of marine fishes</a>)  are expected to guide conservation and policy work over the coming years. 
+Assigning species into different threat categories can help to guide priorities for conservation investment, and produce different recommendations for conservation action for each category. Red Lists of threatened species can be compiled at various geographic levels (state/country/global), and they usually follow the rigurous quantitative methods set by the International Union for Conservation of Nature <a href="http://www.iucnredlist.org/">(IUCN)</a>. Red Lists are authoritative and objective systems for assessing large-scale, species-level extinction risk.</p>
+
+<p>As we learn more about the threat status for more animal and plant groups through comprehensive Red List assessments,  we can start  identifying the biological factors and/or human pressures that explain why some species are more threatened than others. This usually involves using multivariate models to relate a species’ level of threat (e.g. Red List data) with information on its distribution, biology, and the threats it faces. These comparative analyses implement various statistical methods to overcome the fact that evolutionary relatedness can introduce apparent correlations between species’ traits.</p>
+
+<h3 id="ordinal-response">Ordinal response</h3>
+
+<p>To date, most studies have treated Red List values of extinction risk as a continuous variable (i.e there are five main threat categories for living species, going from <em>Least Concern -&gt; Near Threatened -&gt; Vulnerable -&gt; Endangered -&gt; Critically Endangered</em> and they can be treated as a coarse continous index from 1 to 5). This approach assumes that the categories are continuously varying and evenly spaced. Instead, the Red List is an ordinal, categorical estimate of threat that represents an underlying continuous latent variable (the unknown true extinction risk). For example, the true difference in extinction risk may vary between categories of Least Concern and Near Threatened when compared with Critically Endangered and extinct.</p>
+
+<p>The coarse continuous index approach can produce elevated type I error rates because it loses the variance structure of the original ordinal ranks. Problems arise when the ordinal ranks are separated by unequal distances along the underlying continuous variable that they measure, and we can’t know this beforehand.  A growing number of papers have compared the results from ordinal vs continous models, and a simulation test by <a href="http://rspb.royalsocietypublishing.org/content/early/2010/10/09/rspb.2010.1489.short">Matthews et al. (2011)</a> found that the results can be consistent in most situations. The coarse continous approach isn’t necessarily wrong or misleading, but the sensitivity of models to different treatments of Red List response data is not always acknowledged.</p>
+
+<h3 id="phylogenetic-generalized-linear-mixed-models">Phylogenetic generalized linear mixed models</h3>
+
+<p>For my PhD research I studied extinction risk in mammals, and I used IUCN Red List data as the response variable. My co-supervisor and PCM guru <a href="http://researchers.uq.edu.au/researcher/428">Simon Blomberg</a> convinced me to try and model the response as an ordinal index. At the time, only two studies had modeled Red List data as an ordered multinomial response, but both had potential non-indpendece issues. <a href="http://www.jstor.org/stable/10.1086/595756?seq=1#page_scan_tab_contents">Liow et al. (2009)</a> used nonphylogenetic proportional odds models; and <a href="http://onlinelibrary.wiley.com/doi/10.1111/ele.12035/full">González-Suárez &amp; Revilla (2013)</a> used taxonomically informed Generalised Linear Mixed Models. Initially, we tried to code ordinal logit models in JAGS - and while I struggled with the phylogenetic comparative aspect and the JAGS and Linux learning curves, a helpful Reddit user pointed me to the <em>MCMCglmm</em> package by Jarrod Hadfield.</p>
+
+<p><a href="http://cran.r-project.org/web/packages/MCMCglmm/index.html"><em>MCMCglmm</em></a> is an R package for fitting Generalised Linear Mixed Models using Markov chain Monte Carlo techniques. It draws on quantitative genetics methods, and I was very interested in how the it could incorporate phylogenetic information (as a covariance matrix representing the amount of shared evolutionary history between species), and use a probit link function to model ordinal responses. The package is widely-used and well-documented in mailing lists and discussion groups (and Jarrod was always helpful and patient whenever I pestered him on mailing lists or at conferences).</p>
+
+<h3 id="2013-paper">2013 paper</h3>
+
+<p>For my first thesis chapter, I investigated the relationship between extinction risk and  quantitative properties of the mammalian phylogeny. I used <em>MCMCglmm</em> to fit Phylogenetic Generalised Linear Mixed Models (PGLMM; or the cooler-sounding Bayesian Phylogenetic Mixed Models, BPMM). This research was published in 2013 <a href="http://rspb.royalsocietypublishing.org/content/280/1765/20131092.short">[OA link]</a> and since then I’ve seen ordinal extinction risk modeling used to address some interesting questions for amphibians <a href="http://rspb.royalsocietypublishing.org/content/282/1803/20142213">(De Lisle &amp; Rowe 2015)</a> and beetles <a href="http://onlinelibrary.wiley.com/doi/10.1111/cobi.12427/abstract">(Seibold et al., 2015)</a>, using SAS and Mesquite routines that I haven’t looked into yet.</p>
+
+<p>I’m still proud of having published the “first” ordinal/phylogenetic mammal extinction risk  paper. I shared all my data and described the methods as thoroughly as I could, but I did not make my analysis and visualisation code available. On top of that I flaked when someone emailed me and requested the R code (sorry Jörg). I admit that at the time I was:</p>
+
+<ul>
+  <li>Very sloppy at R and keeping track of scripts and data.</li>
+  <li>Ashamed of my non-optimised code, annotated mostly in Spanish.</li>
+  <li>Scared of blatant errors that I might have somehow missed, which would make the paper wrong and useless (despite supervisor review).</li>
+  <li>Away on extended field work and conference travel.</li>
+</ul>
+
+<p>I ended up perpetuating the annoying trend of not supplying materials <a href="http://www.tandfonline.com/doi/abs/10.1080/08989621.2012.678688?url_ver=Z39.88-2003&amp;rfr_id=ori%3Arid%3Acrossref.org&amp;rfr_dat=cr_pub%3Dpubmed&amp;">“upon request”</a> and I’d like to make it right. Below is a fully reproducible example for running and plotting a multivariate model of extinction risk in terrestrial carnivores (cliché/well-studied group) that takes into account phylogenetic relatedness between species, and the ordinal nature of Red List Data. It outlines what I did in the 2013 paper.</p>
+
+<h2 id="rstats-example-code">#rstats example code</h2>
+
+<p>This code is not very elegant, but it should be fully reproducible as long as you have an internet connection. Make sure you install the latest version of all the required packages and please let me know of any serious mistakes or cool data wrangling tips that I could incorporate.</p>
+
+<p>Please contact me if you are interested in this sort of thing, or if you have any feedback.</p>
+
+<p><strong>Downloading and tidying trait data, phylogenetic tree and Red List status</strong></p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Load dplyr for data manipulation</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># For reproducibility, read the table directly from the publication's URL </span><span class="w">
+</span><span class="n">PantheriaWebAddress</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"http://esapubs.org/archive/ecol/e090/184/PanTHERIA_1-0_WR05_Aug2008.txt"</span><span class="w">
+</span><span class="n">pantheria</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.table</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">PantheriaWebAddress</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="n">na.strings</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"-999"</span><span class="p">,</span><span class="s2">"-999.00"</span><span class="p">),</span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># In this example we'll work with terrestrial carnivores </span><span class="w">
+</span><span class="n">carnivora</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">pantheria</span><span class="p">,</span><span class="w"> 
+                    </span><span class="n">MSW05_Order</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Carnivora"</span><span class="o">&amp;</span><span class="w">
+                    </span><span class="n">MSW05_Family</span><span class="o">!=</span><span class="s2">"Phocidae"</span><span class="o">&amp;</span><span class="w">
+                    </span><span class="n">MSW05_Family</span><span class="o">!=</span><span class="s2">"Otariidae"</span><span class="o">&amp;</span><span class="w">
+                    </span><span class="n">MSW05_Family</span><span class="o">!=</span><span class="s2">"Odobenidae"</span><span class="p">)</span><span class="w">
+
+
+</span><span class="c1"># we'll use adult body mass (body size) and litter size for this exercise</span><span class="w">
+</span><span class="c1"># dplyr select can already be used to rename</span><span class="w">
+</span><span class="n">carnivora</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="n">carnivora</span><span class="p">,</span><span class="w">
+                    </span><span class="n">Species</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MSW05_Binomial</span><span class="p">,</span><span class="w">
+                    </span><span class="n">BodySize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X5.1_AdultBodyMass_g</span><span class="p">,</span><span class="w">
+                    </span><span class="n">LitterSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X15.1_LitterSize</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># keep only complete cases</span><span class="w">
+</span><span class="n">carnivora</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">carnivora</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">complete.cases</span><span class="p">(</span><span class="n">.</span><span class="p">))</span><span class="w"> 
+
+</span><span class="c1"># get the extinction risk values from the IUCN Red List API</span><span class="w">
+</span><span class="c1"># the letsR package can also query the Red List website but I've had http issues lately</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">taxize</span><span class="p">)</span><span class="w">
+</span><span class="c1"># get IUCN data summary</span><span class="w">
+</span><span class="n">carnivoraIUCNSummary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">iucn_summary</span><span class="p">(</span><span class="n">carnivora</span><span class="o">$</span><span class="n">Species</span><span class="p">)</span><span class="w">
+</span><span class="c1"># extract threat status values</span><span class="w">
+</span><span class="n">carnivoraIUCNdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">iucn_status</span><span class="p">(</span><span class="n">carnivoraIUCNSummary</span><span class="p">)</span><span class="w">
+</span><span class="c1"># manipulate into dataframe of complete cases</span><span class="w">
+</span><span class="n">carnivoraIUCNdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">carnivoraIUCNdata</span><span class="p">)</span><span class="w">
+</span><span class="n">carnivoraIUCNdata</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">row.names</span><span class="p">(</span><span class="n">carnivoraIUCNdata</span><span class="p">)</span><span class="w">
+</span><span class="n">carnivoraIUCNdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rename</span><span class="p">(</span><span class="n">carnivoraIUCNdata</span><span class="p">,</span><span class="n">Status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">carnivoraIUCNdata</span><span class="p">)</span><span class="w">
+</span><span class="n">carnivoraIUCNdata</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">carnivoraIUCNdata</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">complete.cases</span><span class="p">(</span><span class="n">.</span><span class="p">),</span><span class="n">Status</span><span class="o">!=</span><span class="s2">"DD"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># change Red List status to numerical index</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">letsR</span><span class="p">)</span><span class="w">
+</span><span class="n">carnivoraIUCNdata</span><span class="o">$</span><span class="n">Status</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lets.iucncont</span><span class="p">(</span><span class="n">carnivoraIUCNdata</span><span class="o">$</span><span class="n">Status</span><span class="p">)</span><span class="m">+1</span><span class="w">
+
+</span><span class="c1"># merge tables</span><span class="w">
+</span><span class="n">carnivoraFinal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">carnivoraIUCNdata</span><span class="p">,</span><span class="n">carnivora</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="s2">"Species"</span><span class="p">)</span><span class="w">
+</span><span class="c1"># logTransform body size</span><span class="w">
+</span><span class="n">carnivoraFinal</span><span class="o">$</span><span class="n">lBodySize</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">carnivoraFinal</span><span class="o">$</span><span class="n">BodySize</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># get a phylogeny</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">geiger</span><span class="p">)</span><span class="w">
+</span><span class="c1"># This resolved tree comes from Rolland et al (2014)</span><span class="w">
+</span><span class="n">treeURL</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"http://journals.plos.org/plosbiology/article/asset?unique&amp;id=info:doi/10.1371/journal.pbio.1001775.s001"</span><span class="w">
+</span><span class="n">mammalPhylo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.tree</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">treeURL</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># trim tree to species in dataset</span><span class="w">
+</span><span class="c1"># but first, replace spaces to underscores to match tree tip formatting</span><span class="w">
+</span><span class="n">carnivoraFinal</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gsub</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="s2">"_"</span><span class="p">,</span><span class="n">carnivoraFinal</span><span class="o">$</span><span class="n">Species</span><span class="p">)</span><span class="w">
+</span><span class="n">row.names</span><span class="p">(</span><span class="n">carnivoraFinal</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">carnivoraFinal</span><span class="o">$</span><span class="n">Species</span><span class="w">
+
+</span><span class="c1"># trim the phylogeny to match the data</span><span class="w">
+</span><span class="n">carnPhylo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">treedata</span><span class="p">(</span><span class="n">mammalPhylo</span><span class="p">,</span><span class="n">carnivoraFinal</span><span class="p">)</span><span class="o">$</span><span class="n">phy</span><span class="w">
+
+</span><span class="c1"># drop the species not found in the tree</span><span class="w">
+</span><span class="c1"># treedata changes numeric to factor when dropping rows, so we drop them manually</span><span class="w">
+</span><span class="n">toDrop</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">setdiff</span><span class="p">(</span><span class="n">carnivoraFinal</span><span class="o">$</span><span class="n">Species</span><span class="p">,</span><span class="n">carnPhylo</span><span class="o">$</span><span class="n">tip.label</span><span class="p">)</span><span class="w">
+</span><span class="n">carnivoraData</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">carnivoraFinal</span><span class="p">[</span><span class="o">!</span><span class="n">rownames</span><span class="p">(</span><span class="n">carnivoraFinal</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">toDrop</span><span class="p">,</span><span class="w"> </span><span class="p">]</span></code></pre></figure>
+
+<p>For this example I’m ignoring known issues with missing data, taxonomy and synonyms, and phylogenetic uncertainty. All these issues can influence the model results and interpretation, and they should be addressed in a proper extinction risk study, especially one that aims to inform conservation.</p>
+
+<ul>
+  <li>Missing data can be completed with thorough searches of recent or grey literature, or imputation techniques can fill in the gaps.</li>
+  <li>Experience with the study group and open taxonomic resources can clear up the identity of species before running any analyses.</li>
+  <li>Phylogenetic uncertainty can be addressed by performing MCMCglmm across multiple trees using the <a href="https://github.com/TGuillerme/mulTree">mulTree</a> functions by Thomas Guillerme &amp; Kevin Healy.</li>
+</ul>
+
+<p><strong>Running the model</strong></p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># Now to run the multivariate model</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">MCMCglmm</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># create phylogenetic covariance matrix</span><span class="w">
+</span><span class="n">Ainv</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">inverseA</span><span class="p">(</span><span class="n">carnPhylo</span><span class="p">,</span><span class="n">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"TIPS"</span><span class="p">)</span><span class="o">$</span><span class="n">Ainv</span><span class="w">
+
+</span><span class="c1"># Define priors</span><span class="w">
+</span><span class="c1"># V prior follows suggested Gelman prior for ordinal regression by Gelman (2008), modified by J. Hadfield see function documentation</span><span class="w">
+</span><span class="c1"># R is fixed for an ordinal probit model. See function documentation</span><span class="w">
+</span><span class="n">prior</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="p">(</span><span class="n">B</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">V</span><span class="o">=</span><span class="n">gelman.prior</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">lBodySize</span><span class="o">+</span><span class="n">LitterSize</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">carnivoraData</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="o">=</span><span class="m">1</span><span class="o">+</span><span class="nb">pi</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">3</span><span class="p">)),</span><span class="w">
+               </span><span class="n">R</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">V</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">fix</span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> 
+               </span><span class="n">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">G1</span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="m">1e-6</span><span class="p">,</span><span class="w"> </span><span class="n">nu</span><span class="o">=</span><span class="m">-1</span><span class="p">)))</span><span class="w">        
+ 
+</span><span class="c1"># run model </span><span class="w">
+ 
+</span><span class="n">ERiskModel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">MCMCglmm</span><span class="p">(</span><span class="n">Status</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">lBodySize</span><span class="o">+</span><span class="n">LitterSize</span><span class="p">,</span><span class="w">
+              </span><span class="n">data</span><span class="o">=</span><span class="n">carnivoraData</span><span class="p">,</span><span class="w"> </span><span class="n">random</span><span class="o">=~</span><span class="n">Species</span><span class="p">,</span><span class="w">
+              </span><span class="n">ginverse</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">Species</span><span class="o">=</span><span class="n">Ainv</span><span class="p">),</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ordinal"</span><span class="p">,</span><span class="w">
+              </span><span class="n">prior</span><span class="o">=</span><span class="w"> </span><span class="n">prior</span><span class="p">,</span><span class="w"> </span><span class="n">nitt</span><span class="o">=</span><span class="m">600000</span><span class="p">,</span><span class="w"> </span><span class="n">burnin</span><span class="o">=</span><span class="m">100000</span><span class="p">,</span><span class="w"> </span><span class="n">thin</span><span class="o">=</span><span class="m">500</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># evaluate convergence</span><span class="w">
+</span><span class="n">heidel.diag</span><span class="w"> </span><span class="p">(</span><span class="n">ERiskModel</span><span class="o">$</span><span class="n">Sol</span><span class="p">)</span><span class="w"> </span><span class="c1"># Heidelberg and Welch (1983) diagnostic test</span><span class="w">
+</span><span class="n">autocorr</span><span class="w"> </span><span class="p">(</span><span class="n">ERiskModel</span><span class="o">$</span><span class="n">Sol</span><span class="p">)</span><span class="w"> </span><span class="c1"># autocorrelation of succesive samples (should be near 0)</span><span class="w">
+</span><span class="n">plot</span><span class="w"> </span><span class="p">(</span><span class="n">ERiskModel</span><span class="p">)</span><span class="w"> </span><span class="c1"># visual inspection of mixing properties of the MCMC chain</span><span class="w">
+
+</span><span class="c1"># explore results</span><span class="w">
+</span><span class="n">summary</span><span class="w"> </span><span class="p">(</span><span class="n">ERiskModel</span><span class="p">)</span><span class="w">
+</span><span class="c1"># summarize model for plotting</span><span class="w">
+</span><span class="n">summModel</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">summary</span><span class="p">(</span><span class="n">ERiskModel</span><span class="p">)</span></code></pre></figure>
+
+<p>The number of iterations can be changed depending on hardware/patience. A few things I left out include: running parallel chains, and pooling chains with different starting values and then the corresponding convergence diagnostics. This particular model converged, and the model summary shows that the probabalities in the 95% credible region for the body size parameter estimate do not include zero (i.e. a “significant” positive relationship between body size and extinction risk).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">parameter</th>
+      <th style="text-align: center">post.mean</th>
+      <th style="text-align: right">l-95% CI</th>
+      <th style="text-align: right">u-95% CI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">(Intercept)</td>
+      <td style="text-align: center">-3.19035</td>
+      <td style="text-align: right">-4.95698</td>
+      <td style="text-align: right">-1.67352</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">body size</td>
+      <td style="text-align: center">0.37848</td>
+      <td style="text-align: right">0.19934</td>
+      <td style="text-align: right">0.54769</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">litter size</td>
+      <td style="text-align: center">-0.20584</td>
+      <td style="text-align: right">-0.40273</td>
+      <td style="text-align: right">0.01897</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>No we can plot the effect of body size on extinction risk while the effects of litter size are kept constant. This works by calculating the probabilities of falling into each ordered category for any number of values of a linear predictor. The process is explained very well in <a href="https://stat.ethz.ch/pipermail/r-sig-mixed-models/2010q2/003673.html">this</a> mailing list discussion and in the ordinal regression chapter of John Kruschke’s puppy-themed Bayesian Analysis book (see its accompanying <a href="http://doingbayesiandataanalysis.blogspot.mx/2014/11/ordinal-probit-regression-transforming.html">blog entry</a>). Originally I calculated these probabilities manually. Fortunately, Josh Wiley wrote the <a href="https://github.com/JWiley/postMCMCglmm">postMCMCglmm</a> R package which contains functions to estimate predicted probabilites from an MCMCglmm object. In the end we have a dataframe of predicted probabilites (and CISs) for a range of body size values for each Red List category. Finally, I stacked the probabilities in a ggplot call using a color scheme that I think is pretty and effective (and technically colourblind and printer friendly).</p>
+
+<p><strong>Plotting the model results</strong></p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># new data for prediction</span><span class="w">
+</span><span class="c1"># vectors for each predictor variable, based on the data</span><span class="w">
+
+</span><span class="n">logBSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="nf">min</span><span class="p">(</span><span class="n">carnivoraData</span><span class="o">$</span><span class="n">lBodySize</span><span class="p">),</span><span class="nf">max</span><span class="p">(</span><span class="n">carnivoraData</span><span class="o">$</span><span class="n">lBodySize</span><span class="p">),</span><span class="w"> </span><span class="n">length.out</span><span class="o">=</span><span class="n">nrow</span><span class="p">(</span><span class="n">carnivoraData</span><span class="p">))</span><span class="w">
+</span><span class="n">LitterSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="nf">min</span><span class="p">(</span><span class="n">carnivoraData</span><span class="o">$</span><span class="n">LitterSize</span><span class="p">),</span><span class="nf">max</span><span class="p">(</span><span class="n">carnivoraData</span><span class="o">$</span><span class="n">LitterSize</span><span class="p">),</span><span class="w"> </span><span class="n">length.out</span><span class="o">=</span><span class="n">nrow</span><span class="p">(</span><span class="n">carnivoraData</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># to plot the body size~threat relationship keeping the effect of litter size constant</span><span class="w">
+
+</span><span class="n">newdat2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.matrix</span><span class="p">(</span><span class="n">data.frame</span><span class="p">(</span><span class="s2">"(Intercept)"</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w">
+                      </span><span class="n">bodySize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logBSize</span><span class="p">,</span><span class="w">
+                      </span><span class="n">LitterSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">LitterSize</span><span class="p">)))</span><span class="w"> 
+            
+</span><span class="c1"># probabilities of falling into categories</span><span class="w">
+
+</span><span class="n">require</span><span class="p">(</span><span class="n">devtools</span><span class="p">)</span><span class="w">
+</span><span class="n">install_github</span><span class="w"> </span><span class="p">(</span><span class="s2">"postMCMCglmm"</span><span class="p">,</span><span class="w"> </span><span class="s2">"JWiley"</span><span class="p">)</span><span class="w">
+</span><span class="n">require</span><span class="w"> </span><span class="p">(</span><span class="n">postMCMCglmm</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">## calculate predicted values</span><span class="w">
+
+</span><span class="n">predCarn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">predict2</span><span class="p">(</span><span class="n">ERiskModel</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="o">=</span><span class="n">newdat2</span><span class="p">,</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"all"</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"response"</span><span class="p">,</span><span class="w"> </span><span class="n">varepsilon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="n">summPredCarn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">summary</span><span class="w"> </span><span class="p">(</span><span class="n">predCarn</span><span class="p">,</span><span class="n">level</span><span class="o">=</span><span class="m">0.99</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">## combine predicted probs + HPD intervals with prediction data</span><span class="w">
+</span><span class="n">predProbsCarn</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="w"> </span><span class="p">(</span><span class="n">cbind</span><span class="p">(</span><span class="n">do.call</span><span class="p">(</span><span class="n">rbind</span><span class="p">,</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">newdat2</span><span class="p">),</span><span class="m">5</span><span class="p">)),</span><span class="w"> </span><span class="n">do.call</span><span class="p">(</span><span class="n">rbind</span><span class="p">,</span><span class="n">summPredCarn</span><span class="p">)))</span><span class="w">
+
+</span><span class="c1">## indicator for which level of the outcome</span><span class="w">
+</span><span class="n">predProbsCarn</span><span class="o">$</span><span class="n">outcome</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"LC"</span><span class="p">,</span><span class="s2">"NT"</span><span class="p">,</span><span class="s2">"VU"</span><span class="p">,</span><span class="s2">"EN"</span><span class="p">,</span><span class="s2">"CR"</span><span class="p">),</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">summPredCarn</span><span class="p">[[</span><span class="m">1</span><span class="p">]])),</span><span class="w"> 
+                                 </span><span class="n">levels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"LC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"NT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"VU"</span><span class="p">,</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CR"</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># stack probabilities for the ordered categories</span><span class="w">
+
+</span><span class="n">predProbsCarnLC</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">predProbsCarn</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">outcome</span><span class="o">==</span><span class="s2">"LC"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">select</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">LL</span><span class="p">,</span><span class="n">UL</span><span class="p">)</span><span class="o">%&gt;%</span><span class="w">  
+  </span><span class="n">cbind</span><span class="p">(</span><span class="n">newdat2</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span><span class="w">
+
+</span><span class="n">predProbsCarnNT</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">predProbsCarn</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">outcome</span><span class="o">==</span><span class="s2">"NT"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">select</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">LL</span><span class="p">,</span><span class="n">UL</span><span class="p">)</span><span class="o">%&gt;%</span><span class="w">  
+  </span><span class="n">mutate_each</span><span class="p">(</span><span class="n">funs</span><span class="p">(</span><span class="n">addProb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">+1</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">cbind</span><span class="p">(</span><span class="n">newdat2</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span><span class="w">
+
+</span><span class="n">predProbsCarnVU</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">predProbsCarn</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">outcome</span><span class="o">==</span><span class="s2">"VU"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">select</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">LL</span><span class="p">,</span><span class="n">UL</span><span class="p">)</span><span class="o">%&gt;%</span><span class="w">  
+  </span><span class="n">mutate_each</span><span class="p">(</span><span class="n">funs</span><span class="p">(</span><span class="n">addProb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">+2</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">cbind</span><span class="p">(</span><span class="n">newdat2</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span><span class="w">
+
+</span><span class="n">predProbsCarnEN</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">predProbsCarn</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">outcome</span><span class="o">==</span><span class="s2">"EN"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">select</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">LL</span><span class="p">,</span><span class="n">UL</span><span class="p">)</span><span class="o">%&gt;%</span><span class="w">  
+  </span><span class="n">mutate_each</span><span class="p">(</span><span class="n">funs</span><span class="p">(</span><span class="n">addProb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">+3</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">cbind</span><span class="p">(</span><span class="n">newdat2</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span><span class="w">
+
+</span><span class="n">predProbsCarnCR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">predProbsCarn</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">outcome</span><span class="o">==</span><span class="s2">"EN"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">select</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="n">LL</span><span class="p">,</span><span class="n">UL</span><span class="p">)</span><span class="o">%&gt;%</span><span class="w">  
+  </span><span class="n">mutate_each</span><span class="p">(</span><span class="n">funs</span><span class="p">(</span><span class="n">addProb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">+4</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">cbind</span><span class="p">(</span><span class="n">newdat2</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span><span class="w">
+
+</span><span class="n">predProbPlot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rbind.data.frame</span><span class="p">(</span><span class="n">predProbsCarnLC</span><span class="p">,</span><span class="w">
+                                 </span><span class="n">predProbsCarnNT</span><span class="p">,</span><span class="w">
+                                 </span><span class="n">predProbsCarnVU</span><span class="p">,</span><span class="w">
+                                 </span><span class="n">predProbsCarnEN</span><span class="p">,</span><span class="w">
+                                 </span><span class="n">predProbsCarnCR</span><span class="p">)</span><span class="w">
+
+
+</span><span class="n">predProbPlot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rename</span><span class="p">(</span><span class="n">predProbPlot</span><span class="p">,</span><span class="n">bodySize</span><span class="o">=</span><span class="n">`newdat2[, 2]`</span><span class="p">)</span><span class="w">
+</span><span class="n">predProbPlot</span><span class="o">$</span><span class="n">outcome</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"LC"</span><span class="p">,</span><span class="s2">"NT"</span><span class="p">,</span><span class="s2">"VU"</span><span class="p">,</span><span class="s2">"EN"</span><span class="p">,</span><span class="s2">"CR"</span><span class="p">),</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">summPredCarn</span><span class="p">[[</span><span class="m">1</span><span class="p">]])),</span><span class="w"> 
+                                </span><span class="n">levels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"LC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"NT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"VU"</span><span class="p">,</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CR"</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># plotting</span><span class="w">
+
+</span><span class="n">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+
+ </span><span class="n">ggplot</span><span class="w"> </span><span class="p">(</span><span class="n">predProbPlot</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bodySize</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_ribbon</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">ymin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LL</span><span class="p">,</span><span class="w"> </span><span class="n">ymax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UL</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outcome</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.25</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_line</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="n">seq</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span><span class="m">4.5</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="m">1</span><span class="p">),</span><span class="w">
+                     </span><span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"LC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"NT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"VU"</span><span class="p">,</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CR"</span><span class="p">),</span><span class="n">expand</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span><span class="o">+</span><span class="w">
+  </span><span class="n">scale_x_continuous</span><span class="p">(</span><span class="n">expand</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span><span class="o">+</span><span class="w">
+  </span><span class="n">ylab</span><span class="p">(</span><span class="s2">"threat category"</span><span class="p">)</span><span class="o">+</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"log(body size)"</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"#fed976"</span><span class="p">,</span><span class="s2">"#feb24c"</span><span class="p">,</span><span class="s2">"#fd8d3c"</span><span class="p">,</span><span class="s2">"#f03b20"</span><span class="p">,</span><span class="s2">"#bd0026"</span><span class="p">),</span><span class="n">name</span><span class="o">=</span><span class="s2">"Red List Status"</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"#fed976"</span><span class="p">,</span><span class="s2">"#feb24c"</span><span class="p">,</span><span class="s2">"#fd8d3c"</span><span class="p">,</span><span class="s2">"#f03b20"</span><span class="p">,</span><span class="s2">"#bd0026"</span><span class="p">),</span><span class="w"> </span><span class="n">guide</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">theme_classic</span><span class="p">()</span><span class="o">+</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="n">axis.ticks.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">())</span><span class="o">+</span><span class="w">
+   </span><span class="n">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="n">seq</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">4</span><span class="p">),</span><span class="n">by</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
+ </span></code></pre></figure>
+
+<figure>
+    <a href="/images/liebre.png"><img src="/images/ordinalplot.png" /></a>
+        <figcaption>sample extinction risk plot</figcaption>
+</figure>
+
+<p>The probability of being at the Least Concern threat category is highest for smaller-bodied species, and it decreases with increasing body size. The interpretation for the other categories is done the same way.</p>
+
+:ET
