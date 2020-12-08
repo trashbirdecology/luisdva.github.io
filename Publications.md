@@ -4,8 +4,8 @@ title: Publications
 permalink: /Publications/
 published: true
 share: false
-image: 
-  feature: featurePub.jpg
+header:
+  image: featurePub.jpg
 ---
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
