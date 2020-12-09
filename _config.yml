@@ -18,8 +18,8 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Luis D. Verde Arregoitia"
 title_separator          : "-"
-subtitle                 : "Personal Site"
-name                     : "Home"
+subtitle                 : "Personal Site - Home"
+name                     : "LDVA"
 description              : "Ecology.Evolution.Conservation.Data"
 url                      : https://luisdva.github.io
 baseurl                  : "/"
@@ -67,7 +67,7 @@ analytics:
 author:
   name             : "Luis D. Verde Arregoitia"
   avatar           : https://pbs.twimg.com/profile_images/988264733294788608/AfgxWLOK_400x400.jpg
-  bio              : "data. ecology . evolution . conservation . biogeography. mammals"
+  bio              : "data . ecology . evolution . conservation . biogeography. mammals"
   location         : 
   email            :
   links:
