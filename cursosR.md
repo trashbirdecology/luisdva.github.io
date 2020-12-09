@@ -1,11 +1,10 @@
 ---
-layout: page
 title: Cursos R
 permalink: /cursosR/
 published: true
 share: false
-image:
-  feature: featureHabr.png
+header:
+  image: /assets/images/featureHabr.png
 ---
 
 ## Cursos de R impartidos
