@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: Presentations
 permalink: /Presentations/
 published: true
