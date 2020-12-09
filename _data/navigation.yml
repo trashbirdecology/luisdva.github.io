@@ -1,20 +1,14 @@
 # Site navigation links
 main:
-
- - title: About
+ - title: "About"
    url: /about/
-  
- - title: All posts
+ - title: "All posts"
    url: /posts/
-
- - title: Publications
+ - title: "Publications"
    url: /Publications/
-
- - title: Presentations
+ - title: "Presentations"
    url: /Presentations/
-  
- - title: R blog
+ - title: "R blog"
    url: /rposts/
-  
- - title: Cursos R
+ - title: "Cursos R"
    url: /cursosR/
