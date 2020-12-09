@@ -1,11 +1,11 @@
 ---
-layout: page
+layout: single
 title: Publications
 permalink: /Publications/
 published: true
 share: false
 header:
-  image: featurePub.jpg
+  image: /assets/images/featurePub.jpg
 ---
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
