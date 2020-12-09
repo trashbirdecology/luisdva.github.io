@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 locale                   : "en-US"
 title                    : "Luis D. Verde Arregoitia"
 title_separator          : "-"
-subtitle                 : 
+subtitle                 : "Personal Site"
 name                     : "Home"
 description              : "Ecology.Evolution.Conservation.Data"
 url                      : https://luisdva.github.io
@@ -67,44 +67,38 @@ analytics:
 author:
   name             : "Luis D. Verde Arregoitia"
   avatar           : https://pbs.twimg.com/profile_images/988264733294788608/AfgxWLOK_400x400.jpg
-  bio              : "Personal site"
+  bio              : "data. ecology . evolution . conservation . biogeography. mammals"
   location         : 
   email            :
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://liomys.mx"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/luisdverde/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://twitter.com/luisdverde/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/luisdva/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
-  publons: 980996
-  researchgate: Luis_Verde_Arregoitia
-  gscholar: Ii0dP6kAAAAJ
-  
+      url: "https://github.com/luisdva/"
+    - label: "Publons"
+      icon: "fab fa-fw fa-check-circle"
+      url: "https://publons.com/researcher/980996"
+    - label: "ResearchGate"
+      icon: "fab fa-fw fa-researchgate"
+      url: "https://www.researchgate.net/profile/Luis_Verde_Arregoitia"
+    - label: "Google Scholar"
+      icon: "fab fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?&user=Ii0dP6kAAAAJ"
+
 # Site Footer
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: "https://twitter.com/luisdverde/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/luisdva/"
 
 
 # Reading Files
@@ -232,7 +226,6 @@ compress_html:
     envs: development
 
 
-# Defaults
 defaults:
   # _posts
   - scope:
@@ -242,6 +235,25 @@ defaults:
       layout: single
       author_profile: true
       read_time: false
-      comments: # true
+      comments: false
       share: true
       related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
+      sidebar:
+        nav: "docs"
