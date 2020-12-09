@@ -22,8 +22,8 @@ subtitle                 : "Personal Site"
 name                     : "Home"
 description              : "Ecology.Evolution.Conservation.Data"
 url                      : https://luisdva.github.io
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+baseurl                  : "/"
+repository               : "luisdva/luisdva.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -81,13 +81,13 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/luisdva/"
     - label: "Publons"
-      icon: "fab fa-fw fa-check-circle"
+      icon: "fab fa-fw fa-check"
       url: "https://publons.com/researcher/980996"
     - label: "ResearchGate"
       icon: "fab fa-fw fa-researchgate"
       url: "https://www.researchgate.net/profile/Luis_Verde_Arregoitia"
     - label: "Google Scholar"
-      icon: "fab fa-fw fa-graduation-cap"
+      icon: "fab fa-fw fa-google"
       url: "https://scholar.google.com/citations?&user=Ii0dP6kAAAAJ"
 
 # Site Footer
