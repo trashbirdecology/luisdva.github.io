@@ -4,9 +4,10 @@ title: Publications
 permalink: /Publications/
 published: true
 share: false
-header:
+header: 
   image: /assets/images/featurePub.jpg
----
+ 
+ ---
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
