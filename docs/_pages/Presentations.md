@@ -3,6 +3,7 @@ title: Presentations
 header:
   image: /assets/images/slider5.jpg
 permalink: /Presentations/
+layout: wide
 ---
 
 
