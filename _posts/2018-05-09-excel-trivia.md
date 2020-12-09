@@ -1,6 +1,5 @@
 ---
 title: "This is what happens when you encode data as cell formatting in Excel"
-layout: post
 excerpt: Extracting and wrangling data encoded as text formatting in multi-sheet Excel files. 
 category: rstats
 tags:
@@ -9,11 +8,10 @@ tags:
   - excel
   - readxl
   - tidyxl
-image:
-  feature: featureExcel.png
+header:
+  image: featureExcel.png
   credit: Pixabay CC0 image
   creditlink: 
-published: true
 ---
 
 I recently offered to help create the game cards for a mammalogy-themed trivia board game that will be made available later in the year. The questions and answers had already been prepared and they were stored in an Excel file.  
