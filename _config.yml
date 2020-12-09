@@ -19,8 +19,8 @@ locale                   : "en-US"
 title                    : "Luis D. Verde Arregoitia"
 title_separator          : "-"
 subtitle                 : 
-name                     : "Luis D. Verde Arregoitia"
-description              : "Personal site."
+name                     : "Home"
+description              : "Ecology.Evolution.Conservation.Data"
 url                      : https://luisdva.github.io
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -31,7 +31,7 @@ masthead_title           : # overrides the website title displayed in the masthe
 words_per_minute         :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
+search                   : false
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 # SEO Related
@@ -104,15 +104,6 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
       # url:
 
 
@@ -250,7 +241,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
       comments: # true
       share: true
       related: true
