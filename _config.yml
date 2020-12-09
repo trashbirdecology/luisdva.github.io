@@ -42,7 +42,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               : 
+  username               : "LuisDVerde"
 facebook:
   username               :
   app_id                 :
@@ -81,7 +81,7 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/luisdva/"
     - label: "Publons"
-      icon: "fab fa-fw fa-check"
+      icon: "fas fa-user-check"
       url: "https://publons.com/researcher/980996"
     - label: "ResearchGate"
       icon: "fab fa-fw fa-researchgate"
