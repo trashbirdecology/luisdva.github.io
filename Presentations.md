@@ -1,5 +1,4 @@
 ---
-layout: single
 title: Presentations
 header:
   image: /assets/images/slider5.jpg
