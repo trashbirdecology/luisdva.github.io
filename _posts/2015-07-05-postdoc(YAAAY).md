@@ -1,16 +1,12 @@
 ---
-layout: post
 title: Postdoc!
 excerpt: "Update on my upcoming position and thoughts on the job hunt."
 tags: 
   - postdoctoral
   - Museum
   - Switzerland
-image: 
-  feature: featurePDRF.jpg
-  credit: null
-  creditlink: null
-published: true
+header: 
+  image: /assets/images/featurePDRF.jpg
 ---
 
 

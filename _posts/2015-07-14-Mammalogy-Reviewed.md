@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Trends in mammal research in Mexico 1991-2012"
 excerpt: "Summary of research presented at scientific meetings of the Mexican Mammalogy Society (AMMAC) 1991-2012."
 category: rstats
@@ -7,13 +6,10 @@ tags:
   - scientific conference
   - review
   - mammal research
-image: 
-  feature: featureAMMAC.jpg
-  credit: AMMAC 2014 meeting delegate photo. Labeled for reuse.
-published: true
+header: 
+  overlay_image: /assets/images/featureAMMAC.jpg
+  caption: "Photo: AMMAC 2014 meeting delegate photo. Labeled for reuse."
 ---
-
-
 
 Last year the Mexican Mammalogy Society (Asociación Mexicana de Mastozoología A.C.; [AMMAC](http://www.mastozoologiamexicana.org/)) celebrated its 30th anniversary. As part of the festivities, an analysis of the work presented at national AMMAC meetings from 1991 to 2012 was published in a special section of the society-run journal [Therya](http://www.mastozoologiamexicana.org/therya.php). These meetings are perhaps the most important academic forum for mammal research in the country. I’ve attended several of these meetings and always enjoy seeing so many researchers and students present their research on Neotropical mammals, so a quantitative summary of the research trends in Mexico for the last few decades definitely caught my attention. I had never considered the concept of analyzing conference data, and for months I’ve been meaning to write about this particular paper. 
 
@@ -24,7 +20,7 @@ Miguel Briones-Salas, Dagoberto Ramos and Yadira Santiago went through the abstr
 The team classified the presentations into one of eleven main topics, with choices of: diet, anatomy & morphology, behavior, conservation, distribution, ecology, disease & parasites, physiology, reproduction, taxonomy & phylogeny, and miscellaneous. I was a little puzzled as to why diet wasn’t included in “ecology”, but in any case ecology was the predominant topic. I plotted the table of topics through time as proportions, to see which topics were most popular at each conference and through the years. 
 
 <figure>
-    <a href="/images/ammacPlt.jpeg"><img src="/images/ammacPlt.jpeg"></a>
+    <a href="/assets/images/ammacPlt.jpeg"><img src="/assets/images/ammacPlt.jpeg"></a>
         <figcaption>study topics through time (%) </figcaption>
 </figure>
 

@@ -1,14 +1,12 @@
 ---
-layout: post
 title: "If you present will you publish?"
 excerpt: "Why study the publication rates of presentations at ecology, evolution, and conservation conferences."
 tags: 
   - scientific conference
   - bibliometrics 
   - outcomes
-image: 
-  feature: featureRates.png
-published: true
+header: 
+  image: /assets/images/featureRates.png
 ---
 
 ## We need publication rate analyses for ecology, evolution, and conservation conferences

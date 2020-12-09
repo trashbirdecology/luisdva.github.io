@@ -1,8 +1,8 @@
 ---
-permalink: /about
+permalink: /about/
 title: "About me"
 header:
-image:  /assets/images/featureAboutcopy.jpg
+  image:  /assets/images/featureAboutcopy.jpg
 ---  
 
 
@@ -18,7 +18,7 @@ From July 2015 until October 2016 I was a postdoctoral research fellow in the Ve
 I am currently looking for research and work opportunities while working part time programming and teaching R.
 
 <figure>
-    <a href="/assets/images/luisdrst.JPG"><img src="/assets/images/luisdrst.JPG"></a>
+    <a href="/assets/images/luisdrst.JPG"><img src="/assets/images/luisdrst.JPG" width= "320"></a>
         <figcaption>photo by JD Long</figcaption>
 </figure>
 

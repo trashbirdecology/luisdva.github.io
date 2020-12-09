@@ -6,13 +6,12 @@ tags:
   - hares
   - pikas
   - rabbits
-published: true
 ---
 
 
 
 <figure>
-    <a href="/images/liebre.png"><img src="/images/liebre.png"></a>
+    <a href="/assets/images/liebre.png"><img src="/assets/images/liebre.png"></a>
         <figcaption>Tehuantepec hare.</figcaption>
 </figure>
 

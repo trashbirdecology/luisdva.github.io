@@ -1,17 +1,14 @@
 ---
-layout: post
 title: Ordinal extinction risk models
-excerpt: "Modeling IUCN Red List data as an ordered response variable. A reproducible #rstats example for terrestrial carnivores. "
+excerpt: "Modeling IUCN Red List data as an ordered response variable. A reproducible #rstats example for terrestrial carnivores."
 category: rstats
 tags: 
   - MCMCglmm
   - Probit model
   - extinction risk
-image: 
-  feature: featureCarn.jpg
-  credit: null
-  creditlink: null
-published: true
+header:
+  overlay_image: /assets/images/featureCarn.jpg
+  tagline: "Modeling IUCN Red List data as an ordered response variable. A reproducible #rstats example for terrestrial carnivores."
 ---
 
 > **Update - June 2018 -** an API is now necessary to download IUCN Red List data. This is easy to request though.
@@ -277,7 +274,7 @@ require(ggplot2)
 {% endhighlight %}
 
 <figure>
-    <a href="/images/liebre.png"><img src="/images/ordinalplot.png"></a>
+    <a href="/assets/images/ordinalplot.png"><img src="/assets/images/ordinalplot.png"></a>
         <figcaption>sample extinction risk plot</figcaption>
 </figure>
 
