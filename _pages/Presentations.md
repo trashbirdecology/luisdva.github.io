@@ -8,8 +8,13 @@ header:
   
 ---
 
-
 Work that I have presented at scientific meetings so far.
+
++ Verde Arregoitia, L.D. 2020. Teaching Open Science through R Blogging. _Living Norway Colloquium 2020: Towards openness and transparency in applied ecology_. Trondheim, Norway (remote, [youtube link](https://www.youtube.com/watch?v=bn9kvCEKDnE))
+
++ Ación, L., _et al._ 2020. Communities of Practice in Latin America. R and Friends. _useR! 2020_ Virtual ([youtube link](https://www.youtube.com/watch?v=gtRntU2J3Cg&feature=youtu.be))
+
++ Verde Arregoitia, L.D. & Guillermo D'Elía. 2020. Patrones de convergencia ecomorfológica en roedores neotropicales. _Reunión Anual Conjunta, Sociedad de Biología de Chile -SOCEVOL_. Valdivia, Chile
 
 + Verde Arregoitia, L.D. & Guillermo D'Elía. 2019. Identifying Convergent Evolution in New World Rodents. _99th Annual Meeting of the American Society of Mammalogists_. Washington D.C., USA
 

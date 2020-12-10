@@ -8,6 +8,7 @@ tags:
   - extinction risk
 header:
   overlay_image: /assets/images/featureCarn.jpg
+  overlay_filter: 0.6
   tagline: "Modeling IUCN Red List data as an ordered response variable. A reproducible #rstats example for terrestrial carnivores."
 ---
 

@@ -1,6 +1,9 @@
 ---
-layout: post
 title: Classifying rodent diets
+header:
+  overlay_image: /assets/images/featureRat.jpg
+  overlay_filter: 0.4
+  caption: "Photo credit: LDVA"
 excerpt: New publication - Classifying rodents diets for comparative research
 tags:
   - rats
@@ -8,12 +11,8 @@ tags:
   - paper
   - rodents
   - trophic
-image:
-  feature: featureRat.jpg
-  credit: LDVA
-  creditlink: null
-published: true
 ---
+New publication
 
 Our new paper, [Classifying rodent diets for comparative research](https://doi.org/10.1111/mam.12214){:target="_blank"}, is now published in Mammal Review. 
 
