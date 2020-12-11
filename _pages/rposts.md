@@ -5,6 +5,6 @@ permalink: /rposts/
 excerpt: "R Programming"
 category: rstats
 header: 
-  image: featurePosts.jpg
+  image: /assets/images/featurePosts.jpg
 ---
 R content
