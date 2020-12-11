@@ -9,7 +9,7 @@ tags:
   - scripts
   - version
 header: 
-  image: /images/featureAnnot.png
+  image: /assets/images/featureAnnot.png
 ---
 
 While helping some labmates with their R code last year, I noticed that sometimes they couldn't run their analyses because their scripts had many `library()` calls for obscure packages they didn't need, some of which had installation issues, dependencies, version conflicts, or masked functions. 
