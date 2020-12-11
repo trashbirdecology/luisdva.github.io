@@ -1,25 +1,23 @@
 ---
 title: "From photo to tibble"
-layout: post
 excerpt: Digitizing and rectangling a restaurant menu. 
 category: rstats
+classes: wide
 tags:
   - tesseract
   - unheadr
   - ocr
   - subheaders
-image: 
-  feature: featurePV.png
-  credit: LV
-  creditlink: 
-published: true
+header: 
+  image: /assets/images/featurePV.png
 ---
+
 When I first wrote about tidy evaluation and the [_untangle2_ function](https://luisdva.github.io/rstats/tidyeval/), I used restaurant menus as an example of how embedded subheaders are used to create small multiples of data (by type of menu item). 
 
 After a recent [update](https://ropensci.org/technotes/2018/11/06/tesseract-40/) to the _tesseract_ optical character recognition (ocr) engine, I decided to try and digitize and parse a restaruant menu from a photo. I wanted to try with a real photo from a real menu, and I found this photo in my camera roll.  
 
 <figure>
-    <a href="/images/beer.jpg"><img src="/images/beer.jpg"></a>
+    <a href="/assets/images/beer.jpg"><img src="/assets/images/beer.jpg"></a>
         <figcaption></figcaption>
 </figure>
 
@@ -40,7 +38,7 @@ library(stringr)
 library(unheadr)
 library(tidyr)
 
-beerpath <- ("https://github.com/luisDVA/luisdva.github.io/raw/master/images/beer.jpg")
+beerpath <- ("https://github.com/luisDVA/luisdva.github.io/raw/master/assets/images/beer.jpg")
 # read and process
 beer <- magick::image_read(beerpath) %>%
         image_resize("25%") %>%
@@ -56,7 +54,7 @@ beer <- magick::image_read(beerpath) %>%
 The resulting image looks like this (even though we don't need to write it to disk for the ocr process).
 
 <figure>
-    <a href="/images/blcean.jpg"><img src="/images/bclean.jpeg"></a>
+    <a href="/assets/images/blcean.jpg"><img src="/assets/images/bclean.jpeg"></a>
         <figcaption></figcaption>
 </figure>
 

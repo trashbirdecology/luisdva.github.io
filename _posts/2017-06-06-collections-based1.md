@@ -1,6 +1,5 @@
 ---
 title: "Tidy tables for collections-based research (Part 1)"
-layout: post
 excerpt: Wrangling commonly-used data formats. Part 1 - GenBank accession tables.
 category: rstats
 tags:
@@ -9,11 +8,8 @@ tags:
   - dplyr
   - tidyr
   - melt
-image:
-  feature: featureCollsRes.jpg
-  credit: Oxford Museum of Natural History CC0 public domain image from Pixabay
-  creditlink:
-published: true
+header:
+  image: /assets/images/featureCollsRes.jpg
 ---
 
 This series of posts will go through some simple steps to wrangle the data that often accompanies collections-based studies. This post is on handling multispecies tables of GenBank accession numbers, a common component of systematics and phylogeography papers.

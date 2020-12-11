@@ -1,6 +1,6 @@
 ---
 title: "Plots for model-based clustering of ancestral populations"
-layout: post
+tagline: "Plotting Structure, DAPC, or Admixture results with ggplot2"
 excerpt: Plot models of population structure with ggplot for arbitrary values of K.
 category: rstats
 tags:
@@ -8,13 +8,10 @@ tags:
   - genomics
   - Admixture
   - Structure
-image:
-  feature: featurePigeon.png
-  credit: 
-  creditlink: 
-published: true
+header:
+  overlay_image: /assets/images/featurePigeon.png
+  overlay_filter: 0.5 
 ---
-
 
 Here’s one approach for plotting a set of faceted stacked barplots showing the output from popular software and methods (e.g. Structure, DAPC, or Admixture) used for population genetics/genomics and phylogeography. This code may come in handy when plotting individuals from different locations and models with different numbers of proposed ancestral populations. 
 
@@ -110,7 +107,7 @@ k2plot
 
 The above code produces this:
 <figure>
-    <a href="/images/k2plot.png"><img src="/images/k2plot.png"></a>
+    <a href="/assets/images/k2plot.png"><img src="/assets/images/k2plot.png"></a>
         <figcaption></figcaption>
 </figure>
 <br><br>  
@@ -157,7 +154,7 @@ k2plot + k3plot + k4plot + plot_layout(ncol = 1)
 The output should look like this:
 
 <figure>
-    <a href="/images/allkplot.png"><img src="/images/allkplot.png"></a>
+    <a href="/assets/images/allkplot.png"><img src="/assets/images/allkplot.png"></a>
         <figcaption>patchwork!</figcaption>
 </figure>
 <br><br>  

@@ -1,16 +1,12 @@
 ---
 title: "Visualizando pares de variables independientes"
-layout: post
 excerpt: Graficando dos variables independientes sin usar ejes duales.
 tags:
   - el gerente
   - ggplot2
   - elerre
-image:
-  feature: featureDual.jpg
-  credit: CC0 image
-  creditlink: https://pixabay.com/
-published: true
+header:
+  image: /assets/images/featureDual.jpg
 ---
 
 Supongamos que el personal administrativo de un negocio quiere visualizar las cifras anuales sobre el número de transacciones registradas y el total de ventas para cada uno de sus 15 empleados.
@@ -26,7 +22,7 @@ En este caso no hay razón para esperar que el total de ventas ($MXN) se relacio
 Una de las opciones más simples es mostrar las gráficas para cada variable independiente lado a lado, y para ayudarnos visualmente podemos acomodar la variable dependiente (en este caso un factor) según sus valores en el eje Y para alguna de las dos variables independientes. Ni sé cómo usar dos ejes y simultáneamente y hay [varias](http://www.storytellingwithdata.com/blog/2016/2/1/be-gone-dual-y-axis) [razones](http://www.storytellingwithdata.com/blog/2011/05/secondary-y-axis) para no hacerlo.
 
 <figure>
-    <a href="/images/lollp1.png"><img src="/images/lollp1.png"></a>
+    <a href="/assets/images/lollp1.png"><img src="/assets/images/lollp1.png"></a>
         <figcaption></figcaption>
 </figure>
 
@@ -43,14 +39,14 @@ Si el objetivo es condensar información sobre las dos variables independientes 
 En el primer caso, la gráfica sigue los mismos principios visuales que las dos anteriores.
 
 <figure>
-    <a href="/images/lollp2.png"><img src="/images/lollp2.png"></a>
+    <a href="/assets/images/lollp2.png"><img src="/assets/images/lollp2.png"></a>
         <figcaption></figcaption>
 </figure>
 
 En este último caso, usé (de manera bastante redundante) colores, tamaños, y etiquetas para mostrar los valores de ventas totales mientras que el número de transacciones sólo se demuestra con la posición de los puntos en el eje Y. 
 
 <figure>
-    <a href="/images/lollp3.png"><img src="/images/lollp3.png"></a>
+    <a href="/assets/images/lollp3.png"><img src="/assets/images/lollp3.png"></a>
         <figcaption></figcaption>
 </figure>
 

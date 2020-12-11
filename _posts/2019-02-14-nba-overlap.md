@@ -1,17 +1,14 @@
 ---
 title: "Quantifying point overlap for NBA shot chart data"
-layout: post
 excerpt: Find the most and least similar shot patterns for basketall players.
+classes: wide
 category: rstats
 tags:
   - hoops
   - analytics
   - nbastatr
-image:
-  feature: featureBallin.png
-  credit: 
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureBallin.png
 ---
 
 I saw this [article](http://www.espn.com/nba/story/_/id/25867382/trae-young-says-luka-doncic-trade-worked-teams) about similarities and differences between NBA rookies Trae Young and Luka Doncic, and it made me wonder if parts of their game could be summarized and compared using shot chart data. 
@@ -48,7 +45,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
 - Identify the top _n_ highest-density grid cells and get their centroids.  
   
 <figure>
-    <a href="/images/court_grid.png"><img src="/images/court_grid.png"></a>
+    <a href="/assets/images/court_grid.png"><img src="/assets/images/court_grid.png"></a>
         <figcaption>court plot courtesy of ballR</figcaption>
 </figure>
 <br><br>  
@@ -56,7 +53,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
   
 
 <figure>
-    <a href="/images/jtinterm.png"><img src="/images/jtinterm.png"></a>
+    <a href="/assets/images/jtinterm.png"><img src="/assets/images/jtinterm.png"></a>
         <figcaption>the 'bamako' palette is very fitting for the Celtics</figcaption>
 </figure>
 <br><br>  
@@ -64,7 +61,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
 - Now the 'top' cells and their centroids.  
   
 <figure>
-    <a href="/images/jtinterm2.png"><img src="/images/jtinterm2.png"></a>
+    <a href="/assets/images/jtinterm2.png"><img src="/assets/images/jtinterm2.png"></a>
         <figcaption></figcaption>
 </figure>
 <br><br>
@@ -77,7 +74,7 @@ All shot chart data corresponds to the 2019 season, except for the three Knicks 
 - Plot the shot centroids (with some jitter to show any overlapping grid centroids).  
 <br><br>     
 <figure>
-    <a href="/images/topbottomOw.png"><img src="/images/topbottomOw.png"></a>
+    <a href="/assets/images/topbottomOw.png"><img src="/assets/images/topbottomOw.png"></a>
         <figcaption></figcaption>
 </figure>
 <br><br>
@@ -86,7 +83,7 @@ To get an idea of the rest of the pairwise comparisons, we can draw the matrix o
 
 
 <figure>
-    <a href="/images/OVals.png"><img src="/images/Ovals.png"></a>
+    <a href="/assets/images/OVals.png"><img src="/assets/images/Ovals.png"></a>
         <figcaption></figcaption>
 </figure>
 <br><br>  

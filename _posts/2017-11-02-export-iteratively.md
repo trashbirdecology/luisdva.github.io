@@ -1,19 +1,17 @@
 ---
 title: "Apply functions to grouped data and write each element to disk"
-layout: post
 excerpt: Split a table by a grouping variable, apply functions to each element, and export to separate files. 
+classes: wide
 category: rstats
 tags:
   - dplyr
   - each element
   - walk
   - purrr
-image:
-  feature: featureRish.jpg
-  credit: Pixabay CC0 image
-  creditlink:
-published: true
+header:
+  image: /assets/images/featureRish.jpg
 ---
+
 ## May-2019: Updated again to keep up with changes to the _group\_map_ function in _dplyr_ 0.8.1.  
 ### Dec-2018: Updated the code in this post to use functions from _dplyr_ 0.8.0 and a tidier approach in general. Read more about this upcoming release [here](https://www.tidyverse.org/articles/2018/12/dplyr-0-8-0-release-candidate/). 
 
@@ -63,7 +61,7 @@ I’m using _walk_ because _write\_csv_ returns nothing and writes csv files as 
 Because I was so excited about actually getting everything to work, I put together this cheatsheet-style graphic to describe the workflow. This approach already saved me and my labmate lots of time. I hope others find it useful too. 
 
 <figure>
-    <a href="/images/purrrPost.png"><img src="/images/purrrPost.png"></a>
+    <a href="/assets/images/purrrPost.png"><img src="/assets/images/purrrPost.png"></a>
         <figcaption>somewhat out of date now</figcaption>
 </figure>
 

@@ -1,6 +1,5 @@
 ---
 title: "Less bar charts with error bars please"
-layout: post
 excerpt: ggplot2 alternatives to dynamite plunger plots
 category: rstats
 tags:
@@ -8,17 +7,12 @@ tags:
   - errorbar
   - dataviz
   - datavis
-image: 
-  feature:  
-  credit: 
-  creditlink: 
-published: true
 ---
 
 Computer scientists, psychologists, and statisticians have all studied how to create visualizations that communicate data effectively. Graphical perception experiments showed that the human visual system is pretty good at decoding numerical data mapped to the spatial position of a graphical feature (Heer et al. 2010). This may be why bar charts are so popular and widely-used.  
 
 <figure>
-    <a href="/images/graph3d.jpg"><img src="/images/graph3d.jpg"></a>
+    <a href="/assets/images/graph3d.jpg"><img src="/assets/images/graph3d.jpg"></a>
         <figcaption>CCO image</figcaption>
 </figure>
 
@@ -27,7 +21,7 @@ To show counts or frequencies of observations for different groups, we can make 
 
 
 <figure>
-    <a href="/images/dynam.jpg"><img src="/images/dynam.jpg"></a>
+    <a href="/assets/images/dynam.jpg"><img src="/assets/images/dynam.jpg"></a>
         <figcaption>CCO image</figcaption>
 </figure>
 
@@ -81,7 +75,7 @@ ggplot(msleep_summary,aes(diet,total_sleep))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/01_justbars.png"><img src="/images/01_justbars.png"></a>
+    <a href="/assets/images/01_justbars.png"><img src="/assets/images/01_justbars.png"></a>
         <figcaption></figcaption>
 </figure>
 
@@ -96,7 +90,7 @@ ggplot(msleep_summary,aes(diet,total_sleep))+
 
 
 <figure>
-    <a href="/images/02_barsdyn.png"><img src="/images/02_barsdyn.png"></a>
+    <a href="/assets/images/02_barsdyn.png"><img src="/assets/images/02_barsdyn.png"></a>
         <figcaption>yuck!</figcaption>
 </figure>
 
@@ -109,7 +103,7 @@ ggplot(msleep_summary,aes(diet,total_sleep))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/03_barsalpha.png"><img src="/images/03_barsalpha.png"></a>
+    <a href="/assets/images/03_barsalpha.png"><img src="/assets/images/03_barsalpha.png"></a>
         <figcaption></figcaption>
 </figure>
 
@@ -159,7 +153,7 @@ ggplot(msleep_summary,aes(diet,total_sleep))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/04_bars20.png"><img src="/images/04_bars20.png"></a>
+    <a href="/assets/images/04_bars20.png"><img src="/assets/images/04_bars20.png"></a>
         <figcaption></figcaption>
 </figure>
 
@@ -174,7 +168,7 @@ msleep %>% filter(!is.na(vore)) %>%
 {% endhighlight %}
 
 <figure>
-    <a href="/images/05_sina.png"><img src="/images/05_sina.png"></a>
+    <a href="/assets/images/05_sina.png"><img src="/assets/images/05_sina.png"></a>
         <figcaption></figcaption>
 </figure>
 

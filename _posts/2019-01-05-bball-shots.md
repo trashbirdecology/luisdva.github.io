@@ -1,17 +1,13 @@
 ---
 title: "Animate shot distances for NBA games"
-layout: post
 excerpt: Download, plot, and animate per-game shooting data.
 category: rstats
 tags:
   - beard
   - gganimate
   - nbastatr
-image:
-  feature: featureBallin.png
-  credit: 
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureBallin.png
 ---
 
 Earlier this week I was asked to post the code for the animation in this tweet, which shows the distance for shots taken throughout a basketball game by two players. I wanted to check out the CRAN version of _gganimate_ by [Thomas Lin Pedersen](https://twitter.com/thomasp85), and was also meaning to explore NBA data for a while. I reasoned this might be an interesting way to show offensive activity. 
@@ -27,7 +23,7 @@ The 'shot chart detail' data from the NBA stats API was accessed with [_nbastatr
 Here are the shot distances for James Harden’s last three games:
 
 
-![gif demo]({{ site.baseurl }}/images/bballjh.gif)
+![gif demo]({{ site.baseurl }}/assets/images/bballjh.gif)
  
 the code:
 {% gist luisDVA/411134394b4b59bd8d96ac73b1ea78c0 %}

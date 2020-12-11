@@ -1,16 +1,13 @@
 ---
-layout: post
+title: "Rongeurs"
 excerpt: La morphologie permet de prédire le régime alimentaire et mode de locomotion des rongeurs.
 tags:
   - Fisher
   - Schweizer
   - francais
   - trop mimi
-image:
-  feature: featureRongeurs.jpg
-  credit: CC0 public domain
-  creditlink:
-published: true
+header:
+  image: /assets/images/featureRongeurs.jpg
 ---
 
 > Cette recherche a été publié  dans la revue "Royal Society Open Science". Le Dr Manuel Schweizer du NMBE et la Dr Diana Fisher de l'Université de Queensland, en Australie, ont également collaboré dans cette recherche. 
@@ -22,7 +19,7 @@ published: true
 Plus de la moitié des mammifères sur terre sont des rongeurs. Ces petits animaux sont des mammifères avec des incisives particulièrement longues et pointues, vivant dans presque tous les écosystèmes terrestres. Ce groupe est incroyablement diversifié, avec plus de 2000 espèces reconnues dans le monde. Partout où ils se trouvent, les gens les traitent souvent comme des parasites et des nuisances, pourtant les rongeurs jouent un rôle important dans les écosystèmes où ils habitent. Ces mammifères sont des agents importants notamment pour la dispersion des graines et des liens importants dans les réseaux trophiques. Ils jouent un rôle essentiel dans la bonne santé des forêts, des prairies, des déserts et des marais.
 
 <figure>
-    <a href="/images/castor.jpg"><img src="/images/castor.jpg"></a>
+    <a href="/assets/images/castor.jpg"><img src="/assets/images/castor.jpg"></a>
         <figcaption>CC0 public domain img</figcaption>
 </figure>
 
@@ -39,7 +36,7 @@ Ces résultats sont importants car ils nous donnent des indicateurs essentiels s
 De nombreuses études récentes cherchent à savoir comment l’extinction de différentes espèces affecte la santé des écosystèmes. Si les animaux qui enterrent les graines disparaissent, alors une forêt n’est plus en mesure de se régénérer. Grâce à nos résultats et nos modèles, nous pouvons maintenant prédire grâce à la morphologie de chaque espèce leur régime alimentaire et mode de locomotion. Les habitudes de nombreuses espèces ne sont pas encore bien connues et nos résultats vont nous permettre de répondre à ces questions. 
 
 <figure>
-    <a href="/images/grndSquirrel.jpg"><img src="/images/grndSquirrel.jpg"></a>
+    <a href="/assets/images/grndSquirrel.jpg"><img src="/assets/images/grndSquirrel.jpg"></a>
         <figcaption> CC0 public domain img </figcaption>
 </figure>
 

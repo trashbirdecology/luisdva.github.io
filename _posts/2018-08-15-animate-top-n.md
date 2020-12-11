@@ -1,6 +1,5 @@
 ---
 title: "Get top values by group (animated)"
-layout: post
 excerpt: Animated explanation of dplyr::top_n() and code to create the gif.
 category: rstats
 tags:
@@ -8,11 +7,8 @@ tags:
   - gganimate
   - gifs
   - luna
-image:
-  feature: featureAnimate.png
-  credit: clipartXtras
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureAnimate.png
 ---
 
 Thanks to the 'gganimate' package, expository demos are in season:
@@ -23,13 +19,13 @@ Thanks to the 'gganimate' package, expository demos are in season:
 For previous posts, I've made graphical summaries of R functions such as this one below.  
 
 <figure>
-    <a href="/images/featureUnbreak.png"><img src="/images/featureUnbreak.png"></a>
+    <a href="/assets/images/featureUnbreak.png"><img src="/assets/images/featureUnbreak.png"></a>
         <figcaption></figcaption>
 </figure>
 
 Now that I know how to make crude animations of the data-wrangling process, I made this animation of various tidyerse functions piped together. I focused on the _top\_n()_ function in 'dplyr' because I've written about it in the past and the posts still seem to get pretty regular traffic (links below).
 
-![gif demo]({{ site.baseurl }}/images/topndemo.gif)
+![gif demo]({{ site.baseurl }}/assets/images/topndemo.gif)
  
 top_n() posts:  
 [English version](https://luisdva.github.io/rstats/Top-and-bottom-values-for-groups/)  
@@ -48,7 +44,7 @@ I pasted the code as the plot title, but we can interpret each step like so:
 These are Luna and Lili, respectively. 
 
 <figure>
-    <a href="/images/cutest.jpg"><img src="/images/cutest.jpg"></a>
+    <a href="/assets/images/cutest.jpg"><img src="/assets/images/cutest.jpg"></a>
         <figcaption>cutest</figcaption>
 </figure>
 

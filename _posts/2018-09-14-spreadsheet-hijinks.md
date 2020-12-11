@@ -1,18 +1,15 @@
 ---
 title: "Spreadsheet hijinks"
-layout: post
 excerpt: The results from crowd-sourcing a suitable term for a common spreadsheet practice.
 tags:
   - excel
   - munging
   - unheadr
   - clippy
-image: 
-  feature: featureExcel.png
-  credit: 
-  creditlink: 
-published: true
+header: 
+  image: /assets/images/featureExcel.png
 ---
+
 Earlier in the week Jenny Bryan helped me ask the Twitter community what to call this widely used spreadsheet habit (see the image in my Tweet).
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Do you have a pithy name for this spreadsheet phenomenon? Do tell! <a href="https://t.co/XbqOOSmr4i">https://t.co/XbqOOSmr4i</a></p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/1039267761174732800?ref_src=twsrc%5Etfw">September 10, 2018</a></blockquote>
@@ -21,7 +18,7 @@ Earlier in the week Jenny Bryan helped me ask the Twitter community what to call
 I kept track of the replies to my tweet and to Jenny's retweet, and here are _most_ of the suggested names... 
 
 <figure>
-    <a href="/images/factros.png"><img src="/images/factros.png"></a>
+    <a href="/assets/images/factros.png"><img src="/assets/images/factros.png"></a>
 </figure>
 
 

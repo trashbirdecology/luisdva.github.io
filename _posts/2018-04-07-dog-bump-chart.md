@@ -2,6 +2,7 @@
 title: "Dog breeds bump chart"
 layout: post
 excerpt: Plotting how popularity rankings for dog breeds change through time. 
+classes: wide
 category: rstats
 tags:
   - ggplot2
@@ -9,11 +10,9 @@ tags:
   - labradors
   - akc
   - pup
-image:
-  feature: featureDoggs.png
-  credit: Pixabay CC0 image
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureDoggs.png
+
 ---
 
 Last week, the American Kennel Club announced the 2017 rankings of dog breed [popularity](http://people.com/pets/akc-most-popular-dog-breed-2017/){:target="_blank"} in the USA. A few days later, Dominik Koch [blogged](https://dominikkoch.github.io/Bump-Chart/){:target="_blank"} about creating bump charts in R using _ggplot2_ to show changes in rank over time. 
@@ -24,7 +23,7 @@ For this post, I was only interested in the top ten breeds of 2017 and how they�
 
 In the original bump chart example with Olympic medal rankings, countries are labeled using little flags and the _ggflags_ package. I wanted to use custom images as labels, and the [ggimage](https://github.com/GuangchuangYu/ggimage){:target="_blank"} package worked out great for that. I’ve written code to [scrape and download dog photos](http://luisdva.github.io/rstats/ggpup/){:target="_blank"} by breed in the past, but for this post I drew each dog by hand. 
 
-Side note: I used this nifty function by [Maëlle Salmon](https://twitter.com/ma_salmon){:target="_blank"} for batch resizing images using the packages _purrr_ and _magick_. I uploaded all the drawings [here](https://github.com/luisDVA/luisdva.github.io/tree/master/images/pup){:target="_blank"}. 
+Side note: I used this nifty function by [Maëlle Salmon](https://twitter.com/ma_salmon){:target="_blank"} for batch resizing images using the packages _purrr_ and _magick_. I uploaded all the drawings [here](https://github.com/luisDVA/luisdva.github.io/tree/master/assets/images/pup){:target="_blank"}. 
 
 {% highlight r %}
 library(magick)
@@ -147,7 +146,7 @@ This is what the final chart looks like.
 A lot of the media coverage of the recent rankings noted how French bulldogs have increased in popularity significantly, and this visualization really shows it. Yorkies show the opposite pattern.
 
 <figure>
-    <a href="/images/akcranks.png"><img src="/images/akcranks.png"></a>
+    <a href="/assets/images/akcranks.png"><img src="/assets/images/akcranks.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 

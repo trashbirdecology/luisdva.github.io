@@ -1,17 +1,15 @@
 ---
-layout: post
+title: "Rodent ecomorphology in a phylogenetic context"
 excerpt: Summary of our new publication 'Morphology captures diet and locomotor types in rodents'.
 tags:
   - Fisher
   - Schweizer
   - collections
-image:
-  feature: featureRods.jpg
-  credit:
-  creditlink:
-published: true
+header:
+  image: /assets/images/featureRods.jpg
 ---
-Last week my paper on rodent ecomorphology was finally published (citation details are at the end of this post).
+
+Last week our paper on rodent ecomorphology was finally published (citation details are at the end of this post).
 
 [Morphology captures diet and locomotor types in rodents](http://rsos.royalsocietypublishing.org/content/4/1/160957 "open access link"){:target="_blank"}
 
@@ -23,7 +21,7 @@ This recent publication is the primary result of my postdoctoral research (2015-
 Rodents are small mammals with long, sharp front teeth that they use for gnawing. There are over 2000 recognized species, and more than half the mammals on Earth are rodents. This group is incredibly diverse, with species that live in almost every ecosystem in the world. 
 
 <figure>
-    <a href="/images/sphiggurus.jpg"><img src="/images/sphiggurus.jpg"></a>
+    <a href="/assets/images/sphiggurus.jpg"><img src="/assets/images/sphiggurus.jpg"></a>
         <figcaption>Neotropical porcupine</figcaption>
 </figure>
 
@@ -40,7 +38,7 @@ This result is important because it provides a concrete set of features that ess
 Many recent studies aim to figure out the diversity of the traits of the species present in specific regions to study how the loss of different species can affect local ecosystem functioning (including the super popular and catch-all topic of functional diversity). The methods and results from this study can leverage data from natural history collections to inform this kind of conservation research.
 
 <figure>
-    <a href="/images/woodrats.jpg"><img src="/images/woodrats.jpg"></a>
+    <a href="/assets/images/woodrats.jpg"><img src="/assets/images/woodrats.jpg"></a>
         <figcaption>Neotoma woodrat</figcaption>
 </figure>
 

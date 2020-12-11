@@ -1,10 +1,12 @@
 ---
 title: Classifying rodent diets
+classes: wide
+tagline: "Classifying rodent diets for comparative research"
 header:
   overlay_image: /assets/images/featureRat.jpg
   overlay_filter: 0.4
   caption: "Photo credit: LDVA"
-excerpt: New publication - Classifying rodents diets for comparative research
+excerpt: New publication
 tags:
   - rats
   - omnivore
@@ -12,7 +14,6 @@ tags:
   - rodents
   - trophic
 ---
-New publication
 
 Our new paper, [Classifying rodent diets for comparative research](https://doi.org/10.1111/mam.12214){:target="_blank"}, is now published in Mammal Review. 
 

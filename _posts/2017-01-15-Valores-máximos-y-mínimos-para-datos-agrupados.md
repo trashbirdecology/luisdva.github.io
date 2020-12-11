@@ -1,16 +1,13 @@
 ---
-layout: post
+title: "Valore máximos y mínimos para datos agrupados"
 excerpt: Cómo identificar los valores máximos o mínimos de una variable para datos agrupados utilizando R y dplyr.
 tags:
   - rstats
   - dplyr
   - minmax
   - en tu idioma
-image:
-  feature: featureMinMax.jpg
-  credit: null
-  creditlink: null
-published: true
+header:
+  image: /assets/images/featureMinMax.jpg
 ---
 
 > This post is available in English [here](http://luisdva.github.io/rstats/Top-and-bottom-values-for-groups/)
@@ -75,7 +72,7 @@ ggplot(aes(x=Taxonomic_order,y=log(Brain_mass_g)))+geom_path()+theme_minimal()
 {% endhighlight %}
 
 <figure>
-    <a href="/images/bothslopes.png"><img src="/images/brainMasses.png"></a>
+    <a href="/assets/images/bothslopes.png"><img src="/assets/images/brainMasses.png"></a>
         <figcaption>masa cerebral en escala logarítmica</figcaption>
 </figure>
 

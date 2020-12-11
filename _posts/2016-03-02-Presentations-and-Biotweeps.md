@@ -1,15 +1,11 @@
 ---
-layout: post
 title: Presentations section and Biotweeps
 excerpt: "Brief updates, March 2016"
 tags: 
   -Presentation titles
   -Twitter SciComm
-image: 
-  feature: slider3.jpg
-  credit: null
-  creditlink: null
-published: true
+header: 
+  image: /assets/images/slider3.jpg
 ---
 
 I've added a presentations section to the site, and I just wanted to mention that next week I will be taking over the [Biotweeps](https://biotweep.wordpress.com/) Twitter account. I'll discuss mammals, research, early career science, and other exciting topics.

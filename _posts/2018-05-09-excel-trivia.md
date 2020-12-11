@@ -9,9 +9,7 @@ tags:
   - readxl
   - tidyxl
 header:
-  image: featureExcel.png
-  credit: Pixabay CC0 image
-  creditlink: 
+  image: /assets/images/featureExcel.png
 ---
 
 I recently offered to help create the game cards for a mammalogy-themed trivia board game that will be made available later in the year. The questions and answers had already been prepared and they were stored in an Excel file.  
@@ -25,7 +23,7 @@ All I had to do was wrangle the questions and answers into little tables with on
 Everything seemed fine, until I opened the spreadsheet and realized that the correct answers were highlighted in bold, and the position of the correct answer for each question was already randomized. I’ve written about [not using formatting this way](http://luisdva.github.io/pls-don't-do-this/){:target="_blank"} (and so have many others before me, see [here](http://kbroman.org/dataorg/pages/resources.html){:target="_blank"}) , but I personally hadn’t had to deal with this kind of dataset before. 
 
 <figure>
-    <a href="/images/eichornli.png"><img src="/images/eichornli.png"></a>
+    <a href="/assets/images/eichornli.png"><img src="/assets/images/eichornli.png"></a>
         <figcaption>made with CC0 images</figcaption>
 </figure>
 
@@ -42,7 +40,7 @@ D) 36
 The correct answer (42) is highlighted with bold font. In the Excel format I was dealing with, the same question looks like this (the one on the first row):
 
 <figure>
-    <a href="/images/dogQs.png"><img src="/images/dogQs.png"></a>
+    <a href="/assets/images/dogQs.png"><img src="/assets/images/dogQs.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 

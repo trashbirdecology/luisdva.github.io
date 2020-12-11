@@ -1,18 +1,15 @@
 ---
 title: "Comparing dog and cat ratings"
-layout: post
 excerpt: Downloading, comparing, and visualizing Twitter ratings for dogs and cats. 
+classes: wide
 category: rstats
 tags:
   - rtweet
   - bayesian
   - cats
   - we rate dogs
-image:
-  feature: featureDogsCats.jpg
-  credit: Pixabay CC0 image, photo by user Nordseher
-  creditlink:
-published: true
+header:
+  image: /assets/images/featureDogsCats.jpg
 ---
 Here is yet another post about dogs and the [@dog_rates](https://twitter.com/dog_rates){:target="_blank"} Twitter account. I’m writing this as a way to try out the [rtweet](http://rtweet.info){:target="_blank"} package (and to document some plotting code that I had to leave out of an unrelated paper).
 
@@ -121,7 +118,7 @@ ggplot(alltweets)+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/rateSina.png"><img src="/images/rateSina.png"></a>
+    <a href="/assets/images/rateSina.png"><img src="/assets/images/rateSina.png"></a>
         <figcaption>each point is a rating</figcaption>
 </figure>
 
@@ -164,7 +161,7 @@ muDiff     0.577  0.577  0.583   95  0.410  0.747
 Let’s look at it graphically. BEST has a built in plotting function that generates this figure.
 
 <figure>
-    <a href="/images/defaultBEST.png"><img src="/images/defaultBEST.png"></a>
+    <a href="/assets/images/defaultBEST.png"><img src="/assets/images/defaultBEST.png"></a>
         <figcaption>built-in defaults</figcaption>
 </figure>
 
@@ -197,7 +194,7 @@ ggplot(dogcatsDiffsDF)+geom_bkde(data=muDiff, aes(x=meandiff),fill="#335EAD",col
 {% endhighlight %}
 
 <figure>
-    <a href="/images/muDiff.png"><img src="/images/muDiff.png"></a>
+    <a href="/assets/images/muDiff.png"><img src="/assets/images/muDiff.png"></a>
         <figcaption>click for gallery</figcaption>
 </figure>
 
@@ -206,7 +203,7 @@ Now we know that the mean rating differs between dogs and cats. I’m a dog pers
 > Update: After sharing this post, [Maëlle Salmon](https://twitter.com/ma_salmon){:target="_blank"} asked if maybe the ratings relate to the number of likes and retweets that a dog/cat is getting. Because the variables are right there in the data frame, I've added some code for a quick plot of retweets/likes ~ ratings. I logged the response variables, just because.
 
 <figure>
-    <a href="/images/rtfavs2.png"><img src="/images/rtfavs2.png"></a>
+    <a href="/assets/images/rtfavs2.png"><img src="/assets/images/rtfavs2.png"></a>
         <figcaption>how cool is the cowplot package?</figcaption>
 </figure>
 

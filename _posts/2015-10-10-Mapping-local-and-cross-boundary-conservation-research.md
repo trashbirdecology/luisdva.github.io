@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Mapping local and cross-boundary conservation research
 excerpt: "Mapping spatial patterns in conservation research using R and ICCB 2011 presentation data."
 category: rstats
@@ -7,9 +6,9 @@ tags:
   - SCB
   - geosphere
   - GIS
-image: 
-  feature: featureMapping2.jpg
-published: true
+header: 
+  overlay_image: /assets/images/featureMapping2.jpg
+  overlay_filter: 0.1
 ---
 
 In the past few months I wrote a couple of blog posts ([here](http://luisdva.github.io/Mammalogy-Reviewed/) and [here](http://luisdva.github.io/Presentation-to-publication/)) about the need to collect and analyse data that describes the content presented at biology conferences, as well as data on the demographics of the presenters. In my spare time, I’ve been putting together a dataset of conference content. I analyse part of these data for this post as a way to share some curious spatial patterns in conservation research, and to document my first steps towards using R for GIS analyses. 
@@ -51,7 +50,7 @@ I plotted the points for author and study countries in different colours to show
 
 Final map
 <figure>
-    <a href="/images/cresch.png"><img src="/images/cresch.png"></a>
+    <a href="/assets/images/cresch.png"><img src="/assets/images/cresch.png"></a>
         <figcaption>unedited figure output. click to enlarge.</figcaption>
 </figure>
 

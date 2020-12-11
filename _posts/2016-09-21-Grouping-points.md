@@ -1,6 +1,8 @@
 ---
+title: "Grouping points"
 layout: post
-excerpt: Four ways to draw polygons around groups of points using ggplot.
+excerpt: Four ways to draw polygons around groups of points using ggplot2.
+tagline: "Drawing polygons around groups of points using ggplot"
 category: rstats
 tags:
   - rstats
@@ -8,12 +10,11 @@ tags:
   - ggalt
   - datavis
   - ggforce
-image:
-  feature: featureGroups.png
-  credit: null
-  creditlink: null
-published: true
+header:
+  overlay_image: /assets/images/featureGroups.png
+  overlay_filter: 0.4 
 ---
+
 ## Drawing polygons around groups of points in ggplot
 
 > Updated on February 2020 to include geoms provided by `ggforce`.  
@@ -44,7 +45,7 @@ ggplot(birdsAll,aes(x=mass,y=length,color=age))+geom_point()+theme_bw()
 {% endhighlight %}
 
 <figure>
-    <a href="/images/pointsonly.png"><img src="/images/pointsonly.png"></a>
+    <a href="/assets/images/pointsonly.png"><img src="/assets/images/pointsonly.png"></a>
         <figcaption>just the points in 2d</figcaption>
 </figure>
 
@@ -62,7 +63,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/chullsimg.png"><img src="/images/chullsimg.png"></a>
+    <a href="/assets/images/chullsimg.png"><img src="/assets/images/chullsimg.png"></a>
         <figcaption>with convex hulls and fills for each group</figcaption>
 </figure>
 
@@ -77,7 +78,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 {% endhighlight%}
 
 <figure>
-    <a href="/images/gghull.png"><img src="/images/gghull.png"></a>
+    <a href="/assets/images/gghull.png"><img src="/assets/images/gghull.png"></a>
         <figcaption>hulls and fills for each group</figcaption>
 </figure>
 
@@ -96,7 +97,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/elips.png"><img src="/images/elips.png"></a>
+    <a href="/assets/images/elips.png"><img src="/assets/images/elips.png"></a>
         <figcaption>ellipse</figcaption>
 </figure>
 
@@ -112,7 +113,7 @@ This option is what I ended up using for my own figures. It uses`geom_encircle`,
 {% endhighlight %}
 
 <figure>
-    <a href="/images/encircle.png"><img src="/images/encircle.png"></a>
+    <a href="/assets/images/encircle.png"><img src="/assets/images/encircle.png"></a>
         <figcaption>with smoothing spline</figcaption>
 </figure>
 

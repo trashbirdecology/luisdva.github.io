@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Lagomorph research
 excerpt: "Inaugural blog post, May 2015. Summary of recent research on Lagomorpha (rabbits, hares, pikas)."
 tags: 

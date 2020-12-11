@@ -1,6 +1,5 @@
 ---
 title: "Set the breaks!"
-layout: post
 excerpt: Omitting items from legends in ggplot2. 
 category: rstats
 tags:
@@ -9,11 +8,8 @@ tags:
   - scale
   - tidyverse
   - ggplot
-image:
-  feature: sample-image-4.jpg
-  credit: 
-  creditlink: 
-published: true
+header:
+  image: /assets/images/sample-image-4.jpg
 ---
 
 Last month I was trying to make a figure in ggplot in which the legend did not include certain elements present in the plot. I though it would be straightforward, but I was wrong.
@@ -64,7 +60,7 @@ ggplot(mtcars) +
 {% endhighlight %}
 
 <figure>
-    <a href="/images/p1.png"><img src="/images/p1.png"></a>
+    <a href="/assets/images/p1.png"><img src="/assets/images/p1.png"></a>
         <figcaption>4, 6, and 8 cylinders</figcaption>
 </figure>
 
@@ -78,7 +74,7 @@ ggplot(mtcars) +
 {% endhighlight r %} 
 
 <figure>
-    <a href="/images/p2.png"><img src="/images/p2.png"></a>
+    <a href="/assets/images/p2.png"><img src="/assets/images/p2.png"></a>
         <figcaption>just 4 and 8</figcaption>
 </figure>
 
@@ -86,6 +82,6 @@ ggplot(mtcars) +
 I you’re a phylo person and use ggtree to highlight clades this will come in handy, otherwise I hope this is still a somewhat useful resource on setting breaks. I was so happy and thankful to complete my figure that I asked Hadley for a permanent reminder to set the breaks in my R4DS book.
  
 <figure>
-    <a href="/images/breaks.jpg"><img src="/images/breaks.jpg"></a>
+    <a href="/assets/images/breaks.jpg"><img src="/assets/images/breaks.jpg"></a>
         <figcaption></figcaption>
 </figure>

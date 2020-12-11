@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Mapas de altas latitudes en R
 excerpt: Ilustrando la distribución de dos especies de focas antárticas con R y ggplot2.
 category: rstats
@@ -9,11 +8,9 @@ tags:
   - seals
   - mapping
   - sf
-image:
-  feature: featureSeals.png
-  credit: Andrew Shiva - Wikimedia Commons
-  creditlink: null
-published: true
+header:
+  image: /assets/images/featureSeals.png
+  caption: "Photo by Andrew Shiva - Wikimedia Commons"
 ---
 
 > ## [English-language version](https://luisdva.github.io/rstats/seal-maps/) 
@@ -115,7 +112,7 @@ ggplot()+
 a ver:
 
 <figure>
-    <a href="/images/seals.png"><img src="/images/seals.png"></a>
+    <a href="/assets/images/seals.png"><img src="/assets/assets/images/seals.png"></a>
         <figcaption>photobomb!</figcaption>
 </figure>
   

@@ -1,20 +1,17 @@
 ---
-layout: post
+title: "The world's primates are in trouble"
 excerpt: Brief updates on our new publication reviewing the primate extinction crisis.
 tags:
   - Estrada
   - Science Advances
   - conservation
-image:
-  feature: featurePrimates.jpg
-  credit: CC0 image, Pixabay
-  creditlink:
-published: true
+header:
+  image: /assets/images/featurePrimates.jpg
 ---
+
 > Update, 26/01/2017. As promised, here is the data from the supplement as a csv file. The data is exactly the same that appears in Tables S1 to S4. I simply put it into a useable table that includes all regions and family as separate columns for easier data wrangling. In the regions column, mlAfrica means mainland Africa. 
 
 [Estrada et al 2017 dataset](https://raw.githubusercontent.com/luisDVA/codeluis/master/1600946_tables.csv)
-
 
 ## Gorillas, monkeys and other primates must be saved from 'impending extinction', urge 31 scientists
 

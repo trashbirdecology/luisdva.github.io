@@ -1,5 +1,4 @@
 ---
-layout: post
 title: ggplot2 visualization of conditional inference trees 
 excerpt: "Plotting conditional inference trees with dichotomous responses in R, a grammar of graphics implementation"
 category: rstats
@@ -7,16 +6,15 @@ tags:
   - ggparty
   - random forests
   - partykit
-image: 
-  feature: featureRFs.jpg
-published: true
+header: 
+  image: /assets/images/featureRFs.jpg
 ---
 
 This is an update to a [post](https://luisdva.github.io/rstats/Plotting-conditional-inference-trees-in-R/){:target="_blank"}  I wrote in 2015 on plotting conditional inference trees for dichotomous response variables using R. I actually used the code from that post to plot a conditional inference tree in this recent [publication](https://doi.org/10.1111/cobi.13296){:target="_blank"}  (see below), but it is now way easier to plot all kinds of tree objects thanks to the new [ggparty](https://github.com/martin-borkovec/ggparty){:target="_blank"}  package by Martin Borkovec and Niyaz Madin. (Thanks to [Heidi Seibold](https://twitter.com/HeidiBaya){:target="_blank"} for pointing it out on Twitter.)
  
  
 <figure>
-    <a href="/images/figConditional.png"><img src="/images/figConditional.png"></a>
+    <a href="/assets/images/figConditional.png"><img src="/assets/images/figConditional.png"></a>
         <figcaption>recent figure I made</figcaption>
 </figure>
 <br><br>
@@ -24,7 +22,7 @@ This is an update to a [post](https://luisdva.github.io/rstats/Plotting-conditio
 Here, we’ll walk through the code to plot this tree from a publication by [Lawes et al. 2015](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130626){:target="_blank"} , in which the figure is the default plot output for an object of class ‘BinaryTree’ produced by party::ctree(). In short, the authors were investigating the factors behind population declines for some species of Australian rodents. See my previous post for a more throrough interpretation of the results and an overview of recursive partitioning methods. 
 
 <figure>
-    <a href="/images/ctreeDefault.png"><img src="/images/ctreeDefault.png"></a>
+    <a href="/assets/images/ctreeDefault.png"><img src="/assets/images/ctreeDefault.png"></a>
         <figcaption>default plotting</figcaption>
 </figure>
 <br><br>
@@ -144,7 +142,7 @@ ggparty(rodCT) +
 The plot looks good already, and in my opinion it shows good balance between a graphical depiction of how the observations are split, with explicit data on the numbers of observations at the nodes and the relevant values in the predictors that define the splits. 
 
 <figure>
-    <a href="/images/ggBarsProp.png"><img src="/images/ggBarsProp.png"></a>
+    <a href="/assets/images/ggBarsProp.png"><img src="/assets/images/ggBarsProp.png"></a>
         <figcaption>cool!</figcaption>
 </figure>
 <br><br>
@@ -185,7 +183,7 @@ ggparty(rodCT) +
 {% endhighlight %}
 
 <figure>
-    <a href="/images/ggBarsabs.png"><img src="/images/ggBarsabs.png"></a>
+    <a href="/assets/images/ggBarsabs.png"><img src="/assets/images/ggBarsabs.png"></a>
         <figcaption>another option</figcaption>
 </figure>
 <br><br>

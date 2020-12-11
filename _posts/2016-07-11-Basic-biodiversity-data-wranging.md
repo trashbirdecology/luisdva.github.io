@@ -1,20 +1,16 @@
 ---
-layout: post
 title: Basic biodiversity data-wrangling operations
-excerpt: >-
-  Manipulating variables and content in biodiversity datasets using base R and
+excerpt: Manipulating variables and content in biodiversity datasets using base R and
   dplyr. 
 category: rstats
+classes: wide
 tags:
   - count how many
   - everything()
   - species names
   - separators
-image:
-  feature: featureWrangling1.png
-  credit: null
-  creditlink: null
-published: true
+header:
+  image: /assets/images/featureWrangling1.png
 ---
 
 At some point we all end up working with datasets that describe biodiversity in some form or another. For example: morphological measurements for museum specimens, occurrence records from bird surveys, ecological traits for many different species, etc. Becuse these datasets share some common features, there are certain tools and operations that we can use to get the rows, columns, and content into something we can use in our analyses. 

@@ -1,6 +1,5 @@
 ---
 title: "Data Rectangling Resource Roundup"
-layout: post
 excerpt: Links to material on Data Rectangling. 
 tags:
   - Jenny
@@ -8,11 +7,8 @@ tags:
   - spreadsheets
   - data organization
   - unheadr
-image:
-  feature: featureRectangle.png
-  credit: 
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureRectangle.png
 ---
 
 Earlier this month, I spotted this definition in the _tidyr_ package [vignette](https://tidyr.tidyverse.org/dev/articles/rectangle.html){:target="_blank"}:
@@ -41,7 +37,7 @@ The focus on layouts in these two publications is somewhat in conflict with the 
 When I asked for clarification, [Hadley Wickham](https://twitter.com/hadleywickham){:target="_blank"} rightfully noted that in the examples of ‘non-rectangular’ data from both of these publications, the data are already in a single rectangle with rows and columns and that ‘data tidying’ would be more suitable for the process of making such data usable. 
 
 <figure>
-    <a href="/images/rectfigs.png"><img src="/images/rectfigs.png"></a>
+    <a href="/assets/images/rectfigs.png"><img src="/assets/images/rectfigs.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 <br>

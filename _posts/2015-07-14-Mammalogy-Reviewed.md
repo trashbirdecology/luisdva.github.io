@@ -1,6 +1,7 @@
 ---
 title: "Trends in mammal research in Mexico 1991-2012"
 excerpt: "Summary of research presented at scientific meetings of the Mexican Mammalogy Society (AMMAC) 1991-2012."
+classes: wide
 category: rstats
 tags: 
   - scientific conference
@@ -8,6 +9,7 @@ tags:
   - mammal research
 header: 
   overlay_image: /assets/images/featureAMMAC.jpg
+  overlay_filter: 0.5
   caption: "Photo: AMMAC 2014 meeting delegate photo. Labeled for reuse."
 ---
 

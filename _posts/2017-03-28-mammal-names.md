@@ -1,6 +1,5 @@
 ---
 title: "What's in a name?"
-layout: post
 excerpt: Text analysis applied to mammalian common names. 
 category: rstats
 tags:
@@ -8,11 +7,9 @@ tags:
   - tidytext
   - regex
   - hrbr
-image:
-  feature: featureMNames.png
-  credit: contains CC0 public domain elements from pixabay
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureMNames.png
+
 ---
 With [Mammal March Madness]( http://mammalssuck.blogspot.com/2017/02/dont-call-it-is-comeback-weve-been-here.html) happening this month, I’ve been seeing a lot of common names for mammalian species in my Twitter feed and this year in particular two of the divisions are based directly on common names: **Adjective mammals** (e.g. Spectacled bear, pouched rat, clouded leopard, etc. ) and **Two Animals One Mammal** (e.g. bearcat, tiger quoll, hog badger, etc.). I recently had to figure out how to do text analysis for another project (in which I counted the most frequently-used words in the titles of hundreds of papers), so I wondered if I could apply the same analysis code to the common names for mammals (turns out I could). 
 This post has two parts: Part One is a straightforward text analysis of word frequency, and Part Two is a nifty approach to quantifying name lengths.  
@@ -74,7 +71,7 @@ by_wordAll %>%
 Unsurprisingly, the top words for all orders reflect the names of the most diverse groups (rodents, bats, shrews and primates)
 
 <figure>
-    <a href="/images/allOrders.png"><img src="/images/allOrders.png"></a>
+    <a href="/assets/images/allOrders.png"><img src="/assets/images/allOrders.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 
@@ -134,7 +131,7 @@ ggplot(topWbyOrder,aes(x = fct_reorder(word, n), y = n)) +
 {% endhighlight %}
 
 <figure>
-    <a href="/images/specOrders.png"><img src="/images/specOrders.png"></a>
+    <a href="/assets/images/specOrders.png"><img src="/assets/images/specOrders.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 
@@ -167,7 +164,7 @@ superheat(topWbyOrderLong,heat.col.scheme = "red",
 The heatmap shows how there are no shared top words between the six most diverse orders, and also the frequency of each one. 
 
 <figure>
-    <a href="/images/mheatmap.png"><img src="/images/mheatmap.png"></a>
+    <a href="/assets/images/mheatmap.png"><img src="/assets/images/mheatmap.png"></a>
         <figcaption>click image to enlarge</figcaption>
 </figure>
 
@@ -316,7 +313,7 @@ Most of the output makes no sense, but there were some funny ones, and I decided
 {% endhighlight %}
 
 <figure>
-    <a href="/images/animaux.png"><img src="/images/animaux.png"></a>
+    <a href="/assets/images/animaux.png"><img src="/assets/images/animaux.png"></a>
         <figcaption>a) Finless colorful langur, b) Desperate finvole, c) Imposter dormouse </figcaption>
 </figure>
 
@@ -353,7 +350,7 @@ ggplot(multNames,aes(N_commonNames))+geom_histogram(binwidth = 1,fill="red",alph
 {% endhighlight %}
 
 <figure>
-    <a href="/images/nnames.png"><img src="/images/nnames.png"></a>
+    <a href="/assets/images/nnames.png"><img src="/assets/images/nnames.png"></a>
         <figcaption>pretty skewed</figcaption>
 </figure>
 
@@ -380,7 +377,7 @@ ggplot(firstNames,aes(charlengths))+geom_density(col="red")+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/denschars.png"><img src="/images/denschars.png"></a>
+    <a href="/assets/images/denschars.png"><img src="/assets/images/denschars.png"></a>
         <figcaption> The distribution is much less skewed
 </figcaption>
 </figure>

@@ -1,6 +1,5 @@
 ---
 title: "New publication: Arboreal rodent movement ecology"
-layout: post
 excerpt: Tracking two species of Neotropical cloud forest rodents in three dimensions. 
 tags:
   - habromys
@@ -8,11 +7,10 @@ tags:
   - mastos
   - reithro
   - el loco
-image:
-  feature: featureHabr.png
-  credit: Pablo Colunga
-  creditlink: 
-published: true
+header:
+  overlay_image: /assets/images/featureHabr.png
+  overlay_filter: 0.2
+  caption: "Photo by Pablo Colunga"
 ---
 
 Last week, the article "Space use by two arboreal rodent species in a Neotropical cloud forest" was published in the latest issue of the Journal of Natural History. This work is a collaboration between mammalogists at the Universidad Nacional Autónoma de México (UNAM) and Ecosur, and I was invited to collaborate. This paper, led by Tania Marines-Macías, is a really nice integration of two B.Sc. thesis projects, describing the movement ecology and habitat features for two arboreal rodents in Central/Southern Mexico. 
@@ -24,7 +22,7 @@ We studied two Neotomine-peromyscine cricetids: _Habromys schmidlyi_ and _Reithr
 Both species had home range ares of roughly 0.5 ha, but this includes going up and down the trees in the cloud forest. Harvest mice in the genus _Reithrodontomys_ are known to be good climbers, but it was still surprising to see that _R. microdon_ likes to hang out high up in the forest canopy (11 to 20 meters), while _H. schmidlyi_ were more abundant in the understory (up to 10 meters high).   
 
 <figure>
-    <a href="/images/cutemice.jpg"><img src="/images/cutemice.jpg"></a>
+    <a href="/assets/images/cutemice.jpg"><img src="/assets/images/cutemice.jpg"></a>
         <figcaption>so cute</figcaption>
 </figure>
 

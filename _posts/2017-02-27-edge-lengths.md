@@ -1,18 +1,15 @@
 ---
 title: "Making sense of trees"
-layout: post
 excerpt: Extracting edge lengths from R phylo objects.
 category: rstats
 tags:
   - Jeff Hanson
   - ape
   - Paradis
-image:
-  feature: featureTrees.jpg
-  credit: CC0 image
-  creditlink: https://pixabay.com/
-published: true
+header:
+  image: /assets/images/featureTrees.jpg
 ---
+
 In the words of [Nick Matzke]( https://twitter.com/NickJMatzke):
 
 > R's tree structure is pretty non-intuitive, compared to the "a tree is a collection of node objects" structure that is taught in most phylogenetics courses and used in e.g. C++ software. It's done this way because R likes lists, and doesn't like objects.
@@ -87,7 +84,7 @@ Lets have a look. Both functions keep the tip order so comparing the results is 
 
 
 <figure>
-    <a href="/images/birdFams.png"><img src="/images/birdFams.png"></a>
+    <a href="/assets/images/birdFams.png"><img src="/assets/images/birdFams.png"></a>
         <figcaption>plotted with ggtree</figcaption>
 </figure>
 

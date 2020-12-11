@@ -1,24 +1,24 @@
 ---
-layout: post
+title: "Diverging bar plots"
 excerpt: Making diverging stacked bar plots in R using ggplot.
+tagline: "Diverging stacked bar plots in R"
 category: rstats
+classes: wide
 tags:
   - rstats
   - ggplot
   - artyfarty
   - LINCglobal
-image:
-  feature: featureDiverg.jpg
-  credit: null
-  creditlink: null
-published: true
+header:
+  overlay_image: /assets/images/featureDiverg.jpg
 ---
+
 Bar plots are a good way to show continuous (or count) data that is grouped into categories. When we don't have too many categories (~4 or fewer), plotting bars side by side (dodged) is probably the most straightforward and common solution. 
 
 Here is an example for some vegetation data in which the richness of native vs. introduced plant species was measured at five sampling points along the two slopes of a ravine.
 
 <figure>
-    <a href="/images/dodged.png"><img src="/images/dodged.png"></a>
+    <a href="/assets/images/dodged.png"><img src="/assets/images/dodged.png"></a>
         <figcaption>dodged bar plot with default ggplot settings</figcaption>
 </figure>
 
@@ -34,14 +34,14 @@ Here’s some R code to create stacked bar charts using _ggplot2_. The figure be
 The block of code below goes through five major steps to produce the following figures:
 
 <figure>
-    <a href="/images/northslope.png"><img src="/images/northslope.png"></a>
+    <a href="/assets/images/northslope.png"><img src="/assets/images/northslope.png"></a>
         <figcaption>diverging bar plot with a custom theme for one of the two slopes</figcaption>
 </figure>
 
 Both of these figures use custom themes from Bart Smeets' [artyfarty](https://github.com/Bart6114/artyfarty) package.
 
 <figure>
-    <a href="/images/bothslopes.png"><img src="/images/bothslopes.png"></a>
+    <a href="/assets/images/bothslopes.png"><img src="/assets/images/bothslopes.png"></a>
         <figcaption>diverging bar plot with a custom theme and facet wrapping</figcaption>
 </figure>
 

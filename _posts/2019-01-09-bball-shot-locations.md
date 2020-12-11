@@ -1,17 +1,13 @@
 ---
 title: "Shot distances and court locations for NBA games"
-layout: post
 excerpt: Follow up post - Download, plot, and animate per-game shooting data.
 category: rstats
 tags:
   - booker
   - gganimate
   - nbastatr
-image:
-  feature: featureBallin.png
-  credit: 
-  creditlink: 
-published: true
+header:
+  image: /images/featureBallin.png
 ---
 
 Here's a follow up to my previous [post](https://luisdva.github.io/rstats/bball-shots/) about using _nbastatr_ and _gganimate_ to visualize a player's shots throughout an NBA game.
@@ -33,7 +29,7 @@ The animations were both rendered with default values, and I didn't need to reso
 
 Here's Devin Booker's 70 point game from 2017.
 
-![gif demo]({{ site.baseurl }}/images/booker.gif)
+![gif demo]({{ site.baseurl }}/assets/images/booker.gif)
  
 The code:
 {% gist luisDVA/520cf544c9975c543e3db4168776d194%}

@@ -1,18 +1,17 @@
 ---
 title: "Crisp spatial figures with R, ggplot2, and sf"
-layout: post
 excerpt: Pretty plotting of point and polygon features.
+tagline: "Making maps with R"
 category: rstats
 tags:
   - SIG
   - GIS
   - rspatial
   - sp
-image: 
-  feature: featureMapas.png
-  credit: Lake Retba, Senegal. Photo by user aliunix on Unsplash.
-  creditlink: 
-published: true
+header: 
+  overlay_image: /assets/images/featureMapas.png
+  overlay_filter: 0.3
+  caption: "Lake Retba, Senegal. Photo by user aliunix on Unsplash."
 ---
 
 Here is some code and a few recommendations for creating spatially-explicit plots using R and the _ggplot_ and _sf_ packages. 
@@ -58,7 +57,7 @@ plain
 {% endhighlight %}
 
 <figure>
-  <a href="/images/01_bfr_e.png"><img src="/images/01_bfr_e.png"></a>
+  <a href="/assets/images/01_bfr_e.png"><img src="/assets/images/01_bfr_e.png"></a>
    <figcaption></figcaption>
 </figure>
 
@@ -120,7 +119,7 @@ crisp
 
 
 <figure>
-  <a href="/images/02_aftr_e.png"><img src="/images/02_aftr_e.png"></a>
+  <a href="/assets/images/02_aftr_e.png"><img src="/assets/images/02_aftr_e.png"></a>
    <figcaption></figcaption>
 </figure>
 
@@ -138,7 +137,7 @@ dir_ls(glob = "*.png") %>% map(image_read) %>%
   image_write("mapas_e.gif")
 {% endhighlight %}
 
-![gif anim]({{ site.baseurl }}/images/mapas_e.gif)
+![gif anim]({{ site.baseurl }}/assets/images/mapas_e.gif)
 
 Pretty cool!
 Feel free to contact me with feedback or questions :)

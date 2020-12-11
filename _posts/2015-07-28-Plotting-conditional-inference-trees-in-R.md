@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Plotting conditional inference trees
 excerpt: "Example code for visualizing binary trees with dichotomous responses in R, focused on extinction risk modeling."
 category: rstats
@@ -7,11 +6,9 @@ tags:
   - party
   - random forests
   - grapcongenerator
-image: 
-  feature: featureRFs.jpg
-published: true
+header: 
+  image: /assets/images/featureRFs.jpg
 ---
-
 
 ## UPDATE - August 2019 - recursive partitioning objects can now be plotted using ggplot2 thanks to {ggparty}, this [post](https://luisdva.github.io/rstats/plotting-recursive-partitioning-trees/) is a better option now 
 
@@ -83,7 +80,7 @@ Number of observations:  71
 {% endhighlight %}
 
 <figure>
-    <a href="/images/plotRaw.png"><img src="/images/plotRaw.png"></a>
+    <a href="/assets/images/plotRaw.png"><img src="/assets/images/plotRaw.png"></a>
         <figcaption>plot with default settings</figcaption>
 </figure>
 
@@ -106,13 +103,13 @@ plot (rodCT,inner_panel=innerWeights,
 This plot isn’t too far off from the popular default plot, but the minor differences in the code should save time with editing and improve the data-ink ratio. 
 
 <figure>
-    <a href="/images/newplot.png"><img src="/images/newplot.png"></a>
+    <a href="/assets/images/newplot.png"><img src="/assets/images/newplot.png"></a>
         <figcaption>plot with custom node functions</figcaption>
 </figure>
 
 Just as a demonstration, I exported the last plot as vector graphics and tinkered with it for five minutes in my 10 year old version of Illustrator CS2. The result looks pretty crisp. 
 <figure>
-    <a href="/images/lesslame32.jpg"><img src="/images/lesslame32.jpg "></a>
+    <a href="/assets/images/lesslame32.jpg"><img src="/assets/images/lesslame32.jpg "></a>
         <figcaption>edited figure</figcaption>
 </figure>
 

@@ -1,6 +1,5 @@
 ---
 title: "Animate your data wrangling"
-layout: post
 excerpt:  Using gganimate to animate the data-munging process.
 category: rstats
 tags:
@@ -8,11 +7,9 @@ tags:
   - gganimate
   - gifs
   - tile plots
-image:
-  feature: featureAnimate.png
-  credit: clipartXtras
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureAnimate.png
+  caption: "credit: clipartXtras"
 ---
 
 Yesterday I tweeted this gif showing what we can do about non-data grouping rows embedded in the data rectangle using the 'unheadr' package (we can and we should put them into their own variable in a tidier way). Please ignore the typo in the tweet. 
@@ -29,14 +26,14 @@ https://rud.is/b/2018/07/02/freeing-pdf-data-to-account-for-the-unaccounted/){:t
 
 The book cover.
 <figure>
-    <a href="/images/cavioms.jpg"><img src="/images/cavioms.jpg"></a>
+    <a href="/assets/images/cavioms.jpg"><img src="/assets/images/cavioms.jpg"></a>
         <figcaption>cute!</figcaption>
 </figure>
 
 The first few lines of the table looked like this, and for this demo we can just set up the data directly as a tibble.
 
 <figure>
-    <a href="/images/ojedaT1.png"><img src="/images/ojedaT1.png"></a>
+    <a href="/assets/images/ojedaT1.png"><img src="/assets/images/ojedaT1.png"></a>
         <figcaption>PDF table</figcaption>
 </figure>
 
@@ -127,7 +124,7 @@ ggplot(longTabs_both,aes(column, -row, fill = celltype)) +
 
 
 <figure>
-    <a href="/images/sidebyside.png"><img src="/images/sidebyside.png"></a>
+    <a href="/assets/images/sidebyside.png"><img src="/assets/images/sidebyside.png"></a>
         <figcaption>with facet wrapping</figcaption>
 </figure>
 
@@ -154,7 +151,7 @@ ut_animation <-
 
 Check it out!
 
-![gif demo]({{ site.baseurl }}/images/untangledemo.gif)
+![gif demo]({{ site.baseurl }}/assets/images/untangledemo.gif)
 
 
 Once the animation is rendered we can save it to disk using _anim\_save()_.

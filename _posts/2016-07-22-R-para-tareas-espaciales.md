@@ -1,26 +1,18 @@
 ---
-layout: post
+title: "R para tareas espaciales"
 excerpt: Extraer valores de uno o más raster a partir de coordenadas xy usando R.
+tagline: "Extraer valores de uno o más raster a partir de coordenadas"
+classes: wide
 tags:
   - rstats
   - sig
   - capas raster
   - rgdal
-image:
-  feature: featureSig.png
-  credit: null
-  creditlink: null
-published: true
+header:
+  overlay_image: /assets/images/featureSig.png
+  overlay_filter: 0.5
 ---
 > # Una versión actualizada (marzo 2020) de esta guía está disponible [aquí](https://luisdva.github.io/rspatial-es/).
-
-
-
-
-
-
-
-#### Extraer valores de uno o más raster a partir de coordenadas xy usando R. 
 
 En temas de biodiversidad, es común trabajar con registros puntuales de la distribución de una o más especies, generalmente representadas en coordenadas geográficas xy (longitud/latitud). Para ciertos análisis en macroecología, conservación, y biogeografía, necesitamos datos sobre las condiciones ambientales en cada registro. Estos datos de clima, vegetación, uso de suelo, etc. generalmente existen como capas raster (una representación del área de estudio en formato de matriz dividida en celdas con valores únicos).
 
@@ -59,7 +51,7 @@ points(localidades) #añade los puntos sobre la gráfica existente
 {% endhighlight %}
 
 <figure>
-    <a href="/images/figurita.png"><img src="/images/figurita.png"></a>
+    <a href="/assets/images/figurita.png"><img src="/assets/images/figurita.png"></a>
         <figcaption>utilizando puros valores gráficos predeterminados</figcaption>
 </figure>
 
@@ -101,7 +93,7 @@ ggplot(bioclimat,aes(x=CHELSA_temp_1_1979.2013,y=CHELSA_prec_7_1979.2013))+
 
 
 <figure>
-    <a href="/images/sobres.png"><img src="/images/sobres.png"></a>
+    <a href="/assets/images/sobres.png"><img src="/assets/images/sobres.png"></a>
         <figcaption> envoltura bioclimática </figcaption>
 </figure>
 

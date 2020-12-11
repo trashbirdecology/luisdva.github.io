@@ -1,6 +1,5 @@
 ---
 title: "Matrix Indexing"
-layout: post
 excerpt: Recoding binary dummy variables into factors. Includes tidyverse and base R approaches. 
 category: rstats
 tags:
@@ -9,11 +8,8 @@ tags:
   - dplyr
   - tidyr
   - model matrix
-image:
-  feature: featureMatrixInd.jpg
-  credit: contains CC0 public domain elements from Pixabay
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureMatrixInd.jpg
 ---
 
 I recently received a file from a collaborator in which some categorical variables describing various primate species had been recoded into binary columns. I later learned that this is known as a design or model matrix, in which categories (factors) are expanded into a set of dummy variables.

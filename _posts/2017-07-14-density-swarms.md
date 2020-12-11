@@ -1,19 +1,19 @@
 ---
 title: "Jumping dogs and density plots"
-layout: post
 excerpt: Plotting density distributions with the underlying data as a point swarm. 
+tagline: "Plotting density distributions and the underlying data"
 category: rstats
 tags:
   - ridgeline plots
   - beeswarm
   - violin
   - golden retriever
-image:
-  feature: featureSplash.jpg
-  credit: photo by Adam Baker
-  creditlink: https://commons.wikimedia.org/wiki/File:Dock_jumping_splash.jpg
-published: true
+header:
+  overlay_image: /assets/images/featureSplash.jpg
+  caption: "photo by Adam Baker"
+  overlay_filter: 0.2
 ---
+
 > **pupdate - Nov 2017.** Claus Wilke has added a 'jittered points' option to the ridgeline geom that basically does the same as my hacky beeswarm approach but with less code. I added an example of this feature to the post.  
 
 > **pupdate - Oct 2017.** I've update this post to reflect the project-wide renaming of the _ggridges_ package and added more code annotation.
@@ -35,14 +35,14 @@ With density plots, it’s difficult to see where the data actually are, and as 
 For this post, I go through some code for making density plots that also show the underlying data. As usual, I show this using the best type of data: dog data. 
 
 <figure>
-    <a href="/images/jangolino.jpg"><img src="/images/jangolino.jpg"></a>
+    <a href="/assets/images/jangolino.jpg"><img src="/assets/images/jangolino.jpg"></a>
         <figcaption>CC0 image</figcaption>
 </figure>
 
 To plot the distribution of variable values for different groups, I used the maximum jump distance for several hundred dogs that participated in the SplashDogs ([http://www.splashdogs.com/](http://www.splashdogs.com/){:target="_blank"}) ‘Super Air’ dock jumping competition during 2016. Dock jumping is essentially a long jump sport for dogs. Dogs run along a ~12 meter dock and jump into the water, usually chasing a toy. Jumps are measured from the edge of the dock to the point where the base of the dog's tail first enters the water.
 
 <figure>
-    <a href="/images/labrador.jpg"><img src="/images/labrador.jpg"></a>
+    <a href="/assets/images/labrador.jpg"><img src="/assets/images/labrador.jpg"></a>
         <figcaption>photo by Flickr user marabuchi; (CC BY-SA 2.0)</figcaption>
 </figure>
 
@@ -131,14 +131,14 @@ This code is clunky and it needs different data frames with pre-summarized infor
 
 Here's the result with scaled densities and point swarms.
 <figure>
-    <a href="/images/scaledDens.png"><img src="/images/scaledDens.png"></a>
+    <a href="/assets/images/scaledDens.png"><img src="/assets/images/scaledDens.png"></a>
         <figcaption>Everything rescaled (0-1)</figcaption>
 </figure>
 
 Here's a version with unscaled densities and point swarms.
 
 <figure>
-    <a href="/images/unscaledDens.png"><img src="/images/unscaledDens.png"></a>
+    <a href="/assets/images/unscaledDens.png"><img src="/assets/images/unscaledDens.png"></a>
         <figcaption>Unscaled</figcaption>
 </figure>
 
@@ -254,7 +254,7 @@ For comparison, here’s a plot of the same data using geom_density_ridges() and
 I suspect that what I’ve done with the beeswarm points can be made into a geom to accompany geom_density_ridges. If you’re good at ggproto let me know and we can try it out. 
 
 <figure>
-    <a href="/images/geomhipster.png"><img src="/images/geomhipster.png"></a>
+    <a href="/assets/images/geomhipster.png"><img src="/assets/images/geomhipster.png"></a>
         <figcaption>would wear this on a t-shirt</figcaption>
 </figure>
 
@@ -280,7 +280,7 @@ ggplot(dogbeesRev)+
 Here's an example with the new jittered_points argument in _ggridges_:
 
 <figure>
-    <a href="/images/ridgepoints.png"><img src="/images/ridgepoints.png"></a>
+    <a href="/assets/images/ridgepoints.png"><img src="/assets/images/ridgepoints.png"></a>
         <figcaption>good handling of the plotting order</figcaption>
 </figure>
 
@@ -315,7 +315,7 @@ Stack Overflow help:
 > **Update 16/0/2017:** After posting this I was very impressed with the jumping prowess of dogs in general so I decided to add a comparison with human jumping skills. I found data for the London 2012 Olympics in this [Google Sheets document](https://www.theguardian.com/sport/datablog/interactive/2012/aug/03/london-2012-results-open-data){:target="_blank"} put together by The Guardian and used the **googlesheets** package to download the data and repeat the process. The new figure and the code for downloading the data are below:
 
 <figure>
-    <a href="/images/IOCscaledDens.png"><img src="/images/IOCscaledDens.png"></a>
+    <a href="/assets/images/IOCscaledDens.png"><img src="/assets/images/IOCscaledDens.png"></a>
         <figcaption>Includes Long Jump and Decathlon Long Jump</figcaption>
 </figure>
 

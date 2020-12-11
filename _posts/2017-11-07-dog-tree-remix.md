@@ -1,6 +1,5 @@
 ---
 title: "The tRee of dog bReeds (version 2)"
-layout: post
 excerpt: Manipulate and visualize data describing dog breeds and how they are related. 
 category: rstats
 tags:
@@ -9,11 +8,8 @@ tags:
   - phylo objects
   - genomics
   - ggplot
-image:
-  feature: featureDoggen.png
-  credit: contains CC0 public domain elements from Pixabay
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureDoggen.png
 ---
 
 > This is an updated version of a [post](http://luisdva.github.io/rstats/dog-tree/){:target="_blank"} from May 2017. I updated the code to keep up with updates in some packages, replaced all the functions from the **apply** family with **map** functions from the purrr package, replaced the figures with high-res versions, and added more detailed code annotations. 
@@ -77,7 +73,7 @@ dogAttributesTbl <-
 {% endhighlight %}
 
 <figure>
-    <a href="/images/jangoli.jpg"><img src="/images/jangoli.jpg"></a>
+    <a href="/assets/images/jangoli.jpg"><img src="/assets/images/jangoli.jpg"></a>
         <figcaption>Tidy data makes Jango happy.</figcaption>
 </figure>
 
@@ -190,7 +186,7 @@ ggtree(dogTreeF,layout = "fan")
 
 
 <figure>
-    <a href="/images/fannew.png"><img src="/images/fannew.png"></a>
+    <a href="/assets/images/fannew.png"><img src="/assets/images/fannew.png"></a>
         <figcaption>Fan layout with labels</figcaption>
 </figure>
 
@@ -231,7 +227,7 @@ ggtree(dogCladesTreeOTU,aes(color=group)) %<+% dogCladesC  +
 {% endhighlight %}
 
 <figure>
-    <a href="/images/cutes2.png"><img src="/images/cutes2.png"></a>
+    <a href="/assets/images/cutes2.png"><img src="/assets/images/cutes2.png"></a>
         <figcaption>Red: European Mastiff Clade, Blue: Alpine Clade, Green: Retriever Clade; asterisks show cutest breeds</figcaption>
 </figure>
 
@@ -278,7 +274,7 @@ The function itself has many dependencies and is a mess in terms of functional p
 > This [guide](https://yourdogadvisor.com/smartest-dog-breeds/){:target="_blank"} by [Your Dog Advisor](https://yourdogadvisor.com/smartest-dog-breeds/){:target="_blank"} on the smartest dog breeds is now available, and it also contains trait data that we could draw alongside the tree tips. 
 
 <figure>
-    <a href="/images/lilili.jpeg"><img src="/images/lilili.jpeg"></a>
+    <a href="/assets/images/lilili.jpeg"><img src="/assets/images/lilili.jpeg"></a>
         <figcaption>the heatmap shows fur shedding, cold tolerance, and trainability</figcaption>
 </figure>
 
@@ -325,7 +321,7 @@ Thanks for reading. Feel free to contact with my any questions or if the code is
 This post was written under the supervision of Luna the golden retriever.
 
 <figure>
-    <a href="/images/lunasleep.jpeg"><img src="/images/lunasleep.jpeg"></a>
+    <a href="/assets/images/lunasleep.jpeg"><img src="/assets/images/lunasleep.jpeg"></a>
         <figcaption>Luna</figcaption>
 </figure>
 

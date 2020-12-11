@@ -1,24 +1,21 @@
 ---
-layout: post
+title: "Top and bottom values for groups"
 excerpt: Using R and dplyr to extract minimum or maximum (or both) variable values within groups.
+tagline: "Extracting minimum or maximum values within groups"
 category: rstats
 tags:
   - rstats
   - dplyr
   - minmax
   - mammals
-image:
-  feature: featureMinMax.jpg
-  credit: null
-  creditlink: null
-published: true
+header:
+  overlay_image: /assets/images/featureMinMax.jpg
 ---
-
 
 > Esta publicación está disponible en español [aqui](http://luisdva.github.io/Valores-m%C3%A1ximos-y-m%C3%ADnimos-para-datos-agrupados/)  
 
 ## Update - August 2018: Click [here](https://luisdva.github.io/rstats/animate-top-n/) for an animated demo of the top_n function.
-![gif demo]({{ site.baseurl }}/images/topndemo.gif)
+![gif demo]({{ site.baseurl }}/assets/images/topndemo.gif)
 
 When tables contain data for many different groups, getting the maximum and minimum values (or the top _n_ or bottom _n_ values) of a continuous variable within each group is a common task.   
 
@@ -90,7 +87,7 @@ ggplot(aes(x=Taxonomic_order,y=log(Brain_mass_g)))+geom_path()+theme_minimal()
 {% endhighlight %}
 
 <figure>
-    <a href="/images/bothslopes.png"><img src="/images/brainMasses.png"></a>
+    <a href="/assets/images/bothslopes.png"><img src="/assets/images/brainMasses.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 

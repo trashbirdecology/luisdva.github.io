@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Research patterns in new species of mammals
 excerpt: "Summary and visualization of research effort for recently described species of terrestrial mammals. Includes R code and data."
 category: rstats
@@ -8,11 +7,8 @@ tags:
   - olinguito
   - Peromyscus schmidly
   - ggplot
-image: 
-  feature: featureNM.jpg
-  credit: null
-  creditlink: null
-published: true
+header: 
+  image: /assets/images/featureNM.jpg
 ---
 
 
@@ -20,7 +16,7 @@ published: true
 Most people assume that most, if not all, mammals are known to science. Although mammals are a charismatic and well-studied group, this assumption is mistaken. In [this](http://www.pnas.org/content/106/10/3841.full) paper from 2009, Ceballos and Ehrlich found that 408 new species of terrestrial mammals have been described since 1993 - when the first comprehensive database of mammalian taxonomy (Mammal Species of the World; [MSW](http://www.departments.bucknell.edu/biology/resources/msw3/browse.asp)) was published. Over half of these new mammals are cryptic species (not easily recognized by morphological features), but many others are large and distinctive. We are nowhere near a complete inventory of mammalian diversity. New species are formally described after painstaking efforts by taxonomy-oriented scientists at a surprisingly consistent pace. 
 
 <figure>
-    <a href="/images/cbait.png"><img src="/images/cbait.png"></a>
+    <a href="/assets/images/cbait.png"><img src="/assets/images/cbait.png"></a>
         <figcaption>my take on media coverage for new species</figcaption>
 </figure>
 
@@ -35,7 +31,7 @@ First, I used [Tabula](http://tabula.technology/) to get the data out of the clu
 For 361 species picked at random in the dataset, I did manual searches on Google Scholar in a web browser (using quotations to search for exact matches) and gathered the number of search results in a simple table (download link is with the code). I graphed the number of results for each species (grouped by order) below.  The data and code for all these figures is at the end of this post. I’m pretty proud of how I integrated _dplyr_ and _ggplot2_ to wrangle the data and make the figures. Click on any picture to enlarge it.
 
 <figure>
-    <a href="/images/fig1newM.png"><img src="/images/fig1newM.png"></a>
+    <a href="/assets/images/fig1newM.png"><img src="/assets/images/fig1newM.png"></a>
         <figcaption> Academic search engine hits for 361 species of terrestrial mammals. Species names suppressed to avoid clutter. </figcaption>
 </figure>
 
@@ -54,21 +50,21 @@ years
 Within some orders, it does look as if the species with the earlier description dates appear in more academic literature. Across the entire dataset, there is no visible pattern.
 
 <figure>
-    <a href="/images/fig2newmams.png"><img src="/images/fig2newmams.png"></a>
+    <a href="/assets/images/fig2newmams.png"><img src="/assets/images/fig2newmams.png"></a>
         <figcaption> search results vs. description year </figcaption>
 </figure>
 
 To get a better look at some of the orders that have yielded more new species, here is the same figure for the orders with >2 new species in this dataset.
 
 <figure>
-    <a href="/images/fig3nm.png"><img src="/images/fig3nm.png"></a>
+    <a href="/assets/images/fig3nm.png"><img src="/assets/images/fig3nm.png"></a>
         <figcaption> same as first plot, for orders with more than two new species</figcaption>
 </figure>
 
 This last plot focuses on the two most diverse orders, which also happen to have the most new species. Go ahead and call me a chartjunking tourist for this one, but I wanted to try out _rphylopic_ at some point.  I replaced the points in this dotplot for description dates, and used the _gridExtra_ package to arrange the plots side by side. 
 
 <figure>
-    <a href="/images/fig4nmBig.png"><img src="/images/fig4nmBig.png"></a>
+    <a href="/assets/images/fig4nmBig.png"><img src="/assets/images/fig4nmBig.png"></a>
         <figcaption> new species of rodents and bats, with search hits and description years </figcaption>
 </figure>
 

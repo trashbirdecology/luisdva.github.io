@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Formatted spreadsheets in R
 excerpt: "Import and work with formatted spreadsheet data"
 category: rstats
@@ -8,9 +7,8 @@ tags:
   - formatting
   - xlsx
   - Excel
-image: 
-  feature: featurepls.png
-published: true
+header: 
+  image: /assets/images/featurepls.png
 ---
 
 At some point, we all have had to deal with spreadsheets in which group membership was color coded (see the replies to this [tweet](https://twitter.com/JennyBryan/status/722954354198597632){:target="_blank"}):
@@ -23,7 +21,7 @@ Here’s a quick workflow that uses a new function in [`unheadr`](https://github
 📎 This example spreadsheet (packaged with `unheadr`) shows some tasks and behaviors that characterize a well-behaved dog, along with their respective scores. These rows belong in three different task types (shown in yellow cells and bold font), and the average score for each task type appears next to each one. 
 
  <figure>
-    <a href="/images/dogtest.png"><img src="/images/dogtest.png"></a>
+    <a href="/assets/images/dogtest.png"><img src="/assets/images/dogtest.png"></a>
         <figcaption>cell and font formatting</figcaption>
 </figure>
 <br><br>

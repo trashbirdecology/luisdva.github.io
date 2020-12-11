@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Labeled barplots in ggplot2
 excerpt: "Visualizing grouped values using labeled side-by-side bars in ggplot2."
 category: rstats
@@ -8,13 +7,10 @@ tags:
   - dodged barplot
   - rstats
   - R
-image: 
-  feature: featureBars.png
-  credit: null
-  creditlink: null
-published: true
+header: 
+  overlay_image: /assets/images/featureBars.png
+  overlay_filter: 0.4
 ---
-
 
 
 Bar plots are an effective way of showing the values of grouped data within categories. I recently struggled when making some using ggplot, and after finally getting them right I decided to write this post. I hope people can find this if they ever get stuck when using ggplot to create a grouped bar plot with labels for each bar. For anyone with experience in data visualization, this is a straightforward task. For everyone else (and as future reference for myself), I’ll go through the steps needed to build the plot, including a brief explanation for the important arguments. There are lots of guides and posts online on how to do this, but I found that they lacked the detail needed to help those who get stuck.
@@ -54,7 +50,7 @@ ggplot(newDataFr)+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/bars1.png"><img src="/images/bars1.png"></a>
+    <a href="/assets/images/bars1.png"><img src="/assets/images/bars1.png"></a>
         <figcaption>starting out</figcaption>
 </figure>
 
@@ -70,7 +66,7 @@ ggplot(newDataFr)+
  {% endhighlight %}
  
  <figure>
-    <a href="/images/bars2.png"><img src="/images/bars2.png"></a>
+    <a href="/assets/images/bars2.png"><img src="/assets/images/bars2.png"></a>
         <figcaption>looks better</figcaption>
 </figure>
 
@@ -85,7 +81,7 @@ ggplot(newDataFr)+
  {% endhighlight %}
  
  <figure>
-    <a href="/images/bars3.png"><img src="/images/bars3.png"></a>
+    <a href="/assets/images/bars3.png"><img src="/assets/images/bars3.png"></a>
         <figcaption>the bar labels aren't dodging</figcaption>
 </figure>
 
@@ -102,6 +98,6 @@ ggplot(newDataFr,aes(y=individuals,x=critter,fill=trapped))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/bars4.png"><img src="/images/bars4.png"></a>
+    <a href="/assets/images/bars4.png"><img src="/assets/images/bars4.png"></a>
         <figcaption>finally</figcaption>
 </figure>

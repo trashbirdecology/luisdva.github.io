@@ -1,18 +1,16 @@
 ---
-layout: post
 title: SIG con R - Actualización 
 excerpt: Extraer valores de uno o más raster a partir de coordenadas xy usando R.
+tagline: "R como sistema de información geográfica"
 tags:
   - rstats
   - sig
   - capas raster
   - stars
   - sf
-image:
-  feature: featureSig.png
-  credit: null
-  creditlink: null
-published: true
+header:
+  overlay_image: /assets/images/featureSig.png
+  overlay_filter: 0.5
 ---
 # Extraer valores de uno o más raster a partir de coordenadas xy usando R. 
 
@@ -96,7 +94,7 @@ Ahora podemos visualizar las capas recortadas y los datos puntuales directamente
 El paquete `patchwork` nos ayuda a dibjuar las figuras lado a lado.
 
 <figure>
-    <a href="/images/capasbc.png"><img src="/images/capasbc.png"></a>
+    <a href="/assets/images/capasbc.png"><img src="/assets/images/capasbc.png"></a>
         <figcaption>paletas de color de scico</figcaption>
 </figure>
 
@@ -151,7 +149,7 @@ ggplot(xydat, aes(tempVals, y = precVals)) +
 
 
 <figure>
-    <a href="/images/biocxy.png"><img src="/images/biocxy.png"></a>
+    <a href="/assets/images/biocxy.png"><img src="/assets/images/biocxy.png"></a>
         <figcaption> envoltura bioclimática </figcaption>
 </figure>
 

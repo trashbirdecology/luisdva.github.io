@@ -1,5 +1,4 @@
 ---
-layout: post
 excerpt: 'Emoji flags, international research, and tweet analysis in R.'
 category: rstats
 tags:
@@ -7,12 +6,10 @@ tags:
   - Twitter
   - stringi
   - encoding
-image:
-  feature: featureflags.png
-  credit: null
-  creditlink: null
-published: true
+header:
+  image: /assets/images/featureflags.png
 ---
+
 ## Tweet data and emoji flags in R
 
 On the occasion of the ESOF (EuroScience Open Forum) conference in Manchester, The Royal Society published a [joint statement](https://royalsociety.org/topics-policy/publications/2016/european-academies-statement-science-is-global/) from various scientific societies across Europe about the importance of International science and research collaborations, and how “unnecessary barriers to mobility will weaken science and be to the cost of all nations”. This statement included a call for people to use the social media hashtag #ScienceIsGlobal to recognize the international nature of research teams.  
@@ -65,7 +62,7 @@ norts %>%  count(posted  = date(mdy_hms(norts[,1]))) %>%
 {% endhighlight %}
 
 <figure>
-    <a href="/images/twtdates.png"><img src="/images/twtdates.png"></a>
+    <a href="/assets/images/twtdates.png"><img src="/assets/images/twtdates.png"></a>
         <figcaption>tweets/day</figcaption>
 </figure>
 
@@ -218,7 +215,7 @@ countryFreqsDF %>% top_n(30) %>%
 {% endhighlight %}
 
 <figure>
-    <a href="/images/lolipop.png"><img src="/images/lolipop.png"></a>
+    <a href="/assets/images/lolipop.png"><img src="/assets/images/lolipop.png"></a>
         <figcaption>useful ggalt geometry</figcaption>
 </figure>
 
@@ -245,7 +242,7 @@ do.call(addMapLegend,c(mapParameters,legendWidth = 0.5))
 {% endhighlight %}
 
 <figure>
-    <a href="/images/mapW.png"><img src="/images/mapW.png"></a>
+    <a href="/assets/images/mapW.png"><img src="/assets/images/mapW.png"></a>
         <figcaption>yellow fill is for countries with no matches in the tweet data</figcaption>
 </figure>
 

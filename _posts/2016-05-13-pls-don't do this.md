@@ -1,16 +1,12 @@
 ---
-layout: post
 title: "pls don't do this :("
 excerpt: "Easy changes to make before sharing tabular data with others. "
 tags: 
   - Excel
   - reshape2
   - merge and center
-image: 
-  feature: featurepls.png
-  credit: null
-  creditlink: null
-published: true
+header: 
+  image: /assets/images/featurepls.png
 ---
 
 _Three common bad practices in sharing tables and spreadsheets and how to avoid them._
@@ -43,7 +39,7 @@ By doing this, whatever the color represents is stacked with the actual data in 
 If you rely heavily on cell formatting as a way to store data, consider what would happen if the colors or font types were stripped away (e.g. when collaborating with someone who may not be aware of the importance of the formatting, or when changing file formats to a plain text .tsv or .csv).
 
 <figure>
-    <a href="/images/xlsEx1.png"><img src="/images/xlsEx1.png"></a>
+    <a href="/assets/images/xlsEx1.png"><img src="/assets/images/xlsEx1.png"></a>
         <figcaption>with a helpful legend underneath the cells</figcaption>
 </figure>
 
@@ -51,7 +47,7 @@ If you rely heavily on cell formatting as a way to store data, consider what wou
 Suggestion: add additional indicator columns with the information that was being conferred by the formatting. It might look redundant but it’s an incredible time saver and very convenient within scripting languages.
 
 <figure>
-    <a href="/images/xlsEx1.2.png"><img src="/images/xlsEx1.2.png"></a>
+    <a href="/assets/images/xlsEx1.2.png"><img src="/assets/images/xlsEx1.2.png"></a>
         <figcaption>much better</figcaption>
 </figure>
 
@@ -62,14 +58,14 @@ R users can now handle formatted Excel spreadsheets thanks to Duncan Garmonsway'
 Merged cells will look good in the final version of a table, but they can lead to strange behaviours when trying to read and manipulate the data with other programs. 
 
 <figure>
-    <a href="/images/xlsEx2.png"><img src="/images/xlsEx2.png"></a>
+    <a href="/assets/images/xlsEx2.png"><img src="/assets/images/xlsEx2.png"></a>
         <figcaption>merged and centered</figcaption>
 </figure>
 
 Suggestion: Duplicate the content that was merged in the first place. This kind of melted presentation is actually preferable when analyzing or visualizing the data.
 
 <figure>
-    <a href="/images/xlsEx2.1.png"><img src="/images/xlsEx2.1.png"></a>
+    <a href="/assets/images/xlsEx2.1.png"><img src="/assets/images/xlsEx2.1.png"></a>
         <figcaption>like cheese, data is better melted</figcaption>
 </figure>
 
@@ -79,14 +75,14 @@ Suggestion: Duplicate the content that was merged in the first place. This kind 
 This is a very common practice for data that follows some hierarchy. I see this often in papers from my field because this arrangement can convey the geographic or taxonomic membership of different observations to whatever is referred to below a subheader row until a new one implies otherwise. **A summary of embedded subheaders and my work with them is available [here](https://luisdva.github.io/spreadsheet-hijinks/){:target="_blank"}.** I built the `unheadr` [package](https://github.com/luisDVA/unheadr){:target="_blank"} (now on CRAN) specifically for this. 
 
 <figure>
-    <a href="/images/xlsEx3.png"><img src="/images/xlsEx3.png"></a>
+    <a href="/assets/images/xlsEx3.png"><img src="/assets/images/xlsEx3.png"></a>
         <figcaption>very common in appendices</figcaption>
 </figure>
 
 Suggestion: Same as before, add an indicator column specifying the membership of each row.
 
 <figure>
-    <a href="/images/xlsEx3.1.png"><img src="/images/xlsEx3.1.png"></a>
+    <a href="/assets/images/xlsEx3.1.png"><img src="/assets/images/xlsEx3.1.png"></a>
         <figcaption>very common in appendices</figcaption>
 </figure>
 

@@ -10,9 +10,7 @@ tags:
   - readxl
   - tidyxl
 header:
-  image: featureExcel.png
-  credit: Pixabay CC0 image
-  creditlink: 
+  image: /assets/images/featureExcel.png
 ---
 
 Late last year I added functionality to `unheadr` for importing and working with formatted spreadsheet data (see this [post](https://luisdva.github.io/rstats/annotate-mf/){:target="_blank"}).
@@ -24,7 +22,7 @@ Recently, I saw this tweet by Mara Averick mentioning a spreadsheet in which bol
 After also seeing some COVID-related spreadsheets where bold = negative, it seemed like a good idea to generalize the approach and have a single function that annotates meaningful formatting for all the cells in all the columns of a spreadsheet.
 
 <figure>
-    <a href="/assets/images/eichornli.png"><img src="/assets/images/eichornli.png" width= "400"></a>
+    <a href="/assets/assets/images/eichornli.png"><img src="/assets/assets/images/eichornli.png" width= "400"></a>
         <figcaption>what</figcaption>
 </figure>
 
@@ -34,7 +32,7 @@ After also seeing some COVID-related spreadsheets where bold = negative, it seem
 Let’s try it out with the example data bundled with the package. It is an .xlsx file that looks like this.
 
 <figure>
-    <a href="/assets/images/boutiques.png"><img src="/assets/images/boutiques.png" style="width 95%"></a>
+    <a href="/assets/assets/images/boutiques.png"><img src="/assets/assets/images/boutiques.png" style="width 95%"></a>
         <figcaption>nice colors bro</figcaption>
 </figure>
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Getting elevation data for point occurrences in R using rgbif
 excerpt: Using R to fetch elevation for lat/long data through an API.
 category: rstats
@@ -7,9 +6,9 @@ tags:
   - rspatial
   - rgbif
   - geonames
-image: 
-  feature: featureRGBIF.jpg
-published: true
+header: 
+  overlay_image: /assets/images/featureRGBIF.jpg
+  overlay_filer: 0.3
 ---
 # > Updated on February 2020 to reflect changes to the `elevation` function and how it retrieves data from the web. The Google Elevation API was replaced by the GeoNames service.
 

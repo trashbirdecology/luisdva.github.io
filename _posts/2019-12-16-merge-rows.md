@@ -1,16 +1,15 @@
 ---
-layout: post
 title: Merging rows in R
 excerpt: "Verb-like function to identify and merge rows"
 category: rstats
+classes: wide
 tags: 
   - merging
   - dplyr
   - tidyr
   - tidyeval
-image: 
-  feature: featureRectangle.png
-published: true
+header: 
+  image: /assets/images/featureRectangle.png
 ---
 
 Recently, I was tagged in a tweet seeking advice for rectangling a particularly messy data structure.  

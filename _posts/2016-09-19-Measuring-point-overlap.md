@@ -1,5 +1,5 @@
 ---
-layout: post
+title: "Measuring point overlap"
 excerpt: 'Measuring spatial overlap with point data.'
 category: rstats
 tags:
@@ -7,12 +7,10 @@ tags:
   - O metric
   - ggmap
   - co-occurrence
-image:
-  feature: featureOstatistic.png
-  credit: null
-  creditlink: null
-published: true
+header:
+  image: /assets/images/featureOstatistic.png
 ---
+
 ## Patterns of overlap among occurrence points
 
 For different lines of research that I’ve been involved with lately (morphological differences between co-occurring species of yellow-shouldered bat and the spatial patterning between virus records in wild mammals and human viral cases), I’ve been thinking about spatial overlap between point occurrence data and how to quantify it. 
@@ -34,7 +32,7 @@ To visualize and test _O_ for different degrees of polygon overlap and a varying
 With this hastily-put together function and plotting code, I was able to visualize the occurrence points alongside a plot of how _O_ behaves with different numbers of points. In this case there is no asymmetry in the sample sizes for each ‘species’. 
 
 <figure>
-    <a href="/images/Ovalues.png"><img src="/images/Ovalues.png"></a>
+    <a href="/assets/images/Ovalues.png"><img src="/assets/images/Ovalues.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 
@@ -44,7 +42,7 @@ Now for a somewhat silly example with real distributions, I used _rgbif_ to down
 The two bird species have a narrow contact zone, and each of these has a slight amount of point overlap with the mouse opossum. These three in turn have no overlap at all with the remaining two arid zone rodents, which show a fair amount of overlap.
 
 <figure>
-    <a href="/images/pointmap.png"><img src="/images/pointmap.png"></a>
+    <a href="/assets/images/pointmap.png"><img src="/assets/images/pointmap.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 

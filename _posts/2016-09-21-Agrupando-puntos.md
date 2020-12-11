@@ -1,16 +1,15 @@
 ---
-layout: post
+Title: "Agrupando puntos"
 excerpt: Cuatro maneras de agrupar puntos en dos dimensiones con ggplot.
+tagline: "Agrupando puntos en ggplot"
 tags:
   - rstats
   - ggplot
   - r en tu idioma
   - graficas
-image:
-  feature: featureGroups.png
-  credit: null
-  creditlink: null
-published: true
+header:
+  overlay_image: /assets/images/featureGroups.png
+  overlay_filter: 0.2
 ---
 ## Agrupando puntos en dos dimensiones con ggplot
 
@@ -42,7 +41,7 @@ birdsAll <- bind_rows(birds30,birds40) %>% na.omit()
 {% endhighlight %}
 
 <figure>
-    <a href="/images/pointsonly.png"><img src="/images/pointsonly.png"></a>
+    <a href="/assets/images/pointsonly.png"><img src="/assets/images/pointsonly.png"></a>
         <figcaption>puntos en 2d</figcaption>
 </figure>
 
@@ -58,7 +57,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/chullsimg.png"><img src="/images/chullsimg.png"></a>
+    <a href="/assets/images/chullsimg.png"><img src="/assets/images/chullsimg.png"></a>
         <figcaption>envolturas</figcaption>
 </figure>
 
@@ -73,7 +72,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 {% endhighlight%}
 
 <figure>
-    <a href="/images/gghull.png"><img src="/images/gghull.png"></a>
+    <a href="/assets/images/gghull.png"><img src="/assets/images/gghull.png"></a>
         <figcaption>con relleno</figcaption>
 </figure>
 
@@ -90,7 +89,7 @@ ggplot(birdsAll,aes(x=mass,y=length))+
 {% endhighlight %}
 
 <figure>
-    <a href="/images/elips.png"><img src="/images/elips.png"></a>
+    <a href="/assets/images/elips.png"><img src="/assets/images/elips.png"></a>
         <figcaption>elipse con color</figcaption>
 </figure>
 
@@ -104,7 +103,7 @@ Esta otra opción es la que yo terminé utilizando en mis figuras. Se trata de  
 {% endhighlight %}
 
 <figure>
-    <a href="/images/encircle.png"><img src="/images/encircle.png"></a>
+    <a href="/assets/images/encircle.png"><img src="/assets/images/encircle.png"></a>
         <figcaption>con spline</figcaption>
 </figure>
 

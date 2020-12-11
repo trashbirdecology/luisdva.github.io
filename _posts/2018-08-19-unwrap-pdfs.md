@@ -1,6 +1,5 @@
 ---
 title: "More on extracting data from PDFs"
-layout: post
 excerpt: Cleaning data from the US Financial Disclosure Reports featured in the A.B. Tran and H. Wickham live data challenge.
 category: rstats
 tags:
@@ -8,11 +7,8 @@ tags:
   - unheadr
   - pdf
   - tabulizer
-image:
-  feature: featureAcost.png
-  credit: Pixabay CC0 image
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureAcost.png
 ---
 
 Storing information in PDFs often adds lots of steps (and tears) before we can finally extract and reshape the data into a usable format and structure. Tables in PDFs are just strategically-positioned line borders and text, so we cannot just copy and paste the values into new aggregate datasets, or import them directly into our preferred statistical software. Tables in PDFs do not retain a sense of the rows and columns that hold the values, and that is a problem.
@@ -32,7 +28,7 @@ I was watching a recording of this [live data challenge](https://www.youtube.com
 The table in question was small, with just five rows and six columns (see below). However, it had values broken up across lines so that they could fit in a single page. This leads to lots of awkward blank space.
 
 <figure>
-    <a href="/images/acost.png"><img src="/images/acost.png"></a>
+    <a href="/assets/images/acost.png"><img src="/assets/images/acost.png"></a>
         <figcaption>this table is on page 3 of the report</figcaption>
 </figure>
 

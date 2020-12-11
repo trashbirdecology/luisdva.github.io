@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Section lengths in scientific papers
 excerpt: "How long is the average section in a research article? Includes code for downloading and plotting data for five journals."
 category: rstats
@@ -7,11 +6,9 @@ tags:
   - editing
   - manuscript formatting
   - dotwhisker
-image: 
-  feature: featurePaperSt.jpg
-published: true
+header: 
+  image: /assets/images/featurePaperSt.jpg
 ---
-
 
 
 
@@ -32,7 +29,7 @@ Here’s the code to download the raw data and recreate a rough version of the f
 ## Results
 
 <figure>
-    <a href="/images/epsfixedFinal.png"><img src="/images/epsfixedFinal.png"></a>
+    <a href="/assets/images/epsfixedFinal.png"><img src="/assets/images/epsfixedFinal.png"></a>
         <figcaption>Mean section lengths in five journals. Click to enlarge.</figcaption>
 </figure>
 

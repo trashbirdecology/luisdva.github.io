@@ -2,6 +2,7 @@
 title: Ordinal extinction risk models
 excerpt: "Modeling IUCN Red List data as an ordered response variable. A reproducible #rstats example for terrestrial carnivores."
 category: rstats
+classes: wide
 tags: 
   - MCMCglmm
   - Probit model

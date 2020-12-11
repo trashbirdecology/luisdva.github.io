@@ -1,6 +1,5 @@
 ---
 title: "Dog breed popularity bump chart"
-layout: post
 excerpt: Plotting how popularity rankings for dog breeds change through time, (p)updated for 2020. 
 category: rstats
 tags:
@@ -9,11 +8,8 @@ tags:
   - retriever
   - kennel club
   - pupper
-image:
-  feature: featureDoggs.png
-  credit: Pixabay CC0 image
-  creditlink: 
-published: true
+header:
+  image: /assets/images/featureDoggs.png
 ---
 
 The American Kennel Club recently published the 2019 rankings of dog breed [popularity](https://www.akc.org/expert-advice/dog-breeds/2020-popular-breeds-2019/){:target="_blank"}, collected from registration data in the USA. 
@@ -27,11 +23,11 @@ The code for the 2017 and 2018 versions (below) is detailed in these posts:
   
   
 <figure>
-    <a href="/images/akcranks.png"><img src="/images/akcranks.png" style="width:50%"></a>
+    <a href="/assets/images/akcranks.png"><img src="/assets/images/akcranks.png" style="width:50%"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 <figure>
-    <a href="/images/akcranks2019.png"><img src="/images/akcranks2019.png" style="width:50%"></a>
+    <a href="/assets/images/akcranks2019.png"><img src="/assets/images/akcranks2019.png" style="width:50%"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 <br>
@@ -41,7 +37,7 @@ With the new rankings out, here's another (p)update. By now there is a specific 
 ...and here's the updated plot:  
 
 <figure>
-    <a href="/images/akc2020.png"><img src="/images/akc2020.png"></a>
+    <a href="/assets/images/akc2020.png"><img src="/assets/images/akc2020.png"></a>
         <figcaption>click to enlarge</figcaption>
 </figure>
 <br><br>

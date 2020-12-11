@@ -1,17 +1,15 @@
 ---
-layout: post
 title: annotater
 excerpt: "RStudio addins to annotate R code with details on the packages being loaded"
+classes: wide
 category: rstats
 tags: 
   - styler
   - reproducibility
   - scripts
   - version
-image: 
-  feature: featureAnnot.png
-  credit: Image by Engin_Akyurt from Pixabay
-published: true
+header: 
+  image: /images/featureAnnot.png
 ---
 
 While helping some labmates with their R code last year, I noticed that sometimes they couldn't run their analyses because their scripts had many `library()` calls for obscure packages they didn't need, some of which had installation issues, dependencies, version conflicts, or masked functions. 
