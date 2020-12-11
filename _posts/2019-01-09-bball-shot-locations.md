@@ -7,15 +7,14 @@ tags:
   - gganimate
   - nbastatr
 header:
-  image: /images/featureBallin.png
+  image: /assets/images/featureBallin.png
 ---
 
 Here's a follow up to my previous [post](https://luisdva.github.io/rstats/bball-shots/) about using _nbastatr_ and _gganimate_ to visualize a player's shots throughout an NBA game.
 
 [Mara Averick](https://twitter.com/dataandme) shared the post, and combined two gifs side by side for the tweet.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🏀 nbastatR × gganimate w/ code!<br>&quot;Animate shot distances for NBA games&quot; ⛹️‍♂️ <a href="https://twitter.com/LuisDVerde?ref_src=twsrc%5Etfw">@LuisDVerde</a><a href="https://t.co/qP8hojEEHa">https://t.co/qP8hojEEHa</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a><br>/* L·R panels combined by me bc I hate how Twitter does tall gifs */ <a href="https://t.co/9Tv8RSlAME">pic.twitter.com/9Tv8RSlAME</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/1082362770874605568?ref_src=twsrc%5Etfw">January 7, 2019</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">🏀 nbastatR × gganimate w/ code!<br>&quot;Animate shot distances for NBA games&quot; ⛹️‍♂️ <a href="https://twitter.com/LuisDVerde?ref_src=twsrc%5Etfw">@LuisDVerde</a><a href="https://t.co/qP8hojEEHa">https://t.co/qP8hojEEHa</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/dataviz?src=hash&amp;ref_src=twsrc%5Etfw">#dataviz</a><br>/* L·R panels combined by me bc I hate how Twitter does tall gifs */ <a href="https://t.co/9Tv8RSlAME">pic.twitter.com/9Tv8RSlAME</a></p>&mdash; Mara Averick (@dataandme) <a href="https://twitter.com/dataandme/status/1082362770874605568?ref_src=twsrc%5Etfw">January 7, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 ___  
 
