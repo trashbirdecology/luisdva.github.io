@@ -1,6 +1,5 @@
 ---
 title: "Dog breeds bump chart"
-layout: post
 excerpt: Plotting how popularity rankings for dog breeds change through time. 
 classes: wide
 category: rstats
