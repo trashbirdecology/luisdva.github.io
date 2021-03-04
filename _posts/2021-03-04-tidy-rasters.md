@@ -1,6 +1,6 @@
 ---
 title: "Raster calculations on stars objects"
-excerpt: R as a GIS, raster calculation (reclass, sum) and plotting.
+excerpt: Using R as a GIS - raster calculation (reclass, sum) and plotting.
 tagline: "Species richness maps from species distribution models"
 category: rstats
 tags:
