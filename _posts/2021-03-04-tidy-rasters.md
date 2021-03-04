@@ -31,6 +31,7 @@ I tried to point them to existing tutorials, but didn’t find any recent ones w
 
 Thanks to all the ongoing development happening with spatial methods in R, a `stars` + `sf` + `tidyverse` approach to raster calculations and plotting is now possible, and below is my take on it.
 
+### Proof of concept
 
 Let’s start with a proof of concept. Before working with real data I wanted to see if the approach I cooked up works. For this, we’ll create toy rasters with random suitability values.  
 
@@ -250,6 +251,7 @@ sppolys_tilt %>%
         <figcaption>3D! - click to enlarge</figcaption>
 </figure>
 
+## Working with real MaxEnt files
 Let’s repeat the process with real raster files produced by MaxEnt. This example uses [models of habitat suitability for 96 species of passerine birds in North America](https://doi.org/10.5281/zenodo.3847271){:target="_blank"} during the breeding season, produced by Diana Stralberg and archived on Zenodo. 
 
 The base map for our study area comes from `rnaturalearth`.
