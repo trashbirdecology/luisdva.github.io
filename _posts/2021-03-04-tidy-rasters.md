@@ -16,6 +16,7 @@ header:
 
 ---
 
+> Versión en español [aquí](https://luisdva.github.io/rstats/calculos-rasters/)
 
 A while back, a colleague from Cuba contacted me seeking help with making species richness maps for plants. I had written about [species richness maps in R](https://luisdva.github.io/rstats/GIS-with-R/){:target="_blank"} before, but only when working with point occurrence data or species range polygons. In their case, the task was to reclassify and sum a bunch of MaxEnt models to create a species richness layer.
 
