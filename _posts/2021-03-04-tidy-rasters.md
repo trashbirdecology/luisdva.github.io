@@ -17,16 +17,15 @@ header:
 ---
 
 
-A while back, a colleague from Cuba contacted me seeking help with making species richness maps for plants. I had written about [species richness maps in R](https://luisdva.github.io/rstats/GIS-with-R/)
-{:target="_blank"} before, but only when working with point occurrence data or species range polygons. In their case, the task was to reclassify and sum a bunch of MaxEnt models to create a species richness layer.
+A while back, a colleague from Cuba contacted me seeking help with making species richness maps for plants. I had written about [species richness maps in R](https://luisdva.github.io/rstats/GIS-with-R/){:target="_blank"} before, but only when working with point occurrence data or species range polygons. In their case, the task was to reclassify and sum a bunch of MaxEnt models to create a species richness layer.
 
 I tried to point them to existing tutorials, but didn’t find any recent ones with good exposition, so here we are. I haven’t run my own SDMs in years, but as far as I know, this should still be the overall process. 
 
 1. Run a distribution model (repeat for n species)
 
-2. Pick a threshold and reclassify each species’ raster layer with continuous values of suitability or probability of occurrence into binary presence/absence values.
+2. Pick a threshold and **reclassify** each species’ raster layer with continuous values of suitability or probability of occurrence into binary presence/absence values.
 
-3. Sum the reclassified layers to count the total species richness for each cell
+3. **Sum** the reclassified layers to count the total species richness for each cell
 
 > Disclaimer: I don’t know how others are doing this recently (I suspect with QGIS or ESRI software).
 
@@ -125,7 +124,7 @@ ggplot() +
 
 <figure>
     <a href="/assets/images/toyrasters.png"><img src="/assets/images/toyrasters.png" width= "660"></a>
-        <figcaption>toy sdsm - click to enlarge</figcaption>
+        <figcaption>toy SDMs - click to enlarge</figcaption>
 </figure>
 
 To reclassify all of the arrays, we can use `tidyverse` methods. Here we consider every cell value >70 as present (1) and <70 as absent (0). It’s very cool how we can use `dplyr` verbs directly on the `stars` attributes.
