@@ -28,14 +28,14 @@ Estuve buscando recursos para recomendarles, pero no encontré nada reciente ni 
 3. Sumar los valores de las capas re-clasificadas para contar el total de especies por pixel.
 
 > Desconozco cuál es la práctica actual para hacer ésto, supongo que con QGIS, o con algún programa de ESRI, o directamente con los programas que generan los modelos. Igual aquí propongo una forma bastante sencilla de hacer todo en R.
-> 
-Gracias a todos los avances en los métodos espaciales con R. Podemos usar `stars`, `sf`, y métodos del `tidyverse` para todos nuestros cálculos y visualizaciones de raster.
+ 
+Con los útimos avances en los métodos espaciales con R, podemos usar `stars`, `sf`, y métodos del `tidyverse` para todos nuestros cálculos y visualizaciones de raster.
 
 ### Probando el método
 
 Antes que nada, una demostración con datos simulados muy simples. Para ésto hay que generar unos raster de prueba con valores de idoneidad aleatorios. 
 
-Esta función crea una matriz de 4x5 con valores aleatorios, que se convierte en objeto stars, con un nombre asignado por la función adjective_animal del paquete ids.
+Esta función crea una matriz de 4x5 con valores aleatorios que luego se convierte en objeto `stars`, con un nombre asignado por la función `adjective_animal` del paquete ids.
 
 {% highlight r %}
 # cargar paquetes
@@ -314,7 +314,7 @@ ggplot(northam) +
         <figcaption>modelos MaxEnt</figcaption>
 </figure>
 
-La riqueza de especies se calcula igual que en ejemplo anterior. 
+La riqueza de especies se calcula igual que en el ejemplo anterior. 
 
 {% highlight r %}
 # reclasificar y sumar
@@ -366,7 +366,7 @@ ggplot(northam) +
 
 <figure>
     <a href="/assets/images/bbirdsrich.png"><img src="/assets/images/bbirdsrich.png" width= "660"></a>
-        <figcaption>Quedó buernardo</figcaption>
+        <figcaption>buernardo</figcaption>
 </figure>
 
 Quedó nítido.
