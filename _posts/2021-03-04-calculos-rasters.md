@@ -17,7 +17,7 @@ header:
 ---
 > Read this post in English [here](https://luisdva.github.io/rstats/tidy-rasters/)
 
-Hace algunos meses, un colega de Cuba me contactó con unas dudas sobre cómo hacer mapas de riqueza de especies para algunas plantas caribeñas. Yo había escrito una [guía breve](https://luisdva.github.io/rstats/GIS-with-R/){:target="_blank"} para estos cálculos, pero solo a partir de puntos de ocurrencia o de mapas de distribución vectoriales. En su caso, había que re-clasificar y sumar varios modelos de MaxEnt para generar una capa de riqueza de especies.
+Hace algunos meses, un colega en Cuba me contactó con unas dudas sobre cómo hacer mapas de riqueza de especies para algunas plantas caribeñas. Yo había escrito una [guía breve](https://luisdva.github.io/rstats/GIS-with-R/){:target="_blank"} para estos cálculos, pero solo a partir de puntos de ocurrencia o de mapas de distribución vectoriales. En su caso, había que re-clasificar y sumar varios modelos de MaxEnt para generar una capa de riqueza de especies.
 
 Estuve buscando recursos para recomendarles, pero no encontré nada reciente ni en castellano, así que me puse a armar esta guía. Llevo años sin correr modelos de nicho ecológico (ENM), pero hasta donde sé el proceso sigue siendo el mismo para calcular riqueza.
  
