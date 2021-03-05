@@ -7,6 +7,9 @@ header:
   image: /assets/images/featureHabr.png
 ---
 
+Desde febrero de 2021 cuento con la certificación como [instructor](https://education.rstudio.com/trainers/people/verde_arregoitia+luis/) de Tidyverse por parte de RStudio Education.
+
+
 ## Cursos de R impartidos
 
 Pronto compartiré los materiales y diapositivas de los cursos impartidos en formato interactivo utilizando [Binder](https://mybinder.org).  
