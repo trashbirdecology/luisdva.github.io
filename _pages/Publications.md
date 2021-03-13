@@ -12,6 +12,11 @@ header:
 
 [Google Scholar profile](https://scholar.google.com.au/citations?user=Ii0dP6kAAAAJ&hl=en)
 
+
++ Hernández-Canchola, G., **Verde Arregoitia, L.D.**, Colunga-Salas, P., Gómez-Jiménez, Y.A., León-Paniagua, L. 2021. A Global Review of Phylogeographic Studies on Bats.  In: Lim B.K. et al. (eds) _50 Years of Bat Research_. Springer. 289-309
+
++ D’Elía, G., Canto, J., Ossa, G., **Verde Arregoitia, L.D.**, Bostelmann, E., Iriarte, A., Amador, L. Quiroga-Carmona, M., Hurtado, N., Cadenillas, R., Valdez, L. 2020. Lista actualizada de los mamíferos vivientes de Chile. _Boletín del Museo Nacional de Historia Natural_. 69(2). 67-98
+
 + **Verde Arregoitia, L.D.** & D’Elía, G., 2020. Classifying rodent diets for comparative research. _Mammal Review_. 10.1111/mam.12214
 
 + **Verde Arregoitia, L.D.**, Teta, P. & D’Elía, G., 2020. Patterns in research and data sharing for the study of form and function in caviomorph rodents. _Journal of Mammalogy_. 101 (2), 604-612. https://doi.org/10.1093/jmammal/gyaa002
