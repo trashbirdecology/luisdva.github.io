@@ -7,6 +7,8 @@ header:
   image: /assets/images/featureHabr.png
 ---
 
+A partir de julio de 2021, mi curso para preparación y limpieza de datos "[Data Cleaning with R](https://rfortherestofus.com/courses/data-cleaning/)", se encuentra disponible en el sitio [R for the Rest of Us](https://rfortherestofus.com).
+
 Desde febrero de 2021 cuento con la certificación como [instructor](https://education.rstudio.com/trainers/people/verde_arregoitia+luis/) de Tidyverse por parte de RStudio Education.
 
 
