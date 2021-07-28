@@ -26,7 +26,7 @@ I may not have any fancy Data Science or programming credentials, but I’d like
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">depending on whether they need to procrastinate on something even more odious, I could imagine <a href="https://twitter.com/nacnudus?ref_src=twsrc%5Etfw">@nacnudus</a> or <a href="https://twitter.com/LuisDVerde?ref_src=twsrc%5Etfw">@LuisDVerde</a> getting sucked in by certain aspects of this 😉</p>&mdash; Jenny Bryan (@JennyBryan) <a href="https://twitter.com/JennyBryan/status/1204242138357096449?ref_src=twsrc%5Etfw">December 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-  
+ <br/> 
 
 The course is self paced, and throughout 31 lessons you will learn how to:
 - Make your data tidy 
@@ -43,6 +43,6 @@ Here’s a brief video overview.
 
 <blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">I’m super excited to announce a new <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> course: Data Cleaning with R. <br><br>Taught by the talented <a href="https://twitter.com/LuisDVerde?ref_src=twsrc%5Etfw">@LuisDVerde</a>, this course is a deep dive into the thing everyone does but few people talk about. <a href="https://t.co/GYpcRqyy2N">https://t.co/GYpcRqyy2N</a> <a href="https://t.co/Pew0iPuCY8">pic.twitter.com/Pew0iPuCY8</a></p>&mdash; R for the Rest of Us (@rfortherest) <a href="https://twitter.com/rfortherest/status/1412435503421394945?ref_src=twsrc%5Etfw">July 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-  
+ <br/>  
 
 Check out the course details, and feel free to contact me if you have any questions.
