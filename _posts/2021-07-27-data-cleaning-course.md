@@ -13,7 +13,7 @@ header:
   caption: "Photo credit: Jocelyn Morales - Unsplash" 
 ---
 
-## As of last week , my course [“Data Cleaning with R”[(https://rfortherestofus.com/courses/data-cleaning/){:target="_blank"} is now live and available at [R for the Rest of Us](https://rfortherestofus.com/){:target="_blank"}.
+## As of last week, my course [“Data Cleaning with R”[(https://rfortherestofus.com/courses/data-cleaning/){:target="_blank"} is now live and available at [R for the Rest of Us](https://rfortherestofus.com/){:target="_blank"}.
 
 [R for the Rest of Us](https://rfortherestofus.com/){:target="_blank"} is a welcoming community meant to bring R to folks who do not yet use it. The site, run by [David Keyes](https://twitter.com/dgkeyes){:target="_blank"}, brings together courses, learning resources, custom training, and consulting in all things R.
 
