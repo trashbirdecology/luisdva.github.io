@@ -1,6 +1,6 @@
 ---
 title: Data Cleaning with R
-excerpt: "New Course Available, Clean your data more quickly and efficiently than ever before"
+excerpt: "New Course Available - Clean your data more quickly and efficiently than ever before"
 classes: wide
 category: rstats
 tags: 
