@@ -15,30 +15,33 @@ Desde febrero de 2021 cuento con la certificación como [instructor](https://edu
 
 
 <figure style="width: 200px" class="align-right">
-    <a href="https://pbs.twimg.com/media/FDWdlN0XoAMSKhe?format=jpg&name=large"><img src="https://pbs.twimg.com/media/FDWdlN0XoAMSKhe?format=jpg&name=large"></a>
+    <img src="https://pbs.twimg.com/media/FDWdlN0XoAMSKhe?format=jpg&name=large">
 </figure>
-- gg+: paquetes para extender las capacidades de `ggplot2`. Tutorial impartido durante LatinR 2021. Virtual. [materiales](https://github.com/luisDVA/ggmas)
+gg+: paquetes para extender las capacidades de `ggplot2`. Tutorial impartido durante LatinR 2021. Virtual. [materiales](https://github.com/luisDVA/ggmas)
+<br/>
 
-<br/>
-- Taller: Disponibilidad del conocimiento científico y acceso abierto a código y datos de investigación. CAPES UC, Chile. [materiales](https://docs.google.com/presentation/d/1UnyRUl5VeguLP7X0YERbqfi7bn8K2UpoljGJSaMEJnY/edit?usp=sharing)
-<figure>
-    <a href="https://pbs.twimg.com/media/E90o9n-XMAIbyEX?format=jpg&name=large"><img src="https://pbs.twimg.com/media/E90o9n-XMAIbyEX?format=jpg&name=large" width= "130"></a>
+<figure style="width: 200px" class="align-right">
+    <img src="https://pbs.twimg.com/media/E90o9n-XMAIbyEX?format=jpg&name=large">
 </figure>
+Taller: Disponibilidad del conocimiento científico y acceso abierto a código y datos de investigación. CAPES UC, Chile. [materiales](https://docs.google.com/presentation/d/1UnyRUl5VeguLP7X0YERbqfi7bn8K2UpoljGJSaMEJnY/edit?usp=sharing)
 <br/>
--  Importando datos desde hojas de cálculo. 2020. Taller virtual impartido durante LatinR 2020. [materiales](https://github.com/luisDVA/tallerxl). [youtube](https://www.youtube.com/watch?v=vp_1N2tOFqI)  
-<figure>
-    <a href="https://pbs.twimg.com/media/EixIkqyXsAM6205?format=jpg&name=large"><img src="https://pbs.twimg.com/media/EixIkqyXsAM6205?format=jpg&name=large" width= "130"></a>
+
+<figure style="width: 200px" class="align-right">
+    <img src="https://pbs.twimg.com/media/EixIkqyXsAM6205?format=jpg&name=large">
 </figure>
+Importando datos desde hojas de cálculo. 2020. Taller virtual impartido durante LatinR 2020. [materiales](https://github.com/luisDVA/tallerxl). [youtube](https://www.youtube.com/watch?v=vp_1N2tOFqI)  
 <br/>
-- Limpieza, manipulación y transformación de datos en R. 2019. _Curso teórico-práctico impartido durante el IV Congreso Peruano de Mastozoología_.   
-<figure>
-    <a href="/assets/images/luisaamp.png"><img src="/assets/images/luisaamp.png" width= "130"></a>
+  
+<figure style="width: 200px" class="align-right">
+    <img src="/assets/images/luisaamp.png">
 </figure>
+Limpieza, manipulación y transformación de datos en R. 2019. _Curso teórico-práctico impartido durante el IV Congreso Peruano de Mastozoología_. 
 <br/>
-- Visualización de datos y producción de figuras para publicaciones utilizando R y ggplot2. 2018. _Curso teórico-práctico impartido durante el XIV Congreso Nacional de Mastozoología_ [presentación](https://docs.google.com/presentation/d/1SKtM-2RLXwfGj3uFXXZx8-mT_q0VTSjYomt2d_R6NYI/edit?usp=sharing).  
-<figure>
-    <a href="/assets/images/ldcnm18.png"><img src="/assets/images/ldcnm18.png" width= "130"></a>
+
+<figure style="width: 200px" class="align-right">
+    <img src="/assets/images/ldcnm18.png">
 </figure>
+Visualización de datos y producción de figuras para publicaciones utilizando R y ggplot2. 2018. _Curso teórico-práctico impartido durante el XIV Congreso Nacional de Mastozoología_ [presentación](https://docs.google.com/presentation/d/1SKtM-2RLXwfGj3uFXXZx8-mT_q0VTSjYomt2d_R6NYI/edit?usp=sharing).  
 <br/>
 
 ## Ayudantía Docente (workshops)
