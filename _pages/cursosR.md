@@ -24,7 +24,7 @@ Desde febrero de 2021 cuento con la certificación como [instructor](https://edu
 <figure style="width: 200px" class="align-left">
     <img src="https://pbs.twimg.com/media/E90o9n-XMAIbyEX?format=jpg&name=large">
 </figure>
-</br></br></br>
+<br/><br/><br/>
 - Taller: Disponibilidad del conocimiento científico y acceso abierto a código y datos de investigación. CAPES UC, Chile. [materiales](https://docs.google.com/presentation/d/1UnyRUl5VeguLP7X0YERbqfi7bn8K2UpoljGJSaMEJnY/edit?usp=sharing)  
 
 <figure style="width: 220px" class="align-right">
