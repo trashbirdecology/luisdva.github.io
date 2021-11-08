@@ -19,16 +19,18 @@ Desde febrero de 2021 cuento con la certificación como [instructor](https://edu
 </figure> - gg+: paquetes para extender las capacidades de `ggplot2`. Tutorial impartido durante LatinR 2021. Virtual. [materiales](https://github.com/luisDVA/ggmas)  
 <br/>
 
-<figure style="width: 220px" class="align-left">
+<figure style="width: 200px" class="align-left">
     <img src="https://pbs.twimg.com/media/E90o9n-XMAIbyEX?format=jpg&name=large">
 </figure>
+  
+    
 - Taller: Disponibilidad del conocimiento científico y acceso abierto a código y datos de investigación. CAPES UC, Chile. [materiales](https://docs.google.com/presentation/d/1UnyRUl5VeguLP7X0YERbqfi7bn8K2UpoljGJSaMEJnY/edit?usp=sharing)  
 <br/>
 
 <figure style="width: 220px" class="align-right">
     <img src="https://pbs.twimg.com/media/EixIkqyXsAM6205?format=jpg&name=large">
 </figure>
-
+<br/>
 - Importando datos desde hojas de cálculo. 2020. Taller virtual impartido durante LatinR 2020. [materiales](https://github.com/luisDVA/tallerxl). [youtube](https://www.youtube.com/watch?v=vp_1N2tOFqI)  
 <br/>
   
