@@ -13,10 +13,12 @@ Desde febrero de 2021 cuento con la certificación como [instructor](https://edu
 
 ## Cursos de R impartidos
 
-- gg+: paquetes para extender las capacidades de `ggplot2`. Tutorial impartido durante LatinR 2021. Virtual. [materiales](https://github.com/luisDVA/ggmas)
-<figure>
-    <a href="https://pbs.twimg.com/media/FDWdlN0XoAMSKhe?format=jpg&name=large"><img src="https://pbs.twimg.com/media/FDWdlN0XoAMSKhe?format=jpg&name=large" width= "130"></a>
+
+<figure style="width: 200px" class="align-right">
+    <a href="https://pbs.twimg.com/media/FDWdlN0XoAMSKhe?format=jpg&name=large"><img src="https://pbs.twimg.com/media/FDWdlN0XoAMSKhe?format=jpg&name=large"></a>
 </figure>
+- gg+: paquetes para extender las capacidades de `ggplot2`. Tutorial impartido durante LatinR 2021. Virtual. [materiales](https://github.com/luisDVA/ggmas)
+
 <br/>
 - Taller: Disponibilidad del conocimiento científico y acceso abierto a código y datos de investigación. CAPES UC, Chile. [materiales](https://docs.google.com/presentation/d/1UnyRUl5VeguLP7X0YERbqfi7bn8K2UpoljGJSaMEJnY/edit?usp=sharing)
 <figure>
