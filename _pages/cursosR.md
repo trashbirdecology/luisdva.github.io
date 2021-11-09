@@ -31,6 +31,7 @@ Desde febrero de 2021 cuento con la certificación como [instructor](https://edu
 <figure style="width: 220px" class="align-right">
     <img src="https://pbs.twimg.com/media/EixIkqyXsAM6205?format=jpg&name=large">
 </figure>
+
   
 - Importando datos desde hojas de cálculo. 2020. Taller virtual impartido durante LatinR 2020. [materiales](https://github.com/luisDVA/tallerxl). [youtube](https://www.youtube.com/watch?v=vp_1N2tOFqI)  
   
