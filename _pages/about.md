@@ -11,11 +11,10 @@ Welcome to my personal research page. I'll be using this site for news, updates 
 
 ## Research
 
-I'm interested in mammal diversity - past, and present. Through my research I aim to identify the mechanisms that generate spatial and taxonomic patterns of diversity, and the processes that threaten it. My broader interests include ecomorphology, mammalian evolution, biogeography, and phylogenetic comparative methods. 
+I'm interested in mammalian diversity. Through my research I aim to identify the mechanisms that generate spatial and taxonomic patterns of diversity, and the processes that threaten it. My broader interests include ecomorphology, mammalian evolution, biogeography, small mammals, and phylogenetic comparative methods. 
 
-From July 2015 until October 2016 I was a postdoctoral research fellow in the Vertebrates Department at the [Natural History Musem Bern](https://www.nmbe.ch/en). My project involved relating ecology to morphology to phylogeny in rodents using museum collections and phylogenies. After that (2017-2020) I was a postdoctoral researcher at the Instituto de Ciencias Ambientales y Evolutivas, Universidad Austral de Chile. My research project investigated the ecomorphological evolution of South American rodents. 
+From July 2015 until October 2016 I was a postdoctoral research fellow in the Vertebrates Department at the [Natural History Musem Bern](https://www.nmbe.ch/en). My project involved relating ecology to morphology to phylogeny in rodents using museum collections and phylogenies. After that (2017-2020) I was a postdoctoral researcher at the Instituto de Ciencias Ambientales y Evolutivas, Universidad Austral de Chile. My research project investigated the ecomorphological evolution of South American rodents. After a stint working as a freelance R and Shiny programmer for various projects, I am currenty a postdoctoral researcher at the Evolutionary Macroecology Lab (INECOL, Mexico).
 
-I am currently looking for research and work opportunities while working part time programming and teaching R.
 
 <figure>
     <a href="/assets/images/luisdrst.JPG"><img src="/assets/images/luisdrst.JPG" height= "300"></a>
