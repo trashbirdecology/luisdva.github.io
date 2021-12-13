@@ -18,7 +18,7 @@ header:
 
 <blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Does anyone have an example of a document outlining &quot;best practices&quot; for how to prepare useful archived code (well annotated, etc) to go with data repositories?</p>&mdash; Daniel Bolnick (@DanielBolnick) <a href="https://twitter.com/DanielBolnick/status/1462455323340554240?ref_src=twsrc%5Etfw">November 21, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-This tweet by Daniel Bolnick received many useful replies with resources and guidelines for sharing code that's useful and readable. Shortly after that, the editorial team at The American Naturalist published this [guide](https://comments.amnat.org/2021/12/guidelines-for-archiving-code-with-data.html){:target="_blank"} guide for archiving data and code in ecology, evolution and behavior.
+This tweet by Daniel Bolnick received many useful replies with resources and guidelines for sharing code that's useful and readable. Shortly after that, the editorial team at _The American Naturalist_ published this [guide](https://comments.amnat.org/2021/12/guidelines-for-archiving-code-with-data.html){:target="_blank"} guide for archiving data and code in ecology, evolution and behavior.
 
 Coincidentally, I taught some relevant tools for this at a workshop last September and never wrote about it for this site. With a few packages and IDE tools, we can clean up our code efficiently, which goes a long way towards meeting the latest guidelines for clean, reproducible code. 
 
@@ -108,7 +108,7 @@ ggplot(cast) +
 
 # [Code sections](https://support.rstudio.com/hc/en-us/articles/200484568-Code-Folding-and-Sections-in-the-RStudio-IDE){:target="_blank"}
 
-RStudio (and other IDEs) let us insert foldable sections, to split up scripts into discrete pieces that can be collapsed and navigated between using the little navigation panel that can be toggled on and off in the source pane. These can be built automatically for any comment with four trailing dashes, like so
+RStudio (and other IDEs) let us insert foldable sections, to split up scripts into discrete pieces that can be collapsed and navigated between using the little navigation panel that can be toggled on and off in the source pane. These can be built automatically for any comment with four trailing dashes, like so:
 
 {% highlight r %}
 # My section ---- 
